@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/app.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient( 94.3deg,  rgb(53, 117, 160, 1) 10.9%, rgb(81, 97, 115) 87.1% );
+}
