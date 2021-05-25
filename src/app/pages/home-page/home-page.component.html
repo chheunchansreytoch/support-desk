@@ -1,18 +1,4 @@
 <div class="containerWrapper">
-    <h1>Welcome to Home page</h1>
     <p class="p-link" [routerLink]="['/contact-us']">Click here to Contact Us.</p>
     
-    <div class="formContainer">
-       <form>
-            <div class="inputContainer">
-                <label for="inputFirstname" class="label" >First Name</label>
-                <input class="input" id="inputFirstname" placeholder="enter firstname" (change)="firstNameChanged($event)">
-            </div>
-            <div class="inputContainer">
-                <label for="inputLastname" class="label" >Last Name</label>
-                <input class="input" for="inputLastname" placeholder="enter lastname">
-            </div>
-
-            <button class="btnSubmit" (Click)="btnSubmitClicked()">Submit</button>
-       </form>
 </div>

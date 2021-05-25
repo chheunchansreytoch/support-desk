@@ -1,6 +1,7 @@
 <div class="loginContainer">
+
     <form class="sign-in-form">
-        <h2 class="title-signIn">Sign In</h2>
+        <h2>SIGN IN</h2>
 
         <div class="input-field">
             <input class="input" type="text" placeholder="Firstname" required>
@@ -18,13 +19,19 @@
             <input class="input" type="password" placeholder="Password" required>
         </div>
 
-        <div class="input-field">
-            <input type="checkbox" class="rememberMe" name="remember" value="Remember me">
-            <label for="remember"> Remember me?</label><br>
-        </div>
-
         <button class="btnLogin">Sign In</button>
 
+        <div class="rememberContainer">
+            <div class="rememberMe">
+                <input type="checkbox" name="remember" value="Remember me">
+                    <label class="lbl_rememberMe" for="remember"> Keep me logged in</label>
+            </div>
+               
+            <div class="forgotPassword">
+                <a href="#">Forgot your Password</a>
+            </div>
+        </div>
+       
     </form>
             
 </div>

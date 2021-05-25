@@ -1,54 +1,83 @@
+
 .loginContainer {
-    width: 50%;
-    height: 80vh;
-    margin: 50px;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 60px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-   
     background-color: $color2;
-    border-radius: 50px;
+    border-radius: 10px;
     border: 2px solid;
     border-color: $color6;
     display: flex;
+    font-family: $primary-font;
+    font-size: 12px;
+    color: $color5;
+    text-align: center;
 
     .sign-in-form {
         width: 100%;
         margin: 50px;
         align-items: center;
         align-self: center;
-        color: $color5;
+        margin-left: 50%;
+        margin-right: 50%;
         
-            .input-field {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                
-                .input {
-                    width: 60%;
-                    outline: none;
-                    
-                    margin: 8px 0;
-                    margin-top: 10px;
-                    border-radius: 5px;
-                    border: 1px solid;
-                    padding: 8px;
- 
-                }
-                
+        
+        .input-field {
+            margin-top: 10px;
+            
+
+            .input {
+                width: 80%;
+                outline: none;
+                margin: 8px 0;
+                border-radius: 20px;
+                border: 2px solid;
+                border-color: $color6;
+                padding: 8px;
+
             }
-    }
+                
+        }
+
+        .btnLogin {
+            background-color: $color4;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 80%;
+            opacity: 0.9;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .rememberContainer {
+            width: calc(50% - 10px);
+
+            .rememberMe {
+                margin-bottom: 10px;
+            }
+        }
+
+
+        a:visited {
+            color: $color5;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $color1;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+    }    
+            
 }
 
-.btnLogin {
-    background-color: $color4;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 60%;
-    opacity: 0.9;
-    border-radius: 5px;
-
-    
-}
