@@ -9,12 +9,9 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 const routes: Routes = [
   {
     path: '',
-    component: LoginPageComponent
-  },
-  {
-    path: '',
     component: MainFrontLayoutComponent,
     children: [
+      { path: '', component: LoginPageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'contact-us', component: ContactPageComponent }
     ]

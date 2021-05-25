@@ -1,9 +1,13 @@
 #headerContainer {
-    width: 50%;
-    height: auto;
-    padding: 20px;
+    background-color: $color7;
+    padding: 25px;
+    width: 100%;
 
-    color: $black1;
-    
-    font-family: $primary-font;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img{
+        width: 120px;
+    }
 }

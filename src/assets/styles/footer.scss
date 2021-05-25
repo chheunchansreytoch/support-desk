@@ -1,9 +1,14 @@
-#headerContainer {
+#footerContainer {
+    background-color: $color7;
+    padding: 25px;
     width: 100%;
-    height: auto;
-    padding: 20px;
-
-    color: $black1;
-    background-color: $color5;
-    font-family: $primary-font;
+    margin-top: 67px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    p {
+        color: $black1;
+        font-size: 11px;
+    }
 }
