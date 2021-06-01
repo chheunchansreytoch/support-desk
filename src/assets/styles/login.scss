@@ -8,60 +8,105 @@
     flex-direction: column;
     color: $black1;
     font-size: 13PX;
-    
+    font-family: $primary-font;
 
     .sign-in-form {
-        width: 30%;
         margin: 0;
-        margin-top: 25px;
         display: flex; 
         justify-content: space-between; 
         align-items: center; 
         flex-direction: column;
+        background-color: #fefefe;
         
-        
+        .btnLoginWith {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-direction: column;
+
+            .btnLoginEmail {
+                background-color: $color9;
+                font-weight: bold;
+                color: $color7;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 155%;
+                opacity: 0.9;
+                border-radius: 5px;
+            }
+    
+            .btnLoginEmail:hover {
+                opacity: 0.8;
+                background-color: $color10;
+            }
+        }
+
+        p {
+            width: 150%; 
+            color: $black1;
+            text-align: center; 
+            border-bottom: 1px solid $color6; 
+            line-height: 0.1em;
+            margin: 10px 0 10px;
+
+            span {
+                background:#fff; 
+                padding: 5px 5px;
+            }
+        } 
+
         .input-field {
+            margin: 0;
             margin-top: 10px;
-            width: 100%;
+            width: 125%;
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             flex-direction: column;
 
             .input {
-                width: 80%;
+                width: 125%;
                 outline: none;
-                margin: 8px 0;
-                border-radius: 20px;
+                margin: 5px 0;
+                border-radius: 5px;
                 border: 2px solid;
                 border-color: $color6;
                 padding: 8px;
-
-            }
-                
+            }    
         }
-
+        
         .btnLogin {
-            background-color: $color4;
-            color: $black2;
+            background-color: $color8;
+            font-weight: bold;
+            color: $color7;
             padding: 14px 20px;
             margin: 8px 0;
             border: none;
             cursor: pointer;
-            width: 80%;
+            width: 156%;
             opacity: 0.9;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .btnLogin:hover {
+            opacity: 0.8;
+            background-color: $color4;
         }
 
         .rememberContainer {
+            font-size: 12px;
             display: flex; 
             justify-content: space-between; 
             flex-direction: column;
             align-items: left;
-            font-size: 12px;
-            width: 75%;
-          
+            margin-bottom: 8px;
+            width: 150%;
+        }
+
+        a:link {
+            text-decoration: none;
         }
 
         a:visited {
@@ -71,12 +116,12 @@
         }
 
         a:hover {
-            color: $color1;
+            color: $color2;
             background-color: transparent;
             text-decoration: underline;
         }
-
-    }    
-            
+    
+       
+    }          
 }
 

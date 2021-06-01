@@ -6,10 +6,23 @@
     box-sizing: border-box;
 }
 
-body {
-    height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: $color7;
+.loginContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+        width: 100%;
+    }
+
+    .LoginHeaderContainer {
+        height: 100px;
+    }
+
+    .LoginFooterContainer {
+        height: 100px;
+    }
+
 }

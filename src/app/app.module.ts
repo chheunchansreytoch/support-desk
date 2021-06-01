@@ -12,6 +12,9 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { MainFrontLayoutComponent } from './layouts/main-front-layout/main-front-layout.component';
 import { AllCasesFrontComponent } from './layouts/all-cases-front/all-cases-front.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginHeaderComponent } from './shared/login-header/login-header.component';
+import { LoginFooterComponent } from './shared/login-footer/login-footer.component';
+import { LoginFrontLayoutComponent } from './layouts/login-front-layout/login-front-layout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     NotFoundPageComponent,
     MainFrontLayoutComponent,
     AllCasesFrontComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    LoginHeaderComponent,
+    LoginFooterComponent,
+    LoginFrontLayoutComponent
   ],
   imports: [
     BrowserModule,
