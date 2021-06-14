@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomerUiModuleRoutingModule } from './customer-ui-module/customer-ui-module-routing.module';
+
 import { DefaultFrontLayoutComponent } from './layouts/default-front-layout/default-front-layout.component';
 import { LoginFrontLayoutComponent } from './layouts/login-front-layout/login-front-layout.component';
 import { MainFrontLayoutComponent } from './layouts/main-front-layout/main-front-layout.component';
@@ -10,35 +12,40 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
-  { path: '', 
+  {
+    path: '',
     component: LoginFrontLayoutComponent,
-    children: [
-      { path: '', component: LoginPageComponent }
-    ] 
+    children: [{ path: '', component: LoginPageComponent }],
   },
+
   {
     path: '',
     component: MainFrontLayoutComponent,
     children: [
       { path: 'home', component: HomePageComponent },
-      { path: 'contact-us', component: ContactPageComponent }
-    ]
+      { path: 'contact-us', component: ContactPageComponent },
+    ],
   },
   {
     path: '',
     component: DefaultFrontLayoutComponent,
-    children: [
-      { path: 'default-page', component: DefaultPageComponent }
-    ]
+    children: [{ path: 'default-page', component: DefaultPageComponent }],
+  },
+  {
+    path: 'customer-ui',
+    loadChildren: () =>
+      import('./customer-ui-module/customer-ui-module.module').then(
+        (m) => m.CustomerUiModuleModule
+      ),
   },
   {
     path: '**',
-    component: NotFoundPageComponent
-  }
+    component: NotFoundPageComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
