@@ -12,7 +12,7 @@ import { CustomerUiModuleComponent } from './customer-ui-module.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    component: CustomerUiModuleComponent,
     children: [
       { path: 'home', component: HomePageComponent },
       { path: 'body', component: BodyComponent },
