@@ -15,6 +15,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginHeaderComponent } from './shared/login-header/login-header.component';
 import { LoginFooterComponent } from './shared/login-footer/login-footer.component';
 import { LoginFrontLayoutComponent } from './layouts/login-front-layout/login-front-layout.component';
+import { DefaultFrontLayoutComponent } from './layouts/default-front-layout/default-front-layout.component';
+import { DefaultPageComponent } from './pages/default-page/default-page.component';
+import { DefaultHeaderFrontComponent } from './shared/default-header-front/default-header-front.component';
+import { DefaultFooterFrontComponent } from './shared/default-footer-front/default-footer-front.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { LoginFrontLayoutComponent } from './layouts/login-front-layout/login-fr
     LoginPageComponent,
     LoginHeaderComponent,
     LoginFooterComponent,
-    LoginFrontLayoutComponent
+    LoginFrontLayoutComponent,
+    DefaultFrontLayoutComponent,
+    DefaultPageComponent,
+    DefaultHeaderFrontComponent,
+    DefaultFooterFrontComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

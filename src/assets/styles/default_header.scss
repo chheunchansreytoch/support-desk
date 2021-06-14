@@ -1,0 +1,495 @@
+.defaultContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .defaultHeader {
+        width: 100%;
+        height: 50px;
+        // border-bottom: 1px solid $gray1;
+        // background-color: greenyellow;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        .logo_navbar {
+            width: 150px;
+    
+            img {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .searchContainer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            font-family: $primary-font;
+            color: $gray2;
+
+            .searchPosition {
+                width: 60%;
+
+                .search_bar {
+                    width: 55px; 
+                }  
+                
+                .search_bar .dropdown .layoutConnected {
+                    display: flex;
+                    align-items: center; 
+                    flex-direction: row;
+                } 
+        
+                .search_bar .dropdown .layoutConnected .default_option {
+                    color: $gray2;
+                    padding: 10px 20px;
+                    font-size: 11px;
+                }
+        
+                .search_bar .dropdown .layoutConnected .selectOpt {
+                    background-color: $color7;
+                    border: 1px solid $gray1;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    padding: 7px 7.5px;
+                    text-align-last: center;
+                    color: $black3;
+                    outline: none;
+                                    
+                }
+        
+                .search_bar .dropdown .layoutConnected .selectOpt:last-child {
+                    padding-bottom: 0;
+                }
+        
+                .search_bar .dropdown .layoutConnected .selectOpt .Opt:hover {
+                    color: $color2;
+                }
+
+        
+                .search_bar .dropdown .layoutConnected .search_field {
+                    width: 100px;
+                    position: relative;
+                    margin-top: -1px;
+                }
+        
+                .search_bar .dropdown .layoutConnected .search_field .input_search {
+                    text-indent: 20px;
+                    color: $gray2;
+                    width: 450px;
+                    margin-top: 1px;
+                    height: 33px; 
+                    padding-left: 20px;
+                    padding-right: 38px;
+                    border: 1px solid $gray1;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    outline: none;
+                }
+                    
+        
+                .search_bar .dropdown .layoutConnected .search_field .fa-search { 
+                    position: absolute;
+                    top: 12px;
+                    left: 400px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    padding-left: 20px;
+                    padding-right: 10px;
+                }
+                
+            }
+        }
+
+       
+
+        .navBar {
+            width: 20%;
+            margin-right: -250px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .navBar .fa-star{
+            color: $gray3;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+            
+        }
+                
+        .navBar .fa-star:hover{
+            display: inline-flex;
+            font-size: 18px;
+            line-height: 35px;
+            width: 35px;
+            text-decoration: none;
+            outline: none;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $gray4;
+         }
+
+        .navBar .fa-question-circle{
+            color: $gray3;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navBar .fa-question-circle:hover{
+            display: inline-block;
+            font-size: 18px;
+            line-height: 35px;
+            width: 35px;
+            text-decoration: none;
+            outline: none;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $gray4;
+         }
+
+        .navBar .fa-plus-square{
+            color: $gray3;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navBar .fa-plus-square:hover{
+            display: inline-block;
+            font-size: 18px;
+            line-height: 35px;
+            width: 35px;
+            text-decoration: none;
+            outline: none;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $gray4;
+            
+         }
+
+        .navBar .fa-cog{
+            color: $gray3;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navBar .fa-cog:hover{
+            display: inline-block;
+            font-size: 18px;
+            line-height: 35px;
+            width: 35px;
+            text-decoration: none;
+            outline: none;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $gray4;
+         }
+
+        .navBar .fa-bell{
+            color: $gray3;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navBar .fa-bell:hover{
+            display: inline-block;
+            font-size: 18px;
+            line-height: 35px;
+            width: 35px;
+            text-decoration: none;
+            outline: none;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $gray4;
+         }
+
+        .navBar .userIMG {
+             position: relative; 
+         }
+
+         .navBar .userIMG .avatarImg {
+             position: relative;
+             width: 40px;
+             height: 40px;
+             border: 1px solid $gray3;
+             border-radius: 50%;
+         }
+
+         .navBar .userIMG .avatarImg:hover {
+            border: 2px solid $gray4;
+            border-radius: 50%;
+         }
+
+         .navBar .userIMG .UserProfileContainer {
+            position: absolute;
+            display: none;
+            width: 300px;
+            margin-left: -250px;
+            margin-top: 10px;
+            border: 1px solid #b6b6b6;
+            border-radius: 5px;
+            color: $black1;
+            font-family: $primary-font;
+
+        
+
+            
+
+            // .triangle-element {
+            //     width: 40px;
+            //     height: 40px;
+            //     background: green;
+            //     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            // }
+        
+            .popupContainer {
+                .user-popup {
+                    display: flex; 
+                    justify-content: space-between; 
+                    align-items: center; 
+                    flex-direction: row;
+                    background-color: $color7;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+
+                    .avatarImg {
+                        width: 40px;
+                        height: 40px;
+                        margin: 15px;
+                        border: 2px solid $black1;
+                        border-radius: 50%;
+                    }
+                
+                    .profileUserContainer .profile-userAccount {
+                        margin-right: 81px;
+                        margin-top: -8px;
+                        font-size: 15PX;
+                        font-weight: normal;
+                        display: flex; 
+                        justify-content: space-between; 
+                        align-items: center; 
+                        flex-direction: row;
+                    }
+                
+                    .profileUserContainer .profile-userEmail {
+                        font-size: 11px;
+                        font-weight: normal;
+                        color: $gray3;
+                    }
+                
+                    .profileUserContainer .profile-userAccount .profile-link-userName {
+                        color: $black1;
+                        text-decoration: none;
+                    }
+                
+                    .profile-userAccount:hover{
+                        text-decoration: underline;
+                    }
+                
+                }
+            }
+        
+            .profileContainer { 
+                background-color: $gray4;
+                border-bottom: 1px solid #cfcdcd;
+        
+                .profile-card-link .user-profile-lable{
+                    font-size: 14px;
+                    padding: 5px;
+                    margin-left: 4px;
+                    font-weight: normal;
+                    color: $gray5;
+                }   
+                    
+            }
+        
+            .editProfileContainer .editProfile {  
+                .edit-profile-link {
+                    font-size: 11px;
+                    display: flex; 
+                    padding: 10px;
+                    color: $black1;
+                    text-decoration: none;
+                    background-color: $color7;
+                }
+
+                .edit-profile-link:hover {
+                    color: $color9;
+                    text-decoration: underline;
+                }
+        
+            }
+
+            .UserSettingLabelContainer {
+                background-color: $gray4;
+                border-top: 1px solid #cfcdcd;
+                border-bottom: 1px solid #cfcdcd;
+        
+                .setting-card-link .user-setting-lable {
+                    font-size: 14px;
+                    padding: 5px;
+                    margin-left: 4px;
+                    font-weight: normal;
+                    color: $gray5;
+                }
+            }
+
+        
+            .userSettingsContainer .userSettings{
+                background-color: $color7;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                .user-setting-link {
+                    font-size: 11px;
+                    display: flex; 
+                    padding: 10px;
+                    color: $black1;
+                    text-decoration: none;
+                }
+
+                .user-setting-link:hover {
+                    color: $color9;
+                    text-decoration: underline;
+                }
+            
+                .logOut-link{
+                    font-size: 11px;
+                    display: flex; 
+                    padding: 10px;
+                    color: $black1;
+                    text-decoration: none;
+                }
+            
+                .logOut-link:hover {
+                    color: $color9;
+                    text-decoration: underline;
+                }
+            } 
+         }
+
+         #show:checked ~ .UserProfileContainer{
+            display: block;
+       }
+
+        .defaultFooter {
+            height: 100px;
+        }
+
+        
+    }
+    .serviceContainer {
+        width: 100%;
+        font-family: $primary-font;
+        font-weight: normal;
+        border: 1px solid $gray1;
+        display: flex;
+        justify-content: space-between;
+        .serviceConsoleTabBar {
+            width: 40%;
+            display: flex;
+            .service-console {
+                width: 40%;
+                border-right: 1px solid $gray1;
+                padding: 8px;
+                font-size: 18px;
+            }
+    
+            .CasesContainer {
+                width: 25%;
+                border-right: 1px solid $gray1;
+                padding: 8px;
+                font-size: 14px;
+            }
+    
+            .service-dropdown {
+                width: 7.5%;
+                border-right: 1px solid $gray1;
+                padding: 8px;
+                
+            }
+    
+            .service-dropdown .selectService {
+                width: 20px;
+                border:0px;
+                outline:none;
+                color: $gray5;
+                
+            }
+
+        }
+
+        .tabBar {
+            padding: 8px;
+            display: flex;
+
+        }
+        
+    } 
+   
+}
+
+
+@media screen and (max-width: 898px) {
+    .defaultContainer {
+        .defaultHeader {
+            display: block;
+            height: 120px;
+            .logo_navbar img{
+                width: 100%;
+                margin-bottom: 20px;
+                
+            }
+            .searchContainer {
+                width: 100%;
+                display: inline-block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+                .searchPosition {
+                    	width: 50%;
+                        margin-left: -230px;
+                        
+                    .search_bar {
+                        width: 56px;
+                        
+                        .dropdown .layoutConnected .search_field .input_search {
+                            width: 325px;
+                        }
+    
+                        .dropdown .layoutConnected .search_field .fa-search {
+                            position: absolute;
+                            top: 12px;
+                            left: 263px;
+                            font-size: 14px;
+                            cursor: pointer;
+                            padding-left: 30px;
+                            padding-right: 10px;
+                        }    
+                            
+                    } 
+                }
+
+                .navBar { 
+                   width: 200px;
+                   margin-top: -130px;
+                margin-left: 10px;
+                }
+            }
+        }
+    }
+}

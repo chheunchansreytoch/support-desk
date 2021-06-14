@@ -1,0 +1,139 @@
+.UserProfileContainer {
+    position: absolute;
+    margin: 50px;
+    width: 25%;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    color: $black1;
+    font-family: $primary-font;
+
+    .triangle-element {
+        width: 40px;
+        height: 40px;
+        background: green;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .popupContainer {
+        
+        .user-popup {
+            border-bottom: 1px solid #cfcdcd;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-direction: row;
+            
+            .avatarImg {
+                width: 40px;
+                height: 40px;
+                margin: 15px;
+                border: 2px solid $black1;
+                border-radius: 50%;
+
+    
+            }
+        
+            .profileUserContainer .profile-userAccount {
+                margin-right: 123px;
+                margin-top: -8px;
+                font-size: 15PX;
+                font-weight: normal;
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+                flex-direction: row;
+                
+                
+            }
+        
+            .profileUserContainer .profile-userEmail {
+                font-size: 11px;
+                font-weight: normal;
+                color: $gray3;
+            }
+        
+            .profileUserContainer .profile-userAccount .profile-link-userName {
+                color: $black1;
+                text-decoration: none;
+            }
+        
+            .profile-userAccount:hover{
+                text-decoration: underline;
+            }
+        
+        }
+    }
+
+    .profileContainer { 
+        background-color: $gray4;
+        border-bottom: 1px solid #cfcdcd;
+
+        .profile-card-link .user-profile-lable{
+            font-size: 14px;
+            padding: 5px;
+            margin-left: 4px;
+            font-weight: normal;
+            color: $gray5;
+        }   
+            
+    }
+
+    .user-popup .editProfile .edit-profile-link {
+        font-size: 11px;
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        flex-direction: row;
+        margin: 10px;
+        color: $black1;
+        text-decoration: none;
+    }
+
+    .user-popup .editProfile .edit-profile-link:hover {
+        color: $color9;
+        text-decoration: underline;
+    }
+
+    .UserSettingContainer {
+        background-color: $gray4;
+        border-top: 1px solid #cfcdcd;
+        border-bottom: 1px solid #cfcdcd;
+
+        .setting-card-link .user-setting-lable {
+            font-size: 14px;
+            padding: 5px;
+            margin-left: 4px;
+            font-weight: normal;
+            color: $gray5;
+        }
+
+    }
+
+    .user-popup .userSetting {
+        font-size: 11px;
+        display: flex; 
+        margin: 10px;
+        color: $black1;
+        text-decoration: none;
+    }
+
+    .user-popup .userSetting:hover {
+        color: $color9;
+        text-decoration: underline;
+    }
+
+    .user-popup .logOut {
+        font-size: 11px;
+        display: flex; 
+        margin: 10px;
+        color: $black1;
+        text-decoration: none;
+    }
+
+    .user-popup .logOut:hover {
+        color: $color9;
+        text-decoration: underline;
+    }
+
+}
+
