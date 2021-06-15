@@ -1,0 +1,46 @@
+@import "../../../../assets/styles/customer-ui-style/variables.scss";
+
+.footer {
+  background-color: rgb(245, 245, 245);
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.features {
+  padding: 10px 20px;
+}
+.wrapper p {
+  font-size: 16px;
+  font-weight: $bold;
+  line-height: 25px;
+  padding: 10px 20px;
+  color: grey;
+}
+
+.wrapper a {
+  color: $bg-color;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0px;
+}
+
+.wrapper a:hover {
+  background-color: $bg-color;
+  color: white;
+}
+
+.wrapper a.active {
+  color: $bg-color;
+}
+
+.wrapper .features a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+.wrapper .features a:hover {
+  color: white;
+}
