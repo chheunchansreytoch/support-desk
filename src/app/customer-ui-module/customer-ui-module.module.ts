@@ -6,6 +6,8 @@ import { CustomerUiModuleRoutingModule } from './customer-ui-module-routing.modu
 import { CustomerUiModuleComponent } from './customer-ui-module.component';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatButtonModule } from '@angular/material/button';
+
 import {
   BodyComponent,
   HomePageComponent,
@@ -26,6 +28,7 @@ import {
     CustomerUiModuleRoutingModule,
     MatSliderModule,
     MatIconModule,
+    MatButtonModule,
   ],
 })
 export class CustomerUiModuleModule {}
