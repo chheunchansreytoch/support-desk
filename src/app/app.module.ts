@@ -20,6 +20,7 @@ import { DefaultPageComponent } from './pages/default-page/default-page.componen
 import { DefaultHeaderFrontComponent } from './shared/default-header-front/default-header-front.component';
 import { DefaultFooterFrontComponent } from './shared/default-footer-front/default-footer-front.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -40,13 +41,10 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     DefaultPageComponent,
     DefaultHeaderFrontComponent,
     DefaultFooterFrontComponent,
-    UserProfileComponent
+    UserProfileComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

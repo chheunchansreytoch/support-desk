@@ -1,0 +1,12 @@
+@import "./footer.scss";
+@import "./header.scss";
+@import "./variables.scss";
+// main style file
+
+.customer-ui-body {
+  font-family: $sans-serif;
+  font-weight: $light;
+  color: $txt-primary; //color variable set elsewhere
+  background: $body-bg;
+  -webkit-text-size-adjust: 100%;
+}
