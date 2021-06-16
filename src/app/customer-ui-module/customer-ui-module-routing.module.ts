@@ -7,12 +7,13 @@ import {
   HeaderComponent,
   FooterComponent,
 } from './index';
-import { CustomerUiModuleComponent } from './customer-ui-module.component';
+
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CustomerUiModuleComponent,
+    component: MainLayoutComponent,
     children: [
       { path: 'home', component: HomePageComponent },
       { path: 'body', component: BodyComponent },

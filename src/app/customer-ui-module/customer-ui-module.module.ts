@@ -14,6 +14,7 @@ import {
   FooterComponent,
   HeaderComponent,
 } from './index';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {
     HomePageComponent,
     FooterComponent,
     HeaderComponent,
+    MainLayoutComponent,
   ],
   imports: [
     CommonModule,

@@ -1,9 +1,9 @@
 // pages
-export * from '../pages/customer-ui/home-page/home-page.component';
+export * from './pages/home-page/home-page.component';
 
 // layouts
-export * from '../layouts/customer-ui/body/body.component';
+export * from './components/body/body.component';
 
 // shared
-export * from '../shared/customer-ui/footer/footer.component';
-export * from '../shared/customer-ui/header/header.component';
+export * from './shared/footer/footer.component';
+export * from './shared/header/header.component';
