@@ -28,7 +28,7 @@ hr {
 }
 
 .topics-grid-container {
-  flex: 8;
+  flex: 1;
   display: grid;
   padding: 40px 20px;
   align-items: center;
@@ -67,7 +67,7 @@ hr {
 }
 
 .support-box-container {
-  flex: 2;
+  width: 300px;
   display: flex;
   flex-direction: column;
 }

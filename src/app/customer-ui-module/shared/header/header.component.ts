@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DATA } from 'src/app/dummy/app';
+import { DATA } from 'src/app/customer-ui-module/dummy/app';
 @Component({
   selector: 'app-customer-ui-header',
   templateUrl: './header.component.html',
