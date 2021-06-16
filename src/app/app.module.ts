@@ -20,6 +20,8 @@ import { DefaultPageComponent } from './pages/default-page/default-page.componen
 import { DefaultHeaderFrontComponent } from './shared/default-header-front/default-header-front.component';
 import { DefaultFooterFrontComponent } from './shared/default-footer-front/default-footer-front.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -40,11 +42,13 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     DefaultPageComponent,
     DefaultHeaderFrontComponent,
     DefaultFooterFrontComponent,
-    UserProfileComponent
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
