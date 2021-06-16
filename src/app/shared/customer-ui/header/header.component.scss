@@ -13,14 +13,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  align-items: center;
-  align-content: center;
 }
 
 .wrapper a {
   color: black;
   text-align: center;
-
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
@@ -28,7 +25,7 @@
 }
 
 .wrapper a.logo {
-  flex: 1;
+  flex: 1.5;
   font-weight: $semibold;
 }
 
@@ -52,7 +49,7 @@
 }
 
 .wrapper-right {
-  flex: 4;
+  flex: 8.5;
   text-align: right;
 }
 .wrapper-right a {
