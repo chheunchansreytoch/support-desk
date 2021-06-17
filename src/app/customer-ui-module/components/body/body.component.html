@@ -1,65 +1,53 @@
 <!-- customer ui body has a black background color -->
 <div class="customer-ui-body">
+  <div class="header-wrapper">
+    <div class="header-container-wrapper">
+      <div class="header-container">
+        <a mat-button href="customer-ui/home" class="logo" alt="logo">
+          <img [src]="dummy.PATH" class="image">
+        </a>
+        <div class="wrapper-right">
+          <button mat-button href="customer-ui/home">
+            Features
+          </button>
+          <button mat-button href="customer-ui/home">
+            FAQ
+          </button>
+          <button mat-fab class="image-profile">
+          </button>
+        </div>
+      </div>
+      <p class="header-question">How can we help?</p>
+      <div class="search-bar">
+        <button mat-mini-fab color="white">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input type="text" placeholder="Search the Knowledge Base">
+      </div>
+    </div>
+  </div>
+
   <div class="body-container-wrapper">
     <div class="body-container">
 
       <div class="support-topic-container">
-        <div class="header-container">
+        <div class="topic-container">
           <p>Help Topics</p>
           <hr>
         </div>
-
         <div class="topic-grid-container">
-          <div class="topic">
+          <button class="topic-button">
             <div class="topic-row">
               <mat-icon class="primary-color-icon">app_blocking</mat-icon>
               <div class="title-container">
                 <p class="title">Getting Started</p>
-                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
               </div>
             </div>
-            <!-- <hr> -->
-          </div>
-          <div class="topic">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Articles to get you up and running, quick and easy.</p>
-              </div>
-            </div>
-            <!-- <hr> -->
-          </div>
-          <div class="topic">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Articles to get you up and running, quick and easy.</p>
-              </div>
-            </div>
-            <!-- <hr> -->
-          </div>
-          <div class="topic">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Articles to get you up and running, quick and easy.</p>
-              </div>
-            </div>
-            <hr>
-          </div>
-          <div class="topic">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Articles to get you up and running, quick and easy.</p>
-              </div>
-            </div>
-            <hr>
-          </div>
+          </button>
+
         </div>
       </div>
 

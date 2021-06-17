@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DATA } from 'src/app/customer-ui-module/dummy/app';
 
 @Component({
   selector: 'app-customer-ui-body',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
   constructor() {}
+  dummy = DATA;
 
   ngOnInit(): void {}
 }

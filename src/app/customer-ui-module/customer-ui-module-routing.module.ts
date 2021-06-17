@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import {
-  BodyComponent,
-  HomePageComponent,
-  HeaderComponent,
-  FooterComponent,
-} from './index';
+import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
     children: [
+      { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
-      { path: 'body', component: BodyComponent },
-      { path: 'header', component: HeaderComponent },
-      { path: 'footer', component: FooterComponent },
     ],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardLayoutComponent,
+    children: [{ path: '', component: DashboardPageComponent }],
   },
 ];
 
