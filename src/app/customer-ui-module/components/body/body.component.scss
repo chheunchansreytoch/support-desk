@@ -134,14 +134,14 @@
           min-width: 500px;
           grid-template-columns: repeat(2, 1fr);
           gap: 20px 20px;
+          padding-top: 20px;
 
           .topic-button {
-            margin: 10px 0px;
             outline: none;
             border: none;
             border-radius: 15px;
             background-color: white;
-            box-shadow: 1px 1px 3px #999;
+            box-shadow: 1px 1px 5px #999;
 
             .topic-row {
               display: flex;
@@ -158,14 +158,13 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-
+                text-align: start;
                 .title {
                   color: #333;
                   font-size: 14px;
                   font-weight: $bold;
                   font-family: $primary-font;
                 }
-
                 .description {
                   font-weight: $normal;
                   color: grey;
@@ -179,16 +178,16 @@
           .topic-button:hover {
             cursor: pointer;
             background-color: white;
-            opacity: 0.7;
+            opacity: 0.8;
             box-shadow: 1px 1px 3px #999;
             border-radius: 15px;
           }
 
           .topic-button:active {
             cursor: pointer;
-            background-color: orange;
-            opacity: 0.7;
-            box-shadow: 1px 1px 3px #999;
+            background-color: white;
+            opacity: 0.6;
+            box-shadow: 1px 1px 10px #999;
             border-radius: 15px;
           }
         }
@@ -214,11 +213,20 @@
           }
 
           button {
-            background-color: $bg-color;
-            border-radius: 10px;
-            color: white;
+            cursor: pointer;
+            outline: none;
             border: none;
+            border-radius: 10px;
+            background-color: $bg-color;
+            box-shadow: 1px 1px 3px #999;
+            color: white;
             line-height: 20px;
+          }
+          button:hover {
+            opacity: 0.9;
+          }
+          button:active {
+            opacity: 0.6;
           }
         }
 
