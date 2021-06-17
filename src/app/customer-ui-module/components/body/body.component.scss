@@ -143,14 +143,6 @@
             background-color: white;
             box-shadow: 1px 1px 3px #999;
 
-            :hover {
-              cursor: pointer;
-              background-color: white;
-              opacity: 0.7;
-              box-shadow: 1px 1px 3px #999;
-              border-radius: 15px;
-            }
-
             .topic-row {
               display: flex;
               flex-direction: row;
@@ -182,6 +174,22 @@
                 }
               }
             }
+          }
+
+          .topic-button:hover {
+            cursor: pointer;
+            background-color: white;
+            opacity: 0.7;
+            box-shadow: 1px 1px 3px #999;
+            border-radius: 15px;
+          }
+
+          .topic-button:active {
+            cursor: pointer;
+            background-color: orange;
+            opacity: 0.7;
+            box-shadow: 1px 1px 3px #999;
+            border-radius: 15px;
           }
         }
       }
