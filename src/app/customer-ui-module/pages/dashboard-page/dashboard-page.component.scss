@@ -1,0 +1,147 @@
+@import "../../../../assets/styles/customer-ui-style/app.scss";
+
+.body-wrapper {
+  padding-top: 100px;
+  min-height: 100%;
+  background-color: rgb(240, 240, 240);
+  width: 100%;
+  .body-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 30px;
+
+    .title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title-container {
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-create-case {
+        cursor: pointer;
+        background-color: $bg-color;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .btn-create-case:hover {
+        opacity: 0.6;
+      }
+      .btn-create-case:active {
+        opacity: 0.8;
+      }
+    }
+
+    .header-list-container {
+      width: 100%;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgb(220, 220, 220);
+
+      .status-list-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+
+        .status-button {
+          margin-right: 20px;
+          padding: 10px 0;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+          font-weight: $bold;
+          font-size: 14px;
+        }
+        .active {
+          color: $bg-color;
+          border-bottom: 2px solid $bg-color;
+        }
+        .status-button:hover {
+          color: $bg-color;
+          border-bottom: 2px solid $bg-color;
+        }
+        .status-button:active {
+          opacity: 0.6;
+        }
+      }
+      .search-icon-button {
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // background-color: turquoise;
+      }
+      .search-icon-button:hover {
+        background-color: rgba(156, 156, 156, 0.5);
+        opacity: 0.8;
+      }
+      .search-icon-button:active {
+        opacity: 0.6;
+        background-color: rgb(156, 156, 156);
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+
+      border: none;
+      .check-box {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgb(172, 172, 172);
+        border-radius: 5px;
+      }
+
+      thead {
+        td {
+          padding-top: 40px;
+          padding-bottom: 10px;
+        }
+        td:first-child {
+          text-align: center;
+        }
+      }
+
+      tbody tr {
+        // Set border-radius on the top-left and bottom-left of the first table data on the table row
+        td {
+          padding: 20px 0px;
+          background-color: white;
+          border-top: 2px solid rgba(200, 200, 200, 0.6);
+          border-bottom: 2px solid rgba(200, 200, 200, 0.6);
+        }
+
+        td:first-child {
+          text-align: center;
+          border-radius: 5px 0 0 5px;
+          border-left: 2px solid rgba(200, 200, 200, 0.6);
+        }
+        // Set border-radius on the top-right and bottom-right of the last table data on the table row
+        td:last-child {
+          border-radius: 0 5px 5px 0;
+          border-right: 2px solid rgba(200, 200, 200, 0.6);
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DATA } from 'src/app/customer-ui-module/dummy/app';
 
 @Component({
@@ -7,8 +8,11 @@ import { DATA } from 'src/app/customer-ui-module/dummy/app';
   styleUrls: ['./body.component.scss'],
 })
 export class BodyComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
   dummy = DATA;
+  goToDashboard(): void {
+    this.router.navigate(['/customer-ui/dashboard']);
+  }
 
   ngOnInit(): void {}
 }
