@@ -38,7 +38,7 @@ import { QuillModule } from 'ngx-quill';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    QuillModule,
+    // QuillModule.forRoot(),
   ],
 })
 export class CustomerUiModuleModule {}
