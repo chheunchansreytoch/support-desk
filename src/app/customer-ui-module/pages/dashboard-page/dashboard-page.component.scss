@@ -1,7 +1,6 @@
 @import "../../../../assets/styles/customer-ui-style/app.scss";
-
-.body-container {
-  padding: 60px 30px;
+.container {
+  align-self: center;
   .title-wrapper {
     display: flex;
     justify-content: space-between;
