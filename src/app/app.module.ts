@@ -22,6 +22,8 @@ import { DefaultFooterFrontComponent } from './shared/default-footer-front/defau
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { QuillModule } from 'ngx-quill';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DefaultFooterFrontComponent,
     UserProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    QuillModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
