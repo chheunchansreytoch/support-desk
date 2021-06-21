@@ -1,1 +1,116 @@
-<app-customer-ui-body></app-customer-ui-body>
+<div class="main-container-wrapper">
+  <div class="header-wrapper">
+    <div class="header-container-wrapper">
+      <div class="header-container">
+        <a mat-button href="customer-ui/home" class="logo" alt="logo">
+          <img [src]="dummy.PATH" class="image">
+        </a>
+        <div class="wrapper-right">
+          <button mat-button href="customer-ui/home">
+            Features
+          </button>
+          <button mat-button href="customer-ui/home">
+            FAQ
+          </button>
+          <button mat-fab class="image-profile">
+          </button>
+        </div>
+      </div>
+      <p class="header-question">How can we help?</p>
+      <div class="search-bar">
+        <button mat-mini-fab color="white">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input type="text" placeholder="Search the Knowledge Base">
+      </div>
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="body">
+      <div class="support-topic-container">
+        <div class="topic-container">
+          <p>Help Topics</p>
+          <hr>
+        </div>
+        <div class="topic-grid-container">
+
+          <button class="topic-button">
+            <div class="topic-row">
+              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
+              <div class="title-container">
+                <p class="title">Getting Started</p>
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              </div>
+            </div>
+          </button>
+
+          <button class="topic-button">
+            <div class="topic-row">
+              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
+              <div class="title-container">
+                <p class="title">Getting Started</p>
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              </div>
+            </div>
+          </button><button class="topic-button">
+            <div class="topic-row">
+              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
+              <div class="title-container">
+                <p class="title">Getting Started</p>
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              </div>
+            </div>
+          </button><button class="topic-button">
+            <div class="topic-row">
+              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
+              <div class="title-container">
+                <p class="title">Getting Started</p>
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              </div>
+            </div>
+          </button><button class="topic-button">
+            <div class="topic-row">
+              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
+              <div class="title-container">
+                <p class="title">Getting Started</p>
+                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem
+                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      <div class="support-box-container">
+        <div class="box">
+          <a class="head">Popular Articles</a>
+          <a>How to Create an Account</a>
+          <a>How Does the 14 Day Free Trail Work?</a>
+          <a>How Our Pricing Plans Work?</a>
+          <a>How can I edit My Already Existing Page?</a>
+          <a>How Do I See My Published Page?</a>
+        </div>
+
+        <div class="box">
+          <p class="head">Need Support</p>
+          <p>Can't find the answer you looking for? Don't worry we are here to help!</p>
+
+          <!-- <button (click)="goToDashboard()">CONTACT SUPPORT</button> -->
+          <button (click)="goToDashboard()">CONTACT
+            SUPPORT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-customer-ui-footer></app-customer-ui-footer>
+</div>

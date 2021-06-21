@@ -1,76 +1,73 @@
-<div class="body-wrapper">
-  <div class="body-container">
-    <div class="title-wrapper">
-      <div class="title-container">
-        Cases list
-      </div>
-      <button class="btn-create-case">Create Case</button>
+<div class="body-container">
+  <div class="title-wrapper">
+    <div class="title-container">
+      Cases list
     </div>
-    <div class="header-list-container">
-      <div class="status-list-container">
-        <div class="status-button active">
-          All cases
-        </div>
-        <div class="status-button">
-          Pending
-        </div>
-        <div class="status-button">
-          Submitted
-        </div>
-      </div>
-      <div class="search-icon-button">
-        <mat-icon>search</mat-icon>
-      </div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <td class="center">
-            <div class="check-box"></div>
-          </td>
-          <td>Case Number</td>
-          <td>Subject</td>
-          <td>Priority</td>
-          <td>Created</td>
-          <td>Updated</td>
-          <td>Platform</td>
-          <td>Status</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="center">
-            <div class="check-box"></div>
-          </td>
-          <td>121091</td>
-          <td>can't reset password</td>
-          <td>Priority</td>
-          <td>Aug,1 2019</td>
-          <td>Aug,1 2019</td>
-          <td>Web</td>
-          <td>Pending</td>
-
-        </tr>
-        <tr>
-          <td class="center">
-            <div class="check-box"></div>
-          </td>
-          <td>121092</td>
-          <td>Offilne quit app</td>
-          <td>Priority</td>
-          <td>Aug,1 2019</td>
-          <td>Aug,1 2019</td>
-          <td>Mobile</td>
-          <td>Submitted</td>
-
-
-        </tr>
-
-      </tbody>
-
-    </table>
-
+    <button class="button" [routerLink]="['/customer-ui/case/create']">Create Case</button>
   </div>
+  <div class="header-list-container">
+    <div class="status-list-container">
+      <div class="status-button active">
+        All cases
+      </div>
+      <div class="status-button">
+        Pending
+      </div>
+      <div class="status-button">
+        Submitted
+      </div>
+    </div>
+    <div class="search-icon-button">
+      <mat-icon>search</mat-icon>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <td class="center">
+          <div class="check-box"></div>
+        </td>
+        <td>Case Number</td>
+        <td>Subject</td>
+        <td>Priority</td>
+        <td>Created</td>
+        <td>Updated</td>
+        <td>Platform</td>
+        <td>Status</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center">
+          <div class="check-box"></div>
+        </td>
+        <td>121091</td>
+        <td>can't reset password</td>
+        <td>Priority</td>
+        <td>Aug,1 2019</td>
+        <td>Aug,1 2019</td>
+        <td>Web</td>
+        <td>Pending</td>
+
+      </tr>
+      <tr>
+        <td class="center">
+          <div class="check-box"></div>
+        </td>
+        <td>121092</td>
+        <td>Offilne quit app</td>
+        <td>Priority</td>
+        <td>Aug,1 2019</td>
+        <td>Aug,1 2019</td>
+        <td>Mobile</td>
+        <td>Submitted</td>
+
+
+      </tr>
+
+    </tbody>
+
+  </table>
 
 </div>

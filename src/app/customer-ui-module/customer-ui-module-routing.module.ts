@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { CreateCasePageComponent } from './pages/create-case-page/create-case-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
@@ -19,6 +20,11 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardLayoutComponent,
     children: [{ path: '', component: DashboardPageComponent }],
+  },
+  {
+    path: 'case',
+    component: DashboardLayoutComponent,
+    children: [{ path: 'create', component: CreateCasePageComponent }],
   },
 ];
 

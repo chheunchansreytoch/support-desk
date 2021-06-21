@@ -1,4 +1,17 @@
-@import "./footer.scss";
-@import "./header.scss";
 @import "./variables.scss";
+@import "./button.scss";
 // main style file
+
+.main-container-wrapper {
+  width: 100%;
+  height: 100%;
+  // background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+}
+.main-container {
+  width: 100%;
+  align-self: center;
+  max-width: 1400px;
+  flex: 1;
+}

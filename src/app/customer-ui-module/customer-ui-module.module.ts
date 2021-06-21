@@ -11,22 +11,22 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-
-import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
+import { CreateCasePageComponent } from './pages/create-case-page/create-case-page.component';
+
 @NgModule({
   declarations: [
     CustomerUiModuleComponent,
-    BodyComponent,
     HomePageComponent,
     FooterComponent,
     HeaderComponent,
     MainLayoutComponent,
     DashboardPageComponent,
     DashboardLayoutComponent,
+    CreateCasePageComponent,
   ],
   imports: [
     CommonModule,
