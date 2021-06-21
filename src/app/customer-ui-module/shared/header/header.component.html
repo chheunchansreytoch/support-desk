@@ -5,14 +5,14 @@
     </div>
     <div class="menu-container">
 
-      <button class="menu-item-button active" [routerLink]="['/customer-ui/dashboard']">
+      <button class="menu-item-button" [routerLink]="['/customer-ui/dashboard']" [routerLinkActive]="'active'">
         <!-- [routerLink]="['/customer-ui/home']" -->
         Dashboards
       </button>
-      <button class="menu-item-button" [routerLink]="['/customer-ui/case/create']">
+      <button class="menu-item-button" [routerLink]="['/customer-ui/case']" [routerLinkActive]="'active'">
         Case
       </button>
-      <button class="menu-item-button">
+      <button class=" menu-item-button" [routerLink]="['/customer-ui/message']" [routerLinkActive]="'active'">
         Messages
       </button>
     </div>

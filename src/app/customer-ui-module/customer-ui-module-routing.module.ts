@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'case',
     component: DashboardLayoutComponent,
-    children: [{ path: 'create', component: CreateCasePageComponent }],
+    children: [{ path: '', component: CreateCasePageComponent }],
   },
 ];
 

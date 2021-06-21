@@ -16,6 +16,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { CreateCasePageComponent } from './pages/create-case-page/create-case-page.component';
+import { QuillModule } from 'ngx-quill';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CreateCasePageComponent } from './pages/create-case-page/create-case-pa
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    QuillModule.forRoot(),
+    ReactiveFormsModule,
   ],
 })
 export class CustomerUiModuleModule {}
