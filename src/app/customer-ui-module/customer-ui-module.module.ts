@@ -17,6 +17,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { CreateCasePageComponent } from './pages/create-case-page/create-case-page.component';
 import { QuillModule } from 'ngx-quill';
+
+// import { QuillModule } from 'ngx-quill';
+// QuillModule.forRoot(),
 @NgModule({
   declarations: [
     CustomerUiModuleComponent,
