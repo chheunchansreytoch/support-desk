@@ -8,6 +8,11 @@ import { DATA } from 'src/app/customer-ui-module/dummy/app';
 export class HeaderComponent implements OnInit {
   constructor() {}
   dummy = DATA;
+  hidden = false;
+
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
 
   ngOnInit(): void {}
 }

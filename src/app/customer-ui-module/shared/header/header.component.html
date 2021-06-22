@@ -5,20 +5,27 @@
     </div>
     <div class="menu-container">
 
-      <button class="menu-item-button" [routerLink]="['/customer-ui/dashboard']" [routerLinkActive]="'active'">
+      <button class="menu-item-button" [routerLink]="['/customer-ui/case/list']" [routerLinkActive]="'active'">
         <!-- [routerLink]="['/customer-ui/home']" -->
-        Dashboards
+        Cases
       </button>
-      <button class="menu-item-button" [routerLink]="['/customer-ui/case']" [routerLinkActive]="'active'">
-        Case
+      <button class="menu-item-button" [routerLink]="['/customer-ui/case/create']" [routerLinkActive]="'active'">
+        Create
       </button>
-      <button class=" menu-item-button" [routerLink]="['/customer-ui/message']" [routerLinkActive]="'active'">
-        Messages
+      <button class=" menu-item-button" [routerLink]="['/customer-ui/chat']" [routerLinkActive]="'active'">
+        Chat
       </button>
     </div>
-    <div class="user-profile-wrapper">
-
-      <button mat-fab class="user-profile"></button>
+    <div class="header-right-wrapper">
+      <!-- <button class="button notification-button">
+        <mat-icon aria-label="notification">notifications</mat-icon>
+      </button> -->
+      <button mat-fab class="user-profile" matBadge="7" [matBadgeHidden]="hidden" matBadgeSize="small"
+        [matMenuTriggerFor]="menu" matBadgeColor="warn" (click)="toggleBadgeVisibility()"></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="m-item">notification</button>
+        <button mat-menu-item class="m-item">logout</button>
+      </mat-menu>
     </div>
   </div>
 </div>

@@ -8,6 +8,8 @@ import { CustomerUiModuleComponent } from './customer-ui-module.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
@@ -18,6 +20,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { CreateCasePageComponent } from './pages/create-case-page/create-case-page.component';
 import { QuillModule } from 'ngx-quill';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardPageComponent,
     DashboardLayoutComponent,
     CreateCasePageComponent,
+    ChatPageComponent,
   ],
   imports: [
     CommonModule,
     CustomerUiModuleRoutingModule,
+    QuillModule.forRoot(),
+    ReactiveFormsModule,
     MatSliderModule,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    QuillModule.forRoot(),
-    ReactiveFormsModule,
+    MatBadgeModule,
+    MatMenuModule,
   ],
 })
 export class CustomerUiModuleModule {}

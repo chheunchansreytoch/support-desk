@@ -11,7 +11,7 @@ export class HomePageComponent implements OnInit {
   constructor(private router: Router) {}
   dummy = DATA;
   goToDashboard(): void {
-    this.router.navigate(['/customer-ui/dashboard']);
+    this.router.navigate(['/customer-ui/case/list']);
   }
 
   ngOnInit(): void {}

@@ -7,14 +7,19 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./create-case-page.component.scss'],
 })
 export class CreateCasePageComponent implements OnInit {
-  editorForm!: FormGroup;
+  descriptionForm!: FormGroup;
+  descriptionStyle = {
+    height: '300px',
+  };
 
   constructor() {}
 
   ngOnInit(): void {
-    this.editorForm = new FormGroup({ editor: new FormControl(null) });
+    this.descriptionForm = new FormGroup({
+      description: new FormControl(null),
+    });
   }
   onSubmit() {
-    console.log('hello');
+    console.log(this.descriptionForm.get('description')?.value);
   }
 }

@@ -1,19 +1,35 @@
 <div class="container">
-  <h1>Create Case</h1>
-  <div class="form-container">
-    <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="editor">
-          <h3>Hello</h3>
-        </label>
-        <quill-editor formControlName='editor'></quill-editor>
-        <button>Submit</button>
-      </div>
-    </form>
 
-    <!-- <label class="label-container-wrapper">Title *</label>
-    <input type="text" id="firstname" name="firstname" placeholder="Enter case title">
-    <label class="label-container-wrapper">Description *</label> -->
+  <div class="form-container">
+    <div class="row-container">
+      <div class="img-background-container">
+      </div>
+      <div class="plain-container">
+        <div class="title-container"> Create Case</div>
+        <label class="label-container-wrapper">Subject *</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter case title">
+        <label class="label-container-wrapper">Description *</label>
+        <form [formGroup]="descriptionForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <quill-editor [styles]="descriptionStyle" formControlName="description"></quill-editor>
+          </div>
+        </form>
+        <button class="button submit-buttton">Create</button>
+      </div>
+
+      <!-- <div class="plain-container" id="sub-container">
+        <label class="label-container-wrapper">Status *</label>
+        <div class="status-select">
+          <select>
+            <option disabled selected>Status:</option>
+            <option value="1">Pending</option>
+            <option value="2">Requested</option>
+          </select>
+        </div>
+        <input type="text" id="status" name="status" placeholder="Select-status">
+      </div> -->
+
+    </div>
 
 
   </div>
