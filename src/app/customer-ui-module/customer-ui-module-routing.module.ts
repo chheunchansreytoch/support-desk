@@ -18,15 +18,15 @@ const routes: Routes = [
     ],
   },
   {
-    path: '',
+    path: 'case',
     component: DashboardLayoutComponent,
     children: [
-      { path: 'case', component: DashboardPageComponent },
-      { path: 'case/list', component: DashboardPageComponent },
-      { path: 'case/create', component: CreateCasePageComponent },
-      { path: 'chat', component: ChatPageComponent },
+      { path: '', component: DashboardPageComponent },
+      { path: 'list', component: DashboardPageComponent },
+      { path: 'create', component: CreateCasePageComponent },
     ],
   },
+  { path: 'chat', component: ChatPageComponent },
 ];
 
 @NgModule({

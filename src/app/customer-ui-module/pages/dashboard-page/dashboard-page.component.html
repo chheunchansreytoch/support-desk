@@ -14,7 +14,7 @@
         Pending
       </div>
       <div class="status-button">
-        Submitted
+        Closed
       </div>
     </div>
     <div class="search-icon-button">
@@ -25,9 +25,7 @@
   <table>
     <thead>
       <tr>
-        <td class="center">
-          <div class="check-box"></div>
-        </td>
+        <td>No</td>
         <td>Case Number</td>
         <td>Subject</td>
         <td>Priority</td>
@@ -38,10 +36,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="center">
-          <div class="check-box"></div>
-        </td>
+      <tr class="button" [routerLink]="['/customer-ui/case/create']">
+        <td>1</td>
         <td>121091</td>
         <td>can't reset password</td>
         <td>Priority</td>
@@ -51,19 +47,15 @@
         <td>Pending</td>
 
       </tr>
-      <tr>
-        <td class="center">
-          <div class="check-box"></div>
-        </td>
+      <tr class="button" [routerLink]="['/customer-ui/case/create']">
+        <td>2</td>
         <td>121092</td>
         <td>Offilne quit app</td>
         <td>Priority</td>
         <td>Aug,1 2019</td>
         <td>Aug,1 2019</td>
         <td>Mobile</td>
-        <td>Submitted</td>
-
-
+        <td>Closed</td>
       </tr>
 
     </tbody>
