@@ -1,0 +1,8 @@
+<div class="tab-container">
+  <ng-container *ngFor="let case of caseList; let i = index;">
+    <div class="card-container" (click)="btnChatClicked(i)" [ngClass]="{ 'card-active' : i === selectedIndex}">
+      <div class="title">Case: {{case.caseNumber}}</div>
+      <div class="subtitle">Subject: {{case.subject}}</div>
+    </div>
+  </ng-container>
+</div>

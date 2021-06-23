@@ -3,11 +3,25 @@
   <div class="container-row">
     <div class="tab-container-wrapper​​​​">
       <div class="search-container-wrapper">
-        <input type="text" placeholder="hello">
+        <input type="text" placeholder="Search">
+        <mat-icon>search</mat-icon>
       </div>
-      <div class="tab-container">
+      <app-tab-list></app-tab-list>
+    </div>
+    <div class="chat-container-wrapper">
+      <app-chat-display></app-chat-display>
+      <div class="chat-input">
+
+        <input type="text" placeholder="Type Something...">
+        <button class="mini-button" id="attach-file-icon">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+        <button class="mini-button" id="send-icon">
+          <mat-icon>send</mat-icon>
+        </button>
+
+
       </div>
     </div>
-    <div class="chat-container-wrapper plain-container"></div>
   </div>
 </div>

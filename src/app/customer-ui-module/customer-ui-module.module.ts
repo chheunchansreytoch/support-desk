@@ -21,6 +21,8 @@ import { CreateCasePageComponent } from './pages/create-case-page/create-case-pa
 import { QuillModule } from 'ngx-quill';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { ChatDisplayComponent } from './components/chat-display/chat-display.component';
+import { TabListComponent } from './components/tab-list/tab-list.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
     DashboardLayoutComponent,
     CreateCasePageComponent,
     ChatPageComponent,
+    ChatDisplayComponent,
+    TabListComponent,
   ],
   imports: [
     CommonModule,

@@ -91,6 +91,8 @@
   .support-topic-container {
     width: calc(100% - 300px);
     padding-right: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
     .topic-container {
       width: 100%;
       hr {
@@ -116,11 +118,12 @@
       padding-top: 20px;
 
       .topic-button {
+        cursor: pointer;
         outline: none;
         border: none;
         border-radius: 15px;
         background-color: white;
-        box-shadow: 1px 1px 5px #999;
+        box-shadow: 0 0 20px rgb(230, 230, 230);
 
         .topic-row {
           display: flex;
@@ -155,19 +158,23 @@
       }
 
       .topic-button:hover {
-        cursor: pointer;
-        background-color: white;
-        opacity: 0.8;
-        box-shadow: 1px 1px 3px #999;
-        border-radius: 15px;
+        background-color: $bg-color;
+        color: white;
+        .primary-color-icon {
+          color: white !important;
+        }
+        .title-container {
+          .title {
+            color: white !important;
+          }
+          .description {
+            color: white !important;
+          }
+        }
       }
 
       .topic-button:active {
-        cursor: pointer;
-        background-color: white;
         opacity: 0.6;
-        box-shadow: 1px 1px 10px #999;
-        border-radius: 15px;
       }
     }
   }
@@ -197,7 +204,7 @@
         border: none;
         border-radius: 10px;
         background-color: $bg-color;
-        box-shadow: 1px 1px 3px #999;
+        box-shadow: 0 0 30px rgb(230, 230, 230);
         color: white;
         line-height: 20px;
       }

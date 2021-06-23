@@ -7,13 +7,13 @@
   </div>
   <div class="header-list-container">
     <div class="status-list-container">
-      <div class="status-button active">
+      <div class="status-button" (click)="btnStatusClicked(0)" [ngClass]="{ 'active' : selectedIndex === 0 }">
         All cases
       </div>
-      <div class="status-button">
+      <div class="status-button" (click)="btnStatusClicked(1)" [ngClass]="{ 'active' : selectedIndex === 1 }">
         Pending
       </div>
-      <div class="status-button">
+      <div class="status-button" (click)="btnStatusClicked(2)" [ngClass]="{ 'active' : selectedIndex === 2}">
         Closed
       </div>
     </div>
@@ -25,40 +25,27 @@
   <table>
     <thead>
       <tr>
-        <td>No</td>
-        <td>Case Number</td>
-        <td>Subject</td>
-        <td>Priority</td>
-        <td>Created</td>
-        <td>Updated</td>
-        <td>Platform</td>
-        <td>Status</td>
+        <th>No</th>
+        <th>Case Number</th>
+        <th class="align-start">Subject</th>
+        <th>Priority</th>
+        <th>Created</th>
+        <th>Updated</th>
+        <th>Platform</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="button" [routerLink]="['/customer-ui/case/create']">
-        <td>1</td>
-        <td>121091</td>
-        <td>can't reset password</td>
-        <td>Priority</td>
-        <td>Aug,1 2019</td>
-        <td>Aug,1 2019</td>
-        <td>Web</td>
-        <td>Pending</td>
-
+      <tr class="" [routerLink]="['/customer-ui/case/chat']" *ngFor="let case of caseList; let i=index;">
+        <td>{{i+1}}</td>
+        <td>{{case.caseNumber}}</td>
+        <td class="align-start">{{case.subject}}</td>
+        <td>{{case.priority}}</td>
+        <td>{{case.createdAt}}</td>
+        <td>{{case.updatedAt}}</td>
+        <td>{{case.platform}}</td>
+        <td>{{case.status}}</td>
       </tr>
-      <tr class="button" [routerLink]="['/customer-ui/case/create']">
-        <td>2</td>
-        <td>121092</td>
-        <td>Offilne quit app</td>
-        <td>Priority</td>
-        <td>Aug,1 2019</td>
-        <td>Aug,1 2019</td>
-        <td>Mobile</td>
-        <td>Closed</td>
-      </tr>
-
     </tbody>
-
   </table>
 </div>

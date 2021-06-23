@@ -24,9 +24,9 @@ const routes: Routes = [
       { path: '', component: DashboardPageComponent },
       { path: 'list', component: DashboardPageComponent },
       { path: 'create', component: CreateCasePageComponent },
+      { path: 'chat', component: ChatPageComponent },
     ],
   },
-  { path: 'chat', component: ChatPageComponent },
 ];
 
 @NgModule({
