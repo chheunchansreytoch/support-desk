@@ -26,7 +26,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,8 +56,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
 
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}

@@ -1,0 +1,122 @@
+@import "../../../../assets/styles/customer-ui-style/app.scss";
+.container {
+  align-self: center;
+  .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button {
+      background-color: $bg-color;
+      border-radius: 10px;
+      box-shadow: 0 0 5px lightgrey;
+    }
+  }
+
+  .header-list-container {
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(220, 220, 220);
+
+    .status-list-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+
+      .status-button {
+        margin-right: 20px;
+        padding: 10px 0;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        font-weight: $bold;
+        font-size: 14px;
+      }
+      .active {
+        color: $bg-color;
+        border-bottom: 2px solid $bg-color;
+      }
+      .status-button:hover {
+        color: $bg-color;
+        border-bottom: 2px solid $bg-color;
+      }
+      .status-button:active {
+        opacity: 0.6;
+      }
+    }
+    .search-icon-button {
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      // background-color: turquoise;
+    }
+    .search-icon-button:hover {
+      background-color: rgba(156, 156, 156, 0.5);
+      opacity: 0.8;
+    }
+    .search-icon-button:active {
+      opacity: 0.6;
+      background-color: rgb(156, 156, 156);
+    }
+  }
+
+  table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    border: none;
+
+    thead {
+      tr {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        .align-start {
+          text-align: start;
+        }
+      }
+    }
+
+    tbody tr {
+      box-shadow: 0 0 5px lightgrey;
+      border-radius: 10px;
+      &:hover {
+        cursor: pointer;
+        background-color: $bg-color;
+        color: white;
+      }
+      &:active {
+        opacity: 0.6;
+      }
+      .align-start {
+        text-align: start;
+      }
+
+      td {
+        padding: 20px 0px;
+        background-color: transparent;
+        text-align: center;
+      }
+
+      // set border radius to 'td' to prevent color outside the box
+
+      td:first-child {
+        border-radius: 10px 0 0 10px;
+      }
+
+      td:last-child {
+        border-radius: 0 10px 10px 0;
+      }
+    }
+  }
+}

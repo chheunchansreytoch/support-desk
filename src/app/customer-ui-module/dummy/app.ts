@@ -1,0 +1,145 @@
+export let DATA = {
+  PATH: '../../assets/images/cutomer-ui/logo.png',
+};
+
+export let CASELIST = [
+  {
+    caseNumber: 121011,
+    subject: "can't reset password",
+    priority: 'Low',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Web',
+    status: 'Close',
+  },
+  {
+    caseNumber: 121012,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+  {
+    caseNumber: 121013,
+    subject: "can't reset password",
+    priority: 'Low',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Web',
+    status: 'Close',
+  },
+  {
+    caseNumber: 121014,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+  {
+    caseNumber: 121015,
+    subject: "can't reset password",
+    priority: 'Low',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Web',
+    status: 'Close',
+  },
+  {
+    caseNumber: 121016,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+  {
+    caseNumber: 121017,
+    subject: "can't reset password",
+    priority: 'Low',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Web',
+    status: 'Close',
+  },
+  {
+    caseNumber: 121018,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+  {
+    caseNumber: 121019,
+    subject: "can't reset password",
+    priority: 'Low',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Web',
+    status: 'Close',
+  },
+  {
+    caseNumber: 121020,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+  {
+    caseNumber: 121021,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+  {
+    caseNumber: 121022,
+    subject: 'crash app',
+    priority: 'High',
+    createdAt: 'Aug,1 2019',
+    updatedAt: 'Aug,1 2019',
+    platform: 'Mobile',
+    status: 'Pending',
+  },
+];
+
+export let MESSAGES = [
+  {
+    message: 'Dude',
+    userId: 1,
+  },
+  {
+    message: 'Hey!',
+  },
+  {
+    message: 'You there?',
+    userId: 1,
+  },
+  {
+    message: "Hello, how's it going?",
+    userId: 2,
+  },
+  {
+    message: 'Great thanks!',
+    userId: 1,
+  },
+  {
+    message: 'How about you?',
+    userId: 2,
+  },
+  {
+    message:
+      "Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?Hello, how's it going?",
+    userId: 1,
+  },
+];

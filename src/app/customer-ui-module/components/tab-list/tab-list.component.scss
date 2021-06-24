@@ -1,0 +1,57 @@
+@import "../../../../assets/styles/customer-ui-style/variables.scss";
+.tab-container {
+  margin-top: 5px;
+  padding: 0 5px;
+  height: 65vh;
+  overflow: scroll;
+  .card-container {
+    margin: 15px 0;
+    box-shadow: 0 0 10px rgb(230, 230, 230);
+    border-radius: 15px;
+    display: flex;
+    padding: 10px 20px;
+    flex-direction: column;
+    color: rgba(128, 128, 128);
+    cursor: pointer;
+
+    .title {
+      color: $bg-color;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .subtitle {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .card-container:hover {
+    background-color: $bg-color;
+    color: white;
+    opacity: 0.8;
+    .title {
+      color: white;
+    }
+  }
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.tab-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.tab-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.card-active {
+  background-color: $bg-color;
+  color: white !important;
+
+  .title {
+    color: white !important;
+  }
+}

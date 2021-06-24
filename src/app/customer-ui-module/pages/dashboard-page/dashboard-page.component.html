@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="title-wrapper">
+    <div class="title-container">
+      Cases list
+    </div>
+    <button class="button" [routerLink]="['/customer-ui/case/create']">Create Case</button>
+  </div>
+  <div class="header-list-container">
+    <div class="status-list-container">
+      <div class="status-button" (click)="btnStatusClicked(0)" [ngClass]="{ 'active' : selectedIndex === 0 }">
+        All cases
+      </div>
+      <div class="status-button" (click)="btnStatusClicked(1)" [ngClass]="{ 'active' : selectedIndex === 1 }">
+        Pending
+      </div>
+      <div class="status-button" (click)="btnStatusClicked(2)" [ngClass]="{ 'active' : selectedIndex === 2}">
+        Closed
+      </div>
+    </div>
+    <div class="search-icon-button">
+      <mat-icon>search</mat-icon>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Case Number</th>
+        <th class="align-start">Subject</th>
+        <th>Priority</th>
+        <th>Created</th>
+        <th>Updated</th>
+        <th>Platform</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" [routerLink]="['/customer-ui/case/chat']" *ngFor="let case of caseList; let i=index;">
+        <td>{{i+1}}</td>
+        <td>{{case.caseNumber}}</td>
+        <td class="align-start">{{case.subject}}</td>
+        <td>{{case.priority}}</td>
+        <td>{{case.createdAt}}</td>
+        <td>{{case.updatedAt}}</td>
+        <td>{{case.platform}}</td>
+        <td>{{case.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
