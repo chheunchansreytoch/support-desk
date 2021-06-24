@@ -1,7 +1,5 @@
 @import "../../../../assets/styles/customer-ui-style/variables.scss";
-/* ======== problems =========
-  + cannot add space between the profile image with the other 2 buttons
-*/
+
 .header-wrapper {
   width: 100%;
   background-color: $bg-color;
@@ -16,38 +14,21 @@
       display: flex;
       flex-wrap: nowrap;
       place-content: center space-between;
-      a.logo {
-        overflow: hidden;
-        width: 200px;
-        justify-self: flex-start;
-        align-self: flex-start;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          vertical-align: top;
-        }
-      }
+
       .wrapper-right {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
         padding: 0px 20px;
       }
-      .image-profile {
-        background-image: url("https://wallpapercave.com/wp/wp2461837.jpg");
-        background-size: cover;
-        color: #000;
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-      }
     }
     // ============= header-question class
     .header-question {
       padding-top: 80px;
       font-size: 25px;
-      font-family: $bold;
+      // font-weight: $bold;
+      // font-family: "Open Sans";
+      font-family: $main-font;
       text-align: center;
       color: white;
     }
@@ -100,7 +81,7 @@
       }
       p {
         color: #333;
-        font-family: $primary-font;
+        font-family: $main-font;
       }
     }
     p {
@@ -144,13 +125,13 @@
               color: #333;
               font-size: 14px;
               font-weight: $bold;
-              font-family: $primary-font;
+              font-family: $main-font;
             }
             .description {
               font-weight: $normal;
               color: grey;
               font-size: 12px;
-              font-family: $primary-font;
+              font-family: $main-font;
             }
           }
         }
@@ -224,10 +205,10 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
+// @media only screen and (min-width: 600px) {
+//   /* For tablets: */
 
-  // .col-s-8 {
-  //   width: 66.66%;
-  // }
-}
+//   // .col-s-8 {
+//   //   width: 66.66%;
+//   // }
+// }

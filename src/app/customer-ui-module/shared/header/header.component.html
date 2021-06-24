@@ -1,10 +1,9 @@
 <div class="header-wrapper">
   <div class="header-container">
-    <div [routerLink]="['/customer-ui/home']" class="image-container">
+    <div [routerLink]="['/customer-ui/home']" class="logo-image-container">
       <img [src]="dummy.PATH" alt="logo">
     </div>
     <div class="menu-container">
-
       <button class="menu-item-button" [routerLink]="['/customer-ui/case/list']" [routerLinkActive]="'active'">
         <!-- [routerLink]="['/customer-ui/home']" -->
         Cases
@@ -20,7 +19,7 @@
       <!-- <button class="button notification-button">
         <mat-icon aria-label="notification">notifications</mat-icon>
       </button> -->
-      <button mat-fab class="user-profile" matBadge="7" [matBadgeHidden]="hidden" matBadgeSize="small"
+      <button mat-fab class="user-profile-button" matBadge="7" [matBadgeHidden]="hidden" matBadgeSize="small"
         [matMenuTriggerFor]="menu" matBadgeColor="warn" (click)="toggleBadgeVisibility()"></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item class="m-item">notification</button>

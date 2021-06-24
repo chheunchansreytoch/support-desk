@@ -10,10 +10,36 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans";
 }
 
-@import "./assets/styles/app.scss";
 @import "~quill/dist/quill.core.css";
 @import "~quill/dist/quill.bubble.css";
 @import "~quill/dist/quill.snow.css";
+
+@import "./assets/styles/app.scss";
+// $primary-fonts: "Open Sans";
+@import "~@angular/material/theming";
+@include mat-core();
+
+$core-primary: mat-palette($mat-indigo);
+$core-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$core-warn: mat-palette($mat-red);
+$core-theme: mat-light-theme(
+  (
+    color: (
+      primary: $core-primary,
+      accent: $core-accent,
+      warn: $core-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($core-theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: "Open Sans",
+);
+@include angular-material-typography($custom-typography);

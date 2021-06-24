@@ -1,0 +1,17 @@
+.logo-image-container {
+  cursor: pointer;
+  display: flex;
+  padding: 10px 0px;
+  width: 130px;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+  }
+}
+.logo-image-container:hover {
+  opacity: 0.8;
+}
+.logo-image-container:active {
+  opacity: 0.6;
+}

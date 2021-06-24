@@ -1,0 +1,15 @@
+.title-button {
+  cursor: pointer;
+  padding: 5px;
+  // background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-button:hover {
+  opacity: 0.8;
+}
+.title-button:active {
+  opacity: 0.6;
+}
