@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
+  selected = 'option2';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,5 +21,5 @@ export class HomePageComponent implements OnInit {
   btnSubmitClicked() {
     alert('btnSubmit is Clicked');
   }
-  
+
 }

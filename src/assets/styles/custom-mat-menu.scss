@@ -1,0 +1,11 @@
+.mat-icon {
+  i {
+    font-size: 18px;
+  }
+}
+
+.mat-menu-content:not(:empty) {
+  font-size: 13px;
+  padding: 10px;
+  color: $gray3;
+}
