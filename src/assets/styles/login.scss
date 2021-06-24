@@ -1,4 +1,4 @@
-#loginFormContainer {
+.CustomLogin {
     width: 100%;
     margin: 0;
     display: flex; 
@@ -16,111 +16,165 @@
         align-items: center; 
         flex-direction: column;
         background-color: #fefefe;
-        
-        .btnLoginWith {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-direction: column;
+    }
+    .sign-in-form .loginform {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: $primary-font;
+        font-size: 16px;
+    }
 
-            .btnLoginEmail {
-                background-color: $color9;
-                font-weight: bold;
-                color: $color7;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                cursor: pointer;
-                width: 155%;
-                opacity: 0.9;
-                border-radius: 5px;
-            }
-    
-            .btnLoginEmail:hover {
-                opacity: 0.8;
-                background-color: $color10;
-            }
-        }
+    .sign-in-form .loginform .btnLoginWith {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        flex-direction: column;
 
-        p {
-            width: 150%; 
-            color: $black1;
-            text-align: center; 
-            border-bottom: 1px solid $color6; 
-            line-height: 0.1em;
-            margin: 10px 0 10px;
-
-            span {
-                background:#fff; 
-                padding: 5px 5px;
-            }
-        } 
-
-        .input-field {
-            margin: 0;
-            margin-top: 10px;
-            width: 125%;
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-direction: column;
-
-            .input {
-                width: 125%;
-                outline: none;
-                margin: 5px 0;
-                border-radius: 5px;
-                border: 2px solid;
-                border-color: $color6;
-                padding: 8px;
-            }    
-        }
-        
-        .btnLogin {
-            background-color: $color8;
+        .btnLoginEmail {
+            background-color: $color9;
             font-weight: bold;
             color: $color7;
             padding: 14px 20px;
             margin: 8px 0;
             border: none;
             cursor: pointer;
-            width: 156%;
+            width: 100%;
             opacity: 0.9;
             border-radius: 5px;
         }
 
-        .btnLogin:hover {
+        .btnLoginEmail:hover {
             opacity: 0.8;
-            background-color: $color4;
+            background-color: $color10;
         }
+    }
 
-        .rememberContainer {
-            font-size: 12px;
-            display: flex; 
-            justify-content: space-between; 
-            flex-direction: column;
-            align-items: left;
-            margin-bottom: 8px;
-            width: 150%;
-        }
+    p {
+        width: 100%; 
+        font-size: 12px;
+        color: $black1;
+        text-align: center; 
+        border-bottom: 1px solid $color6; 
+        line-height: 0.1em;
+        margin: 10px 0 10px;
 
-        a:link {
-            text-decoration: none;
+        span {
+            background:#fff; 
+            padding: 5px 5px;
         }
+    } 
 
-        a:visited {
-            color: $black1;
-            background-color: transparent;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: $color2;
-            background-color: transparent;
-            text-decoration: underline;
-        }
     
-       
-    }          
-}
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
+    .custom-field {
+        position: relative;
+        font-size: 14px;
+        padding-top: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .form-input {
+        -webkit-appearance: none;
+        -ms-progress-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: none;
+        background: $color7;
+        padding: 8px;
+        border: 1px solid $color6;
+        border-radius: 5px;
+        width: 300px;
+        outline: none;
+    }
+    
+    .custom-field .placeholder {
+        position: absolute;
+        left: 12px;
+        font-size: 13px;
+        top: calc(50% + 10px);
+        transform: translateY(-50%);
+        color: $gray2;
+        transition:
+        top 0.3s ease,
+        font-size 0.3s ease,
+        color 0.3s ease;
+    }
+    
+    .custom-field .form-input:valid + .placeholder,
+    .custom-field .form-input:focus + .placeholder {
+        top: 10px;
+        font-size: 10px;
+        color: $black1;
+    }
+    
+    .custom-field .form-input {
+        background: none;
+        border: 1px solid $color6;
+        transition: border-color 0.3s ease;
+    }
+    
+    .custom-field .form-input:valid,
+    .custom-field .form-input:focus {
+        border-color: $black1;
+        transition-delay: 0.1s;
+    }
+    
+    .custom-field .form-input + .placeholder {
+        padding: 0 5px;
+        left: 8px;
+    }
+    
+    .custom-field .form-input:valid + .placeholder,
+    .custom-field .form-input:focus + .placeholder {
+        top: 20px;
+        background: #fff;
+    }
 
+    .sign-in-form .loginform .btnLogin {
+        background-color: $color8;
+        font-weight: bold;
+        color: $color7;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        border-radius: 5px;
+    }
+
+    .btnLogin:hover {
+        opacity: 0.8;
+        background-color: $color4;
+    }
+
+    .sign-in-form .loginform .rememberContainer {
+        font-size: 12px;
+        display: flex; 
+        justify-content: space-between; 
+        flex-direction: row;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: $black1;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $color2;
+        background-color: transparent;
+        text-decoration: underline;
+    }  
+}

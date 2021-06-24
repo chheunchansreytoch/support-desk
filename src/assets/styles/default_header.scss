@@ -1,542 +1,885 @@
 .defaultContainer {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    .defaultHeader {
-        // background-color: pink;
+  .defaultHeader {
+    width: 100%;
+    margin: 0 auto;
+    padding: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo_navbar {
+      width: 215px;
+
+      img {
         width: 100%;
-        height: 50px;
         margin: 0 auto;
-        // border-bottom: 1px solid $gray1;
-        // background-color: greenyellow;
-        padding: 20px;
+      }
+    }
+
+    .searchContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      font-family: $primary-font;
+      color: $gray2;
+      margin-top: -10px;
+
+      .searchPosition {
+        width: 60%;
+
+        .search_bar {
+          width: 55px;
+        }
+
+        .search_bar .dropdown .layoutConnected {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+        }
+
+        .search_bar .dropdown .layoutConnected .default_option {
+          color: $gray2;
+          padding: 10px 20px;
+          font-size: 11px;
+        }
+
+        .search_bar .dropdown .layoutConnected .selectOpt {
+          background-color: $color7;
+          border: 1px solid $gray1;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          height: 33px;
+          text-align-last: center;
+          color: $black3;
+          outline: none;
+        }
+
+        .search_bar .dropdown .layoutConnected .selectOpt:last-child {
+          padding-bottom: 0;
+
+        }
+
+        .search_bar .dropdown .layoutConnected .selectOpt option:hover {
+          background-color: $gray1;
+        }
+
+        .search_bar .dropdown .layoutConnected .search_field {
+          width: 100px;
+          position: relative;
+          margin-top: -1px;
+        }
+
+        .search_bar .dropdown .layoutConnected .search_field .input_search {
+          text-indent: 20px;
+          color: $gray2;
+          width: 450px;
+          margin-top: 1px;
+          height: 33px;
+          padding-left: 20px;
+          padding-right: 38px;
+          border: 1px solid $gray1;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          outline: none;
+        }
+        .search_bar .dropdown .layoutConnected .search_field .fa-search {
+          position: absolute;
+          top: 12px;
+          left: 400px;
+          font-size: 14px;
+          cursor: pointer;
+          padding-left: 20px;
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .navBar {
+      width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .navBar .fav-icon-Container {
+
+      #icons-check {
+        display: none;
+      }
+      #icons-check:checked ~ .global-action-Container {
+        display: block;
+        transition: 5s;
+      }
+
+      .global-action-Container {
+        position: absolute;
+        margin: 20px;
+        margin-left: -100px;
+        width: 13%;
+        border: 1px solid #b6b6b6;
+        border-radius: 5px;
+        background-color: $color7;
+        color: $black1;
+        font-weight: normal;
+        font-family: $primary-font;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        font-family: $Roboto-font;
+        display: none;
+      }
+
+      .global-action-Container .favorite-span {
+        color: $black3;
+        font-size: 11px;
+      }
+    }
+
+    .navBar .fi-rr-star{
+      color: $gray3;
+      font-size: 25px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .navBar .fi-rr-star:hover{
+      text-shadow: 0 0 10px blue;
+    }
+
+    .navBar .menuContainer .custom-adding-menu {
+
+      .btn-adding-icon {
+        background: none;
+        border: none;
+        font-size: 25px;
+        color: $gray3;
+        line-height: 1px;
+      }
+
+      :hover {
+        text-shadow: 0 0 10px blue;
+      }
+    }
+
+    .global-action-span {
+      font-size: 100px;
+    }
+
+    .navBar .fi-rr-interrogation{
+        color: $gray3;
+        font-size: 25px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .navBar .fi-rr-interrogation:hover{
+        text-shadow: 0 0 10px blue;
+    }
+
+    .navBar .fi-rr-settings{
+      color: $gray3;
+      font-size: 25px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .navBar .fi-rr-settings:hover {
+      text-shadow: 0 0 10px blue;
+    }
+
+    .navBar .fi-rr-bell {
+      color: $gray3;
+      font-size: 25px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .navBar .fi-rr-bell:hover {
+      text-shadow: 0 0 10px blue;
+    }
+
+    .navBar .userIMG {
+      position: relative;
+    }
+
+    #check {
+      display: none;
+    }
+
+    #check:checked ~ .UserProfileContainer {
+      display: block;
+      transition: 5s;
+    }
+
+    .navBar .userIMG .avatarImg {
+      position: relative;
+      width: 35px;
+      height: 35px;
+      border: 1px solid $gray3;
+      border-radius: 50%;
+    }
+
+    .navBar .userIMG .avatarImg:hover {
+      border: 2px solid $gray4;
+      border-radius: 50%;
+    }
+
+    .navBar .userIMG .UserProfileContainer {
+      display: none;
+      background-color: $color7;
+      position: absolute;
+      margin-left: -255px;
+      margin-top: 10px;
+      width: 300px;
+      border: 1px solid #b6b6b6;
+      border-radius: 5px;
+      color: $black1;
+      font-family: $primary-font;
+
+      .popupContainer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+        flex-direction: row;
+      }
 
-        .logo_navbar {
-            width: 150px;
-    
-            img {
-                width: 100%;
-                margin: 0 auto;
-            }
-        }
+      .popupContainer .user-popup {
+        width: 300px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
 
-        .searchContainer {
-            width: 100%;
-            display: flex;
-            
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            font-family: $primary-font;
-            color: $gray2;
+      .popupContainer .user-popup .userImg .avatarImg {
+        width: 35px;
+        margin-top: 10px;
+        margin-left: 15px;
+        border: 2px solid $black1;
+        border-radius: 50%;
+      }
 
-            .searchPosition {
-                width: 60%;
+      .popupContainer .user-popup .userImg .info-user {
+        margin-top: -45px;
+        margin-left: 70px;
+      }
 
-                .search_bar {
-                    width: 55px; 
-                }  
-                
-                .search_bar .dropdown .layoutConnected {
-                    display: flex;
-                    align-items: center; 
-                    flex-direction: row;
-                } 
-        
-                .search_bar .dropdown .layoutConnected .default_option {
-                    color: $gray2;
-                    padding: 10px 20px;
-                    font-size: 11px;
-                }
-        
-                .search_bar .dropdown .layoutConnected .selectOpt {
-                    background-color: $color7;
-                    border: 1px solid $gray1;
-                    border-top-left-radius: 5px;
-                    border-bottom-left-radius: 5px;
-                    padding: 7px 7.5px;
-                    text-align-last: center;
-                    color: $black3;
-                    outline: none;
-                                    
-                }
-        
-                .search_bar .dropdown .layoutConnected .selectOpt:last-child {
-                    padding-bottom: 0;
-                }
-        
-                .search_bar .dropdown .layoutConnected .selectOpt .Opt:hover {
-                    color: $color2;
-                }
-
-        
-                .search_bar .dropdown .layoutConnected .search_field {
-                    width: 100px;
-                    position: relative;
-                    margin-top: -1px;
-                }
-        
-                .search_bar .dropdown .layoutConnected .search_field .input_search {
-                    text-indent: 20px;
-                    color: $gray2;
-                    width: 450px;
-                    margin-top: 1px;
-                    height: 33px; 
-                    padding-left: 20px;
-                    padding-right: 38px;
-                    border: 1px solid $gray1;
-                    border-top-right-radius: 5px;
-                    border-bottom-right-radius: 5px;
-                    outline: none;
-                }
-                    
-        
-                .search_bar .dropdown .layoutConnected .search_field .fa-search { 
-                    position: absolute;
-                    top: 12px;
-                    left: 400px;
-                    font-size: 14px;
-                    cursor: pointer;
-                    padding-left: 20px;
-                    padding-right: 10px;
-                }
-                
-            }
-        }
-
-       
-
-        .navBar {
-           
-            width: 20%;
-            margin-right: -250px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row;
-        }
-
-        .navBar .fa-star{
-            color: $gray3;
-            font-size: 20px;
-            text-decoration: none;
-            text-align: center;
-            
-        }
-                
-        .navBar .fa-star:hover{
-            display: inline-block;
-            font-size: 18px;
-            line-height: 35px;
-            width: 35px;
-            text-decoration: none;
-            outline: none;
-            height: 36px;
-            border-radius: 50%;
-            background-color: $gray4;
-         }
-
-        .navBar .fa-question-circle{
-            color: $gray3;
-            font-size: 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .navBar .fa-question-circle:hover{
-            display: inline-block;
-            font-size: 18px;
-            line-height: 35px;
-            width: 35px;
-            text-decoration: none;
-            outline: none;
-            height: 36px;
-            border-radius: 50%;
-            background-color: $gray4;
-         }
-
-        .navBar .fa-plus-square{
-            color: $gray3;
-            font-size: 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .navBar .fa-plus-square:hover{
-            display: inline-block;
-            font-size: 18px;
-            line-height: 35px;
-            width: 35px;
-            text-decoration: none;
-            outline: none;
-            height: 36px;
-            border-radius: 50%;
-            background-color: $gray4;
-            
-         }
-
-        .navBar .fa-cog{
-            color: $gray3;
-            font-size: 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .navBar .fa-cog:hover{
-            display: inline-block;
-            font-size: 18px;
-            line-height: 35px;
-            width: 35px;
-            text-decoration: none;
-            outline: none;
-            height: 36px;
-            border-radius: 50%;
-            background-color: $gray4;
-         }
-
-        .navBar .fa-bell{
-            color: $gray3;
-            font-size: 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .navBar .fa-bell:hover{
-            display: inline-block;
-            font-size: 18px;
-            line-height: 35px;
-            width: 35px;
-            text-decoration: none;
-            outline: none;
-            height: 36px;
-            border-radius: 50%;
-            background-color: $gray4;
-         }
-
-        .navBar .userIMG {
-             position: relative; 
-         }
-
-         .navBar .userIMG .avatarImg {
-             position: relative;
-             width: 40px;
-             height: 40px;
-             border: 1px solid $gray3;
-             border-radius: 50%;
-         }
-
-         .navBar .userIMG .avatarImg:hover {
-            border: 2px solid $gray4;
-            border-radius: 50%;
-         }
-
-         .navBar .userIMG .UserProfileContainer {
-            
-            position: absolute;
-            display: none;
-            width: 300px;
-            margin-left: -250px;
-            margin-top: 10px;
-            border: 1px solid #b6b6b6;
-            border-radius: 5px;
-            color: $black1;
-            font-family: $primary-font;
-
-            // .triangle-element {
-            //     width: 40px;
-            //     height: 40px;
-            //     background: green;
-            //     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            // }
-        
-            .popupContainer {
-                .user-popup {
-                    display: flex; 
-                    justify-content: space-between; 
-                    align-items: center; 
-                    flex-direction: row;
-                    background-color: $color7;
-                    border-top-left-radius: 10px;
-                    border-top-right-radius: 10px;
-
-                    .avatarImg {
-                        width: 40px;
-                        height: 40px;
-                        margin: 15px;
-                        border: 2px solid $black1;
-                        border-radius: 50%;
-                    }
-                
-                    .profileUserContainer .profile-userAccount {
-                        margin-right: 81px;
-                        margin-top: -8px;
-                        font-size: 15PX;
-                        font-weight: normal;
-                        display: flex; 
-                        justify-content: space-between; 
-                        align-items: center; 
-                        flex-direction: row;
-                    }
-                
-                    .profileUserContainer .profile-userEmail {
-                        font-size: 11px;
-                        font-weight: normal;
-                        color: $gray3;
-                    }
-                
-                    .profileUserContainer .profile-userAccount .profile-link-userName {
-                        color: $black1;
-                        text-decoration: none;
-                    }
-                
-                    .profile-userAccount:hover{
-                        text-decoration: underline;
-                    }
-                
-                }
-            }
-        
-            .profileContainer { 
-                background-color: $gray4;
-                border-bottom: 1px solid #cfcdcd;
-        
-                .profile-card-link .user-profile-lable{
-                    font-size: 14px;
-                    padding: 5px;
-                    margin-left: 4px;
-                    font-weight: normal;
-                    color: $gray5;
-                }   
-                    
-            }
-        
-            .editProfileContainer .editProfile {  
-                .edit-profile-link {
-                    font-size: 11px;
-                    display: flex; 
-                    padding: 10px;
-                    color: $black1;
-                    text-decoration: none;
-                    background-color: $color7;
-                }
-
-                .edit-profile-link:hover {
-                    color: $color9;
-                    text-decoration: underline;
-                }
-        
-            }
-
-            .UserSettingLabelContainer {
-                background-color: $gray4;
-                border-top: 1px solid #cfcdcd;
-                border-bottom: 1px solid #cfcdcd;
-        
-                .setting-card-link .user-setting-lable {
-                    font-size: 14px;
-                    padding: 5px;
-                    margin-left: 4px;
-                    font-weight: normal;
-                    color: $gray5;
-                }
-            }
-
-        
-            .userSettingsContainer .userSettings{
-                background-color: $color7;
-                border-bottom-left-radius: 4px;
-                border-bottom-right-radius: 4px;
-                .user-setting-link {
-                    font-size: 11px;
-                    display: flex; 
-                    padding: 10px;
-                    color: $black1;
-                    text-decoration: none;
-                }
-
-                .user-setting-link:hover {
-                    color: $color9;
-                    text-decoration: underline;
-                }
-            
-                .logOut-link{
-                    font-size: 11px;
-                    display: flex; 
-                    padding: 10px;
-                    color: $black1;
-                    text-decoration: none;
-                }
-            
-                .logOut-link:hover {
-                    color: $color9;
-                    text-decoration: underline;
-                }
-            } 
-         }  
-    }
-
-    .serviceContainer {
-        width: 100%;
-        height: 45%;
-        font-family: $primary-font;
+      .popupContainer .user-popup .userImg .info-user .profile-link-userName {
+        margin-right: 70px;
+        margin-top: 30px;
+        font-size: 15px;
         font-weight: normal;
-        border-top: 1px solid $gray1;
-        border-bottom: 3px solid $color10;
+        color: $black1;
+        text-decoration: none;
+      }
+
+      .popupContainer .user-popup .userImg .info-user .profile-userEmail {
+        font-size: 11px;
+        font-weight: normal;
+        color: $gray3;
+      }
+
+      .popupContainer .user-popup .userImg .info-user .profile-link-userName:hover{
+        text-decoration: underline;
+      }
+
+      .profileContainer {
+        height: 35px;
+        background-color: $gray4;
+        border-bottom: 1px solid #cfcdcd;
+
+        .profile-card-link .user-profile-lable{
+          font-size: 14px;
+          padding: 7px;
+          font-weight: normal;
+          color: $gray5;
+        }
+      }
+
+      .editProfileContainer {
+        .editProfile .edit-profile-link {
+          font-size: 11px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          margin: 8px;
+          color: $black1;
+          text-decoration: none;
+        }
+
+        .editProfile .edit-profile-link:hover {
+          color: $color9;
+          text-decoration: underline;
+        }
+      }
+
+      .UserSettingContainer {
+        height: 35px;
+        background-color: $gray4;
+        border-top: 1px solid #cfcdcd;
+        border-bottom: 1px solid #cfcdcd;
+
+        :active {
+          transition: 0s 5s;
+        }
+      }
+
+      .UserSettingContainer .setting-card-link .user-setting-lable {
+        font-size: 14px;
+        padding: 5px;
+        margin-left: 4px;
+        font-weight: normal;
+        color: $gray5;
+      }
+
+      .user-setting-layout .userSetting {
+        font-size: 11px;
         display: flex;
-        .grid-icon {
-            // width: 3%;
-            font-size: 22px;
-            margin-top: 6px;
-            margin-left: 20px;
+        margin: 10px;
+        color: $black1;
+        text-decoration: none;
+      }
 
-            // a {
-            //     color: $gray3;
-                
-            // }
-        }
-            .service-console {
-                width: 15%;
-                border-right: 1px solid $gray1;
-                padding: 8px;
-                font-size: 18px;
-                display: flex;
-                justify-content: space-between;
-                flex-direction: column;
+      .user-setting-layout .userSetting:hover {
+        color: $color9;
+        text-decoration: underline;
+      }
 
-            }
-    
-            .CasesContainer {
-                width: 10%;
-                border-right: 1px solid $gray1;
-                padding: 11px;
-                font-size: 14px;
-                display: flex;
-                justify-content: space-between;
-                flex-direction: row;
-            }
-    
-            .CasesContainer .selectService {
-                width: 130px;
-                border:0px;
-                outline:none;
-                color: $gray5;
+      .user-setting-layout .logOut {
+        font-size: 11px;
+        display: flex;
+        margin: 10px;
+        color: $black1;
+        text-decoration: none;
+      }
 
-                // background-color: purple;
-                
-            }
+      .user-setting-layout .logOut:hover {
+        color: $color9;
+        text-decoration: underline;
+      }
+    }
+  }
 
-            .CasesContainer .selectService .service-option{
-                background-color: $color7;
+  .Navigation-service {
+    .serviceContainer {
+      width: 100%;
+      font-family: $primary-font;
+      font-weight: normal;
+      border-top: 1px solid $gray1;
+      border-bottom: 3px solid $color10;
+      display: flex;
 
-                
-            }
+      .grid-icon {
+        width: 2%;
+        font-size: 22px;
+        margin-top: 8px;
+        margin-left: 20px;
+      }
 
-        }
+      .grid-icon a {
+        color: $black3;
+      }
+
+      .grid-icon .fi-rr-layout-fluid:hover {
+        text-shadow: 0 0 10px blue;
+      }
+
+      .service-console {
+        width: 15%;
+        border-right: 1px solid $gray1;
+        padding: 8px;
+        font-size: 18px;
+      }
+
+      .CasesContainer {
+        width: 10%;
+        border-top: 3px solid $color10;
+        border-right: 1px solid $gray1;
+        padding: 11px;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        background-color: $color11;
+      }
+
+      .CasesContainer .selectService {
+        width: 130px;
+        border: 0px;
+        outline:none;
+        color: $gray5;
+        background-color: $color11;
+      }
+
+      .CasesContainer .selectService .service-option{
+        background-color: $color7;
+          // font-size: 1.2rem;
+      }
+    }
+  }
 }
 
 
 @media screen and (max-width: 898px) {
-    .defaultContainer {
-        .defaultHeader {
-            display: block;
-            height: 120px;
-            .logo_navbar img{
-                width: 100%;
-                margin-bottom: 20px;
-                
-            }
-            .searchContainer {
-                width: 100%;
-                display: inline-block;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: row;
+  .defaultContainer{
+    .defaultHeader {
+      height: 120px;
+      .logo_navbar{
+        width: 150px;
 
-                .searchPosition {
-                    	width: 50%;
-                        margin-left: -230px;
-                        
-                    .search_bar {
-                        width: 56px;
-                        
-                        .dropdown .layoutConnected .search_field .input_search {
-                            width: 325px;
-                        }
-    
-                        .dropdown .layoutConnected .search_field .fa-search {
-                            position: absolute;
-                            top: 12px;
-                            left: 263px;
-                            font-size: 14px;
-                            cursor: pointer;
-                            padding-left: 30px;
-                            padding-right: 10px;
-                        }    
-                            
-                    } 
-                }
+        img{
+          width: 100%;
+          margin-bottom: 10px;
 
-                .navBar { 
-                   width: 200px;
-                   margin-top: -130px;
-                   margin-left: 10px;
-                }
-            }
         }
+      }
 
-        .serviceContainer {
-            width: 100%;
-            height: 25%;
-            display: flex;
+      .searchContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: absolute;
 
-            .grid-icon {
-                display: flex;
-                width: 8%;
-                font-size: 22px;
-                margin-top: 9px;
-                margin-left: 20px;
-                color:  $gray3;
-            }
+        .searchPosition {
+          width: 43%;
+          margin-left: -230px;
+          margin-top: 80px;
+          display: flex;
 
-            .service-console {
-                width: 40%;
-                border-right: 1px solid $gray1;
-                font-size: 18px;
-                display: flex;
-                justify-content: space-between;
-                flex-direction: column;
 
-            }
-    
-            .CasesContainer {
-                width: 20%;
-                border-right: 1px solid $gray1;
-                padding: 11px;
-                font-size: 14px;
-            }
-    
-            .service-dropdown {
-                width: 8%;
-                border-right: 1px solid $gray1;
-                padding: 8px;
-                
-            }
-    
-            .service-dropdown .selectService {
-                width: 20px;
-                border:0px;
-                outline:none;
-                color: $gray5;
-                
-            }
+          .search_bar {
+            width: 56px;
+            .dropdown .layoutConnected .search_field .input_search {
+              width: 325px;
+          }
+
+          .dropdown .layoutConnected .search_field .fa-search {
+            position: absolute;
+            top: 12px;
+            left: 263px;
+            font-size: 14px;
+            cursor: pointer;
+            padding-left: 30px;
+            padding-right: 10px;
+          }
         }
+      }
     }
+
+    .navBar {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-top: -15px;
+      .fav-icon-Container .fav-icon-lbl .fi-rr-star{
+        margin-left: 50px;
+      }
+    }
+
+    .Navigation-service .serviceContainer {
+      // display: flex;
+      // margin-top: -20px;
+
+        .grid-icon {
+          // display: flex;
+          // width: 8%;
+          // font-size: 22px;
+          // margin-top: 9px;
+          // margin-left: 20px;
+          // text-decoration: none;
+          // color:  $gray3;
+        }
+
+        .service-console {
+        }
+
+        .CasesContainer {
+          width: 20%;
+          border-right: 1px solid $gray1;
+          padding: 11px;
+          font-size: 14px;
+        }
+
+        .service-dropdown {
+          width: 8%;
+          border-right: 1px solid $gray1;
+          padding: 8px;
+        }
+
+        .service-dropdown .selectService {
+          width: 20px;
+          border:0px;
+          outline:none;
+          color: $gray5;
+        }
+      }
+    }
+  }
 }
+
+
+// @media screen and (max-width: 6630px) {
+//   .defaultContainer{
+//     .defaultHeader {
+//       height: 120px;
+//       .logo_navbar{
+//         width: 150px;
+
+//         img{
+//           width: 100%;
+//           margin-bottom: 10px;
+
+//         }
+//       }
+
+//       .searchContainer {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: row;
+//         position: absolute;
+
+//         .searchPosition {
+//           width: 43%;
+//           margin-left: -230px;
+//           margin-top: 80px;
+//           display: flex;
+
+
+//           .search_bar {
+//             width: 56px;
+//             .dropdown .layoutConnected .search_field .input_search {
+//               width: 325px;
+//           }
+
+//           .dropdown .layoutConnected .search_field .fa-search {
+//             position: absolute;
+//             top: 12px;
+//             left: 263px;
+//             font-size: 14px;
+//             cursor: pointer;
+//             padding-left: 30px;
+//             padding-right: 10px;
+//           }
+//         }
+//       }
+//     }
+
+//     .navBar {
+//       width: 60%;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       flex-direction: row;
+//       margin-top: -15px;
+//       .fav-icon-Container .fav-icon-lbl .fi-rr-star{
+//         margin-left: 50px;
+//       }
+//     }
+
+//     .Navigation-service .serviceContainer {
+//       // display: flex;
+//       // margin-top: -20px;
+
+//         .grid-icon {
+//           // display: flex;
+//           // width: 8%;
+//           // font-size: 22px;
+//           // margin-top: 9px;
+//           // margin-left: 20px;
+//           // text-decoration: none;
+//           // color:  $gray3;
+//         }
+
+//         .service-console {
+//         }
+
+//         .CasesContainer {
+//           width: 20%;
+//           border-right: 1px solid $gray1;
+//           padding: 11px;
+//           font-size: 14px;
+//         }
+
+//         .service-dropdown {
+//           width: 8%;
+//           border-right: 1px solid $gray1;
+//           padding: 8px;
+//         }
+
+//         .service-dropdown .selectService {
+//           width: 20px;
+//           border:0px;
+//           outline:none;
+//           color: $gray5;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+// @media screen and (max-width: 428px) {
+//   .defaultContainer{
+//     .defaultHeader {
+//       height: 120px;
+//       .logo_navbar{
+//         width: 150px;
+
+//         img{
+//           width: 100%;
+//           margin-bottom: 10px;
+
+//         }
+//       }
+
+//       .searchContainer {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: row;
+//         position: absolute;
+
+//         .searchPosition {
+//           width: 43%;
+//           margin-left: -230px;
+//           margin-top: 80px;
+//           display: flex;
+
+
+//           .search_bar {
+//             width: 56px;
+//             .dropdown .layoutConnected .search_field .input_search {
+//               width: 325px;
+//           }
+
+//           .dropdown .layoutConnected .search_field .fa-search {
+//             position: absolute;
+//             top: 12px;
+//             left: 263px;
+//             font-size: 14px;
+//             cursor: pointer;
+//             padding-left: 30px;
+//             padding-right: 10px;
+//           }
+//         }
+//       }
+//     }
+
+//     .navBar {
+//       width: 80%;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       flex-direction: row;
+//       margin-top: -15px;
+//       .fav-icon-Container .fav-icon-lbl .fi-rr-star{
+//         margin-left: 50px;
+//       }
+//     }
+
+//     .Navigation-service .serviceContainer {
+//       // display: flex;
+//       // margin-top: -20px;
+
+//         .grid-icon {
+//           // display: flex;
+//           // width: 8%;
+//           // font-size: 22px;
+//           // margin-top: 9px;
+//           // margin-left: 20px;
+//           // text-decoration: none;
+//           // color:  $gray3;
+//         }
+
+//         .service-console {
+//         }
+
+//         .CasesContainer {
+//           width: 20%;
+//           border-right: 1px solid $gray1;
+//           padding: 11px;
+//           font-size: 14px;
+//         }
+
+//         .service-dropdown {
+//           width: 8%;
+//           border-right: 1px solid $gray1;
+//           padding: 8px;
+//         }
+
+//         .service-dropdown .selectService {
+//           width: 20px;
+//           border:0px;
+//           outline:none;
+//           color: $gray5;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+// @media screen and (max-width: 360px) {
+//   .defaultContainer{
+//     .defaultHeader {
+//       height: 120px;
+//       .logo_navbar{
+//         width: 110px;
+
+//         img{
+//           width: 100%;
+//           margin-bottom: 10px;
+
+//         }
+//       }
+
+//       .searchContainer {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         flex-direction: row;
+//         position: absolute;
+
+//         .searchPosition {
+//           width: 60%;
+//           margin-left: -150px;
+//           margin-top: 80px;
+//           display: flex;
+
+
+//           .search_bar {
+//             width: 56px;
+//             .dropdown .layoutConnected .search_field .input_search {
+//               width: 274px;
+//           }
+
+//           .dropdown .layoutConnected .search_field .fa-search {
+//             position: absolute;
+//             top: 12px;
+//             left: 215px;
+//             font-size: 14px;
+//             cursor: pointer;
+//             padding-left: 30px;
+//             padding-right: 10px;
+//           }
+//         }
+//       }
+//     }
+
+//     .navBar {
+//       width: 45%;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       flex-direction: row;
+//       margin-top: -15px;
+
+//       .fav-icon-Container .fav-icon-lbl .fi-rr-star{
+//         margin: 3px;
+//         font-size: 22px;
+
+//         :hover {
+//           text-shadow: 0 0 10px blue;
+//         }
+//       }
+
+//       .menuContainer .custom-adding-menu .btn-adding-icon .fi-rr-add{
+//         margin: 3px;
+//         font-size: 22px;
+
+//         :hover {
+//           text-shadow: 0 0 10px blue;
+//         }
+//       }
+
+//       .help-support-Container .help-support-lbl .fi-rr-interrogation{
+//         margin: 3px;
+//         font-size: 22px;
+
+//         :hover {
+//           text-shadow: 0 0 10px blue;
+//         }
+//       }
+
+//       .setting-Container .setting-lbl .fi-rr-settings {
+//         margin: 3px;
+//         font-size: 22px;
+
+//         :hover {
+//           text-shadow: 0 0 10px blue;
+//         }
+//       }
+
+//       .notification-Container .notification-lbl .fi-rr-bell {
+//         margin: 3px;
+//         font-size: 22px;
+
+//         :hover {
+//           text-shadow: 0 0 10px blue;
+//         }
+//       }
+
+//       .userIMG .lblClickIMG .avatarImg {
+//         margin: 3px;
+//         font-size: 10px;
+//       }
+//     }
+
+//     .Navigation-service .serviceContainer {
+//       // display: flex;
+//       // margin-top: -20px;
+
+//         .grid-icon {
+//           // display: flex;
+//           // width: 8%;
+//           // font-size: 22px;
+//           // margin-top: 9px;
+//           // margin-left: 20px;
+//           // text-decoration: none;
+//           // color:  $gray3;
+//         }
+
+//         .service-console {
+//         }
+
+//         .CasesContainer {
+//           width: 20%;
+//           border-right: 1px solid $gray1;
+//           padding: 11px;
+//           font-size: 14px;
+//         }
+
+//         .service-dropdown {
+//           width: 8%;
+//           border-right: 1px solid $gray1;
+//           padding: 8px;
+//         }
+
+//         .service-dropdown .selectService {
+//           width: 20px;
+//           border:0px;
+//           outline:none;
+//           color: $gray5;
+//         }
+//       }
+//     }
+//   }
+// }
