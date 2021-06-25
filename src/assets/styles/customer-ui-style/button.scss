@@ -1,4 +1,5 @@
 .button {
+  animation: transform 0.2s;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -9,7 +10,8 @@
 }
 
 .button:hover {
-  opacity: 0.8;
+  transform: scale(1.05);
+  // opacity: 0.8;
 }
 
 .button:active {

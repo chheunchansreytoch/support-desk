@@ -4,15 +4,14 @@
   justify-content: space-between;
   align-items: center;
 
-  overflow: hidden;
   .image-profile {
     border-radius: 100%;
     min-width: 30px;
-    padding: 0;
     height: 30px;
-    background-color: rgb(230, 230, 230);
+    background-color: $light-grey;
     background-image: url("https://wallpapercave.com/wp/wp2461837.jpg");
-    background-size: 30px auto; // fixed height auto width
+    background-size: cover; // fixed height auto width
     background-repeat: no-repeat;
+    background-position: center;
   }
 }

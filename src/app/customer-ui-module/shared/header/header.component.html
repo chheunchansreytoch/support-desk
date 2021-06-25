@@ -3,16 +3,16 @@
     <div [routerLink]="['/customer-ui/home']" class="logo-image-container">
       <img [src]="dummy.PATH" alt="logo">
     </div>
-    <div class="menu-container">
+    <!-- <div class="menu-container">
       <button class="menu-item-button" [routerLink]="['/customer-ui/case/list']" [routerLinkActive]="'active'">
-        <!-- [routerLink]="['/customer-ui/home']" -->
+
         Cases
       </button>
       <button class="menu-item-button" [routerLink]="['/customer-ui/case/create']" [routerLinkActive]="'active'">
         Create
       </button>
 
-    </div>
+    </div> -->
     <div class="header-right-wrapper">
       <button mat-flat-button class="image-profile" matBadge="7" [matBadgeHidden]="hidden" matBadgeSize="small"
         [matMenuTriggerFor]="menu" matBadgeColor="warn" (click)="toggleBadgeVisibility()"></button>

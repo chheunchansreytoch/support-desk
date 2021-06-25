@@ -1,9 +1,11 @@
 @import "../../../../assets/styles/customer-ui-style/variables.scss";
 .footer {
   width: 100%;
+  font-size: $small-size;
+
   background-color: $dark-white;
   .wrapper {
-    padding: 30px;
+    padding: 0 30px;
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
@@ -34,6 +36,7 @@
 @media only screen and (max-width: 400px) {
   .wrapper {
     width: 100%;
+    padding-top: 20px !important;
     flex-direction: column;
   }
 }
