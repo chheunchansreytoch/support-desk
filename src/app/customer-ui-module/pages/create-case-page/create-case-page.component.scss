@@ -1,7 +1,7 @@
 @import "../../../../assets/styles/customer-ui-style/variables.scss";
 .container {
   text-align: center;
-  font-weight: $bold;
+  font-weight: $bold-weight;
   color: #333;
 
   .form-container {
@@ -42,7 +42,7 @@
       }
       input:focus {
         outline: none !important;
-        border: 2px solid $bg-color;
+        border: 2px solid $main-color;
       }
 
       .form-group {
@@ -53,7 +53,7 @@
     }
     .submit-buttton {
       margin-top: 20px;
-      background-color: $bg-color;
+      background-color: $main-color;
       font-size: 14px;
       box-shadow: 1px 1px 5px lightgrey;
     }

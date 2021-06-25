@@ -62,7 +62,7 @@
     color: white;
     margin-left: 25%;
     // background: linear-gradient(to bottom, #00d0ea 0%, #0085d1 100%);
-    background-color: $bg-color;
+    background-color: $main-color;
     background-attachment: fixed;
     position: relative;
   }
@@ -76,7 +76,7 @@
     height: 20px;
     width: 20px;
     // background: linear-gradient(to bottom, #00d0ea 0%, #0085d1 100%);
-    background-color: $bg-color;
+    background-color: $main-color;
     background-attachment: fixed;
     border-bottom-left-radius: 15px;
   }

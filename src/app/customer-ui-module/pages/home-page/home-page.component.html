@@ -1,22 +1,35 @@
-<div class="main-container-wrapper">
-  <div class="header-wrapper">
-    <div class="header-container-wrapper">
+<div class="main-container-wrapper normal-font-style">
+  <div class="header-wrapper ">
+    <div class=" header-container-wrapper main-container">
       <div class="header-container">
         <div [routerLink]="['/customer-ui/home']" class="logo-image-container">
           <img [src]="dummy.PATH" alt="logo">
         </div>
-        <div class="wrapper-right">
-
-          <div class="title-button" [routerLink]="['/customer-ui/home']">
+        <div class="header-right-wrapper">
+          <div class="title-button" id="header-right-wrapper-web" [routerLink]="['/customer-ui/home']">
             Features
           </div>
-
-          <div class="title-button" [routerLink]="['/customer-ui/home']">
+          <div class="title-button" id="header-right-wrapper-web" [routerLink]="['/customer-ui/home']">
             FAQ
           </div>
-          <button mat-fab class="user-profile-button">
-          </button>
+          <button mat-flat-button class="image-profile" [matMenuTriggerFor]="menu"></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item class="m-item">Notifications</button>
+
+            <button mat-menu-item class="m-item">Logout</button>
+          </mat-menu>
         </div>
+        <!-- <div class="header-right-wrapper" id="header-right-wrapper-mobile">
+          <button mat-flat-button class="image-profile" [matMenuTriggerFor]="menu"></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item class="m-item">Notifications</button>
+            <button mat-menu-item class="m-item">Features</button>
+            <button mat-menu-item class="m-item">FAQ</button>
+            <button mat-menu-item class="m-item">Logout</button>
+          </mat-menu>
+
+        </div> -->
+
       </div>
       <p class="header-question">How can we help?</p>
       <div class="search-bar">
@@ -28,10 +41,10 @@
     </div>
   </div>
   <div class="main-container">
-    <div class="body">
+    <div class="body-container">
       <div class="support-topic-container">
-        <div class="topic-container">
-          <p>Help Topics</p>
+        <div class="large-font-style">
+          Help Topics
           <hr>
         </div>
         <div class="topic-grid-container">

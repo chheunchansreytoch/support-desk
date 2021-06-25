@@ -1,11 +1,12 @@
 .title-button {
   cursor: pointer;
-  padding: 5px;
-  // background-color: white;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 5px;
+  color: white;
 }
 .title-button:hover {
   opacity: 0.8;

@@ -2,11 +2,12 @@
   cursor: pointer;
   display: flex;
   padding: 10px 0px;
-  width: 130px;
+
   align-items: center;
   justify-content: center;
+
   img {
-    width: 100%;
+    width: 130px;
   }
 }
 .logo-image-container:hover {

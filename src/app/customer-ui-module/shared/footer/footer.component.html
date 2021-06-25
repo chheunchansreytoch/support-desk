@@ -1,9 +1,15 @@
 <div class="footer">
   <div class="wrapper">
-    <p>&#169; Copyright <a href="#school_link">School Link</a></p>
+    <div class="copyright">&#169; Copyright
+      <div class="company-name">School Link</div>
+    </div>
     <div class="features">
-      <a href="#features">Features</a>
-      <a href="#faq">FAQ</a>
+      <div class="title-button" [routerLink]="['/customer-ui/home']">
+        Features
+      </div>
+      <div class="title-button" [routerLink]="['/customer-ui/home']">
+        FAQ
+      </div>
     </div>
 
   </div>

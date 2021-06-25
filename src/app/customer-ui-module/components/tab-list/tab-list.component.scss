@@ -15,7 +15,7 @@
     cursor: pointer;
 
     .title {
-      color: $bg-color;
+      color: $main-color;
       font-weight: bold;
       overflow: hidden;
       white-space: nowrap;
@@ -28,7 +28,7 @@
     }
   }
   .card-container:hover {
-    background-color: $bg-color;
+    background-color: $main-color;
     color: white;
     opacity: 0.8;
     .title {
@@ -48,7 +48,7 @@
 }
 
 .card-active {
-  background-color: $bg-color;
+  background-color: $main-color;
   color: white !important;
 
   .title {

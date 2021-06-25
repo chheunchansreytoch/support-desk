@@ -1,16 +1,27 @@
 /// all variable used in customer-ui module are here
-$logo-path: "../../../../assets/images/cutomer-ui/logo.png";
 
-$main-font: "Open Sans";
-$secondary-font: "Roboto";
+$logo-path: "../../../../assets/images/cutomer-ui/logo.png"; // logo path
 
-$light: 300;
-$normal: 400;
-$semibold: 500;
-$bold: 700;
+$main-font: "Open Sans", "Roboto", sans-serif; // font-families
+
+// font weights
+$light-weight: 300;
+$normal-weight: 400;
+$semibold-weight: 500;
+$bold-weight: 700;
+
+// font sizes
+$small-size: 12px;
+$normal-size: 16px;
+$large-size: 18px;
+$extra-large-size: 25px;
+
+// colors
+$dark-white: rgb(240, 240, 240);
+$light-black: #333;
+$light-grey: rgb(100, 100, 100);
+$main-color: #39a2db;
+$search-border-color: #a2dbfa;
 
 $txt-primary: white;
 $body-bg: black;
-
-$bg-color: #39a2db;
-$search-border-color: #a2dbfa;

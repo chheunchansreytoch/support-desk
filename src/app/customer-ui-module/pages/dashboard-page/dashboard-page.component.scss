@@ -7,7 +7,7 @@
     align-items: center;
 
     .button {
-      background-color: $bg-color;
+      background-color: $main-color;
       border-radius: 10px;
       box-shadow: 0 0 5px lightgrey;
     }
@@ -32,16 +32,16 @@
         padding: 10px 0;
         cursor: pointer;
         border-bottom: 2px solid transparent;
-        font-weight: $bold;
+        font-weight: $bold-weight;
         font-size: 14px;
       }
       .active {
-        color: $bg-color;
-        border-bottom: 2px solid $bg-color;
+        color: $main-color;
+        border-bottom: 2px solid $main-color;
       }
       .status-button:hover {
-        color: $bg-color;
-        border-bottom: 2px solid $bg-color;
+        color: $main-color;
+        border-bottom: 2px solid $main-color;
       }
       .status-button:active {
         opacity: 0.6;
@@ -92,7 +92,7 @@
       border-radius: 10px;
       &:hover {
         cursor: pointer;
-        background-color: $bg-color;
+        background-color: $main-color;
         color: white;
       }
       &:active {

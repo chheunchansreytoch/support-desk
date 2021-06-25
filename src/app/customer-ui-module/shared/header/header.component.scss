@@ -31,35 +31,15 @@
       border: none;
     }
     .active {
-      color: $bg-color;
-      border-bottom: 2px solid $bg-color;
+      color: $main-color;
+      border-bottom: 2px solid $main-color;
     }
     .menu-item-button:hover {
-      color: $bg-color;
-      border-bottom: 2px solid $bg-color;
+      color: $main-color;
+      border-bottom: 2px solid $main-color;
     }
     .menu-item-button:active {
       opacity: 0.6;
-    }
-  }
-
-  .header-right-wrapper {
-    width: 130px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    /// since there is already a profile button
-    /// I don't think adding the notification button is necessary
-
-    // .notification-button {
-    //   color: grey;
-    //   background-color: transparent;
-    //   padding: 0;
-    // }
-
-    .mat-menu-content {
-      background-color: wheat;
     }
   }
 }

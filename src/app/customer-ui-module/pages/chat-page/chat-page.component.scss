@@ -85,7 +85,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          color: $bg-color;
+          color: $main-color;
           &:hover {
             opacity: 0.6;
           }
@@ -104,7 +104,7 @@
         }
         #send-icon {
           transform: rotate(-45deg);
-          background-color: $bg-color;
+          background-color: $main-color;
           color: white;
         }
       }

@@ -4,6 +4,8 @@
 @import "./title.scss";
 @import "./logo_button.scss";
 @import "./title_button.scss";
+@import "./user_profile_button.scss";
+@import "./search_bar.scss";
 
 // main style file
 .main-container-wrapper {
@@ -18,4 +20,22 @@
   align-self: center;
   max-width: 1400px;
   flex: 1;
+}
+
+.small-font-style {
+  font-family: $main-font;
+  font-size: $small-size;
+  font-weight: $normal-weight;
+}
+
+.normal-font-style {
+  font-family: $main-font;
+  font-size: $normal-size;
+  font-weight: $normal-weight;
+}
+
+.large-font-style {
+  font-family: $main-font;
+  font-size: $large-size;
+  font-weight: $normal-weight;
 }
