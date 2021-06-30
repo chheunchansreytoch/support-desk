@@ -9,6 +9,10 @@
   display: flex;
   flex-direction: column;
 
+  .time {
+    font-size: 10px;
+  }
+
   .messages {
     margin-top: 30px;
     display: flex;
@@ -24,6 +28,10 @@
 
   .yours {
     align-items: flex-start;
+    .time {
+      text-align: start;
+      color: #333;
+    }
   }
   .yours .message {
     margin-right: 25%;
@@ -56,6 +64,11 @@
 
   .mine {
     align-items: flex-end;
+
+    .time {
+      text-align: end;
+      color: white;
+    }
   }
 
   .mine .message {

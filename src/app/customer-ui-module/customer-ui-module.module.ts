@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
@@ -49,6 +51,8 @@ import { TabListComponent } from './components/tab-list/tab-list.component';
     MatCardModule,
     MatBadgeModule,
     MatMenuModule,
+    MatSelectModule,
+    MatFormFieldModule,
   ],
 })
 export class CustomerUiModuleModule {}

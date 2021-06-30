@@ -23,8 +23,42 @@ body {
 @import "~@angular/material/theming";
 @include mat-core();
 
-$core-primary: mat-palette($mat-indigo);
-$core-accent: mat-palette($mat-pink, A200, A100, A400);
+$_main-color: (
+  50: #e7f4fb,
+  100: #c4e3f4,
+  200: #9cd1ed,
+  300: #74bee6,
+  400: #57b0e0,
+  500: #39a2db,
+  600: #339ad7,
+  700: #2c90d2,
+  800: #2486cd,
+  900: #1775c4,
+  A100: #f6fbff,
+  A200: #c3e2ff,
+  A400: #90c9ff,
+  A700: #77bdff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// $core-primary: mat-palette($mat-indigo);
+$core-primary: mat-palette($_main-color);
+$core-accent: mat-palette($mat-pink, D62AD0, D62AD0, D62AD0);
 
 $core-warn: mat-palette($mat-red);
 $core-theme: mat-light-theme(
@@ -43,3 +77,16 @@ $custom-typography: mat-typography-config(
   $font-family: "Open Sans",
 );
 @include angular-material-typography($custom-typography);
+
+.mat-form-container {
+  mat-form-field {
+    .mat-form-field-outline-thick {
+      color: $main-color;
+    }
+    // to change label color
+    .mat-form-field-label {
+      // color: $light-black !important;
+      color: $light-black !important;
+    }
+  }
+}
