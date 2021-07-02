@@ -47,59 +47,22 @@
           <hr>
         </div>
         <div class="topic-grid-container">
-          <button class="topic-button">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <ng-container *ngFor="let item of items">
+            <button class="topic-button" [routerLink]="['/customer-ui/docs']">
+              <div class="topic-row">
+                <mat-icon class="primary-color-icon">app_blocking</mat-icon>
+                <div class="title-container">
+                  <p class="title">Getting Started</p>
+                  <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem
+                    Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
               </div>
-            </div>
-          </button>
+            </button>
+          </ng-container>
 
-          <button class="topic-button">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              </div>
-            </div>
-          </button><button class="topic-button">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              </div>
-            </div>
-          </button><button class="topic-button">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              </div>
-            </div>
-          </button><button class="topic-button">
-            <div class="topic-row">
-              <mat-icon class="primary-color-icon">app_blocking</mat-icon>
-              <div class="title-container">
-                <p class="title">Getting Started</p>
-                <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-              </div>
-            </div>
-          </button>
+
+
 
         </div>
       </div>

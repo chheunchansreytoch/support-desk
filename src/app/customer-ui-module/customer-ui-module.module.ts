@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { ChatDisplayComponent } from './components/chat-display/chat-display.component';
 import { TabListComponent } from './components/tab-list/tab-list.component';
+import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { TabListComponent } from './components/tab-list/tab-list.component';
     ChatPageComponent,
     ChatDisplayComponent,
     TabListComponent,
+    DocsPageComponent,
   ],
   imports: [
     CommonModule,

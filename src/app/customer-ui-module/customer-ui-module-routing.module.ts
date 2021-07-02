@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
-
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { CreateCasePageComponent } from './pages/create-case-page/create-case-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { DocsPageComponent } from './pages/docs-page/docs-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
@@ -17,14 +17,15 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
     ],
   },
+
   {
-    path: 'case',
+    path: '',
     component: DashboardLayoutComponent,
     children: [
-      { path: '', component: DashboardPageComponent },
-      { path: 'list', component: DashboardPageComponent },
-      { path: 'create', component: CreateCasePageComponent },
-      { path: 'chat', component: ChatPageComponent },
+      { path: 'docs', component: DocsPageComponent },
+      { path: 'case/list', component: DashboardPageComponent },
+      { path: 'case/create', component: CreateCasePageComponent },
+      { path: 'case/chat', component: ChatPageComponent },
     ],
   },
 ];

@@ -40,3 +40,9 @@
   font-weight: $normal-weight;
 }
 
+.main-body-customer {
+  .main-container.body-container {
+    max-width: 100%;
+    padding: 0;
+  }
+}

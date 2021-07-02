@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
   constructor(private router: Router) {}
   dummy = DATA;
+  items = [1, 2, 3, 4, 5];
   goToDashboard(): void {
     this.router.navigate(['/customer-ui/case/list']);
   }
