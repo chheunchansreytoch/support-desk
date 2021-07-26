@@ -1,0 +1,95 @@
+ .customAdminPage {
+  .adminContainer {
+    width: 82%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .CustomAdminHeader {
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-family: $Roboto-font;
+      background-color: $color7;
+      box-shadow: 0 2px 5px #eff0f1;
+
+      .custom-header-item {
+        padding: 10px;
+        #close {
+          display: none;
+        }
+
+        .fi-br-menu-burger {
+          font-size: 18px;
+          color: $black1;
+        }
+
+        .fi-br-menu-burger:hover {
+          text-shadow: 0 0 10px rgb(130, 160, 216);
+        }
+      }
+
+      .search-form {
+        width: 25%;
+        height: 35px;
+        border: 1px solid #dee2ff;
+        background-color: #f8f9fa;
+        border-radius: 25px;
+        margin-left: 25%;
+        align-items: center;
+        text-align: center;
+
+        form{
+          .fi-rr-search {
+            font-size: 12px;
+          }
+          .search-input {
+            text-indent: 2px;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 9px;
+            padding-right: 50px;
+          }
+        }
+      }
+
+      .custom-notify-userAcc {
+        display: flex;
+        .btnNotification-Click {
+          float: left;
+          margin-right: 5px;
+          width: 33px;
+          height: 33px;
+          //background: red;
+          text-align: center;
+          padding: 4px;
+          border-radius: 50%;
+          .btn-Notification {
+            color: $black1;
+            font-size: 24px;
+            border: none;
+            background: none;
+          }
+        }
+
+        .btnNotification-Click:hover {
+          background-color: #cedde4;
+        }
+
+        .profile-account {
+          .avatarImg {
+            float: right;
+            width: 35px;
+            height: 35px;
+            border: 1px solid $gray3;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+

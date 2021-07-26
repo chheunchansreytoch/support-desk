@@ -1,13 +1,164 @@
 .defaultContent {
-    background-color: pink;
-    width: 100%;
-    margin: 0;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+  width: 100%;
+  height: 70vh;
+  //margin: 0 auto;
+  //background-color: $color11;
+  //color: $black1;
+  font-size: 13px;
+  font-family: $Roboto-font;
+
+  .page-header {
+    background-color: #f8f9fa;
+    display: flex;
     flex-direction: column;
-    color: $black1;
-    font-size: 13PX;
-    font-family: $primary-font;
-    
+    .custom-case-list {
+      display: flex;
+      height: 50px;
+
+      .custom-case-image {
+        padding: 4px;
+        background-color: #eeeff0;
+        border: 1px solid #eeeff0;
+        height: 48px;
+        .case-image {
+          padding: 4px ;
+          width: 33px;
+          height: 33px;
+          margin-top: 5px
+        }
+      }
+
+      .cases-pin {
+        height: 30px;
+        text-align: center;
+        border: 1px solid #eeeff0;
+        border-radius: 5px;
+        background: #eeeff0;
+        margin-left: 8px;
+        margin-top: 10px;
+
+          :hover {
+            text-shadow: 0 0 10px blue;
+          }
+        .fa-thumbtack{
+          color: #64696e;
+          font-size: 14px;
+        }
+      }
+
+      .button-toggle {
+        padding: 10px;
+      }
+    }
+    .status-sort-case{
+      padding: 10px;
+    }
+  }
+
+  .list-Container {
+    text-align: center;
+
+    table {
+      width: 100%;
+
+    }
+
+    th {
+      background-color: #eeeeee;
+      padding: 7px;
+
+    }
+
+     table, th, td {
+       border: 1px solid #d8dadd;
+       border-collapse: collapse;
+       color: #343a40;
+     }
+
+     td {
+       font-size: 12px;
+       padding: 5px;
+     }
+
+     td select{
+      //-webkit-appearance: none;
+       width: 20px;
+       height: 20px;
+       border: 1px solid $gray1;
+       border-radius: 5px;
+       //background-color: #eeeff0;
+       outline: none;
+
+       option{
+        font-size: 14px;
+       }
+     }
+
+
+     td .edit_hover_class {
+      padding: 5px;
+    }
+
+    td .edit_hover_class .icon-edit-href{
+      visibility:hidden;
+      padding: 10px;
+      color: $black1;
+    }
+
+    td .edit_hover_class:hover .icon-edit-href {
+     visibility:visible;
+     color: $color9;
+
+    }
+
+     td .case-num-href {
+       text-decoration: none;
+       color: $black1;
+     }
+
+     td .case-num-href:hover {
+      text-decoration: underline;
+      color: $color9;
+    }
+
+    td .edit_hover_class .name-href {
+      text-decoration: none;
+      color: $black1;
+    }
+
+    td .edit_hover_class .name-href:hover {
+      text-decoration: underline;
+      color: $color9;
+    }
+
+    td .edit_hover_class .subject-href {
+      text-decoration: none;
+      color: $black1;
+    }
+
+    td .edit_hover_class .subject-href:hover {
+      text-decoration: underline;
+      color: $color9;
+    }
+
+    td .edit_hover_class .status-edit {
+      text-decoration: none;
+      color: $black1;
+    }
+
+    td .edit_hover_class .status-edit:hover {
+      text-decoration: underline;
+      color: $color9;
+    }
+
+    td .edit_hover_class .priority-edit {
+      text-decoration: none;
+      color: $black1;
+    }
+
+    td .edit_hover_class .status-edit:hover {
+      text-decoration: underline;
+      color: $color9;
+    }
+  }
 }

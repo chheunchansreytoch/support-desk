@@ -1,0 +1,81 @@
+<div class="custom-agents">
+  <div class="btnClick">
+    <button class="btnCreate">Create Agent</button>
+    <!-- <ol>
+      <li>
+        <button mat-raised-button (click)="openDialog()">Create</button>
+      </li>
+    </ol> -->
+
+    <!-- <ol>
+      <li>
+        <mat-form-field appearance="fill">
+          <mat-label>What's your name?</mat-label>
+          <input matInput [(ngModel)]="name">
+        </mat-form-field>
+      </li>
+      <li>
+        <button mat-raised-button (click)="openDialog()">Pick one</button>
+      </li>
+      <li *ngIf="animal">
+        You chose: <i>{{animal}}</i>
+      </li>
+    </ol> -->
+  </div>
+
+  <div class="customTable">
+    <table>
+      <thead>
+        <tr>
+          <th>N.</th>
+          <th>Agents Name</th>
+          <th>Job Position</th>
+          <th>Status</th>
+          <th>Agent Info</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of this.items">
+         <td>
+          {{item.n}}
+         </td>
+
+         <td>
+          {{item.agentName}}
+         </td>
+
+         <td>
+          {{item.jobPosition}}
+         </td>
+
+         <td>
+          {{item.status}}
+         </td>
+
+         <td>
+          <!-- {{item.agentInfo}} -->
+          <div class="btnDetailClick">
+            <button class="btnDetail">More Details</button>
+          </div>
+         </td>
+
+         <td>
+          <!-- {{item.action}} -->
+          <div class="btnClick-CrudIcon">
+            <div class="btnEditIcon">
+              <button class="btnEdit"><i class="fi-rr-pencil"></i></button>
+            </div>
+
+            <div class="btnDeleteIcon">
+              <button class="btnDelete"><i class="fi-rr-trash"></i></button>
+            </div>
+          </div>
+
+         </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

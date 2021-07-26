@@ -165,3 +165,60 @@
 
 
 
+ // .selectContainer {
+    //   place-items: center;
+    //   .custom-select-position {
+    //     position: relative;
+    //   }
+
+    //   .custom-select-position select {
+    //     font-size: 1rem;
+    //     font-weight: bold;
+    //     padding: 1em 5em 1em 1.5em;
+    //     background: none;
+    //     color: $black1;
+    //     border: none;
+    //     outline: none;
+    //     appearance: none;
+    //     text-decoration: $gray1;
+    //     text-decoration-line: overline underline;
+
+    //     :focus {
+    //       min-width: 150px;
+    //       width: auto;
+    //   }
+    //   }
+
+
+
+    //   .custom-arrow {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 150px;
+    //     display: block;
+    //     border: none;
+    //     background: none;
+    //     height: 98%;
+    //     width: 0.2em;
+    //     pointer-events: none;
+    //   }
+
+    //   .custom-arrow::before,
+    //   .custom-arrow::after {
+    //       font-size: 0.5em;
+    //       content: '';
+    //       position: absolute;
+    //       width: 0;
+    //       height: 0;
+    //       top: 50%;
+    //       left: 50%;
+    //       transform: translate(-50%, -50%);
+    //   }
+
+    //   .custom-arrow::before {
+    //       border-left: 1em solid transparent;
+    //       border-right: 1em solid transparent;
+    //       border-top: 1em solid $gray3;
+    //   }
+    // }
+  
