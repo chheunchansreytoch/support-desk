@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportPageComponent implements OnInit {
 
+  selectedOption = '3';
+  
   constructor() { }
 
   ngOnInit(): void {

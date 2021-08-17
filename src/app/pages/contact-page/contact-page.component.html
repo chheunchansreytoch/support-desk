@@ -1,4 +1,27 @@
+<div class="custom-contact-list">
+  <div class="custom-contact-image">
+    <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
+  </div>
 
+  <div class="select-contact-option">
+    <mat-form-field appearance="fill">
+      <mat-label>Cases</mat-label>
+      <mat-select [(ngModel)]="selectedOption">
+      <mat-label class="list-cases-lbl">LIST VIEWS</mat-label>
+      <mat-option value="1">All Contacts</mat-option>
+      <mat-option value="2">Birthdays This Month</mat-option>
+      <mat-option value="3">My Contacts</mat-option>
+      <mat-option value="4">New Last Week</mat-option>
+      <mat-option value="5">New This Week</mat-option>
+      <mat-option value="6">Recently Viewed</mat-option>
+      <mat-option value="7">Recently Viewed Contacts</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+
+<!--
 <div class="defaultContent">
   <div class="page-header">
     <div class="custom-case-list">
@@ -116,4 +139,5 @@
   </table>
   </div>
 </div>
+ -->
 

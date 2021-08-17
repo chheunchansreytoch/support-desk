@@ -1,0 +1,62 @@
+<div class="custom-agents">
+  <div class="btnClick">
+    <!-- <button class="btnCreate">Create Agent</button> -->
+    <button class="btnCreate" mat-button (click)="onCreate()">Create Agent</button>
+  </div>
+
+  <div class="customTable">
+    <table>
+      <thead>
+        <tr>
+          <th>N.</th>
+          <th>Agents Name</th>
+          <th>Job Position</th>
+          <th>Status</th>
+          <th>Agent Info</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of this.items">
+         <td>
+          {{item.n}}
+         </td>
+
+         <td>
+          {{item.agentName}}
+         </td>
+
+         <td>
+          {{item.jobPosition}}
+         </td>
+
+         <td>
+          {{item.status}}
+         </td>
+
+         <td>
+          <!-- {{item.agentInfo}} -->
+          <div class="btnDetailClick">
+            <button class="detail-btn" mat-button (click)="onMoreDetailDialog()">More Details</button>
+          </div>
+         </td>
+
+         <td>
+          <!-- {{item.action}} -->
+          <div class="btnClick-CrudIcon">
+            <div class="btnEditIcon">
+              <button class="btnEdit"><i class="fi-rr-pencil"></i></button>
+            </div>
+
+            <div class="btnDeleteIcon">
+              <button class="btnDelete" mat-button (click)="onDelete()"><i class="fi-rr-trash"></i></button>
+            </div>
+          </div>
+         </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

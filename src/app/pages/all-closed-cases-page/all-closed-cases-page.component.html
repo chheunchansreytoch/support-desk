@@ -1,0 +1,98 @@
+<div class="defaultContent">
+  <div class="page-header">
+
+    <div class="status-sort-case">
+      <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
+    </div>
+  </div>
+
+  <div class="list-Container" >
+    <table>
+      <thead>
+          <tr>
+              <th>N.</th>
+              <th><input type="checkbox" (change)="checkAll($event)"></th>
+              <th>Case Number</th>
+              <th>Contact Name</th>
+              <th>Subject</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Date/Time Opened</th>
+              <th>Case Owner</th>
+              <th>Option</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of this.rows">
+              <td>{{item.n}}</td>
+              <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+              </td>
+              <td>
+                <a class="case-num-href" href="">
+                  {{item.caseNumber}}
+                </a>
+
+              </td>
+              <td>
+                <div class='edit_hover_class'>
+                  <a class="name-href" href="#">
+                    {{item.contactName}}
+                  </a>
+                  <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+               </div>
+
+              </td>
+              <td>
+                <div class='edit_hover_class'>
+                  <a class="subject-href" href="#">
+                    {{item.subject}}
+                  </a>
+                  <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+                </div>
+              </td>
+              <td>
+               <div class="status-cases">
+                <select class="select-status">
+                  <option selected>Closed</option>
+                  <option>New</option>
+                  <option>Working</option>
+                  <option>Escalated</option>
+                </select>
+               </div>
+              </td>
+              <td>
+                <div class="priority-cases">
+                 <select class="select-priority">
+                   <option>High</option>
+                   <option>Medium</option>
+                   <option>Low</option>
+                 </select>
+                </div>
+              </td>
+              <td>{{item.dateTime}}</td>
+              <td>{{item.caseOwner}}</td>
+              <td>
+                <div class="custom-option-case">
+                  <div class="edit-icon-container">
+                    <button class="btn-edit"><i class="fi-rr-pencil"></i></button>
+                    <span class="edit-tooltiptext">Edit</span>
+                  </div>
+
+                  <div class="delete-icon-container">
+                    <button class="btn-delete"><i class="fi-rr-trash"></i></button>
+                    <span class="delete-tooltiptext">Delete</span>
+                  </div>
+
+                  <div class="changeOwner-icon-container">
+                    <button class="btn-changeOwner"><i class="fi-rr-mode-landscape"></i></button>
+                    <span class="changeOwner-tooltiptext">Change Owner</span>
+                  </div>
+                </div>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+</div>

@@ -6,7 +6,6 @@
     float: right;
     font-family: $Roboto-font;
     .custom-manage-cases {
-      margin-top: -10px;
       padding: 10px;
       width: 100%;
       height: 100%;
@@ -17,16 +16,16 @@
         display: flex;
 
         .custom-btn-Case-blog {
-          position: relative;
+        //  position: relative;
+
           .btnClickCreate {
-            position: relative;
+            //position: relative;
             float: left;
             margin-right: 5px;
-            margin-top: 10px;
+            // margin-top: 10px;
             text-align: center;
             line-height: 2;
             width: 100px;
-            height: 30px;
             background: #b3d4df;
             border: 1px solid #b3d4df;
             border-radius: 5px;
@@ -38,8 +37,7 @@
           }
 
           .btnClickCreate:hover {
-            text-transform: none;
-            height: 30px;
+            padding: 1px;
             border: #cedde4;
             background: #cedde4;
           }
@@ -47,7 +45,8 @@
           .create-case-popup {
             display: flex;
             flex-direction: column;
-            margin-top: 45px;
+            margin-top: 30px;
+
             .custom-show-create-case-blog {
               overflow-x: hidden;
               z-index: 1001;
@@ -456,21 +455,21 @@
                       color: $black1;
                     }
 
-                   form {
-                    .web-company-input {
-                      padding: 9px 1px;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                      background: $color7;
-                      outline: none;
-                      text-indent: 10px;
-                    }
+                    form {
+                      .web-company-input {
+                        padding: 9px 1px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background: $color7;
+                        outline: none;
+                        text-indent: 10px;
+                      }
 
-                    .web-company-input:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
+                      .web-company-input:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
                     }
-                   }
                   }
                 }
 
@@ -486,7 +485,7 @@
                       color: $black1;
                     }
 
-                   form {
+                  form {
                     .web-name-input {
                       padding: 9px 1px;
                       border: 1px solid #ccc;
@@ -500,35 +499,35 @@
                       border: 1px solid #54adf7;
                       box-shadow: 0 0 3px #54adf7;
                     }
-                   }
-                  }
-
-                  .custom-web-phone {
-                    padding: 14px;
-
-                    .web-phone-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                   form {
-                    .web-phone-input {
-                      padding: 9px 1px;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                      background: $color7;
-                      outline: none;
-                      text-indent: 10px;
-                    }
-
-                    .web-phone-input:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-                   }
                   }
                 }
+
+                .custom-web-phone {
+                  padding: 14px;
+
+                  .web-phone-lbl {
+                    font-size: 11px;
+                    color: $black1;
+                  }
+
+                 form {
+                  .web-phone-input {
+                    padding: 9px 1px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    background: $color7;
+                    outline: none;
+                    text-indent: 10px;
+                  }
+
+                  .web-phone-input:focus {
+                    border: 1px solid #54adf7;
+                    box-shadow: 0 0 3px #54adf7;
+                  }
+                 }
+                }
               }
+            }
 
               .additional-info-lbl-container {
                 padding: 10px;
@@ -858,11 +857,10 @@
           position: relative;
           .btnClickAssign {
             float: right;
-            margin-top: 10px;
+            // margin-top: -10px;
             text-align: center;
             line-height: 2;
             width: 80px;
-            height: 30px;
             background: #b3d4df;
             border: 1px solid #b3d4df;
             border-radius: 5px;
@@ -873,8 +871,7 @@
           }
 
           .btnClickAssign:hover {
-            text-transform: none;
-            height: 30px;
+            padding: 1px;
             border: #cedde4;
             background: #cedde4;
           }
@@ -882,13 +879,12 @@
           .custom-assign-popup {
             display: flex;
             flex-direction: column;
-            margin-top: 45px;
+            margin-top: 30px;
 
             .custom-show-assign-blog {
-              overflow-x: hidden;
               z-index: 1001;
               position: absolute;
-              width: 500px;
+              width: 400px;
               height: 330px;
               background: $color7;
               border-bottom: 1px solid $color7;
@@ -897,6 +893,7 @@
               box-shadow: 0 5px 15px #d4d7da;
 
               .title-assign-container {
+
                 h4 {
                   font-size: 14px;
                   margin: 10px;
@@ -908,25 +905,9 @@
               }
 
               .select-agent-toAssign-container {
-                padding: 14px;
-
-               .custom-btn-department {
-                  width: 80px;
-                  height: 30px;
-                  background: #b3d4df;
-                  border-radius: 5px;
-                  text-align: center;
-                  line-height: 2;
-                  .btn-department {
-                    font-size: 12px;
-                    border: none;
-                    background: none;
-                  }
-                }
-
-                .custom-btn-department:hover {
-                  background: #cedde4;
-                }
+                padding: 5px;
+                display: flex;
+                justify-content: space-between;
 
                 .assign-lbl-container {
                   padding: 4px;
@@ -938,13 +919,13 @@
                   }
 
                   .custom-select-agent {
-                    width: 170px;
+                    width: 150px;
                     position: relative;
                   }
 
                   .custom-select-agent select {
-                    height: 35px;
-                    padding: 10px 15px;
+                    height: 30px;
+                    padding: 1px 15px;
                     line-height: 15px;
                     font-size: 12px;
                     width: 100%;
@@ -974,6 +955,148 @@
                     border: 1px solid #54adf7;
                     box-shadow: 0 0 3px #54adf7;
                   }
+
+                  .custom_department_IT {
+                    overflow-x: hidden;
+                    width: 382px;
+                    height: 200px;
+                    background: #f8f9fa;
+                    border-radius: 7px;
+                    padding: 10px 30px;
+                    margin-top: 10px;
+                    box-shadow: 0 0 5px #d4d7da;
+
+
+                    .dept_IT_lbl {
+                      font-size: 12px;
+                      color: #54adf7;
+                    }
+
+                    .department_IT {
+                      padding: 5px;
+                      margin-top: 10px;
+                    }
+
+                    .department_IT:hover {
+                      background: #e2ece9;
+                      border-radius: 5px;
+
+                    }
+                    .IT_agent_name {
+                      font-size: 12px;
+                    }
+                  }
+
+                  .custom_department_account {
+                    overflow-x: hidden;
+                    width: 382px;
+                    height: 200px;
+                    background: #f8f9fa;
+                    border-radius: 7px;
+                    padding: 10px 30px;
+                    margin-top: 10px;
+                    box-shadow: 0 0 5px #d4d7da;
+
+
+                    .dept_acc_lbl {
+                      font-size: 12px;
+                      color: #54adf7;
+                    }
+
+                    .department_acc {
+                      padding: 5px;
+                      margin-top: 10px;
+                    }
+
+                    .department_acc:hover {
+                      background: #e2ece9;
+                      border-radius: 5px;
+
+                    }
+                    .account_agent_name {
+                      font-size: 12px;
+                    }
+                  }
+
+                  .custom_department_payroll {
+                    overflow-x: hidden;
+                    width: 382px;
+                    height: 200px;
+                    background: #f8f9fa;
+                    border-radius: 7px;
+                    padding: 10px 30px;
+                    margin-top: 10px;
+                    box-shadow: 0 0 5px #d4d7da;
+
+
+                    .dept_payroll_lbl {
+                      font-size: 12px;
+                      color: #54adf7;
+                    }
+
+                    .department_payroll {
+                      padding: 5px;
+                      margin-top: 10px;
+                    }
+
+                    .department_payroll:hover {
+                      background: #e2ece9;
+                      border-radius: 5px;
+
+                    }
+                    .payroll_agent_name {
+                      font-size: 12px;
+                    }
+                  }
+                }
+
+                .custom-Button {
+                  display: flex;
+                  position: absolute;
+                  margin-left: 230px;
+                  margin-top: 25px;
+
+                  .click-cancel2 {
+                    float: left;
+                    margin-right: 10px;
+                    text-align: center;
+                    line-height: 2;
+                    width: 70px;
+                    height: 28px;
+                    background: $color7;
+                    border: 1px solid #779bee;
+                    border-radius: 5px;
+
+                    .btn-cancel2 {
+                      border: none;
+                      background: none;
+                      color: #779bee;
+                    }
+                  }
+
+                  .click-cancel2:hover {
+                    background: #6e88c4;
+                  }
+
+                  .click-assign {
+                    float: right;
+                    text-align: center;
+                    line-height: 2;
+                    width: 70px;
+                    height: 28px;
+                    background: #779bee;
+                    border-radius: 5px;
+
+                    .btn-assign {
+                      border: none;
+                      background: none;
+                      color: $color7;
+                    }
+                  }
+
+                  .click-assign:hover {
+                    background: #6e88c4;
+                  }
                 }
               }
             }
@@ -1001,7 +1124,6 @@
           font-size: 12px;
         }
         table {
-
           width: 100%;
           border-collapse: collapse;
           box-shadow: 0 5px 10px #eff0f1;

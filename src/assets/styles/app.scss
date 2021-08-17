@@ -3,16 +3,15 @@
 @import './footer.scss';
 @import './text.scss';
 @import './form.scss';
-// @import './all_cases_layout.scss';
 @import './login.scss';
 
 @import './login_header.scss';
 @import './login_footer.scss';
-@import './homepage.scss';
 
 @import './default_header.scss';
 @import './default_footer.scss';
 @import './defaultpage.scss';
+@import './myCases.scss';
 @import './custom-mat-menu.scss';
 @import './custom-mat-select.scss';
 @import './custom-mat-button-toggle';
@@ -25,3 +24,6 @@
 @import './admin-sidebar.scss';
 @import './manage_agent.scss';
 @import './manage_cases.scss';
+@import './dialog-sign-up.scss';
+@import './confirm-dialog.scss';
+@import './report_page.scss';

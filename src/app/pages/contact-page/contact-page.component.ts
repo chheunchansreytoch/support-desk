@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-page.component.scss']
 })
 export class ContactPageComponent implements OnInit {
-
+  selectedOption = '3';
   rows = [
     {
       n: "1",

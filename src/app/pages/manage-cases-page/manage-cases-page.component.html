@@ -275,21 +275,63 @@
           </div>
 
           <div class="select-agent-toAssign-container">
-            <div class="custom-btn-department">
-              <button class="btn-department">Department</button>
+            <div class="assign-lbl-container">
+              <label class="agents-lbl" for="department">Departments</label>
+              <div class="custom-select-agent">
+                <select [(ngModel)]="selectedValue">
+                  <option hidden>Choose Department</option>
+                  <option value="dept_IT">IT</option>
+                  <option value="dept_Acc">Accounting</option>
+                  <option value="dept_Payroll">Payroll</option>
+                  <!-- <option *ngFor="let dept of departments" [value]="dept.id">
+                    {{dept.name}}
+                  </option> -->
 
-              <div class="assign-lbl-container" *ngIf="showdepartmentBtn">
-                <label class="agents-lbl">Departments</label>
-                <div class="custom-select-agent">
-                  <select>
-                    <option hidden>Choose Department</option>
-                    <option>Developer</option>
-                    <option>Accounting</option>
-                    <option>Service</option>
-                    <option>Payments</option>
-                  </select>
+                  <!-- <option value="dept_IT">IT</option>
+                  <option value="dept_Acc">Accounting</option> -->
+                </select>
 
+              </div>
+
+              <div class="custom_department_IT" *ngIf="selectedValue == 'dept_IT'">
+                <label class="dept_IT_lbl">Choose Agent of IT Department</label>
+                <div class="department_IT" *ngFor="let depts_IT of departments_IT">
+                   <label class="IT_agent_name" >
+                    <input type="radio" name="departmentIT" value="{{depts_IT.name}}" (change)="radioChangeHandler($event)">
+                     {{depts_IT.name}}
+                  </label>
                 </div>
+                <!-- <p>You have selected: {{ SelectAgentName}}</p> -->
+              </div>
+
+              <div class="custom_department_account" *ngIf="selectedValue == 'dept_Acc'">
+                <label class="dept_acc_lbl">Choose Agent of Account Department</label>
+                <div class="department_acc" *ngFor="let depts_acc of departments_account">
+                   <label class="account_agent_name" >
+                    <input type="radio" name="departmentAccount" value="{{depts_acc.name}}" (change)="radioChangeHandler($event)">
+                     {{depts_acc.name}}
+                  </label>
+                </div>
+              </div>
+
+              <div class="custom_department_payroll" *ngIf="selectedValue == 'dept_Payroll'">
+                <label class="dept_payroll_lbl">Choose Agent of Payroll Department</label>
+                <div class="department_payroll" *ngFor="let depts_payroll of departments_payroll">
+                   <label class="payroll_agent_name" >
+                    <input type="radio" name="departmentPayroll" value="{{depts_payroll.name}}" (change)="radioChangeHandler($event)">
+                     {{depts_payroll.name}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-Button">
+              <div class="click-cancel2">
+                <button class="btn-cancel2">Cancel</button>
+              </div>
+
+              <div class="click-assign">
+                <button class="btn-assign">Assign</button>
               </div>
             </div>
           </div>

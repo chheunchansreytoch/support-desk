@@ -1,4 +1,26 @@
-<div class="defaultContent">
+<div class="custom-account-list">
+  <div class="custom-account-image">
+    <img class="account-image" src="./assets/images/selection-icons/account.png">
+  </div>
+
+  <div class="select-account-option">
+    <mat-form-field appearance="fill">
+      <mat-label>Cases</mat-label>
+      <mat-select [(ngModel)]="selectedOption">
+      <mat-label class="list-cases-lbl">LIST VIEWS</mat-label>
+      <mat-option value="1">All Accounts</mat-option>
+      <mat-option value="2">My Account</mat-option>
+      <mat-option value="3">New Last Week</mat-option>
+      <mat-option value="4">New This Week</mat-option>
+      <mat-option value="4">Platinum and Gold SLA Customers</mat-option>
+      <mat-option value="5">Recently Viewed</mat-option>
+      <mat-option value="6">Recently Viewed Cases</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<!-- <div class="defaultContent">
   <div class="page-header">
     <div class="custom-case-list">
       <div class="custom-case-image">
@@ -115,4 +137,4 @@
   </table>
   </div>
 </div>
-
+ -->

@@ -1,0 +1,80 @@
+<div class="create-agent-container">
+  <h4 mat-dialog-title>Create Agents</h4>
+
+  <div mat-dialog-content>
+    <form>
+      <div class="custom-input-name">
+        <div class="custom-fname">
+          <label class="custom-field">
+            <input class="form-input" type="text" name="fname" required>
+            <span class="placeholder">First Name</span>
+          </label>
+        </div>
+
+        <div class="custom-lname">
+          <label class="custom-field">
+            <input class="form-input" type="text" name="lmail" required>
+            <span class="placeholder">Last Name</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="custom-email">
+        <label class="custom-field">
+          <input class="form-input" type="text" name="email" required>
+          <span class="placeholder">Email</span>
+        </label>
+      </div>
+
+      <div class="password-container">
+        <div class="custom-password">
+          <label class="custom-field">
+            <input class="form-input" type="text" name="password" required>
+            <span class="placeholder">Password</span>
+          </label>
+        </div>
+
+        <div class="custom-repeat-pw">
+          <label class="custom-field">
+            <input class="form-input" type="text" name="password" required>
+            <span class="placeholder">Repeat password</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Custom Department & Gender -->
+      <div class="dept-gen-container">
+        <!-- Custom Department -->
+        <div class="custom-dept" required>
+          <select>
+            <option hidden>Select Department</option>
+            <option>IT</option>
+            <option>Accounting</option>
+            <option>Payroll</option>
+          </select>
+        </div>
+        <!-- Custom Gender -->
+        <div class="gender-container">
+          <div class="custom-gender" *ngFor="let gender of genders">
+            <label class="agent-gender" >
+              <input type="radio" name="gender" value="{{gender.gender}}" (change)="radioChangeHandler($event)">
+              {{gender.gender}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <div class="custom-btn-close">
+      <button class="btn-close" mat-button mat-dialog-close>Close</button>
+    </div>
+
+    <div class="custom-btn-create">
+      <button class="btn-create">Create</button>
+    </div>
+  </div>
+</div>
+
+

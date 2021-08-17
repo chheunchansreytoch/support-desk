@@ -1,4 +1,28 @@
-<div class="defaultContent">
+<div class="custom-report-list">
+  <div class="custom-report-image">
+    <img class="report-image" src="./assets/images/selection-icons/report.png">
+  </div>
+
+  <div class="select-report-option">
+    <mat-form-field appearance="fill">
+      <mat-label>Cases</mat-label>
+      <mat-select [(ngModel)]="selectedOption">
+      <mat-label class="list-cases-lbl">LIST VIEWS</mat-label>
+      <mat-option value="1">All Contacts</mat-option>
+      <mat-option value="2">Birthdays This Month</mat-option>
+      <mat-option value="3">My Contacts</mat-option>
+      <mat-option value="4">New Last Week</mat-option>
+      <mat-option value="5">New This Week</mat-option>
+      <mat-option value="6">Recently Viewed</mat-option>
+      <mat-option value="7">Recently Viewed Contacts</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+
+
+<!-- <div class="defaultContent">
   <div class="page-header">
     <div class="custom-case-list">
       <div class="custom-case-image">
@@ -41,7 +65,7 @@
       <thead>
           <tr>
               <th>N.</th>
-              <!-- <th><input type="checkbox" (change)="checkAll($event)"></th> -->
+              <th><input type="checkbox" (change)="checkAll($event)"></th>
               <th>Case Number</th>
               <th>Contact Name</th>
               <th>Subject</th>
@@ -52,7 +76,7 @@
               <th>Option</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody> -->
           <!-- <tr *ngFor="let item of this.rows">
               <td>{{item.n}}</td>
               <td>
@@ -110,8 +134,8 @@
                 </select>
               </td>
           </tr> -->
-      </tbody>
+      <!-- </tbody>
   </table>
   </div>
-</div>
+</div> -->
 

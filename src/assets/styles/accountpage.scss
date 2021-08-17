@@ -1,68 +1,91 @@
-.defaultContent {
+.defaultContentFrontContainer {
+  .defaultContentFront {
+    .custom-account-list {
+      display: flex;
+      height: 60px;
+      background-color: #f8f9fa;
 
-     td .edit_hover_class {
-      padding: 5px;
+      .custom-account-image {
+        padding: 5px;
+        background-color: #eeeff0;
+        border: 1px solid #eeeff0;
+        height: 52px;
+        .account-image {
+          padding: 4px ;
+          width: 33px;
+          height: 33px;
+          margin-top: 5px
+        }
+      }
     }
-
-    td .edit_hover_class .icon-edit-href{
-      visibility:hidden;
-      padding: 10px;
-      color: $black1;
-    }
-
-    td .edit_hover_class:hover .icon-edit-href {
-     visibility:visible;
-     color: $color9;
-
-    }
-
-     td .acc-num-href {
-       text-decoration: none;
-       color: $black1;
-     }
-
-     td .acc-num-href:hover {
-      text-decoration: underline;
-      color: $color9;
-    }
-
-    td .edit_hover_class .acc-site-href {
-      text-decoration: none;
-      color: $black1;
-    }
-
-    td .edit_hover_class .acc-site-href:hover {
-      text-decoration: underline;
-      color: $color9;
-    }
-
-    td .edit_hover_class .billingstate-href {
-      text-decoration: none;
-      color: $black1;
-    }
-
-    td .edit_hover_class .billingstate-href:hover {
-      text-decoration: underline;
-      color: $color9;
-    }
-
-    td .edit_hover_class .phone-edit {
-      text-decoration: none;
-      color: $black1;
-    }
-
-    td .edit_hover_class .phone-edit:hover {
-      text-decoration: underline;
-      color: $color9;
-    }
-
-    td .edit_hover_class .type-edit {
-      text-decoration: none;
-      color: $black1;
-    }
-
-    td .edit_hover_class .type-edit:hover {
-      text-decoration: underline;
-      color: $color9;
-    }
+  }
 }
+
+// .defaultContent {
+
+//      td .edit_hover_class {
+//       padding: 5px;
+//     }
+
+//     td .edit_hover_class .icon-edit-href{
+//       visibility:hidden;
+//       padding: 10px;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class:hover .icon-edit-href {
+//      visibility:visible;
+//      color: $color9;
+
+//     }
+
+//      td .acc-num-href {
+//        text-decoration: none;
+//        color: $black1;
+//      }
+
+//      td .acc-num-href:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .edit_hover_class .acc-site-href {
+//       text-decoration: none;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class .acc-site-href:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .edit_hover_class .billingstate-href {
+//       text-decoration: none;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class .billingstate-href:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .edit_hover_class .phone-edit {
+//       text-decoration: none;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class .phone-edit:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .edit_hover_class .type-edit {
+//       text-decoration: none;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class .type-edit:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+// }

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-page.component.scss']
 })
 export class AccountPageComponent implements OnInit {
+  selectedOption = '2';
 
   rows = [
     {

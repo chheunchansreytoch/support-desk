@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Department_IT } from 'src/app/typeScripts/department_IT';
+import { Department_Accounting } from 'src/app/typeScripts/department_accounting';
+import { Department_Payroll } from 'src/app/typeScripts/department_payroll';
+
+
 
 @Component({
   selector: 'app-manage-cases-page',
@@ -85,20 +90,8 @@ export class ManageCasesPageComponent implements OnInit {
       caseOwner: "Chheun Chansreytoch",
       option: "",
     },
-
-    // {
-    //   n: "7",
-    //   all: "",
-    //   caseNumber: "00001002",
-    //   contactName: "Chheun Chansreytoch",
-    //   subject: "Dialog issues with text and form",
-    //   status: "New",
-    //   priority: "Low",
-    //   dateTime: "5/19/2021, 2:07 PM",
-    //   caseOwner: "Chheun Chansreytoch",
-    //   option: "",
-    // },
   ]
+
 
   constructor() { }
 
@@ -123,16 +116,54 @@ export class ManageCasesPageComponent implements OnInit {
     this.showdepartmentBtn=!this.showdepartmentBtn
   }
 
-    //department button
-  // showSelectOption1:boolean=false
-  // electOption1() {
-  //   this.showSelectOption1=!this.showSelectOption1
-  // }
+// *** create select departments ***
+  selectedValue = '0';
+  SelectAgentName: string = '';
+
+  departments_IT: Department_IT [] = [
+    {name: 'Chheun Chansreytoch'},
+    {name: 'Mark Lee'},
+    {name: 'Kim Jungwoo'},
+    {name: 'Jung Jaehyun'},
+    {name: 'Chheun Chansreytoch'},
+    {name: 'Mark Lee'},
+    {name: 'Kim Jungwoo'},
+    {name: 'Jung Jaehyun'},
+  ];
+
+  departments_account: Department_Accounting [] = [
+    {name: 'aihlakhvakh'},
+    {name: 'vanvi ha'},
+    {name: 'oiahnvjba'},
+    {name: 'vknakv haaifj'},
+    {name: 'Ckjva lajoa'},
+    {name: 'paonvkla  anoin'},
+    {name: 'alkn ajakvjao'},
+    {name: 'Jpoiahvoia vnoaj'},
+  ]
+
+  departments_payroll: Department_Payroll [] = [
+    {name: 'aihlakhvakh'},
+    {name: 'vanvi ha'},
+    {name: 'oiahnvjba'},
+    {name: 'vknakv haaifj'},
+    {name: 'Ckjva lajoa'},
+    {name: 'paonvkla  anoin'},
+    {name: 'alkn ajakvjao'},
+    {name: 'Jpoiahvoia vnoaj'},
+  ]
+
+  radioChangeHandler (e:any) {
+    this.SelectAgentName = e.target.value;
+  }
 
 
 
 
-  //select checkbox
+
+
+
+// checkbox table
   checks=false;
   checkAll(e:any) {
     if(e.target.checked==true) {
@@ -142,5 +173,7 @@ export class ManageCasesPageComponent implements OnInit {
       this.checks=false;
     }
   }
+
+
 
 }

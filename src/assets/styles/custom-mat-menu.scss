@@ -1,12 +1,34 @@
 .mat-icon {
-  i {
-    font-size: 18px;
+  .calendar-img {
+    width: 27px;
+    height: 27px;
   }
+
+}
+
+a {
+  text-decoration: none;
+
+}
+
+a label {
+  font-size: 12px;
+  color: $black2;
+}
+
+.mat-menu-panel {
+  margin-top: 5px;
+  margin-left: -115px;
 }
 
 .mat-menu-content:not(:empty) {
   font-size: 13px;
-  padding: 10px;
+  padding: 8px;
   color: $gray3;
-
 }
+
+.mat-form-field-wrapper {
+ padding-bottom: 0;
+}
+
+

@@ -1,17 +1,12 @@
 .defaultContainer {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   .defaultHeader {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    font-family: $Roboto-font;
     align-items: center;
     flex-direction: row;
 
@@ -24,310 +19,490 @@
       }
     }
 
-    .custom-position {
-      width: 30%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
+    .Custom-searchForm {
+      form {
+        padding: 1px;
+        display: flex;
+        flex-direction: row;
+
+        input[type=text] {
+          padding: 8px 150px;
+          padding-left: 15px;
+          font-size: 12px;
+          border-top: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-right: none;
+          border-bottom: 1px solid #ccc;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          background: $color7;
+          outline: none;
+          text-indent: 10px;
+        }
+
+        input:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+
+        .custom-search-btn {
+          width: 30px;
+          line-height: 2.3;
+          border: 1px solid $gray1;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+
+          .btn-icon-search {
+            border: none;
+            background: none;
+
+            .fi-rr-search {
+              font-size: 13px;
+              padding-left: 7px;
+              // margin-right: 15px;
+            }
+          }
+        }
+
+        .custom-search-btn:hover {
+          background: $gray4;
+        }
+      }
     }
 
-
-    .custom-position .searchBarContainer {
+    .Custom-Menu-icons {
       display: flex;
-      flex-direction: row;
 
-      .select-dropdown-opt {
-        border: 1px solid $gray1;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        padding: 7px;
-        outline: none;
-       .select-option {
-        border: none;
-       }
-      }
+      .favorite-container {
 
-      .Custom-searchForm {
-        border: 1px solid $gray1;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        padding: 6px;
-        padding-left: 20px;
-        padding-right: 200px;
+        .favorite-icon {
+          float: left;
+          margin-right: 10px;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          padding: 5px;
+          background: #e9ecef;
+          border-radius: 50%;
 
-        .searchForm {
-
-          .search-input {
+          .btn-favorite {
             border: none;
             outline: none;
+            background: none;
+
+            .fi-rr-star {
+              font-size: 20px;
+              color: $black2;
+            }
+          }
+        }
+
+        .favorite-icon-container:hover {
+          background: #c5c7c9;
+        }
+
+        .custom-favorite-popup {
+          position: absolute;
+          margin-top: 35px;
+          transition: width 2s, height 4s;
+
+          .favorite-popup-container {
+            overflow-x: hidden;
+            padding: 10px;
+            background-color: $color7;
+            position: absolute;
+            margin-left: -250px;
+            width: 300px;
+            height: 300px;
+            //border: 1px solid #d4d7da;
+            border-radius: 5px;
+            color: $black1;
+            font-family: $primary-font;
+            box-shadow: 0 5px 25px #d4d7da;
+            transition: width 2s, height 4s;
+
+
+            .favorite-lbl {
+              margin: 10px;
+              margin-top: 20px;
+              font-size: 14px;
+              font-weight: bold;
+
+              .fi-ss-star {
+                font-size: 12px;
+                color: #f8961e;
+              }
+            }
+
+            ul {
+              position: relative;
+            }
+
+            ul li {
+              list-style: none;
+              padding: 10px;
+              font-size: 12px;
+              background: #fff;
+              transition: transform(0.5s);
+
+              a {
+                text-decoration: none;
+              }
+
+              a:active {
+                color: $color9;
+                text-decoration: underline;
+              }
+
+            }
+
+            ul li:hover {
+              // transform: scale(1.1);
+              z-index: 100;
+              background: #e9ecef;
+
+            }
           }
         }
       }
-    }
 
-    .navBar {
-      width: 19%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
-    }
-
-    .navBar .fav-icon-Container {
-
-      #icons-check {
-        display: none;
-      }
-      #icons-check:checked ~ .global-action-Container {
-        display: block;
-        transition: 5s;
-      }
-
-      .global-action-Container {
-        position: absolute;
-        margin: 20px;
-        margin-left: -100px;
-        width: 13%;
-        border: 1px solid #b6b6b6;
-        border-radius: 5px;
-        background-color: $color7;
-        color: $black1;
-        font-weight: normal;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        font-family: $Roboto-font;
-        display: none;
-      }
-
-      .global-action-Container .favorite-span {
-        color: $black3;
-        font-size: 11px;
-      }
-    }
-
-    .navBar .fi-rr-star{
-      color: $gray3;
-      font-size: 23px;
-      text-decoration: none;
-      text-align: center;
-    }
-
-    .navBar .fi-rr-star:hover{
-      text-shadow: 0 0 10px blue;
-    }
-
-    .navBar .menuContainer .custom-adding-menu {
-
-      .btn-adding-icon {
-        background: none;
-        border: none;
-        font-size: 23px;
-        color: $gray3;
-        line-height: 1px;
-      }
-
-      :hover {
-        text-shadow: 0 0 10px blue;
-      }
-    }
-
-    .global-action-span {
-      font-size: 100px;
-    }
-
-    .navBar .fi-rr-interrogation{
-        color: $gray3;
-        font-size: 23px;
-        text-decoration: none;
+      .add-icon-container {
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin-right: 10px;
         text-align: center;
-    }
-
-    .navBar .fi-rr-interrogation:hover{
-        text-shadow: 0 0 10px blue;
-    }
-
-    .navBar .fi-rr-settings{
-      color: $gray3;
-      font-size: 23px;
-      text-decoration: none;
-      text-align: center;
-    }
-
-    .navBar .fi-rr-settings:hover {
-      text-shadow: 0 0 10px blue;
-    }
-
-    .navBar .fi-rr-bell {
-      color: $gray3;
-      font-size: 23px;
-      text-decoration: none;
-      text-align: center;
-    }
-
-    .navBar .fi-rr-bell:hover {
-      text-shadow: 0 0 10px blue;
-    }
-
-    .navBar .userIMG {
-      position: relative;
-    }
-
-    #check {
-      display: none;
-    }
-
-    #check:checked ~ .UserProfileContainer {
-      display: block;
-      transition: 5s;
-    }
-
-    .navBar .userIMG .avatarImg {
-      position: relative;
-      width: 35px;
-      height: 35px;
-      border: 1px solid $gray3;
-      border-radius: 50%;
-    }
-
-    .navBar .userIMG .avatarImg:hover {
-      border: 2px solid $gray4;
-      border-radius: 50%;
-    }
-
-    .navBar .userIMG .UserProfileContainer {
-      display: none;
-      background-color: $color7;
-      position: absolute;
-      margin-left: -255px;
-      margin-top: 10px;
-      width: 300px;
-      border: 1px solid #b6b6b6;
-      border-radius: 5px;
-      color: $black1;
-      font-family: $primary-font;
-
-      .popupContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-      }
-
-      .popupContainer .user-popup {
-        width: 300px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
-
-      .popupContainer .user-popup .userImg .avatarImg {
-        width: 35px;
-        margin-top: 10px;
-        margin-left: 15px;
-        border: 2px solid $black1;
-        border-radius: 50%;
-      }
-
-      .popupContainer .user-popup .userImg .info-user {
-        margin-top: -45px;
-        margin-left: 70px;
-      }
-
-      .popupContainer .user-popup .userImg .info-user .profile-link-userName {
-        margin-right: 70px;
-        margin-top: 30px;
-        font-size: 15px;
-        font-weight: normal;
-        color: $black1;
-        text-decoration: none;
-      }
-
-      .popupContainer .user-popup .userImg .info-user .profile-userEmail {
-        font-size: 11px;
-        font-weight: normal;
-        color: $gray3;
-      }
-
-      .popupContainer .user-popup .userImg .info-user .profile-link-userName:hover{
-        text-decoration: underline;
-      }
-
-      .profileContainer {
-        height: 35px;
-        background-color: $gray4;
-        border-bottom: 1px solid #cfcdcd;
-
-        .profile-card-link .user-profile-lable{
-          font-size: 14px;
-          padding: 7px;
-          font-weight: normal;
-          color: $gray5;
-        }
-      }
-
-      .editProfileContainer {
-        .editProfile .edit-profile-link {
-          font-size: 11px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-direction: row;
-          margin: 8px;
-          color: $black1;
-          text-decoration: none;
-        }
-
-        .editProfile .edit-profile-link:hover {
-          color: $color9;
-          text-decoration: underline;
-        }
-      }
-
-      .UserSettingContainer {
-        height: 35px;
-        background-color: $gray4;
-        border-top: 1px solid #cfcdcd;
-        border-bottom: 1px solid #cfcdcd;
-
-        :active {
-          transition: 0s 5s;
-        }
-      }
-
-      .UserSettingContainer .setting-card-link .user-setting-lable {
-        font-size: 14px;
         padding: 5px;
-        margin-left: 4px;
-        font-weight: normal;
-        color: $gray5;
+        background: #e9ecef;
+        border-radius: 50%;
+
+        .custom-add-popup {
+          .btn-add {
+            border: none;
+            outline: none;
+            background: none;
+
+            .fi-rr-add {
+              font-size: 20px;
+              color: $black2;
+            }
+          }
+        }
       }
 
-      .user-setting-layout .userSetting {
-        font-size: 11px;
-        display: flex;
-        margin: 10px;
-        color: $black1;
-        text-decoration: none;
+      .add-icon-container:hover {
+        background: #c5c7c9;
       }
 
-      .user-setting-layout .userSetting:hover {
-        color: $color9;
-        text-decoration: underline;
+      .support-icon-container {
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        text-align: center;
+        padding: 5px;
+        background: #e9ecef;
+        border-radius: 50%;
+
+        .btn-support {
+          border: none;
+          outline: none;
+          background: none;
+
+          .fi-rr-interrogation {
+            font-size: 20px;
+            color: $black2;
+          }
+        }
       }
 
-      .user-setting-layout .logOut {
-        font-size: 11px;
-        display: flex;
-        margin: 10px;
-        color: $black1;
-        text-decoration: none;
+      .support-icon-container:hover {
+        background: #c5c7c9;
       }
 
-      .user-setting-layout .logOut:hover {
-        color: $color9;
-        text-decoration: underline;
+      .setting-icon-container {
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        text-align: center;
+        padding: 5px;
+        background: #e9ecef;
+        border-radius: 50%;
+
+        .btn-setting {
+          border: none;
+          outline: none;
+          background: none;
+
+          .fi-rr-settings {
+            font-size: 20px;
+            color: $black2;
+          }
+        }
+      }
+
+      .setting-icon-container:hover {
+        background: #c5c7c9;
+      }
+
+      .notification-icon-container {
+        width: 30px;
+        height: 30px;
+        float: left;
+        margin-right: 10px;
+        text-align: center;
+        padding: 5px;
+        background: #e9ecef;
+        border-radius: 50%;
+
+        .notification-icon {
+          .btn-notification {
+            border: none;
+            outline: none;
+            background: none;
+
+            .fi-rr-bell {
+              font-size: 20px;
+              color: $black2;
+            }
+          }
+        }
+
+        .custom-notification-popup {
+          position: absolute;
+          margin-top: 4px;
+          transition: width 2s, height 4s;
+
+          .notification-popup-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            background-color: $color7;
+            position: absolute;
+            margin-left: -360px;
+            width: 400px;
+
+            //border: 1px solid #d4d7da;
+            border-radius: 5px;
+            color: $black1;
+            font-family: $primary-font;
+            box-shadow: 0 5px 25px #d4d7da;
+            transition: width 2s, height 4s;
+
+            .custom-notification-lbl {
+              padding: 10px;
+              .notification-lbl {
+                float: left;
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 10px;
+                color: $black2;
+
+                .fi-sr-bell {
+                  font-size: 12px;
+                }
+              }
+
+              .btn-close {
+                border: none;
+                background: none;
+                float: right;
+                width: 20px;
+                height: 20px;
+                padding: 2px;
+
+                .fi-rr-cross-small {
+                  font-size: 16px;
+                }
+              }
+
+              .btn-close:hover {
+                border-radius: 50%;
+                background: salmon;
+              }
+            }
+
+            .notification-text {
+              padding: 20px;
+              p {
+                font-size: 14px;
+                text-align: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+
+      .notification-icon-container:hover {
+        background: #c5c7c9;
+      }
+
+
+
+      .custom-user-profile {
+        float: right;
+
+        .user-profile-container {
+          .btn-profile {
+            border: none;
+            outline: none;
+            background: none;
+
+            .avatarImg {
+              width: 35px;
+              height: 35px;
+              border: 2px solid #ccc;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .custom-user-pf-popup {
+          position: absolute;
+
+          .UserProfileContainer {
+            background-color: $color7;
+            position: absolute;
+            margin-left: -255px;
+            width: 300px;
+            border: 1px solid #d4d7da;
+            border-radius: 5px;
+            color: $black1;
+            font-family: $primary-font;
+            box-shadow: 0 5px 20px #d4d7da;
+
+            .popupContainer {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-direction: row;
+
+              .user-popup {
+                width: 300px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+
+                .userImg {
+                  .avatarImg {
+                    width: 35px;
+                    margin-top: 10px;
+                    margin-left: 15px;
+                    border: 2px solid #ccc;
+                    border-radius: 50%;
+                  }
+
+                  .info-user {
+                    margin-top: -45px;
+                    margin-left: 70px;
+
+                    .profile-link-userName {
+                      margin-right: 70px;
+                      margin-top: 30px;
+                      font-size: 15px;
+                      font-weight: normal;
+                      color: $black1;
+                      text-decoration: none;
+                    }
+
+                    .profile-userEmail {
+                      font-size: 11px;
+                      font-weight: normal;
+                      color: $gray3;
+                    }
+
+                    .profile-link-userName:hover{
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
+            }
+
+            .profileContainer {
+              height: 35px;
+              background-color: #f8f9fa;
+              border-top: 1px solid #e9ecef;
+              border-bottom: 1px solid #e9ecef;
+
+              .profile-card-link {
+                .user-profile-lable{
+                  font-size: 14px;
+                  padding: 5px;
+                  font-weight: normal;
+                  color: $gray5;
+                }
+              }
+            }
+
+            .editProfileContainer {
+              .editProfile {
+                .edit-profile-link {
+                  font-size: 11px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-direction: row;
+                  margin: 8px;
+                  color: $black1;
+                  text-decoration: none;
+                }
+
+                .edit-profile-link:hover {
+                  color: $color9;
+                  text-decoration: underline;
+                }
+              }
+            }
+
+            .UserSettingContainer {
+              height: 35px;
+              background-color: #f8f9fa;
+              border-top: 1px solid #e9ecef;
+              border-bottom: 1px solid #e9ecef;
+
+              :active {
+                transition: 0s 5s;
+              }
+
+              .setting-card-link .user-setting-lable {
+                font-size: 14px;
+                padding: 5px;
+                margin-left: 4px;
+                font-weight: normal;
+                color: $gray5;
+              }
+            }
+
+            .user-setting-layout .userSetting {
+              font-size: 11px;
+              display: flex;
+              margin: 10px;
+              color: $black1;
+              text-decoration: none;
+
+              .userSetting:hover {
+                color: $color9;
+                text-decoration: underline;
+              }
+            }
+
+            .user-setting-layout .logOut {
+              font-size: 11px;
+              display: flex;
+              margin: 10px;
+              color: $black1;
+              text-decoration: none;
+            }
+
+            .user-setting-layout .logOut:hover {
+              color: $color9;
+              text-decoration: underline;
+            }
+          }
+        }
       }
     }
   }
@@ -365,27 +540,56 @@
       }
 
       .CasesContainer {
-        width: 10%;
-        border-top: 3px solid $color10;
-        border-right: 1px solid $gray1;
-        padding: 11px;
+        width: 170px;
+        position: relative;
+        //border-top: 2px solid $color10;
+      }
+
+      .CasesContainer select{
+        height: 40px;
+        padding: 10px 20px;
+        line-height: 15px;
+        font-size: 12px;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-right: 1px solid #ccc;
+        //border-radius: 5px;
+       -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .CasesContainer select:focus + .focus {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        border: 2px solid var(--select-focus);
+        border-radius: inherit;
+      }
+
+      .CasesContainer:after{
+        content: "";
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        margin-top: -4px;
+        border-top: 8px solid #ccc;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        pointer-events: none;
+      }
+
+      .CasesContainer select:focus {
+        background: #faf9f8;
+        border: 1px solid #54adf7;
+        box-shadow: 0 0 3px #54adf7;
+      }
+
+      .CasesContainer select option {
         font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        background-color: #eeeeee;
-      }
-
-      .CasesContainer .selectService {
-        width: 130px;
-        border: 0px;
-        outline:none;
-        color: $gray5;
-        background-color: #eeeeee;
-      }
-
-      .CasesContainer .selectService .service-option{
-        background-color: $color7;
+        border: 1px solid #54adf7;
       }
     }
   }
@@ -611,7 +815,7 @@
             border-right: 1px solid $gray1;
             padding: 11px;
 
-            
+
           }
 
           .service-dropdown {

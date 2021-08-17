@@ -1,0 +1,22 @@
+.defaultContentFrontContainer {
+  .defaultContentFront {
+    .custom-report-list {
+      display: flex;
+      height: 60px;
+      background-color: #f8f9fa;
+
+      .custom-report-image {
+        padding: 5px;
+        background-color: #eeeff0;
+        border: 1px solid #eeeff0;
+        height: 52px;
+        .report-image {
+          padding: 4px ;
+          width: 33px;
+          height: 33px;
+          margin-top: 5px
+        }
+      }
+    }
+  }
+}

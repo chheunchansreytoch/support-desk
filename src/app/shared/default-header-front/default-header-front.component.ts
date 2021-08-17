@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule,} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-default-header-front',
@@ -7,15 +9,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultHeaderFrontComponent implements OnInit {
 
-  listItems = ['Tests','Devices','Builds','Services','Projects'];
-  onItemClick(category:string, index: number)
-  {
-    console.log(`${category} -> ${this.listItems[index]}`)
-  }
+  public Items;
+  public selectedItems;
 
-  constructor() { }
+constructor(public router: Router, private location: Location){
+  this.Items = [
+    {name: 'Cases'},
+    {name: 'Contacts'},
+    {name: 'Accounts'},
+    {name: 'Reports'},
+  ]
+}
+
+itemSelected(event: any) {
+  this.selectedItems = event.target.value;
+  this.router.navigate([event.target.value.toLowerCase()])
+}
+
 
   ngOnInit(): void {
   }
 
+  selectedValue = '0';
+
+  //Favorite icon Popup
+  showFavoritePopup:boolean=false
+  clickfavoritePopup() {
+    this.showFavoritePopup=!this.showFavoritePopup
+  }
+
+  //User Profile Popup
+  showProfileUser:boolean=false
+  clickProfile() {
+    this.showProfileUser=!this.showProfileUser
+  }
+
+   //Notification Popup
+   showNotificationPopup:boolean=false
+   clickNotification() {
+     this.showNotificationPopup=!this.showNotificationPopup
+   }
 }
