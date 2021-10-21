@@ -1,5 +1,5 @@
 <div class="customAdminPage">
-  <div class="adminSideBar">
+  <div class="adminSideBar" [ngClass]="sideBarService.isBtnSideBar ? 'toggle-sidebar-container' : ''">
     <app-admin-sidebar-page></app-admin-sidebar-page>
   </div>
 

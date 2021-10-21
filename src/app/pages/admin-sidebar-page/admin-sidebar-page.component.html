@@ -1,17 +1,47 @@
 <div class="CustomAdminContent">
   <nav>
-    <a href="#">
-      <img class="image-logo" src="./assets/images/logo.png">
-    </a>
+    <div class="custom-image-SidebarIcon">
+      <!-- <div class="sideBar-icons">
+        <button (click)="onClickBtnSideBar()"><i class="fi fi-rr-menu-burger"></i></button>
+      </div> -->
 
-    <ul>
+      <div class="imageSrc">
+        <a href="#">
+          <img class="image-logo" src="./assets/images/logo.png">
+        </a>
+      </div>
+    </div>
+
+    <div class="list_Sidebar">
+      <mat-list>
+        <mat-list-item *ngFor="let item of items">
+          <div class="option-list" (click)="onClickListItems(item)" [ngClass]="selectedItem === item ? 'listItem' : ''">
+            <a routerLink="{{item.route}}">
+              <mat-icon mat-list-icon>
+                <div mat-list-icon class="admin-icon">
+                  <img src="{{item.icon}}">
+                </div>
+              </mat-icon>
+
+              <div mat-line class="admin-listName" [ngStyle]="{'margin-left': sideBarService.isBtnSideBar ? '10px' : '0px'}" >
+                {{item.name}}
+                <!-- <p *ngIf="!checkIfRouteIsActivated(item.name)">{{ item.name }}</p>
+                <p *ngIf="checkIfRouteIsActivated(item.name)" selected>{{ item.name }}</p> -->
+              </div>
+            </a>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+    <!-- <ul>
       <li class="list-item">
         <div class="home-icon">
           <i class="fi-rr-home"></i>
         </div>
 
         <div class="route-content">
-          <p class="p-link" [routerLink]="['/admin/homepage']"><span>Home</span></p>
+          <p class="p-link" [routerLink]="['/admin-homepage']"><span>Home</span></p>
         </div>
       </li>
 
@@ -21,7 +51,7 @@
         </div>
 
         <div class="route-content">
-          <p class="p-link" [routerLink]="['/admin/manage/agents']"><span>Agent Accounts</span></p>
+          <p class="p-link" [routerLink]="['/admin-manage-agents']"><span>Agent Accounts</span></p>
         </div>
 
       </li>
@@ -32,29 +62,9 @@
         </div>
 
         <div class="route-content">
-          <p class="p-link" [routerLink]="['/admin/manage/cases']"><span>Manage Cases</span></p>
+          <p class="p-link" [routerLink]="['/admin-manage-cases']"><span>Manage Cases</span></p>
         </div>
       </li>
-
-      <!-- <li class="list-item">
-        <div class="home-icon">
-          <i class="fi-rr-search-alt"></i>
-        </div>
-
-        <div class="route-content">
-          <p class="p-link" [routerLink]="['/agents']"><span>View Cases</span></p>
-        </div>
-      </li>
-
-      <li class="list-item">
-        <div class="home-icon">
-          <i class="fi-rr-cloud-check"></i>
-        </div>
-
-        <div class="route-content">
-          <p class="p-link" [routerLink]="['/agents']"><span>View Agent</span></p>
-        </div>
-      </li> -->
 
       <li class="list-item">
         <div class="home-icon">
@@ -65,6 +75,6 @@
           <p class="p-link" [routerLink]="['/agents']"><span>Reports</span></p>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </nav>
 </div>

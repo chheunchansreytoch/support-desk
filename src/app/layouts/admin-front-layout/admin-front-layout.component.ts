@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BtnSideBarService } from 'src/app/services/btn-side-bar.service';
 
 @Component({
   selector: 'app-admin-front-layout',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminFrontLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sideBarService: BtnSideBarService) { }
 
   ngOnInit(): void {
   }

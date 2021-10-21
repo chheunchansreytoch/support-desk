@@ -5,7 +5,7 @@
         <button class="btnCreate" (click)="createCasetoogleTag()">Create Case</button>
       </div>
       <!-- z-1001 -->
-      <div class="create-case-popup" *ngIf="showCasePopop">
+      <div class="create-case-popup" *ngIf="showCasePopup">
         <div class="custom-show-create-case-blog">
           <div class="title-case-container">
             <h4>New Case</h4>
@@ -128,7 +128,7 @@
             </div>
           </div>
 
-          <div class="web-info-lbl-container">
+          <!-- <div class="web-info-lbl-container">
             <div class="Weblabel">
               <label class="web-info-lbl">Web Information</label>
             </div>
@@ -164,9 +164,9 @@
                 </form>
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="additional-info-lbl-container">
+          <!-- <div class="additional-info-lbl-container">
             <div class="additionLabel">
               <label class="addtional-info-lbl">Additional Information</label>
             </div>
@@ -216,7 +216,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="desc-info-lbl-container">
             <div class="descLabel">
@@ -251,7 +251,7 @@
         <div class="custom-button-Container">
           <div class="custom-button-Click">
             <div class="btn-ClickCancel">
-              <button class="btn-Cancel">Cancel</button>
+              <button class="btn-Cancel" (click)="createCasetoogleTag()">Cancel</button>
             </div>
 
             <div class="btn-ClickSave">
@@ -280,6 +280,7 @@
               <div class="custom-select-agent">
                 <select [(ngModel)]="selectedValue">
                   <option hidden>Choose Department</option>
+                  <option value="none">--None--</option>
                   <option value="dept_IT">IT</option>
                   <option value="dept_Acc">Accounting</option>
                   <option value="dept_Payroll">Payroll</option>
@@ -327,7 +328,7 @@
 
             <div class="custom-Button">
               <div class="click-cancel2">
-                <button class="btn-cancel2">Cancel</button>
+                <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
               </div>
 
               <div class="click-assign">
@@ -344,243 +345,251 @@
   <!-- p-relative -->
   <div class="custom-table">
     <!-- p-absolute z-1000 w-100 h-100 -->
-    <div class="invisible-blur-container" [ngClass]=" showCasePopop || showAssignPopop ? 'show-invisible-blur-container': ''"></div>
+    <div class="invisible-blur-container" [ngClass]=" showCasePopup || showAssignPopop ? 'show-invisible-blur-container': ''"></div>
 
     <mat-tab-group>
       <mat-tab label="View Incoming Cases">
-        <table>
-          <thead>
-            <tr>
-              <th>N.</th>
-              <th><input type="checkbox" (change)="checkAll($event)"></th>
-              <th>Case Number</th>
-              <th>Contact Name</th>
-              <th>Subject</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Date/Time Opened</th>
-              <th>Case Owner</th>
-            </tr>
-          </thead>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Contact Name</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Date/Time Opened</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <tr *ngFor="let item of this.rows">
-             <td>
-              {{item.n}}
-             </td>
+            <tbody>
+              <tr *ngFor="let item of this.rows">
+               <td>
+                {{item.n}}
+               </td>
 
-             <td>
-              <input type="checkbox" [checked]="checks">
-              {{item.all}}
-             </td>
+               <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+               </td>
 
-             <td>
-              {{item.caseNumber}}
-             </td>
+               <td>
+                {{item.caseNumber}}
+               </td>
 
-             <td>
-              {{item.contactName}}
-             </td>
+               <td>
+                {{item.contactName}}
+               </td>
 
-             <td>
-              {{item.subject}}
-             </td>
+               <td>
+                {{item.subject}}
+               </td>
 
-             <td>
-              {{item.status}}
-             </td>
+               <td>
+                {{item.status}}
+               </td>
 
-             <td>
-              {{item.priority}}
-             </td>
+               <td>
+                {{item.priority}}
+               </td>
 
-             <td>
-              {{item.dateTime}}
-             </td>
+               <td>
+                {{item.dateTime}}
+               </td>
 
-             <td>
-              {{item.caseOwner}}
-             </td>
-            </tr>
-          </tbody>
-        </table>
+               <td>
+                {{item.caseOwner}}
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </mat-tab>
 
       <mat-tab label="View Case by Product">
-        <table>
-          <thead>
-            <tr>
-              <th>N.</th>
-              <th><input type="checkbox" (change)="checkAll($event)"></th>
-              <th>Case Number</th>
-              <th>Contact Name</th>
-              <th>Subject</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Date/Time Opened</th>
-              <th>Case Owner</th>
-            </tr>
-          </thead>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Contact Name</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Date/Time Opened</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <tr *ngFor="let item of this.rows">
-             <td>
-              {{item.n}}
-             </td>
+            <tbody>
+              <tr *ngFor="let item of this.rows">
+               <td>
+                {{item.n}}
+               </td>
 
-             <td>
-              <input type="checkbox" [checked]="checks">
-              {{item.all}}
-             </td>
+               <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+               </td>
 
-             <td>
-              {{item.caseNumber}}
-             </td>
+               <td>
+                {{item.caseNumber}}
+               </td>
 
-             <td>
-              {{item.contactName}}
-             </td>
+               <td>
+                {{item.contactName}}
+               </td>
 
-             <td>
-              {{item.subject}}
-             </td>
+               <td>
+                {{item.subject}}
+               </td>
 
-             <td>
-              {{item.status}}
-             </td>
+               <td>
+                {{item.status}}
+               </td>
 
-             <td>
-              {{item.priority}}
-             </td>
+               <td>
+                {{item.priority}}
+               </td>
 
-             <td>
-              {{item.dateTime}}
-             </td>
+               <td>
+                {{item.dateTime}}
+               </td>
 
-             <td>
-              {{item.caseOwner}}
-             </td>
-            </tr>
-          </tbody>
-        </table>
+               <td>
+                {{item.caseOwner}}
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </mat-tab>
 
       <mat-tab label="View Current Cases">
-        <table>
-          <thead>
-            <tr>
-              <th>N.</th>
-              <th><input type="checkbox" (change)="checkAll($event)"></th>
-              <th>Case Number</th>
-              <th>Contact Name</th>
-              <th>Subject</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Date/Time Opened</th>
-              <th>Case Owner</th>
-            </tr>
-          </thead>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Contact Name</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Date/Time Opened</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <tr *ngFor="let item of this.rows">
-             <td>
-              {{item.n}}
-             </td>
+            <tbody>
+              <tr *ngFor="let item of this.rows">
+               <td>
+                {{item.n}}
+               </td>
 
-             <td>
-              <input type="checkbox" [checked]="checks">
-              {{item.all}}
-             </td>
+               <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+               </td>
 
-             <td>
-              {{item.caseNumber}}
-             </td>
+               <td>
+                {{item.caseNumber}}
+               </td>
 
-             <td>
-              {{item.contactName}}
-             </td>
+               <td>
+                {{item.contactName}}
+               </td>
 
-             <td>
-              {{item.subject}}
-             </td>
+               <td>
+                {{item.subject}}
+               </td>
 
-             <td>
-              {{item.status}}
-             </td>
+               <td>
+                {{item.status}}
+               </td>
 
-             <td>
-              {{item.priority}}
-             </td>
+               <td>
+                {{item.priority}}
+               </td>
 
-             <td>
-              {{item.dateTime}}
-             </td>
+               <td>
+                {{item.dateTime}}
+               </td>
 
-             <td>
-              {{item.caseOwner}}
-             </td>
-            </tr>
-          </tbody>
-        </table>
+               <td>
+                {{item.caseOwner}}
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </mat-tab>
 
       <mat-tab label="View Old Cases">
-        <table>
-          <thead>
-            <tr>
-              <th>N.</th>
-              <th><input type="checkbox" (change)="checkAll($event)"></th>
-              <th>Case Number</th>
-              <th>Contact Name</th>
-              <th>Subject</th>
-              <th>Status</th>
-              <th>Priority</th>
-              <th>Date/Time Opened</th>
-              <th>Case Owner</th>
-            </tr>
-          </thead>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Contact Name</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Date/Time Opened</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <tr *ngFor="let item of this.rows">
-             <td>
-              {{item.n}}
-             </td>
+            <tbody>
+              <tr *ngFor="let item of this.rows">
+               <td>
+                {{item.n}}
+               </td>
 
-             <td>
-              <input type="checkbox" [checked]="checks">
-              {{item.all}}
-             </td>
+               <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+               </td>
 
-             <td>
-              {{item.caseNumber}}
-             </td>
+               <td>
+                {{item.caseNumber}}
+               </td>
 
-             <td>
-              {{item.contactName}}
-             </td>
+               <td>
+                {{item.contactName}}
+               </td>
 
-             <td>
-              {{item.subject}}
-             </td>
+               <td>
+                {{item.subject}}
+               </td>
 
-             <td>
-              {{item.status}}
-             </td>
+               <td>
+                {{item.status}}
+               </td>
 
-             <td>
-              {{item.priority}}
-             </td>
+               <td>
+                {{item.priority}}
+               </td>
 
-             <td>
-              {{item.dateTime}}
-             </td>
+               <td>
+                {{item.dateTime}}
+               </td>
 
-             <td>
-              {{item.caseOwner}}
-             </td>
-            </tr>
-          </tbody>
-        </table>
+               <td>
+                {{item.caseOwner}}
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </mat-tab>
     </mat-tab-group>
   </div>

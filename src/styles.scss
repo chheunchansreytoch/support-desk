@@ -1,3 +1,7 @@
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+
 @import './assets/styles/app.scss';
 
 * {
@@ -8,4 +12,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.content_wrapper {
+  padding: 10px;
+}
+
+.custom-mat-select {
+  .icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
 

@@ -1,185 +1,189 @@
-<div class="defaultContainer">
+<div class="defaultPageContainer">
   <div class="defaultHeader">
-    <div class="logo_navbar">
-      <img src="./assets/images/logo.png">
+    <div class="custom-logo-page">
+      <div class="logo_navbar">
+        <img src="./assets/images/logo.png">
+      </div>
     </div>
 
-    <div class="Custom-searchForm">
-      <form class="searchForm">
-          <input type="text" name="search-item" placeholder="Search Cases and more ...">
-          <div class="custom-search-btn">
-            <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
+    <div class="search-menuIcon-container">
+      <div class="Custom-searchForm">
+        <form class="searchForm">
+            <input type="text" name="search-item" placeholder="Search Cases and more ...">
+            <div class="custom-search-btn">
+              <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
+            </div>
+        </form>
+      </div>
+
+      <div class="Custom-Menu-icons">
+        <!-- <div class="favorite-container">
+          <div class="favorite-icon">
+            <button class="btn-favorite" (click)="clickfavoritePopup()"><i class="fi-rr-star"></i></button>
           </div>
-      </form>
-    </div>
 
-    <div class="Custom-Menu-icons">
-      <div class="favorite-container">
-        <div class="favorite-icon">
-          <button class="btn-favorite" (click)="clickfavoritePopup()"><i class="fi-rr-star"></i></button>
-        </div>
-
-        <div class="custom-favorite-popup" *ngIf="showFavoritePopup">
-          <div class="favorite-popup-container">
-            <label class="favorite-lbl">Favorites <i class="fi-ss-star"></i></label>
-            <ul>
-              <li><a href="">Dialogs issue with text and form</a></li>
-              <li><a href="">Dialogs issue with text and form Dialogs issue with text and form</a></li>
-              <li><a href="">Dialogs issue with text and form</a></li>
-              <li><a href="">Dialogs issue with text and form Dialogs issue with text and form</a></li>
-              <li><a href="">Dialogs issue with text and form</a></li>
-              <li><a href="">Dialogs issue with text and form</a></li>
-              <li><a href="">Dialogs issue with text and form Dialogs issue with text and form</a></li>
-            </ul>
+          <div class="custom-favorite-popup" *ngIf="showFavoritePopup">
+            <div class="favorite-popup-container">
+              <label class="favorite-lbl">Favorites <i class="fi-ss-star"></i></label>
+              <ul>
+                <li><a href="">Dialogs issue with text and form</a></li>
+                <li><a href="">Dialogs issue with text and form Dialogs issue with text and form</a></li>
+                <li><a href="">Dialogs issue with text and form</a></li>
+                <li><a href="">Dialogs issue with text and form Dialogs issue with text and form</a></li>
+                <li><a href="">Dialogs issue with text and form</a></li>
+                <li><a href="">Dialogs issue with text and form</a></li>
+                <li><a href="">Dialogs issue with text and form Dialogs issue with text and form</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </div>
+        </div> -->
 
-      <div class="add-icon-container">
-        <div class="custom-add-popup">
-          <button class="btn-add"><i class="fi-rr-add" mat-button [matMenuTriggerFor]="menu"></i></button>
+        <!-- <div class="add-icon-container">
+          <div class="custom-add-popup">
+            <button class="btn-add"><i class="fi-rr-add" mat-button [matMenuTriggerFor]="menu"></i></button>
 
-          <mat-menu #menu="matMenu">
-            <span class="global-action-span">GLOBAL ACTIONS</span>
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/calendar.png">
-                </mat-icon>
-                <label>New Event</label>
-              </a>
-            </button>
+            <mat-menu #menu="matMenu">
+              <span class="global-action-span">GLOBAL ACTIONS</span>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/calendar.png">
+                  </mat-icon>
+                  <label>New Event</label>
+                </a>
+              </button>
 
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/task-list.png">
-                </mat-icon>
-                <label>New Task</label>
-              </a>
-            </button>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/task-list.png">
+                  </mat-icon>
+                  <label>New Task</label>
+                </a>
+              </button>
 
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/contact-book.png">
-                </mat-icon>
-                <label>New Contact</label>
-              </a>
-            </button>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/contact-book.png">
+                  </mat-icon>
+                  <label>New Contact</label>
+                </a>
+              </button>
 
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/phone-call.png">
-                </mat-icon>
-                <label>Log a Call</label>
-              </a>
-            </button>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/phone-call.png">
+                  </mat-icon>
+                  <label>Log a Call</label>
+                </a>
+              </button>
 
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/email.png">
-                </mat-icon>
-                <label>New Email</label>
-              </a>
-            </button>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/email.png">
+                  </mat-icon>
+                  <label>New Email</label>
+                </a>
+              </button>
 
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/briefcase.png">
-                </mat-icon>
-                <label>New Case</label>
-              </a>
-            </button>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/briefcase.png">
+                  </mat-icon>
+                  <label>New Case</label>
+                </a>
+              </button>
 
-            <button mat-menu-item>
-              <a href="">
-                <mat-icon>
-                  <img class="calendar-img" src="./assets/images/adding-picture-option/crown.png">
-                </mat-icon>
-                <label>Opportunity</label>
-              </a>
-            </button>
-          </mat-menu>
-        </div>
-      </div>
+              <button mat-menu-item>
+                <a href="">
+                  <mat-icon>
+                    <img class="calendar-img" src="./assets/images/adding-picture-option/crown.png">
+                  </mat-icon>
+                  <label>Opportunity</label>
+                </a>
+              </button>
+            </mat-menu>
+          </div>
+        </div> -->
 
-      <div class="support-icon-container">
-        <button class="btn-support"><i class="fi-rr-interrogation"></i></button>
-      </div>
+        <!-- <div class="support-icon-container">
+          <button class="btn-support"><i class="fi-rr-interrogation"></i></button>
+        </div> -->
 
-      <div class="setting-icon-container">
-        <button class="btn-setting"> <i class="fi-rr-settings"></i></button>
-      </div>
+        <!-- <div class="setting-icon-container">
+          <button class="btn-setting"> <i class="fi-rr-settings"></i></button>
+        </div> -->
 
-      <div class="notification-icon-container">
-        <div class="notification-icon">
-          <button class="btn-notification"  (click)="clickNotification()"> <i class="fi-rr-bell"></i></button>
-        </div>
+        <div class="notification-icon-container">
+          <div class="notification-icon">
+            <button class="btn-notification"  (click)="clickNotification()"> <i class="fi-rr-bell"></i></button>
+          </div>
 
-        <div class="custom-notification-popup" *ngIf="showNotificationPopup">
-          <div class="notification-popup-container">
-            <div class="custom-notification-lbl">
-              <label class="notification-lbl">Notifications <i class="fi-sr-bell"></i></label>
-              <button class="btn-close"><i class="fi-rr-cross-small"></i></button>
+          <div class="custom-notification-popup" *ngIf="showNotificationPopup">
+            <div class="notification-popup-container">
+              <div class="custom-notification-lbl">
+                <label class="notification-lbl">Notifications <i class="fi-sr-bell"></i></label>
+                <button class="btn-close"><i class="fi-rr-cross-small"></i></button>
+              </div>
+              <hr>
+              <div class="notification-text">
+                <p>You don't have any notification right now.</p>
+              </div>
             </div>
             <hr>
-            <div class="notification-text">
-              <p>You don't have any notification right now.</p>
-            </div>
           </div>
-          <hr>
-        </div>
-      </div>
-
-      <div class="custom-user-profile">
-        <div class="user-profile-container">
-          <button class="btn-profile" (click)="clickProfile()">
-            <img class="avatarImg" src="./assets/images/avatar.png">
-          </button>
         </div>
 
-        <div class="custom-user-pf-popup" *ngIf="showProfileUser">
-          <div class="UserProfileContainer">
-            <div class="popupContainer">
-              <div class="user-popup">
-                <div class="userImg">
-                  <a href="#">
-                    <img class="avatarImg" src="./assets/images/avatar.png">
-                  </a>
+        <div class="custom-user-profile">
+          <div class="user-profile-container">
+            <button class="btn-profile" (click)="clickProfile()">
+              <img class="avatarImg" src="./assets/images/avatar.png">
+            </button>
+          </div>
 
-                  <div class="info-user">
-                    <a href="#" class="profile-link-userName">Chheun Chansreytoch</a>
-                    <h2 class="profile-userEmail">chheunchansreytoch@gmail.com</h2>
+          <div class="custom-user-pf-popup" *ngIf="showProfileUser">
+            <div class="UserProfileContainer">
+              <div class="popupContainer">
+                <div class="user-popup">
+                  <div class="userImg">
+                    <a href="#">
+                      <img class="avatarImg" src="./assets/images/avatar.png">
+                    </a>
+
+                    <div class="info-user">
+                      <a href="#" class="profile-link-userName">Chheun Chansreytoch</a>
+                      <h2 class="profile-userEmail">chheunchansreytoch@gmail.com</h2>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="profileContainer">
-              <div class="profile-card-link">
-                  <h3 class="user-profile-lable">User Profile</h3>
+              <div class="profileContainer">
+                <div class="profile-card-link">
+                    <h3 class="user-profile-lable">User Profile</h3>
+                </div>
               </div>
-            </div>
 
-            <div class="editProfileContainer">
-              <div class="editProfile">
-                <a href="#" class="edit-profile-link">Edit Profile</a>
+              <div class="editProfileContainer">
+                <div class="editProfile">
+                  <a href="#" class="edit-profile-link">Edit Profile</a>
+                </div>
               </div>
-            </div>
 
-            <div class="UserSettingContainer">
-              <div class="setting-card-link">
-                  <h3 class="user-setting-lable">User Settings</h3>
+              <div class="UserSettingContainer">
+                <div class="setting-card-link">
+                    <h3 class="user-setting-lable">User Settings</h3>
+                </div>
               </div>
-            </div>
 
-            <div class="user-setting-layout">
-              <a class="userSetting" href="#">Settings</a>
-              <a class="logOut" href="#">Log Out</a>
+              <div class="user-setting-layout">
+                <a class="userSetting" href="#">Settings</a>
+                <a class="logOut" href="#">Log Out</a>
+              </div>
             </div>
           </div>
         </div>
@@ -199,7 +203,10 @@
 
       <div class="CasesContainer">
         <select ng-model="items" (change)="itemSelected($event)">
-          <option *ngFor="let item of Items">{{ item.name }}</option>
+          <ng-container *ngFor="let item of Items">
+            <option *ngIf="!checkIfRouteIsActivated(item.name)">{{ item.name }}</option>
+            <option *ngIf="checkIfRouteIsActivated(item.name)" selected>{{ item.name }}</option>
+          </ng-container>
         </select>
       </div>
     </div>

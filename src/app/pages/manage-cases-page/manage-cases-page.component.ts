@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Department_IT } from 'src/app/typeScripts/department_IT';
 import { Department_Accounting } from 'src/app/typeScripts/department_accounting';
 import { Department_Payroll } from 'src/app/typeScripts/department_payroll';
-
-
+import { DialogsService } from 'src/app/services/dialogs.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-manage-cases-page',
@@ -12,6 +12,8 @@ import { Department_Payroll } from 'src/app/typeScripts/department_payroll';
 })
 export class ManageCasesPageComponent implements OnInit {
 
+  selectedValue = 'none';
+  public selecedBtnCancel;
   //create data table
   rows = [
     {
@@ -90,19 +92,99 @@ export class ManageCasesPageComponent implements OnInit {
       caseOwner: "Chheun Chansreytoch",
       option: "",
     },
+
+    {
+      n: "7",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "New",
+      priority: "Low",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "5",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "New",
+      priority: "Low",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "8",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "New",
+      priority: "Low",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "9",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "New",
+      priority: "Low",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "10",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "New",
+      priority: "Low",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "11",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "New",
+      priority: "Low",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
   ]
 
 
-  constructor() { }
+  constructor(public dialog: MatDialog, public dialogService: DialogsService) { }
 
   ngOnInit(): void {
   }
 
   //createCasetoogleTag
-  showCasePopop:boolean=false
+  showCasePopup:boolean=false
   createCasetoogleTag() {
-    this.showCasePopop=!this.showCasePopop
+    //this.assignCasetoogleTag();
+    this.showCasePopup=!this.showCasePopup
   }
+
 
   //assignCasetoogleTag
   showAssignPopop:boolean=false
@@ -116,8 +198,11 @@ export class ManageCasesPageComponent implements OnInit {
     this.showdepartmentBtn=!this.showdepartmentBtn
   }
 
+  // onClickCreateCase() {
+  //   this.dialogService.openCreateCaseDialog();
+  // }
+
 // *** create select departments ***
-  selectedValue = '0';
   SelectAgentName: string = '';
 
   departments_IT: Department_IT [] = [
@@ -156,11 +241,6 @@ export class ManageCasesPageComponent implements OnInit {
   radioChangeHandler (e:any) {
     this.SelectAgentName = e.target.value;
   }
-
-
-
-
-
 
 
 // checkbox table

@@ -58,7 +58,7 @@ export class ManageAgentsPageComponent implements OnInit {
       agentInfo: "",
       Action: "",
     },
-  ]
+  ];
 
   constructor(public dialog: MatDialog,
     public dialogService: DialogsService) { }
@@ -80,7 +80,7 @@ export class ManageAgentsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
 
+  }
 }
 

@@ -1,143 +1,24 @@
-<div class="custom-contact-list">
-  <div class="custom-contact-image">
-    <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
-  </div>
-
-  <div class="select-contact-option">
-    <mat-form-field appearance="fill">
-      <mat-label>Cases</mat-label>
-      <mat-select [(ngModel)]="selectedOption">
-      <mat-label class="list-cases-lbl">LIST VIEWS</mat-label>
-      <mat-option value="1">All Contacts</mat-option>
-      <mat-option value="2">Birthdays This Month</mat-option>
-      <mat-option value="3">My Contacts</mat-option>
-      <mat-option value="4">New Last Week</mat-option>
-      <mat-option value="5">New This Week</mat-option>
-      <mat-option value="6">Recently Viewed</mat-option>
-      <mat-option value="7">Recently Viewed Contacts</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</div>
-
-
-<!--
 <div class="defaultContent">
   <div class="page-header">
-    <div class="custom-case-list">
-      <div class="custom-case-image">
-        <img class="case-image" src="./assets/images/selection-icons/contacts.png">
-      </div>
+    <div class="custom-contact-list">
+      <div class="case-contact-container">
+        <div class="custom-contact-image">
+          <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
+        </div>
 
-      <div class="select-case-option">
-        <mat-form-field appearance="fill">
-          <mat-label>Contacts</mat-label>
-          <mat-select disableRipple>
-          <mat-label class="list-cases-lbl">LIST VIEWS</mat-label>
-          <mat-option value="1">All Contacts</mat-option>
-          <mat-option value="2">Birthdays This Month</mat-option>
-          <mat-option value="3">My Contacts</mat-option>
-          <mat-option value="4">New Last Week</mat-option>
-          <mat-option value="4">New This Week</mat-option>
-          <mat-option value="5">Recently Viewed</mat-option>
-          <mat-option value="6">Recently Viewed Contacts</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-
-      <div class="cases-pin">
-        <mat-icon><i class="fas fa-thumbtack"></i></mat-icon>
-      </div>
-
-      <div class="button-toggle">
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-          <mat-button-toggle value="new">Create New Contact</mat-button-toggle>
-        </mat-button-toggle-group>
+        <div class="select-contact-option">
+          <div class="custom-contact-lbl">
+            <label class="contacts-lbl">Contacts</label>
+          </div>
+          <select ng-model="items" (change)="onSelectedOption($event)">
+            <ng-container *ngFor="let item of Items">
+              <option *ngIf="!checkIfRouteIsActivated(item.label)">{{ item.name }}</option>
+              <option *ngIf="checkIfRouteIsActivated(item.label)" selected>{{ item.name }}</option>
+            </ng-container>
+          </select>
+        </div>
       </div>
     </div>
-
-    <div class="status-sort-case">
-      <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
-    </div>
-  </div>
-
-  <div class="list-Container">
-    <table>
-      <thead>
-          <tr>
-              <th>N.</th>
-              <th><input type="checkbox" (change)="checkAll($event)"></th>
-              <th>Name</th>
-              <th>Account Name</th>
-              <th>Title</th>
-              <th>Phone</th>
-              <th>Email</th>
-              <th>Contact Owner</th>
-              <th>Option</th>
-          </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of this.rows">
-          <td>{{item.n}}</td>
-          <td>
-            <input type="checkbox" [checked]="checks">
-            {{item.all}}
-          </td>
-          <td>
-            <div class='edit_hover_class'>
-              <a class="name-href" href="">
-                {{item.name}}
-              </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-            </div>
-          </td>
-          <td>
-            <div class='edit_hover_class'>
-              <a class="acc-num-href" href="#">
-                {{item.accountNumber}}
-              </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-           </div>
-
-          </td>
-          <td>
-            <div class='edit_hover_class'>
-              <a class="title-href" href="#">
-                {{item.title}}
-              </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-            </div>
-          </td>
-          <td>
-            <div class='edit_hover_class'>
-              <span class="phone-edit">
-                {{item.phone}}
-              </span>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-            </div>
-          </td>
-          <td>
-            <div class='edit_hover_class'>
-              <span class="email-edit">
-                {{item.email}}
-              </span>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-            </div>
-          </td>
-          <td>{{item.contactOwnerAlias}}</td>
-          <td>
-            {{item.option}}
-            <select>
-              <option hidden></option>
-              <option><a href="">Edit</a></option>
-              <option><a href="">Delete</a></option>
-              <option><a href="">Change Owner</a></option>
-            </select>
-          </td>
-      </tr>
-    </tbody>
-  </table>
   </div>
 </div>
- -->
-
+<router-outlet></router-outlet>

@@ -1,0 +1,478 @@
+.create-agent-container {
+  .mat-dialog-title {
+    color: $black1;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .mat-dialog-content {
+    form  {
+      .custom-input-name {
+        margin-top: 10px;
+        display: flex;
+
+        //custom firstname
+        .custom-fname {
+          float: left;
+          margin-right: 20px;
+          .custom-field {
+            position: relative;
+            font-size: 14px;
+            padding-top: 20px;
+            margin-bottom: 5px;
+          }
+
+          .form-input {
+            -webkit-appearance: none;
+            -ms-progress-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: none;
+            // background: $color7;
+            padding: 8px;
+            border: 1px solid $color6;
+            border-radius: 5px;
+            width: 200px;
+            outline: none;
+          }
+
+          .custom-field .placeholder {
+            position: absolute;
+            left: 12px;
+            font-size: 13px;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            color: $gray2;
+            transition:
+            top 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 10px;
+            font-size: 10px;
+            color: #54adf7;
+
+          }
+
+          .custom-field .form-input {
+            background: none;
+            border: 1px solid $color6;
+            transition: border-color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid,
+          .custom-field .form-input:focus {
+            border-color: #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+            transition-delay: 0.1s;
+
+          }
+
+          .custom-field .form-input + .placeholder {
+            padding: 0 5px;
+            left: 8px;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 13px;
+            background: #fff;
+          }
+        }
+
+        //custom lastname
+        .custom-lname {
+          float: right;
+          .custom-field {
+            position: relative;
+            font-size: 14px;
+            padding-top: 20px;
+            margin-bottom: 5px;
+          }
+
+          .form-input {
+            -webkit-appearance: none;
+            -ms-progress-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: none;
+            background: $color7;
+            padding: 8px;
+            border: 1px solid $color6;
+            border-radius: 5px;
+            width: 200px;
+            outline: none;
+          }
+
+          .custom-field .placeholder {
+            position: absolute;
+            left: 12px;
+            font-size: 13px;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            color: $gray2;
+            transition:
+            top 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 10px;
+            font-size: 10px;
+            color: #54adf7;
+          }
+
+          .custom-field .form-input {
+            background: none;
+            border: 1px solid $color6;
+            transition: border-color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid,
+          .custom-field .form-input:focus {
+            border-color: #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+            transition-delay: 0.1s;
+          }
+
+          .custom-field .form-input + .placeholder {
+            padding: 0 5px;
+            left: 8px;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 14px;
+            background: #fff;
+          }
+        }
+      }
+
+      //custom email
+      .custom-email {
+        margin-top: 20px;
+
+        .custom-field {
+          position: relative;
+          font-size: 14px;
+          padding-top: 20px;
+          margin-bottom: 5px;
+        }
+
+        .form-input {
+          -webkit-appearance: none;
+          -ms-progress-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: none;
+          background: $color7;
+          padding: 8px;
+          border: 1px solid $color6;
+          border-radius: 5px;
+          width: 420px;
+          outline: none;
+        }
+
+        .custom-field .placeholder {
+          position: absolute;
+          left: 12px;
+          font-size: 13px;
+          top: calc(50% + 10px);
+          transform: translateY(-50%);
+          color: $gray2;
+          transition:
+          top 0.3s ease,
+          font-size 0.3s ease,
+          color 0.3s ease;
+        }
+
+        .custom-field .form-input:valid + .placeholder,
+        .custom-field .form-input:focus + .placeholder {
+          top: 10px;
+          font-size: 10px;
+          color: #54adf7;
+        }
+
+        .custom-field .form-input {
+          background: none;
+          border: 1px solid $color6;
+          transition: border-color 0.3s ease;
+        }
+
+        .custom-field .form-input:valid,
+        .custom-field .form-input:focus {
+          border-color: #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+          transition-delay: 0.1s;
+        }
+
+        .custom-field .form-input + .placeholder {
+          padding: 0 5px;
+          left: 8px;
+        }
+
+        .custom-field .form-input:valid + .placeholder,
+        .custom-field .form-input:focus + .placeholder {
+          top: 14px;
+          background: #fff;
+        }
+      }
+
+      .password-container {
+        margin-top: 20px;
+        display: flex;
+
+        //custom password
+        .custom-password {
+          float: left;
+          margin-right: 20px;
+          .custom-field {
+            position: relative;
+            font-size: 14px;
+            padding-top: 20px;
+            margin-bottom: 5px;
+          }
+
+          .form-input {
+            -webkit-appearance: none;
+            -ms-progress-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            // background: none;
+            background: $color7;
+            padding: 8px;
+            border: 1px solid $color6;
+            border-radius: 5px;
+            width: 200px;
+            outline: none;
+          }
+
+          .custom-field .placeholder {
+            position: absolute;
+            left: 12px;
+            font-size: 13px;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            color: $gray2;
+            transition:
+            top 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 10px;
+            font-size: 10px;
+            color: #54adf7;
+          }
+
+          .custom-field .form-input {
+            background: none;
+            border: 1px solid $color6;
+            transition: border-color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid,
+          .custom-field .form-input:focus {
+            border-color: #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+            transition-delay: 0.1s;
+          }
+
+          .custom-field .form-input + .placeholder {
+            padding: 0 5px;
+            left: 8px;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 14px;
+            background: #fff;
+          }
+        }
+
+        //custom repeat password
+        .custom-repeat-pw {
+          float: right;
+          .custom-field {
+            position: relative;
+            font-size: 14px;
+            padding-top: 20px;
+            margin-bottom: 5px;
+          }
+
+          .form-input {
+            -webkit-appearance: none;
+            -ms-progress-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: none;
+            background: $color7;
+            padding: 8px;
+            border: 1px solid $color6;
+            border-radius: 5px;
+            width: 200px;
+            outline: none;
+          }
+
+          .custom-field .placeholder {
+            position: absolute;
+            left: 12px;
+            font-size: 13px;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            color: $gray2;
+            transition:
+            top 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 10px;
+            font-size: 10px;
+            color: #54adf7;
+          }
+
+          .custom-field .form-input {
+            background: none;
+            border: 1px solid $color6;
+            transition: border-color 0.3s ease;
+          }
+
+          .custom-field .form-input:valid,
+          .custom-field .form-input:focus {
+            border-color: #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+            transition-delay: 0.1s;
+          }
+
+          .custom-field .form-input + .placeholder {
+            padding: 0 5px;
+            left: 8px;
+          }
+
+          .custom-field .form-input:valid + .placeholder,
+          .custom-field .form-input:focus + .placeholder {
+            top: 14px;
+            background: #fff;
+          }
+        }
+      }
+
+      .dept-gen-container {
+        display: flex;
+        margin-top: 20px;
+        .custom-dept {
+          float: left;
+          margin-right: 20px;
+          width: 200px;
+          position: relative;
+        }
+
+        .custom-dept select{
+          height: 35px;
+          padding: 10px 15px;
+          line-height: 15px;
+          font-size: 12px;
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+         -webkit-appearance: none;
+          appearance: none;
+          color: $gray2;
+        }
+
+        .custom-dept:after{
+          content: "";
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          margin-top: -4px;
+          border-top: 8px solid #ccc;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          pointer-events: none;
+        }
+
+        .custom-dept select:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+
+        .custom-dept select option {
+          font-size: 14px;
+          line-height: 200%;
+        }
+
+        //custom gender
+        .gender-container {
+          display: flex;
+          float: right;
+          .custom-gender {
+            float: left;
+            margin: 5px;
+            .agent-gender {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mat-dialog-actions {
+    float: right;
+    .custom-btn-close {
+      float: left;
+      margin-right: 10px;
+      width: 60px;
+      height: 25px;
+      text-align: center;
+      line-height: 1;
+      border-radius: 5px;
+      background: $color9;
+
+      .btn-close {
+        color: $color7;
+        margin-left: -13px;
+        border: none;
+        background: none;
+      }
+    }
+
+    .custom-btn-close:hover {
+      opacity: 0.8;
+      background-color: $color10;
+    }
+
+    .custom-btn-create {
+      float: left;
+      margin-right: 10px;
+      width: 60px;
+      height: 25px;
+      text-align: center;
+      line-height: 1.8;
+      border-radius: 5px;
+      background: $color8;
+
+
+      .btn-create {
+        color: $color7;
+        border: none;
+        background: none;
+      }
+    }
+
+    .custom-btn-create:hover {
+      opacity: 0.8;
+      background-color: $color4;
+    }
+  }
+}

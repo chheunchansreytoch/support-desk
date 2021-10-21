@@ -1,0 +1,258 @@
+.custom-view-All-Cases {
+  .defaultContentList {
+    .status-sort-case{
+      margin-top: 10px;
+      span{
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+
+    .list-Container {
+      padding: 10px;
+      height: 445px;
+      border-radius: 5px;
+      table {
+        width: 100%;
+      }
+
+      table thead tr th {
+        background-color: #eeeeee;
+        padding: 7px;
+
+      }
+
+      table, th, td {
+        padding: 12px;
+        border: 1px solid #d8dadd;
+        border-collapse: collapse;
+        color: #343a40;
+      }
+
+      tbody tr td {
+        font-size: 12px;
+        text-align: left;
+        background: $color7;
+      }
+
+      tbody tr td .edit_hover_class {
+        padding: 5px;
+      }
+
+      tbody tr td .edit_hover_class .icon-edit-href{
+        visibility:hidden;
+        padding: 10px;
+        color: $black1;
+      }
+
+      tbody tr td .edit_hover_class:hover .icon-edit-href {
+        visibility:visible;
+        color: $color9;
+
+      }
+
+      tbody tr td .case-num-href {
+          text-decoration: none;
+          color: $black1;
+      }
+
+      tbody tr td .case-num-href:hover {
+        text-decoration: underline;
+        color: $color9;
+      }
+
+      tbody tr td .edit_hover_class .name-href {
+        text-decoration: none;
+        color: $black1;
+      }
+
+      tbody tr td .edit_hover_class .name-href:hover {
+        text-decoration: underline;
+        color: $color9;
+      }
+
+      tbody tr td .edit_hover_class .subject-href {
+        text-decoration: none;
+        color: $black1;
+      }
+
+      tbody tr td .edit_hover_class .subject-href:hover {
+        text-decoration: underline;
+        color: $color9;
+      }
+
+      tbody tr td .custom-priority {
+        width: 35px;
+        text-align: center;
+      }
+
+      tbody tr td .custom-priority:hover {
+        background: #f0f0f0;
+        transition: 0.5s;
+      }
+
+      tbody tr td .custom-dateTime {
+        width: 110px;
+        text-align: center;
+      }
+
+      tbody tr td .custom-dateTime:hover {
+        background: #f0f0f0;
+        transition: 0.5s;
+      }
+
+      tbody tr td .custom-status {
+        width: 40px;
+        text-align: center;
+      }
+
+      tbody tr td .custom-status:hover {
+        background: #f0f0f0;
+        transition: 0.5s;
+      }
+
+      tbody tr td .custom-caseOwner {
+        width: 90px;
+        //text-align: center;
+
+        a {
+          text-decoration: none;
+          color: $color2;
+        }
+
+        a:hover {
+          text-decoration: underline;
+          color: $color2;
+        }
+      }
+
+      // tbody tr td .custom-caseOwner:hover {
+      //   background: #f0f0f0;
+      // }
+
+      tbody tr td .custom-option-case {
+        //display: flex;
+        text-align: center;
+        .edit-icon-container {
+          width: 25px;
+          height: 25px;
+          padding: 5px;
+          position: relative;
+          display: inline-block;
+
+          .btn-edit {
+            border: none;
+            background: none;
+          }
+
+          .edit-tooltiptext {
+            visibility: hidden;
+            width: 40px;
+            font-size: 10px;
+            background-color: #e9ecef;
+            color: $color9;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 120%;
+          }
+
+          .edit-tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #e9ecef transparent transparent;
+          }
+        }
+
+        .edit-icon-container:hover {
+          background: #e9ecef;
+          transition: 0.5s;
+          border-radius: 50%;
+        }
+
+        .edit-icon-container:hover .edit-tooltiptext {
+          visibility: visible;
+        }
+
+        .delete-icon-container {
+          width: 25px;
+          height: 25px;
+          padding: 5px;
+          position: relative;
+          display: inline-block;
+
+          .btn-delete {
+            border: none;
+            background: none;
+          }
+
+          .delete-tooltiptext {
+            visibility: hidden;
+            width: 40px;
+            font-size: 10px;
+            background-color: #e9ecef;
+            color: $color9;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 120%;
+          }
+
+          .delete-tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #e9ecef transparent transparent;
+          }
+        }
+
+        .delete-icon-container:hover {
+          background: #e9ecef;
+          transition: 0.5s;
+          border-radius: 50%;
+        }
+
+        .delete-icon-container:hover .delete-tooltiptext {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .custom-button {
+    .cancel-btn {
+      width: 70px;
+      height: 30px;
+      border-radius: 5px;
+      background: $color2;
+
+      button{
+        padding: 7px;
+        margin-right: 8px;
+        color: $color7;
+        border: none;
+        background: none;
+      }
+    }
+
+    .cancel-btn:hover {
+      background: $color10;
+      transition: 0.5s;
+    }
+  }
+}

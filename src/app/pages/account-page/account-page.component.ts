@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule,} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-account-page',
@@ -6,60 +8,66 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-page.component.scss']
 })
 export class AccountPageComponent implements OnInit {
-  selectedOption = '2';
 
-  rows = [
-    {
-      n: "1",
-      all: "",
-      accountNumber: "Edge Communications",
-      accountSite: "",
-      billingStateProvince: "TX",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
+  currentRoute = '';
+  selectedOption = '3';
+  public Items;
+  public selectedItems;
 
-    {
-      n: "2",
-      all: "",
-      accountNumber: "Edge Communications",
-      accountSite: "",
-      billingStateProvince: "TX",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-    {
-      n: "3",
-      all: "",
-      accountNumber: "Edge Communications",
-      accountSite: "",
-      billingStateProvince: "TX",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
+  constructor(public router: Router, private location: Location){
+    this.Items = [
+      {name: 'All Accounts', label: 'accounts/agent-all-accounts'},
+      {name: 'My Account', label: 'accounts/agent-my-account'},
+      {name: 'Recently Viewed', label: 'accounts/agent-recently-viewed-account'},
+      //{name: 'Recently Viewed Cases'},
+    ];
 
-  ]
+    router.events.subscribe(val => {
+      this.currentRoute = location.path();
+    });
+  }
+
+  checkIfRouteIsActivated(item: string) {
+    console.log(this.currentRoute)
+    console.log(item)
+    return this.currentRoute.includes(item);
+  }
+
+  itemSelected(e: any) {
+    console.log(e)
+    this.selectedItems = e.target.value;
+    this.router.navigate(['/' + e.target.value]);
+  }
 
 
-  constructor() { }
+  onSelectedOption(event: any) {
+    this.itemSelected(event);
+
+    this.selectedItems = event.target.value;
+    const value = this.selectedItems;
+
+    const allAccount = 'All Accounts';
+    const myAccount = 'My Account';
+    const recentyViewed = 'Recently Viewed';
+   //const recentlyViewsCases = 'Recently Viewed Cases';
+
+
+    if (value == allAccount) {
+      this.router.navigate(['/accounts/agent-all-accounts']);
+    }
+    else if (value == myAccount) {
+      this.router.navigate(['/accounts/agent-my-account']);
+    }
+
+    else if (value == recentyViewed) {
+      this.router.navigate(['/accounts/agent-recently-viewed-account']);
+    }
+
+    // else if (value == recentlyViewsCases){
+    //   console.log('review case works');
+    // }
+  }
 
   ngOnInit(): void {
   }
-
-  checks=false;
-  checkAll(e:any) {
-    if(e.target.checked==true) {
-      this.checks=true;
-    }
-    else {
-      this.checks=false;
-    }
-  }
-
 }

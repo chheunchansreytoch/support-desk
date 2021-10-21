@@ -1,0 +1,385 @@
+<div class="customContactChatter">
+  <mat-tab-group>
+    <mat-tab label="Activity">
+      <div class="activity-panel-container">
+        <div class="custom-activity-tabs">
+          <div class="tab_triger">
+            <ul>
+              <li *ngFor="let activityList of activityLists">
+                <button (click)="openActivityList(activityList)" [ngClass]="selectedActivityList === activityList ? 'activityClass' : ''">{{activityList}}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tab-layout-container">
+          <div class="custom-newTask-layout">
+            <ng-container *ngIf="selectedActivityList === 'New Task'">
+              <div class="newTask-layout">
+                  <quill-editor></quill-editor>
+              </div>
+
+              <div class="custom-sendTo-shareBtn">
+                <div class="sendTo">
+                  <p><span>To</span> this case</p>
+                  <button class="send-btn" mat-button (click)="onSendTo()"><i class="fi-rr-clip"></i></button>
+                </div>
+
+                <div class="custom-btn-share">
+                  <button type="button" class="share-btn">Share</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="custom-newEvent-layout">
+            <ng-container *ngIf="selectedActivityList === 'New Event'">
+              <div class="newEvent-layout">
+                <div class="question-lbl">
+                  <label>Subject</label>
+                </div>
+
+                <div class="Custom-searchForm">
+                  <form class="searchForm">
+                      <input type="text" name="search-item" placeholder="Search">
+                      <div class="custom-search-btn">
+                      </div>
+                  </form>
+                </div>
+              </div>
+
+
+              <div class="custom-pickerDate">
+                <div class="pickerDateTimeContainer1">
+                  <label class="startdate-lbl">Start</label>
+
+                  <div class="startDateTimeContainer">
+                    <div class="custom-start-date">
+                      <div class="date-lbl-panel">
+                        <label>Date</label>
+                      </div>
+
+                      <div class="custom-startDatePicker" >
+                        <input type="date" min={{minDate}} (change)="onStartDate($event)" value="{{currentDate | date:'yyyy-MM-dd'}}">
+                      </div>
+                    </div>
+
+                    <div class="custom-start-time">
+                      <div class="time-lbl">
+                        <label>Time</label>
+                      </div>
+
+                      <div class="custom-startTimePicker">
+                        <input type="time" (change)="onStartTime($event)">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pickerDateTimeContainer2" >
+                  <label class="enddate-lbl">End</label>
+                  <div class="EndDateTimeContainer">
+                    <div class="custom-end-date">
+                      <div class="enddate-lbl-panel">
+                        <label>Date</label>
+                      </div>
+
+                      <div class="custom-endDatePicker" >
+                        <input type="date" min={{minDate}} (change)="onEndDate($event)" value="{{currentDate | date:'yyyy-MM-dd'}}">
+                      </div>
+                    </div>
+
+                    <div class="custom-end-time">
+                      <div class="time-lbl">
+                        <label>Time</label>
+                      </div>
+
+                      <div class="custom-endTimePicker">
+                        <input type="time" (change)="onEndTime($event)">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-Name">
+                <label>Name</label>
+                <mat-form-field appearance="fill">
+                  <mat-select disableRipple [(ngModel)]="selectedOption">
+                    <mat-option class="custom-mat-select" value="1" *ngFor="let item of optionContacts">
+                      <img class="icon" src="{{item.image}}">
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="custom-Related">
+                <label>Related To</label>
+                <mat-form-field appearance="fill">
+                  <mat-select disableRipple [(ngModel)]="selectedOption">
+                    <mat-option class="custom-mat-select" value="1" *ngFor="let item of optionAccounts">
+                      <img class="icon" src="{{item.image}}">
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="custom-AssignTo">
+                <label>Assign To</label>
+                <mat-form-field appearance="fill">
+                  <mat-select disableRipple [(ngModel)]="selectedOption">
+                    <mat-option class="custom-mat-select" value="1" *ngFor="let item of optionOwnerContacts">
+                      <img class="icon" src="{{item.image}}">
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="SaveButtonContainer">
+                <div class="custom-save-button">
+                  <button>Save</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="custom-call-layout">
+            <ng-container *ngIf="selectedActivityList === 'Log a Call'">
+              <div class="custom-selectSearch-container">
+                <div class="subject-lbl">
+                  <label>Subject</label>
+                </div>
+
+                <div class="custom-select-dropdown">
+                  <select>
+                    <option *ngFor="let optionSubject of optionSubjects">{{optionSubject}}</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="custom-comments-container">
+                <label>Comments</label>
+                <div class="custom-text-area">
+                  <form>
+                    <textarea></textarea>
+                  </form>
+                </div>
+              </div>
+
+              <div class="custom-Name">
+                <label>Name</label>
+                <mat-form-field appearance="fill">
+                  <mat-select disableRipple [(ngModel)]="selectedOption">
+                    <mat-option class="custom-mat-select" value="1" *ngFor="let item of optionContacts">
+                      <img class="icon" src="{{item.image}}">
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="custom-Related">
+                <label>Related To</label>
+                <mat-form-field appearance="fill">
+                  <mat-select disableRipple [(ngModel)]="selectedOption">
+                    <mat-option class="custom-mat-select" value="1" *ngFor="let item of optionAccounts">
+                      <img class="icon" src="{{item.image}}">
+                      {{item.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="SaveButtonContainer">
+                <div class="custom-save-button">
+                  <button>Save</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="custom-Email-layout">
+            <ng-container *ngIf="selectedActivityList === 'Email'">
+              <div class="custom-email-container">
+                <div class="custom-from-email">
+                  <div class="from-email-span">
+                    <span>From</span>
+                  </div>
+
+                  <div class="from-email-form">
+                    <form>
+                      <input type="text">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-To-container">
+                <div class="custom-To-email">
+                  <div class="To-email-span">
+                    <span>To</span>
+                  </div>
+
+                  <div class="To-email-form">
+                    <form>
+                      <input type="text">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-Bcc-container">
+                <div class="custom-Bcc-email">
+                  <div class="Bcc-email-span">
+                    <span>Bcc</span>
+                  </div>
+
+                  <div class="Bcc-email-form">
+                    <form>
+                      <input type="text">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-subject-container">
+                <div class="custom-subject-email">
+                  <div class="subject-email-span">
+                    <span>Subject</span>
+                  </div>
+
+                  <div class="subject-email-form">
+                    <form>
+                      <input type="text" placeholder="Enter Subject...">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-text-container">
+                <quill-editor></quill-editor>
+              </div>
+
+              <div class="SendButtonContainer">
+                <div class="custom-send-button">
+                  <button>Send</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Chatter">
+      <div class="post-pull-container">
+        <div class="custom-post-pull">
+          <div class="tab_triger">
+            <ul>
+              <li *ngFor="let menuList of menuLists">
+                <button (click)="openMenuList(menuList)" [ngClass]="selectedList === menuList ? 'menuClass' : ''">{{menuList}}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="post-poll-layout">
+          <div class="custom-post-layout">
+            <ng-container *ngIf="selectedList === 'Post'">
+              <div class="post-layout">
+                  <quill-editor></quill-editor>
+              </div>
+
+              <div class="custom-sendTo-shareBtn">
+                <div class="sendTo">
+                  <p><span>To</span> this case</p>
+                  <button class="send-btn" mat-button (click)="onSendTo()"><i class="fi-rr-clip"></i></button>
+                </div>
+
+                <div class="custom-btn-share">
+                  <button type="button" class="share-btn">Share</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="custom-poll-layout">
+            <ng-container *ngIf="selectedList === 'Poll'">
+              <div class="poll-layout">
+                <div class="question-lbl">
+                  <label>Question</label>
+                </div>
+
+                <div class="input-question">
+                  <form>
+                    <textarea placeholder="What whould you like to ask?"></textarea>
+                  </form>
+                </div>
+              </div>
+
+              <ul>
+                <li *ngFor="let item of choices; let i = index">
+                  <div class="custom-choice">
+                    <div class="choice-lbl">
+                      <label> Choice
+                        {{i+1}}
+                      </label>
+                    </div>
+
+                    <div class="input-choice">
+                      <form>
+                        <textarea></textarea>
+                      </form>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="custom-addnewchoice">
+                <div class="newchoice-lbl">
+                  <label><span>To</span>  this case</label>
+                </div>
+
+                <div class="add-ask-container">
+                  <div class="btn-newchoice">
+                    <button (click)="onClickAdd(choices)"><i class="fi-rr-plus"></i> Add new choice</button>
+                  </div>
+
+                  <div class="custom-ask-button">
+                    <button>Ask</button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="custom-question-layout">
+            <ng-container *ngIf="selectedList === 'Question'">
+              <div class="input-choice">
+                <label>Question (Enter up to 255 characters)</label>
+                <form>
+                  <textarea></textarea>
+                </form>
+              </div>
+
+              <div class="post-layout">
+                  <quill-editor></quill-editor>
+              </div>
+
+              <div class="custom-shareBtn">
+                <div class="custom-btn-share">
+                  <button type="button" class="share-btn">Share</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+

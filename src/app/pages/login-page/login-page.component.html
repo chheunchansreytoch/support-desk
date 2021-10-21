@@ -12,7 +12,7 @@
                 <input class="form-input" type="text" name="fname" required>
                 <span class="placeholder">First Name</span>
             </label>
-        
+
             <label class="custom-field">
                 <input class="form-input" type="text" name="lmail" required>
                 <span class="placeholder">Last Name</span>
@@ -34,14 +34,14 @@
                         <label class="lbl_rememberMe" for="remember"> Keep me logged in</label>
                 </div>
             </div>
-    
-            <button class="btnLogin">Sign In</button>
-    
+
+            <button class="btnLogin" [routerLink]="['/cases']">Sign In</button>
+
             <div class="rememberContainer">
                 <div class="forgotPassword">
                     <a href="#">Forgot your Password</a>
                 </div>
-            </div>        
+            </div>
     </div>
 </form>
 </div>

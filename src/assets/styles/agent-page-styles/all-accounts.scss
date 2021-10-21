@@ -1,0 +1,240 @@
+.tabDefaultContentContainer {
+  .defaultContent {
+    .status-sort-case{
+      margin-top: 10px;
+      span{
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+
+    .list-Container {
+      table {
+        width: 100%;
+      }
+
+      table thead tr th {
+        background-color: #eeeeee;
+        padding: 7px;
+
+      }
+
+      table, th, td {
+        padding: 15px;
+        border: 1px solid #d8dadd;
+        border-collapse: collapse;
+        color: #343a40;
+      }
+
+      tbody tr td {
+        font-size: 12px;
+        //padding: 10px;
+        //text-align: left;
+        background: $color7;
+      }
+
+      tbody tr td select{
+      //-webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $gray1;
+        border-radius: 5px;
+        //background-color: #eeeff0;
+        outline: none;
+
+        option{
+        font-size: 14px;
+        }
+      }
+
+
+      td .edit_hover_class {
+        padding: 5px;
+      }
+
+      td .edit_hover_class .icon-edit-href{
+        visibility:hidden;
+        padding: 10px;
+        color: $black1;
+      }
+
+      td .edit_hover_class:hover .icon-edit-href {
+       visibility:visible;
+       color: $color9;
+
+      }
+
+      td .acc-name-href {
+        text-decoration: none;
+        color: $black1;
+      }
+
+      td .acc-name-href:hover {
+        text-decoration: underline;
+        color: $color9;
+      }
+
+      td .edit_hover_class .phone-edit {
+        text-decoration: none;
+        color: $black1;
+      }
+
+      td .edit_hover_class .phone-edit:hover {
+        text-decoration: underline;
+        color: $color9;
+      }
+
+      td .custom-option-account {
+        display: flex;
+        margin-left: 15px;
+
+        .edit-icon-container {
+          width: 25px;
+          height: 25px;
+          padding: 5px;
+          position: relative;
+          display: inline-block;
+
+          .btn-edit {
+            border: none;
+            background: none;
+          }
+
+          .edit-tooltiptext {
+            visibility: hidden;
+            font-size: 10px;
+            width: 50px;
+            background: #e9ecef;
+            color: $color9;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 50%;
+            margin-left: -25px;
+          }
+
+          .edit-tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #e9ecef transparent;
+          }
+        }
+
+        .edit-icon-container:hover {
+          background: #e9ecef;
+          border-radius: 50%;
+        }
+
+        .edit-icon-container:hover .edit-tooltiptext {
+          visibility: visible;
+        }
+
+        .delete-icon-container {
+          width: 25px;
+          height: 25px;
+          padding: 5px;
+          position: relative;
+          display: inline-block;
+
+          .btn-delete {
+            border: none;
+            background: none;
+          }
+
+          .delete-tooltiptext {
+            visibility: hidden;
+            font-size: 10px;
+            width: 50px;
+            background: #e9ecef;
+            color: $color9;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 50%;
+            margin-left: -25px;
+          }
+
+          .delete-tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #e9ecef transparent;
+          }
+        }
+
+        .delete-icon-container:hover {
+          background: #e9ecef;
+          border-radius: 50%;
+        }
+
+        .delete-icon-container:hover .delete-tooltiptext {
+          visibility: visible;
+        }
+
+        .changeOwner-icon-container {
+          width: 25px;
+          height: 25px;
+          padding: 5px;
+          position: relative;
+          display: inline-block;
+
+          .btn-changeOwner {
+            border: none;
+            background: none;
+          }
+
+          .changeOwner-tooltiptext {
+            visibility: hidden;
+            font-size: 10px;
+            width: 80px;
+            background: #e9ecef;
+            color: $color9;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 150%;
+            left: 50%;
+            margin-left: -40px;
+          }
+
+          .changeOwner-tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #e9ecef transparent;
+          }
+        }
+
+        .changeOwner-icon-container:hover {
+          background: #e9ecef;
+          border-radius: 50%;
+        }
+
+        .changeOwner-icon-container:hover .changeOwner-tooltiptext {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+.detailCaseContainer {
+  width: 100%;
+  height: 457px;
+  display: flex;
+  background: rgb(196, 196, 247);
+  overflow-y: scroll;
+  .customCaseSideBarContainer {
+    left: 0;
+    width: 30%;
+    padding: 10px;
+    height: 100px;
+
+    .customCaseSidebar {
+      width: 100%;
+      float: left;
+      color: $black1;
+      background: #f8f9fa;
+      box-shadow: 0 5px 15px #d4d7da;
+      border-radius: 5px;
+      font-family: $Roboto-font;
+
+      .CaseSidebarHeaderContainer {
+        .customCaseSidebarHeader {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          .spanNumColumn {
+            margin-top: 5px;
+            margin-left: 26px;
+            font-size: 12px;
+          }
+
+          .customShowAstable {
+            margin-right: 29px;
+            width: 30px;
+            height: 30px;
+            line-height: 2.3;
+            text-align: center;
+            float: right;
+
+            a {
+              text-decoration: none;
+
+              .fi-rr-list {
+                color: $black1;
+                font-size: 16px;
+              }
+            }
+          }
+
+          .customShowAstable:hover {
+            border-radius: 50%;
+            background: #eeeff0;
+          }
+        }
+
+        .Custom-searchForm {
+          border-bottom: 1px solid $gray1;
+          padding-left: 15px;
+          padding-right: 10px;
+
+          .searchForm {
+            padding: 6px;
+            display: flex;
+            flex-direction: row;
+
+            input[type=text] {
+              width: 312px;
+              font-size: 12px;
+              border-top: 1px solid #ccc;
+              border-left: 1px solid #ccc;
+              border-right: none;
+              border-bottom: 1px solid #ccc;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+              background: $color7;
+              outline: none;
+              text-indent: 10px;
+            }
+
+            input:focus {
+              border: 1px solid #54adf7;
+              box-shadow: 0 0 3px #54adf7;
+            }
+
+            .custom-search-btn {
+              width: 30px;
+              line-height: 2.3;
+              border: 1px solid $gray1;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+
+              .btn-icon-search {
+                border: none;
+                background: none;
+
+                .fi-rr-search {
+                  font-size: 13px;
+                  padding-left: 7px;
+                  // margin-right: 15px;
+                }
+              }
+            }
+
+            .custom-search-btn:hover {
+              background: $gray4;
+            }
+          }
+        }
+
+        .customTitleSpan {
+          border-bottom: 1px solid $gray1;
+          .title-span {
+            padding: 10px;
+            // margin-top: 10px;
+            margin-left: 31px;
+
+            span {
+              font-size: 14px;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .customListItems {
+          //margin-top: 10px;
+          max-height: 310px;
+          overflow-x: hidden;
+
+          ul {
+            position: relative;
+          }
+
+          ul li {
+            list-style: none;
+            padding: 10px;
+            font-size: 12px;
+            //background: #fff;
+            border-bottom: 1px solid $gray1;
+            transition: transform(0.5s);
+
+            .listItemContainer {
+              display: flex;
+              justify-content: space-between;
+              .customCaseIssueDetail {
+                .customCheckboxContainer {
+                  display: flex;
+                  margin-left: 10px;
+                  .customCheckbox {
+                    float: left;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                  }
+                }
+              }
+            }
+
+            a {
+              text-decoration: none;
+              color: $black1;
+            }
+
+            a:active {
+              color: $color9;
+              text-decoration: underline;
+            }
+
+          }
+
+          ul li:hover {
+            z-index: 100;
+            transition: 0.5s;
+            background: #fff;
+
+          }
+        }
+      }
+    }
+  }
+
+  .customCaseDetailsContainer {
+    left: 30%;
+    width: 20%;
+
+  }
+
+  .customChatSideContainer {
+    flex: 1;
+    width: 50%;
+
+  }
+}
+
+.detailCaseContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.detailCaseContainer {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -1,0 +1,152 @@
+.customAdminPage {
+  background: #f8f9fa;
+  .adminContainer {
+    .custom-agents {
+      margin-top: -20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      width: 100%;
+      color: $black1;
+      font-family: $Roboto-font;
+      //background-color: #edeef5;
+
+      .btnClick {
+        margin-bottom: 10px;
+        text-align: center;
+        line-height: 2;
+        width: 100px;
+        background: #b3d4df;
+        border: 1px solid #b3d4df;
+        border-radius: 5px;
+
+        .btnCreate {
+          border: none;
+          background: none;
+        }
+      }
+
+      .btnClick:hover {
+        padding: 1px;
+        border: #cedde4;
+        background: #cedde4;
+      }
+
+      .customTable {
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          box-shadow: 0 5px 10px #eff0f1;
+          background: $color7;
+          text-align: left;
+          overflow: hidden;
+
+          thead {
+            width: 100%;
+            box-shadow: 0 5px 10px #eff0f1;
+          }
+
+          thead tr {
+            box-shadow: 0 1px 1px #ebeef1;
+          }
+
+          thead tr th {
+            padding:  0.5rem 1rem;
+            background-color: #dee2ff;
+            line-height: 2.3;
+            font-size: 13px;
+          }
+
+          tbody tr {
+            box-shadow: 0 1px 1px #ebeef1;
+          }
+
+          tbody tr:hover {
+            background-color: #dee2ff;
+            //color: white;
+            transition: 0.5s;
+          }
+
+          tbody tr th {
+            padding:  0.5rem 2rem;
+            background-color: #ced2f0;
+            line-height: 2.3;
+            font-size: 13px;
+          }
+
+          tbody tr td {
+            padding:  0.8rem 1rem;
+            line-height: 2;
+            font-size: 13px;
+          }
+
+          .btnDetailClick {
+            text-align: center;
+            width: 80px;
+            border: 1px solid #00b4d8;
+            border-radius: 5px;
+
+            .btnDetail {
+              color: #00b4d8;
+              font-size: 11px;
+              border: none;
+              background: none;
+            }
+
+            .detail-btn {
+              font-size: 11px;
+              color: #00b4d8;
+              border: none;
+              background: none;
+            }
+          }
+
+          .btnDetailClick:hover {
+            background: #dee2ff;
+          }
+
+          .btnClick-CrudIcon {
+            display: flex;
+            .btnEditIcon {
+              float: left;
+              margin-right: 5px;
+              width: 30px;
+              height: 30px;
+              padding: 4px;
+              text-align: center;
+              background: #dee2ff;
+              border-radius: 50%;
+              .btnEdit {
+                border: none;
+                background: none;
+              }
+            }
+
+            .btnEditIcon:hover {
+              background: #ced4da;
+            }
+
+            .btnDeleteIcon {
+              float: right;
+              width: 30px;
+              height: 30px;
+              padding: 4px;
+              text-align: center;
+              background: #dee2ff;
+              border-radius: 50%;
+              .btnDelete {
+                border: none;
+                background: none;
+              }
+            }
+
+            .btnDeleteIcon:hover {
+              background: #ced4da;
+            }
+          }
+        }
+      }
+    }
+  }
+}

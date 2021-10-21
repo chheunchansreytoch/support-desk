@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-closed-cases-page',
@@ -7,11 +9,87 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllClosedCasesPageComponent implements OnInit {
 
-
+  currentRoute: string = '';
   selectedOption = '3';
 
   //create data table
   rows = [
+    {
+      n: "1",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form ",
+      status: "",
+      priority: " ",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+    {
+      n: "2",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: " ",
+      priority: " ",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "3",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: " ",
+      priority: " ",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "1",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: "",
+      priority: " ",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+    {
+      n: "2",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: " ",
+      priority: " ",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
+    {
+      n: "3",
+      all: "",
+      caseNumber: "00001002",
+      contactName: "Chheun Chansreytoch",
+      subject: "Dialog issues with text and form",
+      status: " ",
+      priority: " ",
+      dateTime: "5/19/2021, 2:07 PM",
+      caseOwner: "Chheun Chansreytoch",
+      option: "",
+    },
+
     {
       n: "1",
       all: "",
@@ -51,8 +129,6 @@ export class AllClosedCasesPageComponent implements OnInit {
     },
   ]
 
-  // selectedOption = '3';
-
 //select checkbox
   checks=false;
   checkAll(e:any) {
@@ -63,7 +139,11 @@ export class AllClosedCasesPageComponent implements OnInit {
       this.checks=false;
     }
   }
-  constructor() { }
+  constructor(
+    public router: Router,
+    private location: Location
+    ) {
+  }
 
   ngOnInit(): void {
   }

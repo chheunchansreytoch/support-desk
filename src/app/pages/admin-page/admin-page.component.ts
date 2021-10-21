@@ -63,9 +63,34 @@ export class AdminPageComponent implements OnInit {
       status: "Working",
       agentInfo: "",
       Action: "",
+    },
+
+    {
+      n: "8",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+    {
+      n: "9",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+    {
+      n: "10",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
     }
   ]
-  
+
   constructor() { }
 
   ngOnInit(): void {

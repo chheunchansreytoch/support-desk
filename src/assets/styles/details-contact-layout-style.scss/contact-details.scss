@@ -1,0 +1,451 @@
+.detailContactContainer {
+  .customContactInfomation {
+    width: 100%;
+    .customContactDetailChatter {
+      position: absolute;
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      .contactDetailsContainer {
+        width: 50%;
+        padding-right: 5px;
+
+        .customContactDetail {
+          background: #f8f9fa;
+          border-radius: 5px;
+
+          .customAccountRelated {
+            padding: 5px;
+            margin-top: 10px;
+            height: 294px;
+
+            .account-contactRelated {
+              margin-top: 10px;
+              display: flex;
+              background: #f0f0f0;
+              border: 1px solid $gray4;
+              border-radius: 5px;
+
+              .custom-contact-image {
+                float: left;
+                margin-right: 10px;
+                padding: 5px;
+
+                .contact-image {
+                  padding: 4px ;
+                  width: 33px;
+                  height: 33px;
+                }
+              }
+
+              .contacts-title {
+                margin-top: 15px;
+                display: flex;
+
+                .contact-panel-container {
+                  float: left;
+                  margin-right: 180px;
+
+                  a {
+                    text-decoration: none;
+
+                    .custom-contact-span {
+                      color: $black2;
+                      font-size: 16px;
+                      margin-left: -5px;
+                      font-weight: bold;
+                    }
+
+                    .custom-contact-span:hover {
+                      color: $color2;
+                    }
+                  }
+                  a:hover {
+                    text-decoration: underline;
+                    color: $color2;
+                    transition: 0.5s;
+                  }
+                }
+
+                .btn-container-contact {
+                  float: right;
+                  display: flex;
+                  margin-top: -5px;
+                  line-height: 1.8;
+                  text-align: center;
+
+                  .btn-view-all-contact {
+                    width: 60px;
+                    height: 27px;
+                    border: 1px solid $color2;
+                    border-radius: 5px;
+                    background: #f8f9fa;
+                    float: left;
+                    margin-right: 10px;
+
+                    button{
+                      font-size: 13px;
+                      color: $color2;
+                      background: none;
+                      border: none;
+                    }
+                  }
+
+                  .btn-view-all-contact:hover {
+                    transition: 0.5s;
+                    color: $color7;
+                    background: $color2;
+
+                    button:hover {
+                      color: $color7;
+                      transition: 0.5s;
+                    }
+                  }
+
+                  .btn-New-contact {
+                    float: right;
+                    width: 60px;
+                    height: 27px;
+                    border: 1px solid $color2;
+                    background: #f8f9fa;
+                    border-radius: 5px;
+
+                    button {
+                      font-size: 13px;
+                      color: $color2;
+                      background: none;
+                      border: none;
+                    }
+                  }
+
+                  .btn-New-contact:hover {
+                    transition: 0.5s;
+                    color: $color7;
+                    background: $color2;
+
+                    button:hover {
+                      color: $color7;
+                      transition: 0.5s;
+                    }
+                  }
+                }
+              }
+
+              .contacts-title:hover {
+                color: $color2;
+              }
+            }
+
+            .account-caseRelated {
+              margin-top: 10px;
+              display: flex;
+              background: #f0f0f0;
+              border: 1px solid $gray4;
+              border-radius: 5px;
+
+              .custom-case-image {
+                float: left;
+                margin-right: 10px;
+                padding: 5px;
+
+                .case-image {
+                  padding: 4px ;
+                  width: 33px;
+                  height: 33px;
+                }
+              }
+
+              .cases-title {
+                margin-top: 15px;
+                display: flex;
+
+                .case-panel-container {
+                  float: left;
+                  margin-right: 200px;
+
+                  a {
+                    text-decoration: none;
+
+                    .custom-case-span {
+                      color: $black2;
+                      font-size: 16px;
+                      margin-left: -5px;
+                      font-weight: bold;
+                    }
+
+                    .custom-case-span:hover {
+                      color: $color2;
+                    }
+                  }
+                  a:hover {
+                    text-decoration: underline;
+                    color: $color2;
+                    transition: 0.5s;
+                  }
+                }
+
+                .btn-container-case {
+                  //float: right;
+                  display: flex;
+                  margin-top: -5px;
+                  margin-left: 35px;
+                  line-height: 1.8;
+                  text-align: center;
+
+                  .btn-view-all-case {
+                    width: 60px;
+                    height: 27px;
+                    border: 1px solid $color2;
+                    border-radius: 5px;
+                    background: #f8f9fa;
+                    float: right;
+                    //margin-right: 10px;
+
+                    button{
+                      font-size: 13px;
+                      color: $color2;
+                      background: none;
+                      border: none;
+                    }
+
+
+                  }
+
+                  .btn-view-all-case:hover {
+                    transition: 0.5s;
+                    color: $color7;
+                    background: $color2;
+
+                    button:hover {
+                      color: $color7;
+                      transition: 0.5s;
+                    }
+                  }
+                }
+              }
+
+              .cases-title:hover {
+                color: $color2;
+              }
+            }
+          }
+
+          .custom-upload-btn {
+            padding: 23px 170px;
+
+            .uploadingContainer {
+              border: 1px solid $color2;
+              border-radius: 5px;
+              text-align: center;
+              display: flex;
+              height: 30px;
+              line-height: 2;
+
+              button {
+                border: none;
+                background: none;
+                width: 100%;
+
+                .fi-rr-upload {
+                  font-size: 12px;
+                  color: $color2;
+                  margin-top: 2px
+                }
+
+                span {
+                  font-size: 12px;
+                  margin-left: 10px;
+                  color: $color2;
+                }
+              }
+            }
+
+            .uploadingContainer:hover {
+              transition: 0.5s;
+              color: $color7;
+              background: $color2;
+
+              button .fi-rr-upload {
+                color: $color7;
+                transition: 0.5s;
+              }
+
+              button span:hover {
+                color: $color7;
+                transition: 0.5s;
+              }
+            }
+          }
+
+          .details-info-container {
+            height: 280px;
+            overflow-x: hidden;
+            .custom-caseowner-info {
+              display: flex;
+              justify-content: space-between;
+              padding: 30px;
+
+              .case-owner {
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .case-owner-span {
+                  border-bottom: 1px solid $gray1;
+                  width: 170px;
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+
+                }
+              }
+
+              .phone-number {
+                border-bottom: 1px solid $gray1;
+                width: 200px;
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                  text-align: left;
+
+                }
+
+                .phone-number-span {
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+              }
+            }
+
+            .custom-name-details-info {
+              display: flex;
+              justify-content: space-between;
+              padding: 30px;
+
+              .case-owner {
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .case-owner-span {
+                  border-bottom: 1px solid $gray1;
+                  width: 170px;
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+
+                }
+              }
+
+              .phone-number {
+                border-bottom: 1px solid $gray1;
+                width: 200px;
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                  text-align: left;
+
+                }
+
+                .phone-number-span {
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+              }
+            }
+
+            .custom-account-name-details-info {
+              display: flex;
+              justify-content: space-between;
+              padding: 30px;
+
+              .case-owner {
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .case-owner-span {
+                  border-bottom: 1px solid $gray1;
+                  width: 170px;
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+
+                }
+              }
+
+              .phone-number {
+                border-bottom: 1px solid $gray1;
+                width: 200px;
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                  text-align: left;
+
+                }
+
+                .phone-number-span {
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+              }
+            }
+
+            .custom-title-details-info {
+              display: flex;
+              justify-content: space-between;
+              padding: 30px;
+
+              .case-owner {
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .case-owner-span {
+                  border-bottom: 1px solid $gray1;
+                  width: 170px;
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+
+                }
+              }
+
+              .phone-number {
+                border-bottom: 1px solid $gray1;
+                width: 200px;
+                label {
+                  font-size: 11px;
+                  color: $gray2;
+                  text-align: left;
+
+                }
+
+                .phone-number-span {
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

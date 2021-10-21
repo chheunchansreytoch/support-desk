@@ -1,19 +1,16 @@
 .formContainer {
+  width: 100%;
+  margin-top: 20px;
+
+  .inputContainer {
     width: 100%;
-    margin-top: 20px;
+    margin-bottom: 20px;
 
-    .inputContainer {
-        width: 100%;
-        margin-bottom: 20px;
-
-        .input {
-            width: 50%;
-            padding: 5px;
-            outline: none;
-
-            margin-top: 10px;
-        }
+    .input {
+        width: 50%;
+        padding: 5px;
+        outline: none;
+        margin-top: 10px;
     }
-
-
+  }
 }

@@ -1,29 +1,61 @@
 @import './variables.scss';
-@import './header.scss';
-@import './footer.scss';
 @import './text.scss';
 @import './form.scss';
-@import './login.scss';
-
-@import './login_header.scss';
-@import './login_footer.scss';
-
-@import './default_header.scss';
-@import './default_footer.scss';
-@import './defaultpage.scss';
-@import './myCases.scss';
 @import './custom-mat-menu.scss';
 @import './custom-mat-select.scss';
-@import './custom-mat-button-toggle';
 
-@import './accountpage.scss';
-@import './contactpage.scss';
-@import './admin-header.scss';
-@import './adminpage.scss';
-@import './admin-footer.scss';
-@import './admin-sidebar.scss';
-@import './manage_agent.scss';
-@import './manage_cases.scss';
-@import './dialog-sign-up.scss';
-@import './confirm-dialog.scss';
-@import './report_page.scss';
+
+/*Admin Login Style*/
+@import './admin-login-styles/login_header.scss';
+@import './admin-login-styles/login.scss';
+@import './admin-login-styles/login_footer.scss';
+
+
+/*Admin Page Styles*/
+@import './admin-page-styles/admin-sidebar.scss';
+@import './admin-page-styles/admin-header.scss';
+@import './admin-page-styles/adminpage.scss';
+@import './admin-page-styles/admin-footer.scss';
+@import './admin-page-styles/manage_agent.scss';
+@import './admin-page-styles/manage_cases.scss';
+@import './admin-page-styles/confirm-dialog.scss';
+@import './admin-page-styles/custom-mat-button-toggle.scss';
+@import './admin-page-styles/dialog-sign-up.scss';
+
+
+/*Agent Page Styles*/
+@import './agent-page-styles/default_header.scss';
+@import './agent-page-styles/casepage.scss';
+@import './agent-page-styles/default_footer.scss';
+@import './agent-page-styles/accountpage.scss';
+@import './agent-page-styles/all-accounts.scss';
+@import './agent-page-styles/agent-cases.scss';
+@import './agent-page-styles/contactpage.scss';
+@import './agent-page-styles/report_page.scss';
+@import './agent-page-styles/all-closed-cases.scss';
+@import './agent-page-styles/all-contacts.scss';
+
+
+
+/*Details Case Layout Styles*/
+@import './details-case-layout-styles/case-sidebar.scss';
+@import './details-case-layout-styles/case-details.scss';
+@import './details-case-layout-styles/chat-side.scss';
+@import './details-case-layout-styles/sendTo-dialog.scss';
+
+
+/*Details Contact Layout Styles*/
+@import './details-contact-layout-style.scss/contact-sidebar.scss';
+@import './details-contact-layout-style.scss/contact-info.scss';
+@import './details-contact-layout-style.scss/contact-details.scss';
+@import './details-contact-layout-style.scss/contact-chatter.scss';
+
+
+/*Details Account Layout Styles*/
+@import './details-account-layout-styles/account-sidebar.scss';
+@import './details-account-layout-styles/account-info.scss';
+@import './details-account-layout-styles/account-details.scss';
+@import './details-account-layout-styles/account-chatter.scss';
+@import './details-account-layout-styles/account-viewAll-dialog.scss';
+@import './details-account-layout-styles/account-newDialog.scss';
+@import './details-account-layout-styles/account-viewAllCase-dialog..scss';

@@ -1,0 +1,372 @@
+.detailCaseContainer {
+  .customChatSideContainer {
+    left: 30%;
+    width: 35%;
+    // height: 337px;
+    padding: 10px;
+
+    .CasesDetailContainer {
+      width: 100%;
+      border-radius: 5px;
+      padding: 5px;
+      box-shadow: 0 5px 15px #d4d7da;
+      float: right;
+      background-color: #f8f9fa;
+      color: $black1;
+      font-family: $Roboto-font;
+
+      .post-pull-container {
+        border: 1px solid #dadbdc;
+        margin: 10px;
+        border-radius: 5px;
+        background: rgb(253, 253, 253);
+
+        .custom-post-pull {
+          max-width: 800px;
+          margin-right: 0 auto;
+        }
+
+        .tab_triger ul{
+          display: flex;
+          background: #efefef;
+          border-radius: 5px;
+          border-top-right-radius: 5px;
+
+          li {
+            list-style: none;
+          }
+        }
+
+        .tab_triger ul li button {
+          border: none;
+        }
+
+        .tab_triger ul li button{
+          position: relative;
+          display: block;
+          padding: 8px 15px;
+          cursor: pointer;
+          min-width: 100px;
+          text-align: center;
+          font-weight: 700px;
+        }
+
+        .post-poll-layout {
+          align-items: center;
+          height: 337px;
+          // height: 200px;
+          // //max-height: 100%;
+          // //max-height: 90%;
+          // overflow-x: hidden;
+
+          .custom-post-layout {
+            .post-layout {
+              padding: 20px;
+
+            }
+
+            .custom-sendTo-shareBtn {
+              display: flex;
+              justify-content: space-between;
+
+
+              .sendTo {
+                margin-left: 20px;
+
+                p {
+                  font-size: 12px;
+
+                  span {
+                    font-weight: bold;
+                  }
+                }
+
+                .send-btn {
+                  border: none;
+                  background: none;
+
+                  .fi-rr-clip {
+                    font-size: 12px;
+                    margin-left: 20px;
+                  }
+
+                  .fi-rr-clip:hover {
+                    color: $color9;
+                  }
+                }
+              }
+
+              .custom-btn-share {
+                margin-right: 20px;
+                width: 90px;
+                height: 30px;
+                border-radius: 5px;
+                background: $color2;
+
+                .share-btn {
+                  color: $color7;
+                  padding: 7px;
+                  margin-left: 20px;
+                  border: none;
+                  background: none;
+                }
+              }
+
+              .custom-btn-share:hover {
+                background: #5784be;
+                transition: 0.5s;
+              }
+            }
+          }
+
+          .custom-poll-layout {
+            height: 300px;
+            overflow-x: hidden;
+            .poll-layout {
+              padding: 5px;
+              .question-lbl {
+                padding: 7px;
+                margin-left: 5px;
+                label{
+                  font-size: 12px;
+                  color: $gray2;
+                }
+              }
+
+              .input-question {
+                form {
+                  text-align: center;
+                  textarea{
+                    padding: 10px;
+                    width: 95%;
+                    height: 40px;
+                    border: 1px solid $gray3;
+                    border-radius: 5px;
+                    background: none;
+                    overflow: auto;
+                    resize:none;
+                    outline: none;
+                  }
+
+                  textarea:focus {
+                    border: 1px solid #54adf7;
+                    box-shadow: 0 0 3px #54adf7;
+                  }
+                }
+              }
+            }
+
+            ul li {
+              list-style: none;
+              .custom-choice {
+                padding: 5px;
+                .choice-lbl {
+                  padding: 7px;
+                  margin-left: 5px;
+
+                  label{
+                    font-size: 12px;
+                    color: $gray2;
+                  }
+                }
+
+                .input-choice {
+                  form {
+                    text-align: center;
+                    textarea{
+                      padding: 10px;
+                      width: 95%;
+                      height: 40px;
+                      border: 1px solid $gray3;
+                      border-radius: 5px;
+                      background: none;
+                      overflow: auto;
+                      resize:none;
+                      outline: none;
+                    }
+
+                    textarea:focus {
+                      border: 1px solid #54adf7;
+                      box-shadow: 0 0 3px #54adf7;
+                    }
+                  }
+                }
+              }
+            }
+
+            .custom-addnewchoice {
+              padding: 15px;
+              
+              .newchoice-lbl {
+                label {
+                  font-size: 12px;
+                  span {
+                    font-weight: bold;
+                  }
+                }
+              margin-left: 10px;
+
+              }
+            }
+
+            .add-ask-container {
+              display: flex;
+              justify-content: space-between;
+              margin-right: 20px;
+
+              .btn-newchoice {
+                margin-top: 10px;
+                width: 150px;
+                height: 30px;
+                background: $color2;
+                border-radius: 5px;
+
+                button {
+                  padding: 8px;
+                  margin-left: 10px;
+                  background: none;
+                  border: none;
+                  color: $color7;
+
+                  .fi-rr-plus {
+                    font-size: 12px;
+                    color: $color7;
+                  }
+                }
+              }
+
+              .btn-newchoice:hover {
+                background: #5784be;
+                transition: 0.5s;
+              }
+
+              .custom-ask-button {
+                margin-top: 10px;
+                width: 50px;
+                height: 30px;
+                background: $color2;
+                border-radius: 5px;
+
+                button {
+                  padding: 8px;
+                  margin-left: 5px;
+                  background: none;
+                  border: none;
+                  color: $color7;
+                }
+              }
+
+              .custom-ask-button:hover {
+                width: 50px;
+                height: 30px;
+                border-radius: 5px;
+                background: #5784be;
+                transition: 0.5s;
+              }
+            }
+          }
+        }
+      }
+
+      .custom-detail-container{
+        margin: 10px;
+
+        .custom-caseOwner-status {
+          display: flex;
+          justify-content: space-between;
+          .custom-caseOwner {
+            width: 70%;
+            border-bottom: 1px solid #ccc;
+            label {
+              font-size: 11px;
+              color: $gray2;
+            }
+
+            .caseOwner-span {
+              span {
+                font-size: 13px;
+                color: $color2;
+              }
+            }
+          }
+
+          .custom-status {
+            // margin-top: 5px;
+            // float: right;
+
+            label {
+              font-size: 11px;
+              color: $gray2;
+            }
+
+            .custom-status-select {
+              width: 90px;
+              height: 25px;
+              position: relative;
+              .select-status {
+                padding: 7px;
+                margin-left: -6px;
+                font-size: 11px;
+                width: 100%;
+                background: none;
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+                appearance: none;
+              }
+
+              .select-status:focus {
+                background: #faf9f8;
+                border-radius: 5px;
+                border: 1px solid #54adf7;
+                box-shadow: 0 0 3px #54adf7;
+              }
+            }
+
+            .custom-status-select:after {
+              content: "";
+              position: absolute;
+              text-align: center;
+              right: 10px;
+              top: 50%;
+              margin-top: -4px;
+              border-top: 6px solid #ccc;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menuClass {
+    background: $color2;
+    color: $color7;
+    transition: 0.5s;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

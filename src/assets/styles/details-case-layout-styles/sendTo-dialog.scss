@@ -1,0 +1,13 @@
+.mat-dialog-actions {
+  .custom-btn-close {
+    padding: 4px 25px;
+    border: 1px solid $color9;
+    border-radius: 5px;
+
+    button {
+      border: none;
+      background: none;
+      color: $color9;
+    }
+  }
+}
