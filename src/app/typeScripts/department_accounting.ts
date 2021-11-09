@@ -1,3 +1,5 @@
 export class Department_Accounting {
-  name!: string;
+  all: string = '';
+  name: string = '';
+  status: string = '';
 }

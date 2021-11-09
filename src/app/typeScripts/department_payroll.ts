@@ -1,3 +1,5 @@
 export class Department_Payroll {
-  name!: string;
+  all: string = '';
+  name: string = '';
+  status: string = '';
 }

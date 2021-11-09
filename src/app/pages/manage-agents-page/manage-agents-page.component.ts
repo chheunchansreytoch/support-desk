@@ -58,6 +58,58 @@ export class ManageAgentsPageComponent implements OnInit {
       agentInfo: "",
       Action: "",
     },
+
+    {
+      n: "9",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+    {
+      n: "7",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+
+    {
+      n: "8",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+
+    {
+      n: "9",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+
+    {
+      n: "10",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
+    {
+      n: "11",
+      agentName: "Chheun Chansreytoch",
+      jobPosition: "Developer",
+      status: "Working",
+      agentInfo: "",
+      Action: "",
+    },
   ];
 
   constructor(public dialog: MatDialog,

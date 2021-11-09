@@ -50,9 +50,39 @@
               border-top-right-radius: 5px;
               box-shadow: 0 5px 15px #d4d7da;
 
-              h4 {
-                font-size: 16px;
-                margin: 10px;
+              .case-blog-container {
+                display: flex;
+                justify-content: space-between;
+
+                .title-case-container {
+                  h4 {
+                    font-size: 16px;
+                    margin: 10px;
+                  }
+                }
+
+                .custom-btnClose {
+                  padding: 10px;
+
+                  .btn-close {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 2px;
+                    border: none;
+                    outline: none;
+                    background: none;
+
+                    .fi-rr-cross-small {
+                      font-size: 14px;
+                    }
+                  }
+
+                  .btn-close:hover {
+                    background: #b3d4df;
+                    border-radius: 50%;
+                    transition: 0.5s;
+                  }
+                }
               }
 
               .case-info-lbl-container {
@@ -118,6 +148,7 @@
                       border-radius: 5px;
                      -webkit-appearance: none;
                       appearance: none;
+                      outline: none;
                     }
 
                     .select-box:after{
@@ -185,6 +216,7 @@
                       border-radius: 5px;
                      -webkit-appearance: none;
                       appearance: none;
+                      outline: none;
                     }
 
                     .select-box-priority:after{
@@ -284,6 +316,7 @@
                       border-radius: 5px;
                      -webkit-appearance: none;
                       appearance: none;
+                      outline: none;
                     }
 
                     .select-box-origin:after{
@@ -367,6 +400,7 @@
                       border-radius: 5px;
                      -webkit-appearance: none;
                       appearance: none;
+                      outline: none;
                     }
 
                     .select-box-type:after{
@@ -393,319 +427,6 @@
                   }
                 }
               }
-
-              // .web-info-lbl-container {
-              //   padding: 10px;
-
-              //   .Weblabel {
-              //     padding: 5px;
-              //     height: 30px;
-              //     background-color: #dee9f3;
-              //     border-radius: 5px;
-              //     .web-info-lbl {
-              //       font-size: 14px;
-              //       padding: 10px;
-              //     }
-              //   }
-
-              //   .web1-Container {
-              //     display: flex;
-              //     justify-content: space-between;
-
-              //     .custom-web-email {
-              //       padding: 14px;
-
-              //       .web-email-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //     form {
-              //       .web-email-input {
-              //         padding: 9px 1px;
-              //         border: 1px solid #ccc;
-              //         border-radius: 5px;
-              //         background: $color7;
-              //         outline: none;
-              //         text-indent: 10px;
-              //       }
-
-              //       .web-email-input:focus {
-              //         border: 1px solid #54adf7;
-              //         box-shadow: 0 0 3px #54adf7;
-              //       }
-              //     }
-              //     }
-
-              //     .custom-web-company {
-              //       padding: 14px;
-
-              //       .web-company-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //       form {
-              //         .web-company-input {
-              //           padding: 9px 1px;
-              //           border: 1px solid #ccc;
-              //           border-radius: 5px;
-              //           background: $color7;
-              //           outline: none;
-              //           text-indent: 10px;
-              //         }
-
-              //         .web-company-input:focus {
-              //           border: 1px solid #54adf7;
-              //           box-shadow: 0 0 3px #54adf7;
-              //         }
-              //       }
-              //     }
-              //   }
-              //   .web2-Container {
-              //     display: flex;
-              //     justify-content: space-between;
-
-              //     .custom-web-name {
-              //       padding: 14px;
-
-              //       .web-name-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //       form {
-              //         .web-name-input {
-              //           padding: 9px 1px;
-              //           border: 1px solid #ccc;
-              //           border-radius: 5px;
-              //           background: $color7;
-              //           outline: none;
-              //           text-indent: 10px;
-              //         }
-
-              //         .web-name-input:focus {
-              //           border: 1px solid #54adf7;
-              //           box-shadow: 0 0 3px #54adf7;
-              //         }
-              //       }
-              //     }
-
-              //     .custom-web-phone {
-              //       padding: 14px;
-
-              //       .web-phone-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //     form {
-              //       .web-phone-input {
-              //         padding: 9px 1px;
-              //         border: 1px solid #ccc;
-              //         border-radius: 5px;
-              //         background: $color7;
-              //         outline: none;
-              //         text-indent: 10px;
-              //       }
-
-              //       .web-phone-input:focus {
-              //         border: 1px solid #54adf7;
-              //         box-shadow: 0 0 3px #54adf7;
-              //       }
-              //     }
-              //     }
-              //   }
-              // }
-
-              // .additional-info-lbl-container {
-              //   padding: 10px;
-
-              //   .additionLabel {
-              //     padding: 5px;
-              //     height: 30px;
-              //     background-color: #dee9f3;
-              //     border-radius: 5px;
-              //     .addtional-info-lbl {
-              //       font-size: 14px;
-              //       padding: 10px;
-              //     }
-              //   }
-
-              //   .custom-addition-Container1 {
-              //     display: flex;
-              //     justify-content: space-between;
-              //     .product-container {
-              //       padding: 14px;
-              //       .product-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //       .select-box-product {
-              //         width: 170px;
-              //         position: relative;
-              //       }
-
-              //       .select-box-product select{
-              //         height: 35px;
-              //         padding: 10px 15px;
-              //         line-height: 15px;
-              //         font-size: 12px;
-              //         width: 100%;
-              //         border: 1px solid #ccc;
-              //         border-radius: 5px;
-              //       -webkit-appearance: none;
-              //         appearance: none;
-              //       }
-
-              //       .select-box-product:after{
-              //         content: "";
-              //         position: absolute;
-              //         right: 8px;
-              //         top: 50%;
-              //         margin-top: -4px;
-              //         border-top: 8px solid #ccc;
-              //         border-left: 6px solid transparent;
-              //         border-right: 6px solid transparent;
-              //         pointer-events: none;
-              //       }
-
-              //       .select-box-product select:focus {
-              //         border: 1px solid #54adf7;
-              //         box-shadow: 0 0 3px #54adf7;
-              //       }
-
-              //       .select-box-product select option {
-              //         font-size: 14px;
-              //         line-height: 200%;
-              //       }
-              //     }
-
-              //     .custom-engineer-req-num {
-              //       padding: 14px;
-
-              //       .engineer-num-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //     form {
-              //       .engineer-num-input {
-              //         padding: 9px 1px;
-              //         border: 1px solid #ccc;
-              //         border-radius: 5px;
-              //         background: $color7;
-              //         outline: none;
-              //         text-indent: 10px;
-              //       }
-
-              //       .engineer-num-input:focus {
-              //         border: 1px solid #54adf7;
-              //         box-shadow: 0 0 3px #54adf7;
-              //       }
-              //     }
-              //     }
-              //   }
-
-              //   .custom-addition-Container2 {
-              //     display: flex;
-              //     justify-content: space-between;
-              //     .potential-container {
-              //       padding: 14px;
-              //       .potential-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //       .select-box-potential {
-              //         width: 170px;
-              //         position: relative;
-              //       }
-
-              //       .select-box-potential select{
-              //         height: 35px;
-              //         padding: 10px 15px;
-              //         line-height: 15px;
-              //         font-size: 12px;
-              //         width: 100%;
-              //         border: 1px solid #ccc;
-              //         border-radius: 5px;
-              //       -webkit-appearance: none;
-              //         appearance: none;
-              //       }
-
-              //       .select-box-potential:after{
-              //         content: "";
-              //         position: absolute;
-              //         right: 8px;
-              //         top: 50%;
-              //         margin-top: -4px;
-              //         border-top: 8px solid #ccc;
-              //         border-left: 6px solid transparent;
-              //         border-right: 6px solid transparent;
-              //         pointer-events: none;
-              //       }
-
-              //       .select-box-potential select:focus {
-              //         border: 1px solid #54adf7;
-              //         box-shadow: 0 0 3px #54adf7;
-              //       }
-
-              //       .select-box-potential select option {
-              //         font-size: 14px;
-              //         line-height: 200%;
-              //       }
-              //     }
-
-              //     .violation-container {
-              //       padding: 14px;
-              //       .violation-lbl {
-              //         font-size: 11px;
-              //         color: $black1;
-              //       }
-
-              //       .select-box-violation {
-              //         width: 170px;
-              //         position: relative;
-              //       }
-
-              //       .select-box-violation select{
-              //         height: 35px;
-              //         padding: 10px 15px;
-              //         line-height: 15px;
-              //         font-size: 12px;
-              //         width: 100%;
-              //         border: 1px solid #ccc;
-              //         border-radius: 5px;
-              //       -webkit-appearance: none;
-              //         appearance: none;
-              //       }
-
-              //       .select-box-violation:after {
-              //         content: "";
-              //         position: absolute;
-              //         right: 8px;
-              //         top: 50%;
-              //         margin-top: -4px;
-              //         border-top: 8px solid #ccc;
-              //         border-left: 6px solid transparent;
-              //         border-right: 6px solid transparent;
-              //         pointer-events: none;
-              //       }
-
-              //       .select-box-violation select:focus {
-              //         border: 1px solid #54adf7;
-              //         box-shadow: 0 0 3px #54adf7;
-              //       }
-
-              //       .select-box-violation select option {
-              //         font-size: 14px;
-              //         line-height: 200%;
-              //       }
-              //     }
-              //   }
-              // }
 
               .desc-info-lbl-container {
                 padding: 10px;
@@ -880,8 +601,8 @@
             .custom-show-assign-blog {
               z-index: 1001;
               position: absolute;
-              width: 400px;
-              height: 330px;
+              width: 700px;
+              height: 420px;
               background: $color7;
               border-bottom: 1px solid $color7;
               border-top-left-radius: 5px;
@@ -889,32 +610,62 @@
               box-shadow: 0 5px 15px #d4d7da;
 
               .title-assign-container {
+                display: flex;
+                justify-content: space-between;
 
                 h4 {
                   font-size: 14px;
                   margin: 10px;
                 }
 
-                .line-break {
-                  border-top: 1px solid $gray1;
+                .custom-btnClose {
+                  padding: 10px;
+
+                  .btn-close {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 2px;
+                    border: none;
+                    outline: none;
+                    background: none;
+
+                    .fi-rr-cross-small {
+                      font-size: 14px;
+                    }
+                  }
+
+                  .btn-close:hover {
+                    background: #b3d4df;
+                    border-radius: 50%;
+                    transition: 0.5s;
+                  }
                 }
               }
 
+              .line-break {
+                border-top: 1px solid $gray1;
+              }
+
               .select-agent-toAssign-container {
-                padding: 5px;
-                display: flex;
-                justify-content: space-between;
-
                 .assign-lbl-container {
-                  padding: 4px;
+                  display: flex;
+                  justify-content: space-between;
 
-                  .agents-lbl {
-                    font-size: 11px;
-                    margin-right: 20px;
-                    color: $black1;
+                  .testing {
+                    // height: 60vh;
+                    height: 375px;
+                    box-shadow: 1px 0 0 #d4d7da;
+
+                    .test .agents-lbl {
+                      padding: 10px;
+                      font-size: 11px;
+                      margin-right: 20px;
+                      color: $black1;
+                    }
                   }
 
                   .custom-select-agent {
+                    padding: 10px;
                     width: 150px;
                     position: relative;
                   }
@@ -925,6 +676,7 @@
                     line-height: 15px;
                     font-size: 12px;
                     width: 100%;
+                    outline: none;
                     border: 1px solid #ccc;
                     border-radius: 5px;
                    -webkit-appearance: none;
@@ -938,9 +690,10 @@
                   .custom-select-agent:after {
                     content: "";
                     position: absolute;
-                    right: 8px;
+                    right: 15px;
                     top: 50%;
                     margin-top: -4px;
+                   // margin-left: -5px;
                     border-top: 8px solid #ccc;
                     border-left: 6px solid transparent;
                     border-right: 6px solid transparent;
@@ -952,147 +705,446 @@
                     box-shadow: 0 0 3px #54adf7;
                   }
 
-                  .custom_department_IT {
-                    overflow-x: hidden;
-                    width: 382px;
-                    height: 200px;
-                    background: #f8f9fa;
-                    border-radius: 7px;
-                    padding: 10px 30px;
-                    margin-top: 10px;
-                    box-shadow: 0 0 5px #d4d7da;
+                  .custom-none-option {
+                    .custom-image{
+                      margin: 40px;
 
-
-                    .dept_IT_lbl {
-                      font-size: 12px;
-                      color: #54adf7;
+                      img {
+                        width: 70%;
+                        height: 20%;
+                        margin-left: 100px;
+                      }
                     }
 
-                    .department_IT {
-                      padding: 5px;
-                      margin-top: 10px;
-                    }
+                    .custom-instruction {
+                      margin-top: -60px;
+                      margin-left: 170px;
 
-                    .department_IT:hover {
-                      background: #e2ece9;
-                      border-radius: 5px;
+                      h5{
+                        color: #6fb5cc;
+                        font-size: 14px;
 
-                    }
-                    .IT_agent_name {
-                      font-size: 12px;
+                        .fi-rr-sad {
+                          color: #6fb5cc;
+                          font-size: 18px;
+                        }
+                      }
                     }
                   }
 
+                  .custom_department_IT {
+                    .custom-dept_IT_lbl {
+                      //background: red;
+                      padding: 10px;
+                      .dept_IT_lbl {
+                        padding: 5px;
+                        font-size: 14px;
+                        color: #6fb5cc;
+
+
+                      }
+                    }
+
+                    .department_IT {
+                      overflow: auto;
+                      width: 550px;
+                      height: 280px;
+                      padding-left: 1px;
+                      padding-right: 1px;
+                      box-shadow: 0 4px 3px -3px #d4d7da;
+
+                      table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        box-shadow: 0 5px 10px #eff0f1;
+                        background: $color7;
+                        text-align: left;
+
+                        thead {
+                          width: 100%;
+                          box-shadow: 0 5px 10px #eff0f1;
+                        }
+
+                        thead tr {
+                          box-shadow: 0 1px 1px #ebeef1;
+                        }
+
+                        thead tr th {
+                          padding:  0.5rem 1rem;
+                          background-color: #b3d4df;
+                          line-height: 2.3;
+                          font-size: 13px;
+                        }
+
+                        tbody tr {
+                          box-shadow: 0 1px 1px #ebeef1;
+                        }
+
+                        tbody tr:hover {
+                          background-color: #dee2ff;
+                          //color: white;
+                          transition: 0.5s;
+                        }
+
+                        tbody tr th {
+                          padding:  0.5rem 2rem;
+                          background-color: #ced2f0;
+                          line-height: 2.3;
+                          font-size: 13px;
+                        }
+
+                        tbody tr td {
+                          padding:  0.5rem 1rem;
+                          line-height: 2;
+                          font-size: 13px;
+                        }
+                      }
+                    }
+
+                    .custom-Button {
+                      display: flex;
+                      position: absolute;
+                      margin-left: 370px;
+                      margin-top: 15px;
+
+                      .click-cancel2 {
+                        float: left;
+                        margin-right: 10px;
+                        text-align: center;
+                        line-height: 2;
+                        width: 70px;
+                        height: 28px;
+                        //background: $color7;
+                       // border: 1px solid #779bee;
+
+                        background: #ff002b;
+                        border-radius: 5px;
+
+                        .btn-cancel2 {
+                          border: none;
+                          background: none;
+                          color: $color7;
+                          font-weight: bold;
+                        }
+
+                      }
+
+                      .click-cancel2:hover {
+                        background: #c00021;
+                        transition: 0.5s;
+                      }
+
+                      .click-assign {
+                        float: right;
+                        text-align: center;
+                        line-height: 2;
+                        width: 70px;
+                        height: 28px;
+                        background: #6fb5cc;
+                        border-radius: 5px;
+
+                        .btn-assign {
+                          border: none;
+                          background: none;
+                          //color: $black1;
+                          color: #f7fff7;
+                          //font-weight: bold;
+                        }
+
+                        // .btn-assign:hover {
+                        //   color: #f7fff7;
+                        // }
+                      }
+
+                      .click-assign:hover {
+                        background: #5fa0b6;
+                        transition: 0.5s;
+                      }
+                    }
+                  }
+
+
                   .custom_department_account {
-                    overflow-x: hidden;
-                    width: 382px;
-                    height: 200px;
-                    background: #f8f9fa;
-                    border-radius: 7px;
-                    padding: 10px 30px;
-                    margin-top: 10px;
-                    box-shadow: 0 0 5px #d4d7da;
+                    .custom-dept_acc_lbl {
+                      //background: red;
+                      padding: 10px;
+                      .dept_acc_lbl {
+                        padding: 5px;
+                        font-size: 14px;
+                        color: #6fb5cc;
 
 
-                    .dept_acc_lbl {
-                      font-size: 12px;
-                      color: #54adf7;
+                      }
                     }
 
                     .department_acc {
-                      padding: 5px;
-                      margin-top: 10px;
+                      overflow: auto;
+                      width: 550px;
+                      height: 280px;
+                      padding-left: 1px;
+                      padding-right: 1px;
+                      box-shadow: 0 4px 3px -3px #d4d7da;
+
+                      table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        box-shadow: 0 5px 10px #eff0f1;
+                        background: $color7;
+                        text-align: left;
+
+                        thead {
+                          width: 100%;
+                          box-shadow: 0 5px 10px #eff0f1;
+                        }
+
+                        thead tr {
+                          box-shadow: 0 1px 1px #ebeef1;
+                        }
+
+                        thead tr th {
+                          padding:  0.5rem 1rem;
+                          background-color: #b3d4df;
+                          line-height: 2.3;
+                          font-size: 13px;
+                        }
+
+                        tbody tr {
+                          box-shadow: 0 1px 1px #ebeef1;
+                        }
+
+                        tbody tr:hover {
+                          background-color: #dee2ff;
+                          //color: white;
+                          transition: 0.5s;
+                        }
+
+                        tbody tr th {
+                          padding:  0.5rem 2rem;
+                          background-color: #ced2f0;
+                          line-height: 2.3;
+                          font-size: 13px;
+                        }
+
+                        tbody tr td {
+                          padding:  0.5rem 1rem;
+                          line-height: 2;
+                          font-size: 13px;
+                        }
+                      }
                     }
 
-                    .department_acc:hover {
-                      background: #e2ece9;
-                      border-radius: 5px;
+                    .custom-Button {
+                      display: flex;
+                      position: absolute;
+                      margin-left: 370px;
+                      margin-top: 15px;
 
-                    }
-                    .account_agent_name {
-                      font-size: 12px;
+                      .click-cancel2 {
+                        float: left;
+                        margin-right: 10px;
+                        text-align: center;
+                        line-height: 2;
+                        width: 70px;
+                        height: 28px;
+                        //background: $color7;
+                       // border: 1px solid #779bee;
+
+                        background: #ff002b;
+                        border-radius: 5px;
+
+                        .btn-cancel2 {
+                          border: none;
+                          background: none;
+                          color: $color7;
+                          font-weight: bold;
+                        }
+
+                      }
+
+                      .click-cancel2:hover {
+                        background: #c00021;
+                        transition: 0.5s;
+                      }
+
+                      .click-assign {
+                        float: right;
+                        text-align: center;
+                        line-height: 2;
+                        width: 70px;
+                        height: 28px;
+                        background: #6fb5cc;
+                        border-radius: 5px;
+
+                        .btn-assign {
+                          border: none;
+                          background: none;
+                          color: #f7fff7;
+                        }
+                      }
+
+                      .click-assign:hover {
+                        background: #5fa0b6;
+                        transition: 0.5s;
+                      }
                     }
                   }
 
                   .custom_department_payroll {
-                    overflow-x: hidden;
-                    width: 382px;
-                    height: 200px;
-                    background: #f8f9fa;
-                    border-radius: 7px;
-                    padding: 10px 30px;
-                    margin-top: 10px;
-                    box-shadow: 0 0 5px #d4d7da;
+                    .custom-dept_payroll_lbl {
+                      //background: red;
+                      padding: 10px;
+
+                      .dept_payroll_lbl {
+                        padding: 5px;
+                        font-size: 14px;
+                        color: #6fb5cc;
 
 
-                    .dept_payroll_lbl {
-                      font-size: 12px;
-                      color: #54adf7;
+                      }
                     }
 
                     .department_payroll {
-                      padding: 5px;
-                      margin-top: 10px;
+                      overflow: auto;
+                      width: 550px;
+                      height: 280px;
+                      padding-left: 1px;
+                      padding-right: 1px;
+                      box-shadow: 0 4px 3px -3px #d4d7da;
+
+                      table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        box-shadow: 0 5px 10px #eff0f1;
+                        background: $color7;
+                        text-align: left;
+
+                        thead {
+                          width: 100%;
+                          box-shadow: 0 5px 10px #eff0f1;
+                        }
+
+                        thead tr {
+                          box-shadow: 0 1px 1px #ebeef1;
+                        }
+
+                        thead tr th {
+                          padding:  0.5rem 1rem;
+                          background-color: #b3d4df;
+                          line-height: 2.3;
+                          font-size: 13px;
+                        }
+
+                        tbody tr {
+                          box-shadow: 0 1px 1px #ebeef1;
+                        }
+
+                        tbody tr:hover {
+                          background-color: #dee2ff;
+                          //color: white;
+                          transition: 0.5s;
+                        }
+
+                        tbody tr th {
+                          padding:  0.5rem 2rem;
+                          background-color: #ced2f0;
+                          line-height: 2.3;
+                          font-size: 13px;
+                        }
+
+                        tbody tr td {
+                          padding:  0.5rem 1rem;
+                          line-height: 2;
+                          font-size: 13px;
+                        }
+                      }
                     }
 
-                    .department_payroll:hover {
-                      background: #e2ece9;
-                      border-radius: 5px;
+                    .custom-Button {
+                      display: flex;
+                      position: absolute;
+                      margin-left: 370px;
+                      margin-top: 15px;
 
+                      .click-cancel2 {
+                        float: left;
+                        margin-right: 10px;
+                        text-align: center;
+                        line-height: 2;
+                        width: 70px;
+                        height: 28px;
+                        //background: $color7;
+                       // border: 1px solid #779bee;
+
+                        background: #ff002b;
+                        border-radius: 5px;
+
+                        .btn-cancel2 {
+                          border: none;
+                          background: none;
+                          color: $color7;
+                          font-weight: bold;
+                        }
+
+                      }
+
+                      .click-cancel2:hover {
+                        background: #c00021;
+                        transition: 0.5s;
+                      }
+
+                      .click-assign {
+                        float: right;
+                        text-align: center;
+                        line-height: 2;
+                        width: 70px;
+                        height: 28px;
+                        background: #6fb5cc;
+                        border-radius: 5px;
+
+                        .btn-assign {
+                          border: none;
+                          background: none;
+                          color: #f7fff7;
+                        }
+                      }
+
+                      .click-assign:hover {
+                        background: #5fa0b6;
+                        transition: 0.5s;
+                      }
                     }
-                    .payroll_agent_name {
-                      font-size: 12px;
-                    }
-                  }
-                }
-
-                .custom-Button {
-                  display: flex;
-                  position: absolute;
-                  margin-left: 230px;
-                  margin-top: 25px;
-
-                  .click-cancel2 {
-                    float: left;
-                    margin-right: 10px;
-                    text-align: center;
-                    line-height: 2;
-                    width: 70px;
-                    height: 28px;
-                    background: $color7;
-                    border: 1px solid #779bee;
-                    border-radius: 5px;
-
-                    .btn-cancel2 {
-                      border: none;
-                      background: none;
-                      color: #779bee;
-                    }
                   }
 
-                  .click-cancel2:hover {
-                    background: #6e88c4;
-                  }
+                  // .custom_department_payroll {
+                  //   overflow-x: hidden;
+                  //   width: 382px;
+                  //   height: 200px;
+                  //   background: #f8f9fa;
+                  //   border-radius: 7px;
+                  //   padding: 10px 30px;
+                  //   margin-top: 10px;
+                  //   box-shadow: 0 0 5px #d4d7da;
 
-                  .click-assign {
-                    float: right;
-                    text-align: center;
-                    line-height: 2;
-                    width: 70px;
-                    height: 28px;
-                    background: #779bee;
-                    border-radius: 5px;
 
-                    .btn-assign {
-                      border: none;
-                      background: none;
-                      color: $color7;
-                    }
-                  }
+                  //   .dept_payroll_lbl {
+                  //     font-size: 12px;
+                  //     color: #54adf7;
+                  //   }
 
-                  .click-assign:hover {
-                    background: #6e88c4;
-                  }
+                  //   .department_payroll {
+                  //     padding: 5px;
+                  //     margin-top: 10px;
+                  //   }
+
+                  //   .department_payroll:hover {
+                  //     background: #e2ece9;
+                  //     border-radius: 5px;
+
+                  //   }
+                  //   .payroll_agent_name {
+                  //     font-size: 12px;
+                  //   }
+                  // }
                 }
               }
             }
@@ -1125,7 +1177,7 @@
         }
 
         .table-scroll {
-          height:400px;
+          height: 385px;
           overflow:auto;
           margin-top:20px;
         }
@@ -1148,16 +1200,10 @@
 
           thead tr th {
             padding:  0.5rem 1rem;
-            background-color: #dee2ff;
+            background-color: #b3d4df;
             line-height: 2.3;
             font-size: 13px;
           }
-
-          // tbody {
-          //   width: 100px;
-          //   height: 100px;
-          //   overflow-x: hidden;
-          // }
 
           tbody tr {
             box-shadow: 0 1px 1px #ebeef1;

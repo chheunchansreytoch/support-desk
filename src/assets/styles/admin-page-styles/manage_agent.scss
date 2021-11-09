@@ -2,11 +2,11 @@
   background: #f8f9fa;
   .adminContainer {
     .custom-agents {
-      margin-top: -20px;
+      margin-top: -0.5px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px;
+      padding: 10px;
       width: 100%;
       color: $black1;
       font-family: $Roboto-font;
@@ -34,13 +34,17 @@
       }
 
       .customTable {
+        height:430px;
+        overflow:auto;
+        margin-top:20px;
+
         table {
           width: 100%;
           border-collapse: collapse;
           box-shadow: 0 5px 10px #eff0f1;
           background: $color7;
           text-align: left;
-          overflow: hidden;
+          //overflow: hidden;
 
           thead {
             width: 100%;
@@ -53,7 +57,7 @@
 
           thead tr th {
             padding:  0.5rem 1rem;
-            background-color: #dee2ff;
+            background-color: #b3d4df;
             line-height: 2.3;
             font-size: 13px;
           }

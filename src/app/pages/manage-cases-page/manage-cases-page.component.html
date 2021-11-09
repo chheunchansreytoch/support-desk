@@ -7,9 +7,16 @@
       <!-- z-1001 -->
       <div class="create-case-popup" *ngIf="showCasePopup">
         <div class="custom-show-create-case-blog">
-          <div class="title-case-container">
-            <h4>New Case</h4>
+          <div class="case-blog-container">
+            <div class="title-case-container">
+              <h4>New Case</h4>
+            </div>
+
+            <div class="custom-btnClose">
+              <button class="btn-close" (click)="createCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
+            </div>
           </div>
+
           <div class="case-info-lbl-container">
 
             <hr class="line-break">
@@ -24,7 +31,7 @@
               </div>
 
               <div class="custom-select">
-                <label class="status-lbl">Case Owner</label>
+                <label class="status-lbl">Status</label>
                 <div class="select-box" required>
                   <select>
                     <option>New</option>
@@ -128,96 +135,6 @@
             </div>
           </div>
 
-          <!-- <div class="web-info-lbl-container">
-            <div class="Weblabel">
-              <label class="web-info-lbl">Web Information</label>
-            </div>
-
-            <div class="web1-Container">
-              <div class="custom-web-email">
-                <label class="web-email-lbl">Web Email</label>
-                <form>
-                  <input class="web-email-input" type="text" name="search">
-                </form>
-              </div>
-
-              <div class="custom-web-company">
-                <label class="web-company-lbl">Web Company</label>
-                <form>
-                  <input class="web-company-input" type="text" name="search">
-                </form>
-              </div>
-            </div>
-
-            <div class="web2-Container">
-              <div class="custom-web-name">
-                <label class="web-name-lbl">Web Name</label>
-                <form>
-                  <input class="web-name-input" type="text" name="search">
-                </form>
-              </div>
-
-              <div class="custom-web-phone">
-                <label class="web-phone-lbl">Web Phone</label>
-                <form>
-                  <input class="web-phone-input" type="text" name="search">
-                </form>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="additional-info-lbl-container">
-            <div class="additionLabel">
-              <label class="addtional-info-lbl">Additional Information</label>
-            </div>
-
-            <div class="custom-addition-Container1">
-              <div class="product-container">
-                <label class="product-lbl">Product</label>
-                <div class="select-box-product" required>
-                  <select>
-                    <option>--None--</option>
-                    <option>New</option>
-                    <option>Working</option>
-                    <option>Escalated</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="custom-engineer-req-num">
-                <label class="engineer-num-lbl">Engineering req Number</label>
-                <form>
-                  <input class="engineer-num-input" type="text" name="search">
-                </form>
-              </div>
-            </div>
-
-            <div class="custom-addition-Container2">
-              <div class="potential-container">
-                <label class="potential-lbl">Potential Liability</label>
-                <div class="select-box-potential" required>
-                  <select>
-                    <option>--None--</option>
-                    <option>No</option>
-                    <option>Yes</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="violation-container">
-                <label class="violation-lbl">SLA Violation</label>
-                <div class="select-box-violation" required>
-                  <select>
-                    <option>--None--</option>
-                    <option>GC1040</option>
-                    <option>GC1060</option>
-                    <option>GC1020</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
           <div class="desc-info-lbl-container">
             <div class="descLabel">
               <label class="desc-info-lbl">Description Information</label>
@@ -271,51 +188,139 @@
         <div class="custom-show-assign-blog">
           <div class="title-assign-container">
             <h4>Assign Case To</h4>
-            <hr class="line-break">
+            <div class="custom-btnClose">
+              <button class="btn-close" (click)="assignCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
+            </div>
           </div>
+
+          <hr class="line-break">
 
           <div class="select-agent-toAssign-container">
             <div class="assign-lbl-container">
-              <label class="agents-lbl" for="department">Departments</label>
-              <div class="custom-select-agent">
-                <select [(ngModel)]="selectedValue">
-                  <option hidden>Choose Department</option>
-                  <option value="none">--None--</option>
-                  <option value="dept_IT">IT</option>
-                  <option value="dept_Acc">Accounting</option>
-                  <option value="dept_Payroll">Payroll</option>
-                  <!-- <option *ngFor="let dept of departments" [value]="dept.id">
-                    {{dept.name}}
-                  </option> -->
+              <div class="testing">
+                <div class="test">
+                  <label class="agents-lbl" for="department">Departments</label>
+                </div>
 
-                  <!-- <option value="dept_IT">IT</option>
-                  <option value="dept_Acc">Accounting</option> -->
-                </select>
+                <div class="custom-select-agent">
+                  <select [(ngModel)]="selectedValue">
+                    <!-- <option hidden>Choose Department</option> -->
+                    <option value="none">--None--</option>
+                    <option value="dept_IT">IT</option>
+                    <option value="dept_Acc">Accounting</option>
+                    <option value="dept_Payroll">Payroll</option>
+                    <!-- <option *ngFor="let dept of departments" [value]="dept.id">
+                      {{dept.name}}
+                    </option> -->
 
+                    <!-- <option value="dept_IT">IT</option>
+                    <option value="dept_Acc">Accounting</option> -->
+                  </select>
+                </div>
+              </div>
+
+              <div class="custom-none-option" *ngIf="selectedValue == 'none'">
+                <div class="custom-image">
+                  <img src="./assets/images/admin-iconList/selection3.png">
+                </div>
+
+                <div class="custom-instruction">
+                  <h5>There is nothing to show &nbsp; <i class="fi fi-rr-sad"></i></h5>
+                </div>
               </div>
 
               <div class="custom_department_IT" *ngIf="selectedValue == 'dept_IT'">
-                <label class="dept_IT_lbl">Choose Agent of IT Department</label>
-                <div class="department_IT" *ngFor="let depts_IT of departments_IT">
-                   <label class="IT_agent_name" >
-                    <input type="radio" name="departmentIT" value="{{depts_IT.name}}" (change)="radioChangeHandler($event)">
-                     {{depts_IT.name}}
-                  </label>
+                <div class="custom-dept_IT_lbl">
+                  <label class="dept_IT_lbl">Choose Agent of IT Department</label>
+                </div>
+
+                <div class="department_IT">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Checkbox</th>
+                        <th>Agents Name</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let depts_IT of departments_IT">
+                        <td>
+                          <input type="checkbox" [checked]="Checked">
+                          {{depts_IT.all}}
+                        </td>
+
+                        <td>
+                          {{depts_IT.name}}
+                        </td>
+
+                        <td>
+                          {{depts_IT.status}}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="custom-Button">
+                  <div class="click-cancel2">
+                    <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
+                  </div>
+
+                  <div class="click-assign">
+                    <button class="btn-assign">Assign</button>
+                  </div>
                 </div>
                 <!-- <p>You have selected: {{ SelectAgentName}}</p> -->
               </div>
 
               <div class="custom_department_account" *ngIf="selectedValue == 'dept_Acc'">
-                <label class="dept_acc_lbl">Choose Agent of Account Department</label>
-                <div class="department_acc" *ngFor="let depts_acc of departments_account">
-                   <label class="account_agent_name" >
-                    <input type="radio" name="departmentAccount" value="{{depts_acc.name}}" (change)="radioChangeHandler($event)">
-                     {{depts_acc.name}}
-                  </label>
+                <div class="custom-dept_acc_lbl">
+                  <label class="dept_acc_lbl">Choose Agent of Accounting Department</label>
+                </div>
+
+                <div class="department_acc">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Checkbox</th>
+                        <th>Agents Name</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let depts_acc of departments_account">
+                        <td>
+                          <input type="checkbox" [checked]="Checked">
+                          {{depts_acc.all}}
+                        </td>
+
+                        <td>
+                          {{depts_acc.name}}
+                        </td>
+
+                        <td>
+                          {{depts_acc.status}}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="custom-Button">
+                  <div class="click-cancel2">
+                    <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
+                  </div>
+
+                  <div class="click-assign">
+                    <button class="btn-assign">Assign</button>
+                  </div>
                 </div>
               </div>
 
-              <div class="custom_department_payroll" *ngIf="selectedValue == 'dept_Payroll'">
+              <!-- <div class="custom_department_payroll" *ngIf="selectedValue == 'dept_Payroll'">
                 <label class="dept_payroll_lbl">Choose Agent of Payroll Department</label>
                 <div class="department_payroll" *ngFor="let depts_payroll of departments_payroll">
                    <label class="payroll_agent_name" >
@@ -323,23 +328,58 @@
                      {{depts_payroll.name}}
                   </label>
                 </div>
-              </div>
-            </div>
+              </div> -->
 
-            <div class="custom-Button">
-              <div class="click-cancel2">
-                <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
-              </div>
+              <div class="custom_department_payroll" *ngIf="selectedValue == 'dept_Payroll'">
+                <div class="custom-dept_payroll_lbl">
+                  <label class="dept_payroll_lbl">Choose Agent of Payroll Department</label>
+                </div>
 
-              <div class="click-assign">
-                <button class="btn-assign">Assign</button>
+                <div class="department_payroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Checkbox</th>
+                        <th>Agents Name</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let depts_payroll of departments_payroll">
+                        <td>
+                          <input type="checkbox" [checked]="Checked">
+                          {{depts_payroll.all}}
+                        </td>
+
+                        <td>
+                          {{depts_payroll.name}}
+                        </td>
+
+                        <td>
+                          {{depts_payroll.status}}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="custom-Button">
+                  <div class="click-cancel2">
+                    <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
+                  </div>
+
+                  <div class="click-assign">
+                    <button class="btn-assign">Assign</button>
+                  </div>
+                </div>
+                <!-- <p>You have selected: {{ SelectAgentName}}</p> -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- p-relative -->

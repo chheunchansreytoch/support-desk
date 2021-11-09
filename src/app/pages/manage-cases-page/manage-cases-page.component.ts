@@ -14,6 +14,8 @@ export class ManageCasesPageComponent implements OnInit {
 
   selectedValue = 'none';
   public selecedBtnCancel;
+  private departmentIT_statusValue;
+
   //create data table
   rows = [
     {
@@ -185,7 +187,6 @@ export class ManageCasesPageComponent implements OnInit {
     this.showCasePopup=!this.showCasePopup
   }
 
-
   //assignCasetoogleTag
   showAssignPopop:boolean=false
   assignCasetoogleTag() {
@@ -206,36 +207,176 @@ export class ManageCasesPageComponent implements OnInit {
   SelectAgentName: string = '';
 
   departments_IT: Department_IT [] = [
-    {name: 'Chheun Chansreytoch'},
-    {name: 'Mark Lee'},
-    {name: 'Kim Jungwoo'},
-    {name: 'Jung Jaehyun'},
-    {name: 'Chheun Chansreytoch'},
-    {name: 'Mark Lee'},
-    {name: 'Kim Jungwoo'},
-    {name: 'Jung Jaehyun'},
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
   ];
 
+  // checkStatusValue() {
+  //   let value = Object(this.departments_IT)["status"];
+  //   console.log(value);
+  // }
+
   departments_account: Department_Accounting [] = [
-    {name: 'aihlakhvakh'},
-    {name: 'vanvi ha'},
-    {name: 'oiahnvjba'},
-    {name: 'vknakv haaifj'},
-    {name: 'Ckjva lajoa'},
-    {name: 'paonvkla  anoin'},
-    {name: 'alkn ajakvjao'},
-    {name: 'Jpoiahvoia vnoaj'},
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
   ]
 
   departments_payroll: Department_Payroll [] = [
-    {name: 'aihlakhvakh'},
-    {name: 'vanvi ha'},
-    {name: 'oiahnvjba'},
-    {name: 'vknakv haaifj'},
-    {name: 'Ckjva lajoa'},
-    {name: 'paonvkla  anoin'},
-    {name: 'alkn ajakvjao'},
-    {name: 'Jpoiahvoia vnoaj'},
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Working",
+    },
+
+    {
+      all: "",
+      name: "Chheun Chansreytoch",
+      status: "Closed",
+    },
   ]
 
   radioChangeHandler (e:any) {
@@ -253,6 +394,18 @@ export class ManageCasesPageComponent implements OnInit {
       this.checks=false;
     }
   }
+
+// checkToAssign list
+Checked=false;
+isChecked(e:any){
+  if(e.target.checked==true) {
+    this.Checked=true;
+  }
+  else {
+    this.Checked=false;
+  }
+}
+
 
 
 

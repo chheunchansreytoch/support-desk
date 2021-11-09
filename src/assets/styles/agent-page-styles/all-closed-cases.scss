@@ -13,7 +13,7 @@
     .list-Container {
       padding: 15px;
       height: 445px;
-      overflow-x: hidden;
+      overflow: scroll;
       //margin: 0px 10px;
       table {
         width: 100%;
@@ -109,7 +109,7 @@
       tbody tr td .status-cases .select-status{
         height: 30px;
         padding: 7px;
-        margin-left: 15px;
+        margin-left: 9px;
         font-size: 11px;
         width: 100%;
         background: none;
@@ -150,7 +150,7 @@
       tbody tr td .priority-cases .select-priority{
         height: 30px;
         padding: 7px;
-        margin-left: 50px;
+        margin-left: 9px;
         font-size: 11px;
         width: 100%;
         background: none;
