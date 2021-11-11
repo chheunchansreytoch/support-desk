@@ -20,6 +20,9 @@
       "es2018",
       "dom"
     ],
+    "paths": {
+      "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
+    },
     "noImplicitAny": false,
   },
   "angularCompilerOptions": {

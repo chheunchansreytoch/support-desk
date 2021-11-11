@@ -7,7 +7,7 @@ import { IManager } from "../models/IManager.model";
 import { catchError, retry } from "rxjs/operators";
 import { Observable, throwError } from "rxjs";
 
-@Injectable({providedIn: 'root'})
+@Injectable({providedIn:'root'})
 export class ManagerStore {
 
   @observable public isLoading: boolean = false;
