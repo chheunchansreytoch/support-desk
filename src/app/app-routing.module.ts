@@ -45,7 +45,7 @@ import { AccountChatterPageComponent } from './pages/account-chatter-page/accoun
 
 
 const routes: Routes = [
-  { path: 'agent',
+  { path: 'manager',
     component: LoginFrontLayoutComponent,
     children: [
       { path: 'login', component: LoginPageComponent },
