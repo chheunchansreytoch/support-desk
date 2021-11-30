@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateAgentsDialogComponent } from '../components/dialogs/create-agents-dialog/create-agents-dialog.component';
 import { MoreDetailDialogComponent } from '../components/dialogs/more-detail-dialog/more-detail-dialog.component';
-// import { ConfirmMessageDialogComponent } from '../components/dialogs/confirm-message-dialog/confirm-message-dialog.component';
-import { ConfirmDialogComponent } from '../components/dialogs/confirm-dialog/confirm-dialog.component';
 import { SendToDialogComponent } from '../components/dialogs/send-to-dialog/send-to-dialog.component';
 import { ViewAllDialogComponent } from '../components/dialogs/view-all-dialog/view-all-dialog.component';
 import { CreateNewDialogComponent } from '../components/dialogs/create-new-dialog/create-new-dialog.component';
@@ -11,6 +9,8 @@ import { ViewAllcasesDialogComponent } from '../components/dialogs/view-allcases
 import { CreateCaseDialogComponent } from '../components/dialogs/create-case-dialog/create-case-dialog.component';
 import { AssignToDialogComponent } from '../components/dialogs/assign-to-dialog/assign-to-dialog.component';
 import { ViewNotificationDialogComponent } from '../components/dialogs/view-notification-dialog/view-notification-dialog.component';
+import { ConfirmDeleteDialogComponent } from '../components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,8 @@ export class DialogsService {
     this.dialog.open(MoreDetailDialogComponent);
   }
 
-  openConfirmDialog() {
-    // this.dialog.open(ConfirmMessageDialogComponent);
-    this.dialog.open(ConfirmDialogComponent);
+  openDeleteConfirmDialog() {
+    this.dialog.open(ConfirmDeleteDialogComponent);
   }
 
   openSendToDialog() {

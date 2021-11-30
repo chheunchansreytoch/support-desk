@@ -2,78 +2,63 @@
   <h4 mat-dialog-title>Create Agents</h4>
 
   <div mat-dialog-content>
-    <form>
-      <div class="custom-input-name">
-        <div class="custom-fname">
-          <label class="custom-field">
-            <input class="form-input" type="text" name="fname" required>
-            <span class="placeholder">First Name</span>
-          </label>
-        </div>
+    <form [formGroup]="registrationForm" (ngSubmit)="formSubmitted(registrationForm.value)">
+      <div class="loginform">
+        <label class="custom-field">
+          <input class="form-input" type="text" name="username" required formControlName="username">
+          <span class="placeholder">Username</span>
+        </label>
+        <p class="errorMessageLabel" *ngIf="registrationForm.controls['username']?.touched && registrationForm.controls['username']?.errors?.required">Please Input Username.</p>
 
-        <div class="custom-lname">
-          <label class="custom-field">
-            <input class="form-input" type="text" name="lmail" required>
-            <span class="placeholder">Last Name</span>
-          </label>
-        </div>
+        <label class="custom-field">
+          <input class="form-input" type="email" name="email" required formControlName="email">
+          <span class="placeholder">Email</span>
+        </label>
+
+        <label class="custom-field">
+          <input class="form-input" type="password" name="password" required formControlName="password">
+          <span class="placeholder">Password</span>
+        </label>
+
+        <label class="custom-field">
+          <input class="form-input" type="password" name="password" required formControlName="confirmPassword">
+          <span class="placeholder">Repeat Password</span>
+        </label>
+        <p class="errorMessageLabel" *ngIf="registrationForm.controls['confirmPassword']?.touched && registrationForm.controls['confirmPassword']?.errors?.confirmedValidator">Confirm Password is not match.</p>
       </div>
 
-      <div class="custom-email">
-        <label class="custom-field">
-          <input class="form-input" type="text" name="email" required>
-          <span class="placeholder">Email</span>
+      <div class="position">
+        <label class="department-container">
+          <div class="custom-dept" required >
+            <select formControlName="department" >
+              <!-- <option hidden>Select Department</option> -->
+              <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option>
+            </select>
+          </div>
+        </label>
+
+        <label class="gender-container">
+          <div class="custom-gender" *ngFor="let gender of genders">
+            <label class="agent-gender" >
+              <input type="radio" name="gender" value="{{gender}}" (change)="radioChangeHandler($event)" formControlName="gender">
+              {{gender}}
+            </label>
+          </div>
         </label>
       </div>
 
-      <div class="password-container">
-        <div class="custom-password">
-          <label class="custom-field">
-            <input class="form-input" type="text" name="password" required>
-            <span class="placeholder">Password</span>
-          </label>
-        </div>
+      <div class="custom-create-btn">
+        <div mat-dialog-actions>
+          <div class="close-btn">
+            <button mat-button mat-dialog-close>Close</button>
+          </div>
 
-        <div class="custom-repeat-pw">
-          <label class="custom-field">
-            <input class="form-input" type="text" name="password" required>
-            <span class="placeholder">Repeat password</span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Custom Department & Gender -->
-      <div class="dept-gen-container">
-        <!-- Custom Department -->
-        <div class="custom-dept" required>
-          <select>
-            <option hidden>Select Department</option>
-            <option>IT</option>
-            <option>Accounting</option>
-            <option>Payroll</option>
-          </select>
-        </div>
-        <!-- Custom Gender -->
-        <div class="gender-container">
-          <div class="custom-gender" *ngFor="let gender of genders">
-            <label class="agent-gender" >
-              <input type="radio" name="gender" value="{{gender.gender}}" (change)="radioChangeHandler($event)">
-              {{gender.gender}}
-            </label>
+          <div class="create-btn">
+            <button (click)="btnSubmitClicked()">Create</button>
           </div>
         </div>
       </div>
     </form>
-  </div>
-
-  <div mat-dialog-actions>
-    <div class="custom-btn-close">
-      <button class="btn-close" mat-button mat-dialog-close>Close</button>
-    </div>
-
-    <div class="custom-btn-create">
-      <button class="btn-create">Create</button>
-    </div>
   </div>
 </div>
 

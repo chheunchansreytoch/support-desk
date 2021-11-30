@@ -83,6 +83,22 @@
             padding:  0.8rem 1rem;
             line-height: 2;
             font-size: 13px;
+
+            img {
+              display: inline-block;
+              width: 38px;
+              height: 38px;
+              border-radius: 50%;
+              object-fit: cover;
+
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: cover;
+            }
+          }
+
+          .email {
+            color: #00b4d8;
           }
 
           .btnDetailClick {

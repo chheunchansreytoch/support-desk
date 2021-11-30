@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerStore } from 'src/app/stores/customer.store';
 
 @Component({
   selector: 'app-all-accounts-page',
@@ -8,102 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class AllAccountsPageComponent implements OnInit {
 
   selectedOption = '3';
+  arrCustomers: Array<any> = [];
 
-  constructor(){}
+  constructor(
+    private customerStore: CustomerStore,
+  ){ }
 
-  // create data table
-  rows = [
-    {
-      n: "1",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "2",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-    {
-      n: "3",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "4",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "5",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "6",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "7",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "8",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "9",
-      all: "",
-      accountName: "Edge Communications",
-      phone: "(512) 757-6000",
-      type: "Customer-Direct",
-      accountOwnerAlias: "Chheun chansreytoch",
-      option: "",
-    },
-  ]
+  fetchCustomers() {
+    this.customerStore.getCustomers().subscribe((res: any) => {
+      this.arrCustomers = res;
+      console.log(this.arrCustomers);
+    });
+  }
 
   ngOnInit(): void {
+    this.fetchCustomers();
   }
 
   checks=false;

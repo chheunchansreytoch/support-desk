@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
+import { CaseStore } from 'src/app/stores/case.store';
 import { Router } from '@angular/router';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-all-closed-cases-page',
@@ -11,123 +15,23 @@ export class AllClosedCasesPageComponent implements OnInit {
 
   currentRoute: string = '';
   selectedOption = '3';
+  arrCases: Array<any> = [];
 
-  //create data table
-  rows = [
-    {
-      n: "1",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form ",
-      status: "",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-    {
-      n: "2",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  constructor(
+    public router: Router,
+    private location: Location,
+    private caseStore: CaseStore,
 
-    {
-      n: "3",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
 
-    {
-      n: "1",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-    {
-      n: "2",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  ) {}
 
-    {
-      n: "3",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
 
-    {
-      n: "1",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-    {
-      n: "2",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-
-    {
-      n: "3",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-  ]
+  fetchCases() {
+    this.caseStore.getCases().subscribe((res: any) => {
+      this.arrCases = res;
+      console.log(this.arrCases);
+    });
+  }
 
 //select checkbox
   checks=false;
@@ -139,13 +43,16 @@ export class AllClosedCasesPageComponent implements OnInit {
       this.checks=false;
     }
   }
-  constructor(
-    public router: Router,
-    private location: Location
-    ) {
-  }
+
 
   ngOnInit(): void {
+    this.fetchCases();
+  }
+
+  convertUTCtoDate(UTC: string) {
+    const date = new Date(UTC);
+    const strDate = moment(date).format('LLLL');
+    return strDate;
   }
 
 }

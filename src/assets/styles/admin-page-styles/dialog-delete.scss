@@ -1,0 +1,77 @@
+.deleteContainer {
+  .confirm-messgage1 {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .custom-delete-btn {
+    .cancel-btn {
+      float: left;
+      margin-right: 10px;
+
+      button {
+        border: none;
+        outline: none;
+        background-color: $color9;
+        color: $color7;
+        border-radius: 5px;
+        padding: 5px 14px;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: transform 80ms ease-in;
+      }
+
+      button:hover{
+        background-color: rgb(14, 14, 179);
+        transition: 0.5s;
+      }
+
+      button:active {
+        transform: scale(0.85);
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      button.ghost {
+        background-color: transparent;
+        border-color: #FFFFFF;
+      }
+    }
+
+    .custom-delete-btn {
+      button {
+        border: none;
+        outline: none;
+        background-color: red;
+        color: $color7;
+        border-radius: 5px;
+        padding: 5px 14px;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: transform 80ms ease-in;
+      }
+
+      button:hover{
+        background-color: rgb(180, 12, 12);
+        transition: 0.5s;
+      }
+
+      button:active {
+        transform: scale(0.85);
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      button.ghost {
+        background-color: transparent;
+        border-color: #FFFFFF;
+      }
+    }
+  }
+}

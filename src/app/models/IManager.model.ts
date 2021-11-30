@@ -1,7 +1,6 @@
 export class IManager {
   id?: string;
-  firstname: string | undefined;
-  lastname: string | undefined;
+  username: string | undefined;
   email: string | undefined;
   password: string | undefined;
   imageDownloadUrl: string | undefined;

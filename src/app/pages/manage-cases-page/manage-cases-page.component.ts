@@ -4,6 +4,7 @@ import { Department_Accounting } from 'src/app/typeScripts/department_accounting
 import { Department_Payroll } from 'src/app/typeScripts/department_payroll';
 import { DialogsService } from 'src/app/services/dialogs.service';
 import { MatDialog } from '@angular/material/dialog';
+import { CaseStore } from 'src/app/stores/case.store';
 
 @Component({
   selector: 'app-manage-cases-page',
@@ -15,169 +16,203 @@ export class ManageCasesPageComponent implements OnInit {
   selectedValue = 'none';
   public selecedBtnCancel;
   private departmentIT_statusValue;
+  arrCases: Array<any> = [];
 
   //create data table
-  rows = [
-    {
-      n: "1",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-    {
-      n: "2",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  // rows = [
+  //   {
+  //     n: "1",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
+  //   {
+  //     n: "2",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "3",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "3",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "4",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "4",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "5",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "5",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "6",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "6",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "7",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "7",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "5",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "5",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "8",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "8",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "9",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "9",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "10",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  //   {
+  //     n: "10",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
 
-    {
-      n: "11",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "New",
-      priority: "Low",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-  ]
+  //   {
+  //     n: "11",
+  //     all: "",
+  //     caseNumber: "00001002",
+  //     contactName: "Chheun Chansreytoch",
+  //     subject: "Dialog issues with text and form",
+  //     status: "New",
+  //     priority: "Low",
+  //     dateTime: "5/19/2021, 2:07 PM",
+  //     caseOwner: "Chheun Chansreytoch",
+  //     option: "",
+  //   },
+  // ]
 
 
-  constructor(public dialog: MatDialog, public dialogService: DialogsService) { }
+  constructor(
+    public dialog: MatDialog,
+    public dialogService: DialogsService,
+    private caseStore: CaseStore
+  )
+  { }
+
+  fetchCases() {
+    this.caseStore.getCases().subscribe((res: any) => {
+      this.arrCases = res;
+    });
+  }
+
+  btnSubmitClicked() { };
+
+  // formSubmitted(formData: any) {
+  //   if (this.registrationForm.valid) {
+  //     const { department, gender } = formData;
+  //     const finalData = {
+  //       ...formData,
+  //       createdBy: this.managerStore.getCurrentUser.id,
+  //       department: { id: department },
+  //       gender: gender,
+  //     };
+
+  //     this.agentStore.addAgent(finalData).subscribe((res: {}) => {
+  //       this.arrAgents.push(finalData);
+  //       this.registrationForm.reset();
+  //     });
+
+  //     console.log("Form is valid");
+  //   }
+  // }
 
   ngOnInit(): void {
+    this.fetchCases();
   }
 
   //createCasetoogleTag

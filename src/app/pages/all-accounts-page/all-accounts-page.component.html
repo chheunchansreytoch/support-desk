@@ -3,7 +3,7 @@
     <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
   </div>
 
-  <div class="list-Container">
+  <div class="list-Container2">
     <table>
       <thead>
         <tr>
@@ -11,23 +11,23 @@
           <th><input type="checkbox" (change)="checkAll($event)"></th>
           <th>Account Name</th>
           <th>Phone</th>
-          <th>Type</th>
-          <th>Account Owner Alias</th>
-          <th>Option</th>
+          <th>Email</th>
+          <th>Action</th>
+          <th>Profile</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let item of this.rows">
-          <td>{{item.n}}</td>
+        <tr *ngFor="let item of arrCustomers; let i = index" routerLink="/accounts/account-details">
+          <td>{{i+1}}</td>
+
           <td>
             <input type="checkbox" [checked]="checks">
-            {{item.all}}
           </td>
           <td>
             <div class='edit_hover_class'>
               <a class="acc-name-href" href="/accounts/account-details">
-                {{item.accountName}}
+                {{item.username}}
               </a>
               <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
@@ -43,14 +43,23 @@
 
           <td>
             <div class='edit_hover_class'>
-              <span class="type-edit">
-                {{item.type}}
+              <span class="phone-edit">
+                {{item.email}}
               </span>
               <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
 
-          <td>{{item.accountOwnerAlias}}</td>
+          <!-- <td>
+            <div class='edit_hover_class'>
+              <span class="type-edit">
+                {{item.type}}
+              </span>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td> -->
+
+          <!-- <td>{{item.accountOwnerAlias}}</td> -->
 
           <td>
             <div class="custom-option-account">
@@ -69,6 +78,10 @@
                 <span class="changeOwner-tooltiptext">Change Owner</span>
               </div>
             </div>
+          </td>
+
+          <td>
+            <img src="{{item.imageDownloadUrl}}">
           </td>
         </tr>
       </tbody>

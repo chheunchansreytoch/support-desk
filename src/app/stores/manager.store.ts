@@ -2,7 +2,6 @@ import { action, computed, observable } from "mobx";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-
 import { IManager } from "../models/IManager.model";
 import { catchError, retry } from "rxjs/operators";
 import { Observable, throwError } from "rxjs";
@@ -35,7 +34,7 @@ export class ManagerStore {
     private httpClient: HttpClient,
     private router: Router
   ) {
-
+    this.getManagers();;
   }
 
   managerJSONMapping() {
@@ -49,20 +48,34 @@ export class ManagerStore {
     return manager != null ? true : false;
   }
 
+  @computed
+  get getCurrentUser(): any {
+    const manager = localStorage.getItem('manager_auth');
+    return manager ? JSON.parse(manager) : {'id': null, 'username': null};
+  }
+
   @action
-  login(email: string, password: string) {
-    this.httpClient.post<IManager>(this.endpoint + '/managers/login', JSON.stringify({ email, password }), this.httpHeader)
+  login(username: string, email: string, password: string) {
+    try {
+      this.httpClient.post<IManager>(
+        this.endpoint + '/managers/login',
+        JSON.stringify({ username, email, password }), this.httpHeader)
       .pipe(
         retry(1),
         catchError(this.processError)
       ).subscribe((result) => {
-        localStorage.setItem("user_auth", JSON.stringify(result));
-        this.router.navigate(['/']);
+        localStorage.setItem("manager_auth", JSON.stringify(result));
+        this.router.navigate(['/admin-homepage']);
+        console.log("correct");
       });
+    } catch(error) {
+      console.log('login errer ln.52: ', error)
+    }
   }
 
   @action
-  getUsers(): Observable<IManager> {
+  getManagers(): Observable<IManager> {
+    //const userData = JSON.parse(localStorage.getItem('user_auth') || '{}');
     return this.httpClient.get<IManager>(this.endpoint + '/managers', this.httpHeaderWithToken)
     .pipe(
       retry(1),
@@ -70,13 +83,23 @@ export class ManagerStore {
     )
   }
 
+  @action
+  getManager(id, data): Observable<IManager> {
+    return this.httpClient.get<IManager>(this.endpoint + '/managers/' + id, this.httpHeader)
+    .pipe(
+      retry(1),
+      catchError(this.processError)
+    )
+  }
+
   // @action
-  // getUser(id, data): Observable<IManager> {
-  //   return this.httpClient.get<IManager>(this.endpoint + '/managers/' + id, JSON.stringify(data), this.httpHeader)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
+  // async addManager(data: any) {
+  //   try {
+  //     const result = await this.httpClient.post<IManager>(this.endpoint + '/invoice/create', JSON.stringify(data), this.httpHeader).toPromise();
+  //     return result;
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
   // }
 
   @action
@@ -88,17 +111,17 @@ export class ManagerStore {
     )
   }
 
-  @action
-  updateUser(id, data): Observable<IManager> {
-    return this.httpClient.put<IManager>(this.endpoint + '/managers/' + id, JSON.stringify(data), this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
-  }
+  // @action
+  // updateUser(id, data): Observable<IManager> {
+  //   return this.httpClient.put<IManager>(this.endpoint + '/managers/' + id, JSON.stringify(data), this.httpHeader)
+  //   .pipe(
+  //     retry(1),
+  //     catchError(this.processError)
+  //   )
+  // }
 
   @action
-  deleteUser(id){
+  deleteManager(id){
     return this.httpClient.delete<IManager>(this.endpoint + '/managers/' + id, this.httpHeader)
     .pipe(
       retry(1),
@@ -115,6 +138,5 @@ export class ManagerStore {
     }
     console.log(message);
     return throwError(message);
- }
-
+  }
 }

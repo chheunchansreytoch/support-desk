@@ -91,7 +91,14 @@ export class AdminPageComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor() {
+    console.log('Hello');
+    const auth = localStorage.getItem('manager_auth');
+    if (auth) {
+      const abc = JSON.parse(auth);
+      console.log(abc);
+    }
+   }
 
   ngOnInit(): void {
   }

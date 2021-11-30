@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeleteDialogComponent } from 'src/app/components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
 import { DialogsService } from 'src/app/services/dialogs.service';
+import { AgentStore } from 'src/app/stores/agent.store';
 
 @Component({
   selector: 'app-manage-agents-page',
@@ -9,111 +11,21 @@ import { DialogsService } from 'src/app/services/dialogs.service';
 })
 export class ManageAgentsPageComponent implements OnInit {
 
-  items = [
-    {
-      n: "1",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      action: "",
-    },
-    {
-      n: "2",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-    {
-      n: "3",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-    {
-      n: "4",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-    {
-      n: "5",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-    {
-      n: "6",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
+  arrAgents: Array<any> = [];
+  numOfAgents = [''];
 
-    {
-      n: "9",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-    {
-      n: "7",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
+  constructor(
+    public dialog: MatDialog,
+    public dialogService: DialogsService,
+    private agentStore: AgentStore
+  ) { }
 
-    {
-      n: "8",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-
-    {
-      n: "9",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-
-    {
-      n: "10",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-    {
-      n: "11",
-      agentName: "Chheun Chansreytoch",
-      jobPosition: "Developer",
-      status: "Working",
-      agentInfo: "",
-      Action: "",
-    },
-  ];
-
-  constructor(public dialog: MatDialog,
-    public dialogService: DialogsService) { }
+  fetchAgents() {
+    return this.agentStore.getAgents().subscribe((res: any) => {
+      this.arrAgents = res;
+      //console.log(this.arrAgents);
+    });
+  }
 
   onCreate() {
     this.dialogService.openCreateDialog();
@@ -124,15 +36,26 @@ export class ManageAgentsPageComponent implements OnInit {
   }
 
   onUpdate() {
-
+    //this.dialogService.openConfirmDialog
   }
 
-  onDelete() {
-    this.dialogService.openConfirmDialog();
+  onSelectedAgent(agentId) {
+    if(agentId) {
+      const dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, {
+        data: agentId
+      });
+      dialogRef.afterClosed().subscribe(async (result: any) => {
+        if(!result) return;
+        await this.agentStore.deleteAgent(result);
+        console.log(result);
+        //alert("Delete Successfully!");
+      });
+    }
+    return;
   }
 
   ngOnInit(): void {
-
+    this.fetchAgents();
   }
 }
 

@@ -1,36 +1,38 @@
 <div class="defaultContent">
-    <div class="status-sort-case">
+  <div class="status-sort-case">
     <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
   </div>
 
-  <div class="list-Container" >
+  <div class="list-Container1" >
     <table>
       <thead>
-          <tr>
-            <th>N.</th>
-            <th><input type="checkbox" (change)="checkAll($event)"></th>
-            <th>Case Number</th>
-            <th>Contact Name</th>
-            <th>Subject</th>
-            <th>Status</th>
-            <th>Priority</th>
-            <th>Date/Time Opened</th>
-            <th>Case Owner</th>
-            <th>Option</th>
-          </tr>
+        <tr>
+          <th>N.</th>
+          <th><input type="checkbox" (change)="checkAll($event)"></th>
+          <th>Case Number</th>
+          <th>Contact Name</th>
+          <th>Contact Number</th>
+          <th>Subject</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Date|Time</th>
+          <th>Assigned Date</th>
+          <th>Case Owner</th>
+          <th>Actions</th>
+        </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let item of this.rows">
-          <td>{{item.n}}</td>
+        <tr *ngFor="let item of arrCases; let i = index" routerLink="/cases/case-details">
+          <td>{{i+1}}</td>
 
           <td>
             <input type="checkbox" [checked]="checks">
-            {{item.all}}
           </td>
 
           <td>
-            <a class="case-num-href" href="/cases/case-details">
+            <a class="case-num-href" >
               {{item.caseNumber}}
             </a>
           </td>
@@ -38,11 +40,29 @@
           <td>
             <div class='edit_hover_class'>
               <a class="name-href" href="#">
-                {{item.contactName}}
+                {{item.customer.username}}
               </a>
               <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
+
+          <td>
+            <div class='edit_hover_class'>
+              <a class="name-href" href="#">
+                {{item.customer.phone}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+
+          <!-- <td>
+            <div class='edit_hover_class'>
+              <a class="name-href" href="#">
+                {{item.email}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td> -->
 
           <td class="subject-td">
             <div class='edit_hover_class'>
@@ -53,33 +73,48 @@
             </div>
           </td>
 
+          <td class="subject-td">
+            <div class='edit_hover_class'>
+              <a class="subject-href" href="/contacts/contact-details">
+                {{item.description}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+
           <td>
-            <div class="status-cases">
+            {{item.status.name}}
+            <!-- <div class="status-cases">
             <select class="select-status">
               <option selected>Closed</option>
               <option>New</option>
               <option>Working</option>
               <option>Escalated</option>
             </select>
-            </div>
+            </div> -->
           </td>
 
           <td>
-            <div class="priority-cases">
+            <!-- <div class="priority-cases">
               <select class="select-priority">
                 <option>High</option>
                 <option>Medium</option>
                 <option>Low</option>
               </select>
-            </div>
+            </div> -->
+            {{item.priority.name}}
           </td>
 
-          <td>{{item.dateTime}}</td>
+          <td>{{convertUTCtoDate(item.createdDate)}}</td>
+          <td>{{convertUTCtoDate(item.assignedDate)}}</td>
 
-          <td>{{item.caseOwner}}</td>
+          <td>{{item.agent.username}}</td>
 
           <td>
-            <div class="custom-option-case">
+            <div class="tree-action">
+
+            </div>
+            <!-- <div class="custom-option-case">
               <div class="edit-icon-container">
                 <button class="btn-edit"><i class="fi-rr-pencil"></i></button>
                 <span class="edit-tooltiptext">Edit</span>
@@ -94,8 +129,12 @@
                 <button class="btn-changeOwner"><i class="fi-rr-mode-landscape"></i></button>
                 <span class="changeOwner-tooltiptext">Change Owner</span>
               </div>
-            </div>
+            </div> -->
           </td>
+
+          <!-- <td>
+            <img src="{{item.imageDownloadUrl}}">
+          </td> -->
         </tr>
       </tbody>
     </table>

@@ -9,7 +9,6 @@ import { FooterFrontComponent } from './shared/footer-front/footer-front.compone
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { MainFrontLayoutComponent } from './layouts/main-front-layout/main-front-layout.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginHeaderComponent } from './shared/login-header/login-header.component';
 import { LoginFooterComponent } from './shared/login-footer/login-footer.component';
 import { LoginFrontLayoutComponent } from './layouts/login-front-layout/login-front-layout.component';
@@ -40,8 +39,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MoreDetailDialogComponent } from './components/dialogs/more-detail-dialog/more-detail-dialog.component';
 import { CreateAgentsDialogComponent } from './components/dialogs/create-agents-dialog/create-agents-dialog.component';
-import { ConfirmMessageDialogComponent } from './components/dialogs/confirm-message-dialog/confirm-message-dialog.component';
-import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
 import { MatListModule } from '@angular/material/list';
 import { MyCasesPageComponent } from './pages/my-cases-page/my-cases-page.component';
 import { AllClosedCasesPageComponent } from './pages/all-closed-cases-page/all-closed-cases-page.component';
@@ -88,9 +85,16 @@ import { TestPageComponent } from './pages/test-page/test-page.component';
 import { CreateCaseDialogComponent } from './components/dialogs/create-case-dialog/create-case-dialog.component';
 import { AssignToDialogComponent } from './components/dialogs/assign-to-dialog/assign-to-dialog.component';
 import { AdminSidebarLayoutComponent } from './layouts/admin-sidebar-layout/admin-sidebar-layout.component';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 import { ViewNotificationDialogComponent } from './components/dialogs/view-notification-dialog/view-notification-dialog.component';
-
+import { ManagerLoginPageComponent } from './pages/manager-login-page/manager-login-page.component';
+import { FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-page.component';
+import { CustomerLoginPageComponent } from './pages/customer-login-page/customer-login-page.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { ConfirmDeleteDialogComponent } from './components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +105,6 @@ import { ViewNotificationDialogComponent } from './components/dialogs/view-notif
     ContactPageComponent,
     NotFoundPageComponent,
     MainFrontLayoutComponent,
-    LoginPageComponent,
     LoginHeaderComponent,
     LoginFooterComponent,
     LoginFrontLayoutComponent,
@@ -159,8 +162,12 @@ import { ViewNotificationDialogComponent } from './components/dialogs/view-notif
     AssignToDialogComponent,
     AdminSidebarLayoutComponent,
     ViewNotificationDialogComponent,
+    ManagerLoginPageComponent,
+    AgentLoginPageComponent,
+    CustomerLoginPageComponent,
+    ConfirmDeleteDialogComponent,
   ],
-  entryComponents: [CreateAgentsDialogComponent, ConfirmMessageDialogComponent, MoreDetailDialogComponent, ConfirmDialogComponent, SendToDialogComponent],
+  entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -185,7 +192,10 @@ import { ViewNotificationDialogComponent } from './components/dialogs/view-notif
     MatNativeDateModule,
     ReactiveFormsModule,
     MatBadgeModule,
-   // FormGroup,
+    // FormControl,
+    // FormGroup,
+    HttpClientModule,
+    MatTreeModule,
   ],
 
   providers: [],

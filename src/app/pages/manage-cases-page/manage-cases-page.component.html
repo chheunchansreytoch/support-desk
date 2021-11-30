@@ -396,60 +396,52 @@
                 <th>N.</th>
                 <th><input type="checkbox" (change)="checkAll($event)"></th>
                 <th>Case Number</th>
-                <th>Contact Name</th>
                 <th>Subject</th>
+                <th>Description</th>
+                <th>Assigned By</th>
+                <th>Assigned Date</th>
+                <th>Contact Name</th>
                 <th>Status</th>
                 <th>Priority</th>
-                <th>Date/Time Opened</th>
                 <th>Case Owner</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr *ngFor="let item of this.rows">
+              <tr *ngFor="let item of arrCases; let i = index">
                <td>
-                {{item.n}}
+                {{i+1}}
                </td>
 
                <td>
                 <input type="checkbox" [checked]="checks">
-                {{item.all}}
                </td>
 
-               <td>
-                {{item.caseNumber}}
-               </td>
+               <td>{{item.caseNumber}}</td>
 
-               <td>
-                {{item.contactName}}
-               </td>
+               <td>{{item.subject}}</td>
 
-               <td>
-                {{item.subject}}
-               </td>
+               <td>{{item.description}}</td>
 
-               <td>
-                {{item.status}}
-               </td>
+               <td>{{item.manager.username}}</td>
 
-               <td>
-                {{item.priority}}
-               </td>
+               <td>{{item.createdDate}}</td>
 
-               <td>
-                {{item.dateTime}}
-               </td>
+               <td>{{item.customer.username}}</td>
 
-               <td>
-                {{item.caseOwner}}
-               </td>
+               <td>{{item.status.name}}</td>
+
+               <td>{{item.priority.name}}</td>
+
+               <td>{{item.agent.username}}</td>
+
               </tr>
             </tbody>
           </table>
         </div>
       </mat-tab>
 
-      <mat-tab label="View Case by Product">
+      <!-- <mat-tab label="View Case by Product">
         <div class="table-scroll">
           <table>
             <thead>
@@ -508,8 +500,8 @@
             </tbody>
           </table>
         </div>
-      </mat-tab>
-
+      </mat-tab> -->
+<!--
       <mat-tab label="View Current Cases">
         <div class="table-scroll">
           <table>
@@ -569,9 +561,9 @@
             </tbody>
           </table>
         </div>
-      </mat-tab>
+      </mat-tab> -->
 
-      <mat-tab label="View Old Cases">
+      <!-- <mat-tab label="View Old Cases">
         <div class="table-scroll">
           <table>
             <thead>
@@ -630,7 +622,7 @@
             </tbody>
           </table>
         </div>
-      </mat-tab>
+      </mat-tab> -->
     </mat-tab-group>
   </div>
 </div>

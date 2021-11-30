@@ -8,7 +8,6 @@ import { AccountPageComponent } from './pages/account-page/account-page.componen
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AdminSidebarPageComponent } from './pages/admin-sidebar-page/admin-sidebar-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
 // import { ManageAgentAccountPageComponent } from './pages/manage-agent-account-page/manage-agent-account-page.component';
 import { ManageCasesPageComponent } from './pages/manage-cases-page/manage-cases-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
@@ -41,17 +40,23 @@ import { AccountSidebarPageComponent } from './pages/account-sidebar-page/accoun
 import { AccountInfoPageComponent } from './pages/account-info-page/account-info-page.component';
 import { AccountDetailsPageComponent } from './pages/account-details-page/account-details-page.component';
 import { AccountChatterPageComponent } from './pages/account-chatter-page/account-chatter-page.component';
+import { ManagerLoginPageComponent } from './pages/manager-login-page/manager-login-page.component';
+import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-page.component';
 
 
 
 const routes: Routes = [
-  { path: 'manager',
-    component: LoginFrontLayoutComponent,
-    children: [
-      { path: 'login', component: LoginPageComponent },
-      // { path: 'test', component: TestingPageComponent },
-    ]
-  },
+  // { path: '',
+  //   component: LoginFrontLayoutComponent,
+  //   children: [
+  //     { path: '', component: LoginPageComponent },
+  //     // { path: 'test', component: TestingPageComponent },
+  //   ]
+  // },
+
+  { path: '', component: ManagerLoginPageComponent },
+  { path: 'agent-login', component: AgentLoginPageComponent },
+
   {
     path: '',
     component: AdminFrontLayoutComponent,
