@@ -1,0 +1,24 @@
+<div class="defaultContent">
+  <div class="page-header">
+    <div class="custom-case-list">
+      <div class="case-list-container">
+        <div class="custom-case-image">
+          <img class="case-image" src="./assets/images/selection-icons/account.png">
+        </div>
+
+        <div class="select-case-option">
+          <div class="custom-case-lbl">
+            <label class="cases-lbl">Cases</label>
+          </div>
+          <select ng-model="items" (change)="onSelectedOption($event)">
+            <ng-container *ngFor="let item of Items">
+              <option *ngIf="!checkIfRouteIsActivated(item.label)">{{ item.name }}</option>
+              <option *ngIf="checkIfRouteIsActivated(item.label)" selected>{{ item.name }}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

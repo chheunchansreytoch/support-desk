@@ -1,0 +1,321 @@
+ .customAdminPage {
+  .adminContainer {
+    width: 500px;
+    float: right;
+    //position: absolute;
+    font-family: $Roboto-font;
+    flex: 1;
+    display: flex;
+    //transition: 0.5s;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    .CustomAdminHeader {
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-family: $Roboto-font;
+      background-color: $color7;
+      box-shadow: 0 0 2px 2px #eff0f1;
+
+      .custom-image-SidebarIcon {
+        display: flex;
+        .sideBar-icons {
+          margin: 7px;
+          float: left;
+          margin-right: 9px;
+
+          button {
+           border: none;
+           background: none;
+           width: 30px;
+           height: 30px;
+           line-height: 1;
+
+            .fi-rr-menu-burger {
+              font-size: 18px;
+              color: $black1;
+            }
+          }
+
+          button:hover {
+            transition: 0.5s;
+            background: #cedde4;
+            border-radius: 50%;
+          }
+        }
+
+        .imageSrc {
+          float: right;
+          .image-logo {
+            width: 150px;
+            margin: 9px;
+          }
+        }
+      }
+
+      // .custom-header-item {
+      //   padding: 10px;
+      //   #close {
+      //     display: none;
+      //   }
+
+      //   button {
+      //     border: none;
+      //     background: none;
+
+      //     .fi-rr-menu-burger {
+      //       font-size: 18px;
+      //       color: $black1;
+      //     }
+
+      //     .fi-rr-menu-burger:hover {
+      //       text-shadow: 0 0 10px rgb(130, 160, 216);
+      //     }
+      //   }
+      // }
+
+      .search-form {
+        // width: 25%;
+        // height: 35px;
+        // border: 1px solid #dee2ff;
+        // background-color: #f8f9fa;
+        // border-radius: 25px;
+        // margin-left: 25%;
+        // align-items: center;
+        // text-align: center;
+
+        form {
+          padding: 1px;
+          display: flex;
+          flex-direction: row;
+
+          input[type=text] {
+            padding: 8px 150px;
+            padding-left: 15px;
+            font-size: 12px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: none;
+            border-bottom: 1px solid #ccc;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background: $color7;
+            outline: none;
+            text-indent: 10px;
+          }
+
+          input:focus {
+            border: 1px solid transparent;
+            border-color: #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+          }
+
+          .custom-search-btn {
+            width: 30px;
+            line-height: 2.3;
+            border: 1px solid $gray1;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            .btn-icon-search {
+              border: none;
+              background: none;
+
+              .fi-rr-search {
+                font-size: 13px;
+                padding-left: 7px;
+                // margin-right: 15px;
+              }
+            }
+          }
+
+          .custom-search-btn:hover {
+            background: $gray4;
+          }
+        }
+      }
+
+      .custom-notify-userAcc {
+        display: flex;
+        z-index: 2000;
+
+        .btnNotification-Click {
+          float: left;
+          margin-right: 5px;
+          width: 33px;
+          height: 33px;
+          //background: red;
+          text-align: center;
+          padding: 4px;
+          //border-radius: 50%;
+          .btn-Notification {
+            color: $black1;
+            font-size: 24px;
+            border: none;
+            background: none;
+          }
+
+          .custom-notification-popup {
+            position: absolute;
+            margin-top: 4px;
+            transition: width 2s, height 4s;
+
+            .notification-popup-container {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              overflow-x: hidden;
+              background-color: $color7;
+              margin-left: -360px;
+              width: 400px;
+              // height: 300px;
+              // overflow-x: hidden;
+
+              //border: 1px solid #d4d7da;
+              border-radius: 5px;
+              color: $black1;
+              font-family: $primary-font;
+              box-shadow: 0 5px 25px #d4d7da;
+              transition: width 2s, height 4s;
+
+              .custom-notification-lbl {
+                padding: 10px;
+
+                .notification-lbl {
+                  float: left;
+                  font-size: 14px;
+                  font-weight: bold;
+                  text-indent: 3px;
+                  color: $black2;
+
+                  .fi-sr-bell {
+                    font-size: 12px;
+                  }
+                }
+
+                .btn-close {
+                  border: none;
+                  background: none;
+                  float: right;
+                  width: 20px;
+                  height: 20px;
+                  padding: 2px;
+
+                  .fi-rr-cross-small {
+                    font-size: 16px;
+                  }
+                }
+
+                .btn-close:hover {
+                  border-radius: 50%;
+                  background: #cedde4;
+                }
+              }
+
+              .notification-text {
+                width: 400px;
+                height: 300px;
+                overflow-x: hidden;
+
+                ul {
+                  list-style-type: none;
+                  padding: 5px;
+                  box-shadow: 0 1px 1px #ddd;
+                  display: flex;
+                  justify-content: space-between;
+                  position: relative;
+                }
+
+                ul:hover {
+                  background-color: #eff0f1;
+                }
+
+                ul .notificationList-custom .notificationList li {
+                  //padding: 8px 16px;
+                  text-align: left;
+                  text-indent: 7px;
+                  //border-bottom: 1px solid #ddd;
+                }
+
+                ul .notificationList-custom .from-account li{
+                  text-align: left;
+                  text-indent: 7px;
+
+                  span {
+                    font-size: 10px;
+                    color: $gray3;
+                  }
+                }
+
+                ul .notification-info {
+                  .custom-duration {
+                    margin-top: -8px;
+                    li label{
+                      font-size: 10px;
+                      color: $gray3;
+                    }
+                  }
+
+                  .custom-button {
+                    display: flex;
+
+                    .btn-view {
+                      float: left;
+                      margin-right: 10px;
+                      padding: 1px 13px;
+                      background: $color8;
+                      border-radius: 3px;
+
+                      button{
+                        font-size: 12px;
+                        color: $color7;
+                        background: none;
+                        border: none;
+                        outline: none;
+                      }
+                    }
+
+                    .btn-delete {
+                      //line-height: 2;
+                      button {
+                        background: none;
+                        border: none;
+                        outline: none;
+
+                        .fi-rr-trash{
+                          font-size: 16px;
+                          color: $black1;
+                          //line-height: 2;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .btnNotification-Click:hover {
+          background-color: #cedde4;
+          transition: 0.5s;
+          border-radius: 50%;
+        }
+
+        .profile-account {
+          .avatarImg {
+            float: right;
+            width: 35px;
+            height: 35px;
+            border: 1px solid $gray3;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+

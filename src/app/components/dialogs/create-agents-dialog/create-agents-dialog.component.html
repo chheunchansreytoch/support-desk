@@ -1,0 +1,65 @@
+<div class="create-agent-container">
+  <h4 mat-dialog-title>Create Agents</h4>
+
+  <div mat-dialog-content>
+    <form [formGroup]="registrationForm" (ngSubmit)="formSubmitted(registrationForm.value)">
+      <div class="loginform">
+        <label class="custom-field">
+          <input class="form-input" type="text" name="username" required formControlName="username">
+          <span class="placeholder">Username</span>
+        </label>
+        <p class="errorMessageLabel" *ngIf="registrationForm.controls['username']?.touched && registrationForm.controls['username']?.errors?.required">Please Input Username.</p>
+
+        <label class="custom-field">
+          <input class="form-input" type="email" name="email" required formControlName="email">
+          <span class="placeholder">Email</span>
+        </label>
+
+        <label class="custom-field">
+          <input class="form-input" type="password" name="password" required formControlName="password">
+          <span class="placeholder">Password</span>
+        </label>
+
+        <label class="custom-field">
+          <input class="form-input" type="password" name="password" required formControlName="confirmPassword">
+          <span class="placeholder">Repeat Password</span>
+        </label>
+        <p class="errorMessageLabel" *ngIf="registrationForm.controls['confirmPassword']?.touched && registrationForm.controls['confirmPassword']?.errors?.confirmedValidator">Confirm Password is not match.</p>
+      </div>
+
+      <div class="position">
+        <label class="department-container">
+          <div class="custom-dept" required >
+            <select formControlName="department" >
+              <!-- <option hidden>Select Department</option> -->
+              <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option>
+            </select>
+          </div>
+        </label>
+
+        <label class="gender-container">
+          <div class="custom-gender" *ngFor="let gender of genders">
+            <label class="agent-gender" >
+              <input type="radio" name="gender" value="{{gender}}" (change)="radioChangeHandler($event)" formControlName="gender">
+              {{gender}}
+            </label>
+          </div>
+        </label>
+      </div>
+
+      <div class="custom-create-btn">
+        <div mat-dialog-actions>
+          <div class="close-btn">
+            <button mat-button mat-dialog-close>Close</button>
+          </div>
+
+          <div class="create-btn">
+            <button (click)="btnSubmitClicked()">Create</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

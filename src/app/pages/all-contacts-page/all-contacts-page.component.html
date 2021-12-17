@@ -1,0 +1,97 @@
+
+<div class="defaultContent">
+  <div class="status-sort-case">
+    <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
+  </div>
+
+  <div class="list-Container">
+    <table>
+      <thead>
+        <tr>
+          <th>N.</th>
+          <th><input type="checkbox" (change)="checkAll($event)"></th>
+          <th>Name</th>
+          <th>Account Name</th>
+          <th>Title</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Contact Owner</th>
+          <th>Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of this.rows">
+          <td>{{item.n}}</td>
+          <td>
+            <input type="checkbox" [checked]="checks">
+            {{item.all}}
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <a class="name-href" href="./contacts/contact-details">
+                {{item.name}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <a class="acc-num-href" href="#">
+                {{item.accountNumber}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <a class="title-href" href="#">
+                {{item.title}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <span class="phone-edit">
+                {{item.phone}}
+              </span>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <span class="email-edit">
+                {{item.email}}
+              </span>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+          <td>{{item.contactOwnerAlias}}</td>
+          <td>
+            <div class="custom-option-contact">
+              <div class="edit-icon-container">
+                <button class="btn-edit"><i class="fi-rr-pencil"></i></button>
+                <span class="edit-tooltiptext">Edit</span>
+              </div>
+
+              <div class="delete-icon-container">
+                <button class="btn-delete"><i class="fi-rr-trash"></i></button>
+                <span class="delete-tooltiptext">Delete</span>
+              </div>
+
+              <div class="changeOwner-icon-container">
+                <button class="btn-changeOwner"><i class="fi-rr-mode-landscape"></i></button>
+                <span class="changeOwner-tooltiptext">Change Owner</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+

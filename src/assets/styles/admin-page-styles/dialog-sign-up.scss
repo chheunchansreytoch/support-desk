@@ -1,0 +1,237 @@
+.create-agent-container {
+  .mat-dialog-title {
+    color: $black1;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .mat-dialog-content {
+    margin-top: 20px;
+    form  {
+      justify-content: center;
+      align-items: center;
+
+      .loginform {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: $primary-font;
+        font-size: 16px;
+
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+
+        .custom-field {
+          position: relative;
+          font-size: 14px;
+          //padding-top: 20px;
+          padding-top: 20px;
+
+          .form-input {
+            -webkit-appearance: none;
+            -ms-progress-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: none;
+            background: $color7;
+            padding: 8px;
+            border: 1px solid $color6;
+            border-radius: 5px;
+            width: 400px;
+            outline: none;
+          }
+
+          .placeholder {
+            position: absolute;
+            left: 12px;
+            font-size: 13px;
+            top: calc(50% + 10px);
+            transform: translateY(-50%);
+            color: $gray2;
+            transition:
+            top 0.3s ease,
+            font-size 0.3s ease,
+            color 0.3s ease;
+          }
+
+          .form-input:valid + .placeholder,
+          .form-input:focus + .placeholder {
+            top: 10px;
+            font-size: 10px;
+            color: #54adf7;
+          }
+
+          .form-input {
+            background: none;
+            border: 1px solid $color6;
+            transition: border-color 0.3s ease;
+            text-indent: 5px;
+          }
+
+          .form-input:valid,
+          .form-input:focus {
+            border: 1px solid #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+            transition-delay: 0.1s;
+          }
+
+          .form-input + .placeholder {
+            padding: 0 5px;
+            left: 8px;
+          }
+
+          .form-input:valid + .placeholder,
+          .form-input:focus + .placeholder {
+            top: 10px;
+            left: -2px;
+            background-color: none;
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
+        .errorMessageLabel {
+          font-size: 10px;
+          color: red;
+          margin-right: 260px;
+        }
+      }
+
+      .position {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        .department-container {
+          .custom-dept {
+            float: left;
+            width: 200px;
+            position: relative;
+            //margin-left: -5px;
+
+           select{
+              height: 35px;
+              padding: 10px 15px;
+              left: -10%;
+              line-height: 15px;
+              font-size: 12px;
+              width: 100%;
+              border: 1px solid #ccc;
+              outline: none;
+              border-radius: 5px;
+              -webkit-appearance: none;
+              appearance: none;
+              color: $gray2;
+            }
+          }
+
+          .custom-dept:after{
+            content: "";
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            margin-top: -4px;
+            border-top: 8px solid #ccc;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            pointer-events: none;
+          }
+
+          .custom-dept select:focus {
+            border: 1px solid #54adf7;
+            box-shadow: 0 0 3px #54adf7;
+          }
+
+          .custom-dept select option {
+            font-size: 14px;
+            line-height: 200%;
+          }
+        }
+
+        .gender-container {
+          display: flex;
+          float: right;
+          .custom-gender {
+            //float: left;
+            margin: 5px;
+            .agent-gender {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .custom-create-btn {
+        float: right;
+        .close-btn {
+          float: left;
+          margin-right: 10px;
+
+          button {
+            border: none;
+            outline: none;
+            background-color: $color9;
+            color: $color7;
+            border-radius: 5px;
+            padding: 5px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: transform 80ms ease-in;
+          }
+
+          button:hover{
+            background-color: rgb(14, 14, 179);
+            transition: 0.5s;
+          }
+
+          button:active {
+            transform: scale(0.85);
+          }
+
+          button:focus {
+            outline: none;
+          }
+
+          button.ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+          }
+        }
+
+        .create-btn {
+          button {
+            border: none;
+            outline: none;
+            background-color: $color8;
+            color: $color7;
+            border-radius: 5px;
+            padding: 5px 14px;
+            font-size: 13px;
+            //font-weight: bold;
+            letter-spacing: 1px;
+            transition: transform 80ms ease-in;
+          }
+
+          button:hover{
+            // background-color: rgb(180, 12, 12);
+            background-color: rgb(23, 133, 23);
+            transition: 0.5s;
+          }
+
+          button:active {
+            transform: scale(0.85);
+          }
+
+          button:focus {
+            outline: none;
+          }
+
+          button.ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}

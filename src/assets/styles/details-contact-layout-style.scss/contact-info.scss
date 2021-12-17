@@ -1,0 +1,187 @@
+.detailContactContainer {
+  font-family: $Roboto-font;
+  .customContactInfomation {
+    margin-top: 10px;
+    .contactInfoContainer {
+      left: 30%;
+      flex: 0;
+      overflow-x: hidden;
+      padding-left: 1px;
+      padding-right: 11px;
+
+      .customContactInfo {
+        //background: greenyellow;
+        border-radius: 5px;
+
+        .contact-list-container {
+          display: flex;
+          background: #f0f0f0;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+
+          .custom-contact-image {
+            float: left;
+            margin-right: 23px;
+            padding: 5px;
+
+            .contact-image {
+              padding: 4px ;
+              margin-top: 2px;
+              width: 33px;
+              height: 33px;
+            }
+          }
+
+          .contact-title {
+            //padding: 13px;
+
+            label {
+              margin-left: -19px;
+              font-size: 11px;
+              color: $black1;
+            }
+
+            .custom-name-span {
+              span {
+                font-size: 16px;
+                margin-left: -20px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        .CustomInformationDetail {
+          background: $color7;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          .InfomationContainer {
+            display: flex;
+            .customTitleContainer {
+              padding: 10px;
+              margin-left: 2px;
+              float: left;
+              margin-right: 50px;
+              label {
+                font-size: 11px;
+                color: $gray3;
+              }
+
+              .title-span {
+                span {
+                  font-size: 13px;
+                }
+              }
+            }
+
+            .customAccountNameContainer {
+              padding: 10px;
+              margin-left: 2px;
+              float: left;
+              margin-right: 50px;
+              label {
+                font-size: 11px;
+                color: $gray3;
+              }
+
+              .account-name-span {
+                a {
+                  text-decoration: none;
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+
+                a:hover {
+                  text-decoration: underline;
+                  color: $color2;
+                }
+              }
+            }
+
+            .customPhoneContainer {
+              padding: 10px;
+              margin-left: 2px;
+              float: left;
+              margin-right: 50px;
+              label {
+                font-size: 11px;
+                color: $gray3;
+              }
+
+              .phone-span {
+                a {
+                  text-decoration: none;
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+
+                a:hover {
+                  text-decoration: underline;
+                  color: $color2;
+                }
+              }
+            }
+
+            .customEmailContainer {
+              padding: 10px;
+              margin-left: 2px;
+              float: left;
+              margin-right: 50px;
+              label {
+                font-size: 11px;
+                color: $gray3;
+              }
+
+              .email-name-span {
+                a {
+                  text-decoration: none;
+
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+
+                a:hover {
+                  text-decoration: underline;
+                  color: $color2;
+                }
+              }
+            }
+
+            .customContactOwnerContainer {
+              padding: 10px;
+              margin-left: 2px;
+              float: left;
+              margin-right: 50px;
+              label {
+                font-size: 11px;
+                color: $gray3;
+              }
+
+              .contact-owner-name-span {
+                a {
+                  text-decoration: none;
+
+                  span {
+                    font-size: 13px;
+                    color: $color2;
+                  }
+                }
+
+                a:hover {
+                  text-decoration: underline;
+                  color: $color2;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

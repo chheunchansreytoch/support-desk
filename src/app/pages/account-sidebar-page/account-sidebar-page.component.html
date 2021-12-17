@@ -1,0 +1,58 @@
+<div class="customAccountSidebar">
+  <div class="CaseSidebarHeaderContainer">
+    <div class="customCaseSidebarHeader">
+      <div class="spanNumColumn">
+        <span> • 5 items  </span>
+      </div>
+
+      <div class="customShowAstable">
+        <a href="/accounts">
+          <i class="fi-rr-list"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="Custom-searchForm">
+      <form class="searchForm">
+          <input type="text" name="search-item" placeholder="Search Cases and more ...">
+          <div class="custom-search-btn">
+            <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
+          </div>
+      </form>
+    </div>
+
+    <div class="customTitleSpan">
+      <div class="title-span">
+        <span>Account Site</span>
+      </div>
+    </div>
+
+    <div class="customListItems">
+      <ul>
+        <li *ngFor="let value of this.values">
+          <div class="listItemContainer">
+            <div class="customCaseIssueDetail">
+              <div class="customCheckboxContainer">
+                <div class="customCheckbox">
+                  {{value.n}}
+                </div>
+
+                <div class="custom-account-site">
+                  <div class="account-name">
+                    {{value.accountName}}
+                  </div>
+
+                  <div class="phone">
+                    {{value.phone}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

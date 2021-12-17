@@ -1,0 +1,200 @@
+<div class="CasesDetailContainer">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Feed">
+      <div class="post-pull-container">
+        <div class="custom-post-pull">
+          <div class="tab_triger">
+            <ul>
+              <li *ngFor="let menuList of menuLists">
+                <button (click)="openMenuList(menuList)" [ngClass]="selectedList === menuList ? 'menuClass' : ''">{{menuList}}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="post-poll-layout">
+          <div class="custom-post-layout">
+            <ng-container *ngIf="selectedList === 'Post'">
+              <div class="post-layout">
+                  <quill-editor></quill-editor>
+              </div>
+
+              <div class="custom-sendTo-shareBtn">
+                <div class="sendTo">
+                  <p><span>To</span> this case</p>
+                  <button class="send-btn" mat-button (click)="onSendTo()"><i class="fi-rr-clip"></i></button>
+                </div>
+
+                <div class="custom-btn-share">
+                  <button type="button" class="share-btn">Share</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="custom-poll-layout">
+            <ng-container *ngIf="selectedList === 'Poll'">
+              <div class="poll-layout">
+                <div class="question-lbl">
+                  <label>Question</label>
+                </div>
+
+                <div class="input-question">
+                  <form>
+                    <textarea placeholder="What whould you like to ask?"></textarea>
+                  </form>
+                </div>
+              </div>
+
+              <ul>
+                <li *ngFor="let item of choices; let i = index">
+                  <div class="custom-choice">
+                    <div class="choice-lbl">
+                      <label> Choice
+                        {{i+1}}
+                      </label>
+                    </div>
+
+                    <div class="input-choice">
+                      <form>
+                        <textarea></textarea>
+                        <!-- <input type="text"> -->
+                        <!-- <button> <i class="fi-rr-cross-small"></i></button> -->
+                      </form>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="custom-addnewchoice">
+                <div class="newchoice-lbl">
+                  <label><span>To</span>  this case</label>
+                </div>
+
+                <div class="add-ask-container">
+                  <div class="btn-newchoice">
+                    <button (click)="onClickAdd(choices)"><i class="fi-rr-plus"></i> Add new choice</button>
+                  </div>
+
+                  <div class="custom-ask-button">
+                    <button>Ask</button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Details">
+      <div class="custom-detail-container">
+        <div class="custom-caseOwner-status">
+          <div class="custom-caseOwner">
+            <label>Case Owner</label>
+            <div class="caseOwner-span">
+              <span>Chheun Chansreytoch</span>
+            </div>
+          </div>
+
+          <div class="custom-status">
+            <label>Status</label>
+            <div class="custom-status-select">
+              <select class="select-status">
+                <option selected>Closed</option>
+                <option>New</option>
+                <option>Working</option>
+                <option>Escalated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-caseOwner-status">
+          <div class="custom-caseOwner">
+            <label>Case Owner</label>
+            <div class="caseOwner-span">
+              <span>Chheun Chansreytoch</span>
+            </div>
+          </div>
+
+          <div class="custom-status">
+            <label>Status</label>
+            <div class="custom-status-select">
+              <select class="select-status">
+                <option selected>Closed</option>
+                <option>New</option>
+                <option>Working</option>
+                <option>Escalated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-caseOwner-status">
+          <div class="custom-caseOwner">
+            <label>Case Owner</label>
+            <div class="caseOwner-span">
+              <span>Chheun Chansreytoch</span>
+            </div>
+          </div>
+
+          <div class="custom-status">
+            <label>Status</label>
+            <div class="custom-status-select">
+              <select class="select-status">
+                <option selected>Closed</option>
+                <option>New</option>
+                <option>Working</option>
+                <option>Escalated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-caseOwner-status">
+          <div class="custom-caseOwner">
+            <label>Case Owner</label>
+            <div class="caseOwner-span">
+              <span>Chheun Chansreytoch</span>
+            </div>
+          </div>
+
+          <div class="custom-status">
+            <label>Status</label>
+            <div class="custom-status-select">
+              <select class="select-status">
+                <option selected>Closed</option>
+                <option>New</option>
+                <option>Working</option>
+                <option>Escalated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-caseOwner-status">
+          <div class="custom-caseOwner">
+            <label>Case Owner</label>
+            <div class="caseOwner-span">
+              <span>Chheun Chansreytoch</span>
+            </div>
+          </div>
+
+          <div class="custom-status">
+            <label>Status</label>
+            <div class="custom-status-select">
+              <select class="select-status">
+                <option selected>Closed</option>
+                <option>New</option>
+                <option>Working</option>
+                <option>Escalated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+

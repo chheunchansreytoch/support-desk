@@ -1,0 +1,71 @@
+<div class="customCaseSidebar">
+  <div class="CaseSidebarHeaderContainer">
+    <div class="customCaseSidebarHeader">
+      <div class="spanNumColumn">
+        <span> • 5 items  </span>
+      </div>
+
+      <div class="customShowAstable">
+        <a href="/cases/agent-all-closed-cases">
+          <i class="fi-rr-list"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="Custom-searchForm">
+      <form class="searchForm">
+          <input type="text" name="search-item" placeholder="Search Cases and more ...">
+          <div class="custom-search-btn">
+            <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
+          </div>
+      </form>
+    </div>
+
+    <div class="customTitleSpan">
+      <div class="title-span">
+        <span>Cases Owner Alias</span>
+      </div>
+    </div>
+
+    <div class="customListItems">
+      <ul>
+        <li *ngFor="let value of this.values">
+          <div class="listItemContainer">
+            <div class="customCaseIssueDetail">
+              <div class="customCheckboxContainer">
+                <div class="customCheckbox">
+                  {{value.n}}
+                </div>
+
+                <div class="customCaseNumber" href="/cases/case-detail">
+                  <div class="caseNumber">
+                    <label>{{value.caseNumber}}</label>
+                  </div>
+
+                  <div class="caseSubject">
+                    {{value.subject}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="customCaseNameDetail">
+              <div class="nameCaseOwner">
+                <label>{{value.accountName}}</label>
+              </div>
+
+              <div class="status">
+                <span>{{value.status}}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+

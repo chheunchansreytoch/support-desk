@@ -1,0 +1,71 @@
+<div class="loginContainer">
+  <div class="container">
+    <div class="container" id="container">
+      <!-- <div class="image">
+        <img src="./assets/images/logo.png">
+      </div> -->
+      <div class="form-container sign-in-container">
+        <!-- [formGroup]="loginForm" (ngSubmit)="formSubmited(loginForm.value)" -->
+        <form  class="sign-in-form" [formGroup]="loginForm" (ngSubmit)="formSubmited(loginForm.value)">
+          <div class="loginform">
+            <h3>Sign In</h3>
+            <div class="btnLoginWith">
+              <button class="btnLoginEmail">Sign In using your email</button>
+            </div>
+
+            <p class="signEmail"><span>or sign in with your email</span></p>
+
+            <!-- <label class="custom-field">
+              <input class="form-input" type="text" name="firstname" required formControlName="firstname">
+              <span class="placeholder">First Name</span>
+            </label> -->
+
+            <label class="custom-field">
+              <input class="form-input" type="text" name="username" required formControlName="username">
+              <span class="placeholder">Username</span>
+            </label>
+
+            <label class="custom-field">
+              <input class="form-input" type="email" name="email" required formControlName="email">
+              <span class="placeholder">Email</span>
+            </label>
+
+            <label class="custom-field">
+              <input class="form-input" type="password" name="password" required formControlName="password">
+              <span class="placeholder">Password</span>
+            </label>
+
+            <div class="keep-logged">
+              <label class="remember1">
+                <input type="checkbox" checked="checked">
+              </label>
+
+              <label class="remember2">
+                <span> Remember me</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btnLogin">Sign In</button>
+
+            <div class="forgotPassword">
+              <a href="#">Forgot your Password</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p class="abc">Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

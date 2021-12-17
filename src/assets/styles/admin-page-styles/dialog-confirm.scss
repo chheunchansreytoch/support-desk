@@ -1,0 +1,65 @@
+// .custom-btn-delete-popup {
+//   font-family: $Roboto-font;
+
+//   .mat-dialog-actions {
+    // btn-delete-container {
+    //   display: flex;
+    //   float: right;
+
+    //   .custom-btn-cancel {
+    //     width: 45px;
+    //     height: 23px;
+    //     text-align: center;
+    //     line-height: 1.7;
+    //     background: $color8;
+    //     border-radius: 5px;
+
+    //     .btn-cancel {
+    //       border: none;
+    //       background: none;
+    //     }
+    //   }
+
+//       .custom-btn-delete {
+//         width: 45px;
+//         height: 23px;
+//         text-align: center;
+//         line-height: 1.7;
+//         background: #cf6868;
+//         border-radius: 5px;
+
+//         .btn-delete {
+//           border: none;
+//           background: none;
+//         }
+//       }
+//     // }
+//   }
+// }
+
+.custom-btn-delete-popup {
+  font-family: $Roboto-font;
+
+  // .mat-dialog-actions {
+
+    .btn-delete-container {
+      display: flex;
+      float: right;
+
+      .custom-btn-cancel {
+        width: 45px;
+        height: 23px;
+        text-align: center;
+        line-height: 1.7;
+        background: red;
+        border-radius: 5px;
+
+        .btn-cancel {
+          border: none;
+          background: none;
+        }
+      }
+    }
+  // }
+}
+

@@ -1,0 +1,24 @@
+<div class="defaultContent">
+  <div class="page-header">
+    <div class="custom-contact-list">
+      <div class="case-contact-container">
+        <div class="custom-contact-image">
+          <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
+        </div>
+
+        <div class="select-contact-option">
+          <div class="custom-contact-lbl">
+            <label class="contacts-lbl">Contacts</label>
+          </div>
+          <select ng-model="items" (change)="onSelectedOption($event)">
+            <ng-container *ngFor="let item of Items">
+              <option *ngIf="!checkIfRouteIsActivated(item.label)">{{ item.name }}</option>
+              <option *ngIf="checkIfRouteIsActivated(item.label)" selected>{{ item.name }}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

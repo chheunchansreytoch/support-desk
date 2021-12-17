@@ -1,0 +1,91 @@
+<div class="defaultContent">
+  <div class="status-sort-case">
+    <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
+  </div>
+
+  <div class="list-Container2">
+    <table>
+      <thead>
+        <tr>
+          <th>N.</th>
+          <th><input type="checkbox" (change)="checkAll($event)"></th>
+          <th>Account Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Action</th>
+          <th>Profile</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of arrCustomers; let i = index" routerLink="/accounts/account-details">
+          <td>{{i+1}}</td>
+
+          <td>
+            <input type="checkbox" [checked]="checks">
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <a class="acc-name-href" href="/accounts/account-details">
+                {{item.username}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+          <td>
+            <div class='edit_hover_class'>
+              <span class="phone-edit">
+                {{item.phone}}
+              </span>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+
+          <td>
+            <div class='edit_hover_class'>
+              <span class="phone-edit">
+                {{item.email}}
+              </span>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+
+          <!-- <td>
+            <div class='edit_hover_class'>
+              <span class="type-edit">
+                {{item.type}}
+              </span>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td> -->
+
+          <!-- <td>{{item.accountOwnerAlias}}</td> -->
+
+          <td>
+            <div class="custom-option-account">
+              <div class="edit-icon-container">
+                <button class="btn-edit"><i class="fi-rr-pencil"></i></button>
+                <span class="edit-tooltiptext">Edit</span>
+              </div>
+
+              <div class="delete-icon-container">
+                <button class="btn-delete"><i class="fi-rr-trash"></i></button>
+                <span class="delete-tooltiptext">Delete</span>
+              </div>
+
+              <div class="changeOwner-icon-container">
+                <button class="btn-changeOwner"><i class="fi-rr-mode-landscape"></i></button>
+                <span class="changeOwner-tooltiptext">Change Owner</span>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <img src="{{item.imageDownloadUrl}}">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

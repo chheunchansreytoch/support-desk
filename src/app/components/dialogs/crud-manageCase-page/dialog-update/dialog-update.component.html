@@ -1,0 +1,58 @@
+<div class="UpdateContainer">
+  <mat-dialog-content class="mat-typography">
+    <h3 class="confirm-messgage1">Update Case</h3>
+
+    <form>
+      <div class="container1">
+        <div class="case-number">
+          <label>Case Number</label>
+          <input type="text">
+        </div>
+
+        <div class="status">
+          <label>Status</label>
+          <input type="text">
+        </div>
+
+        <div class="priority">
+          <label>Priority</label>
+          <input type="text">
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="department">
+          <label>Department</label>
+          <input type="text" >
+        </div>
+
+        <div class="agent-name">
+          <label>Agent Name</label>
+          <input type="text">
+        </div>
+
+        <div class="subject">
+          <label>Subject</label>
+          <input type="text">
+        </div>
+      </div>
+
+      <div class="container3">
+        <label>Description</label>
+        <input type="text">
+      </div>
+    </form>
+  </mat-dialog-content>
+
+  <div class="custom-delete-btn">
+    <mat-dialog-actions align="end">
+      <div class="cancel-btn">
+        <button mat-button mat-dialog-close>Cancel</button>
+      </div>
+
+      <div class="custom-delete-btn">
+        <button (click)="onClickUpdateCase()" mat-button cdkFocusInitial>Save</button>
+      </div>
+    </mat-dialog-actions>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="CustomAdminContent">
+  <nav>
+    <div class="custom-image-SidebarIcon">
+      <!-- <div class="sideBar-icons">
+        <button (click)="onClickBtnSideBar()"><i class="fi fi-rr-menu-burger"></i></button>
+      </div> -->
+
+      <div class="imageSrc">
+        <a href="#">
+          <img class="image-logo" src="./assets/images/logo.png">
+        </a>
+      </div>
+    </div>
+
+    <div class="list_Sidebar">
+      <mat-list>
+        <mat-list-item *ngFor="let item of items">
+          <div class="option-list" (click)="onClickListItems(item)" [ngClass]="selectedItem === item ? 'listItem' : ''">
+            <a routerLink="{{item.route}}">
+              <mat-icon mat-list-icon>
+                <div mat-list-icon class="admin-icon">
+                  <img src="{{item.icon}}">
+                </div>
+              </mat-icon>
+
+              <div mat-line class="admin-listName" [ngStyle]="{'margin-left': sideBarService.isBtnSideBar ? '10px' : '0px'}" >
+                {{item.name}}
+                <!-- <p *ngIf="!checkIfRouteIsActivated(item.name)">{{ item.name }}</p>
+                <p *ngIf="checkIfRouteIsActivated(item.name)" selected>{{ item.name }}</p> -->
+              </div>
+            </a>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </nav>
+</div>

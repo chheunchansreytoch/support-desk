@@ -1,0 +1,487 @@
+.tabDefaultContentContainer {
+  .defaultContent {
+    .status-sort-case{
+      margin-top: 10px;
+      span{
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+
+    .list-Container2 {
+      padding: 15px;
+      height: 445px;
+      overflow: scroll;
+      //margin: 0px 10px;
+      table {
+        width: 100%;
+        background: $color7;
+        border-collapse: collapse;
+        box-shadow: 0 5px 10px #eff0f1;
+        background: $color7;
+        text-align: left;
+
+        thead {
+          width: 100%;
+          box-shadow: 0 5px 10px #eff0f1;
+        }
+
+        thead tr {
+          box-shadow: 0 1px 1px #ebeef1;
+        }
+
+        thead tr th {
+          padding:  0.5rem 1rem;
+          background-color: #b3d4df;
+          line-height: 2.3;
+          font-size: 13px;
+        }
+
+        tbody tr {
+          box-shadow: 0 1px 1px #ebeef1;
+        }
+
+        tbody tr:hover {
+          background-color: #dee2ff;
+          //color: white;
+          transition: 0.5s;
+        }
+
+        tbody tr th {
+          padding:  0.5rem 2rem;
+          background-color: #ced2f0;
+          line-height: 2.3;
+          font-size: 13px;
+        }
+
+        tbody tr td {
+          padding:  0.8rem 1rem;
+          line-height: 2;
+          font-size: 13px;
+
+          img {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+          }
+        }
+
+        .email {
+          color: #00b4d8;
+        }
+
+        tbody tr td .edit_hover_class {
+          padding: 5px;
+        }
+
+        tbody tr td .edit_hover_class .icon-edit-href{
+          visibility:hidden;
+          padding: 10px;
+          color: $black1;
+        }
+
+        tbody tr td .edit_hover_class:hover .icon-edit-href {
+          visibility:visible;
+          color: $color9;
+        }
+
+        tbody tr td .edit_hover_class .acc-name-href {
+          text-decoration: none;
+          color: $black1;
+        }
+
+        tbody tr td .edit_hover_class .acc-name-href:hover {
+          text-decoration: underline;
+          color: $color9;
+        }
+
+        tbody tr td .custom-option-account {
+          display: flex;
+
+          .edit-icon-container {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            position: relative;
+            display: inline-block;
+
+            .btn-edit {
+              border: none;
+              background: none;
+            }
+
+            .edit-tooltiptext {
+              visibility: hidden;
+              font-size: 10px;
+              width: 50px;
+              background: #e9ecef;
+              color: $color9;
+              text-align: center;
+              border-radius: 6px;
+              padding: 5px 0;
+              position: absolute;
+              z-index: 1;
+              top: 150%;
+              left: 50%;
+              margin-left: -25px;
+            }
+
+            .edit-tooltiptext::after {
+              content: "";
+              position: absolute;
+              bottom: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent #e9ecef transparent;
+            }
+          }
+
+          .edit-icon-container:hover {
+            background: #e9ecef;
+            border-radius: 50%;
+          }
+
+          .edit-icon-container:hover .edit-tooltiptext {
+            visibility: visible;
+          }
+
+          .delete-icon-container {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            position: relative;
+            display: inline-block;
+
+            .btn-delete {
+              border: none;
+              background: none;
+            }
+
+            .delete-tooltiptext {
+              visibility: hidden;
+              font-size: 10px;
+              width: 50px;
+              background: #e9ecef;
+              color: $color9;
+              text-align: center;
+              border-radius: 6px;
+              padding: 5px 0;
+              position: absolute;
+              z-index: 1;
+              top: 150%;
+              left: 50%;
+              margin-left: -25px;
+            }
+
+            .delete-tooltiptext::after {
+              content: "";
+              position: absolute;
+              bottom: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent #e9ecef transparent;
+            }
+          }
+
+          .delete-icon-container:hover {
+            background: #e9ecef;
+            border-radius: 50%;
+          }
+
+          .delete-icon-container:hover .delete-tooltiptext {
+            visibility: visible;
+          }
+
+          .changeOwner-icon-container {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            position: relative;
+            display: inline-block;
+
+            .btn-changeOwner {
+              border: none;
+              background: none;
+            }
+
+            .changeOwner-tooltiptext {
+              visibility: hidden;
+              font-size: 10px;
+              width: 80px;
+              background: #e9ecef;
+              color: $color9;
+              text-align: center;
+              border-radius: 6px;
+              padding: 5px 0;
+              position: absolute;
+              z-index: 1;
+              top: 150%;
+              left: 50%;
+              margin-left: -40px;
+            }
+
+            .changeOwner-tooltiptext::after {
+              content: "";
+              position: absolute;
+              bottom: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent #e9ecef transparent;
+            }
+          }
+
+          .changeOwner-icon-container:hover {
+            background: #e9ecef;
+            border-radius: 50%;
+          }
+
+          .changeOwner-icon-container:hover .changeOwner-tooltiptext {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// .list-Container {
+//   table {
+//     width: 100%;
+//   }
+
+//   table thead tr th {
+//     background-color: #eeeeee;
+//     padding: 7px;
+
+//   }
+
+//   table, th, td {
+//     padding: 15px;
+//     border: 1px solid #d8dadd;
+//     border-collapse: collapse;
+//     color: #343a40;
+//   }
+
+//   tbody tr td {
+//     font-size: 12px;
+//     //padding: 10px;
+//     //text-align: left;
+//     background: $color7;
+//   }
+
+//   tbody tr td select{
+//   //-webkit-appearance: none;
+//     width: 20px;
+//     height: 20px;
+//     border: 1px solid $gray1;
+//     border-radius: 5px;
+//     //background-color: #eeeff0;
+//     outline: none;
+
+//     option{
+//     font-size: 14px;
+//     }
+//   }
+
+
+//   td .edit_hover_class {
+//     padding: 5px;
+//   }
+
+//   td .edit_hover_class .icon-edit-href{
+//     visibility:hidden;
+//     padding: 10px;
+//     color: $black1;
+//   }
+
+//   td .edit_hover_class:hover .icon-edit-href {
+//    visibility:visible;
+//    color: $color9;
+
+//   }
+
+//   td .acc-name-href {
+//     text-decoration: none;
+//     color: $black1;
+//   }
+
+//   td .acc-name-href:hover {
+//     text-decoration: underline;
+//     color: $color9;
+//   }
+
+//   td .edit_hover_class .phone-edit {
+//     text-decoration: none;
+//     color: $black1;
+//   }
+
+//   td .edit_hover_class .phone-edit:hover {
+//     text-decoration: underline;
+//     color: $color9;
+//   }
+
+//   td .custom-option-account {
+//     display: flex;
+//     margin-left: 15px;
+
+//     .edit-icon-container {
+//       width: 25px;
+//       height: 25px;
+//       padding: 5px;
+//       position: relative;
+//       display: inline-block;
+
+//       .btn-edit {
+//         border: none;
+//         background: none;
+//       }
+
+//       .edit-tooltiptext {
+//         visibility: hidden;
+//         font-size: 10px;
+//         width: 50px;
+//         background: #e9ecef;
+//         color: $color9;
+//         text-align: center;
+//         border-radius: 6px;
+//         padding: 5px 0;
+//         position: absolute;
+//         z-index: 1;
+//         top: 150%;
+//         left: 50%;
+//         margin-left: -25px;
+//       }
+
+//       .edit-tooltiptext::after {
+//         content: "";
+//         position: absolute;
+//         bottom: 100%;
+//         left: 50%;
+//         margin-left: -5px;
+//         border-width: 5px;
+//         border-style: solid;
+//         border-color: transparent transparent #e9ecef transparent;
+//       }
+//     }
+
+//     .edit-icon-container:hover {
+//       background: #e9ecef;
+//       border-radius: 50%;
+//     }
+
+//     .edit-icon-container:hover .edit-tooltiptext {
+//       visibility: visible;
+//     }
+
+//     .delete-icon-container {
+//       width: 25px;
+//       height: 25px;
+//       padding: 5px;
+//       position: relative;
+//       display: inline-block;
+
+//       .btn-delete {
+//         border: none;
+//         background: none;
+//       }
+
+//       .delete-tooltiptext {
+//         visibility: hidden;
+//         font-size: 10px;
+//         width: 50px;
+//         background: #e9ecef;
+//         color: $color9;
+//         text-align: center;
+//         border-radius: 6px;
+//         padding: 5px 0;
+//         position: absolute;
+//         z-index: 1;
+//         top: 150%;
+//         left: 50%;
+//         margin-left: -25px;
+//       }
+
+//       .delete-tooltiptext::after {
+//         content: "";
+//         position: absolute;
+//         bottom: 100%;
+//         left: 50%;
+//         margin-left: -5px;
+//         border-width: 5px;
+//         border-style: solid;
+//         border-color: transparent transparent #e9ecef transparent;
+//       }
+//     }
+
+//     .delete-icon-container:hover {
+//       background: #e9ecef;
+//       border-radius: 50%;
+//     }
+
+//     .delete-icon-container:hover .delete-tooltiptext {
+//       visibility: visible;
+//     }
+
+//     .changeOwner-icon-container {
+//       width: 25px;
+//       height: 25px;
+//       padding: 5px;
+//       position: relative;
+//       display: inline-block;
+
+//       .btn-changeOwner {
+//         border: none;
+//         background: none;
+//       }
+
+//       .changeOwner-tooltiptext {
+//         visibility: hidden;
+//         font-size: 10px;
+//         width: 80px;
+//         background: #e9ecef;
+//         color: $color9;
+//         text-align: center;
+//         border-radius: 6px;
+//         padding: 5px 0;
+//         position: absolute;
+//         z-index: 1;
+//         top: 150%;
+//         left: 50%;
+//         margin-left: -40px;
+//       }
+
+//       .changeOwner-tooltiptext::after {
+//         content: "";
+//         position: absolute;
+//         bottom: 100%;
+//         left: 50%;
+//         margin-left: -5px;
+//         border-width: 5px;
+//         border-style: solid;
+//         border-color: transparent transparent #e9ecef transparent;
+//       }
+//     }
+
+//     .changeOwner-icon-container:hover {
+//       background: #e9ecef;
+//       border-radius: 50%;
+//     }
+
+//     .changeOwner-icon-container:hover .changeOwner-tooltiptext {
+//       visibility: visible;
+//     }
+//   }
+// }

@@ -1,0 +1,59 @@
+.customAdminPage {
+  background: #f8f9fa;
+  .adminContainer {
+    .AdminContainerCustom {
+      padding: 10px;
+      width: 100%;
+      color: $black1;
+      font-family: $Roboto-font;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 5px 10px #eff0f1;
+        background: $color7;
+        text-align: left;
+        overflow: hidden;
+
+        thead {
+          width: 100%;
+          box-shadow: 0 5px 10px #eff0f1;
+        }
+
+        thead tr th {
+          padding:  0.5rem 2rem;
+          background-color: #b3d4df;
+          line-height: 2.3;
+          font-size: 13px;
+        }
+
+        tbody tr {
+          box-shadow: 0 1px 1px #ebeef1;
+        }
+
+        tbody tr:hover {
+          background-color: #dee2ff;
+          //color: white;
+          transition: 0.5s;
+        }
+
+        tbody tr th {
+          padding:  0.5rem 2rem;
+          background-color: #ced2f0;
+          line-height: 2.3;
+          font-size: 13px;
+        }
+
+        tbody tr td {
+          padding:  0.8rem 2rem;
+          line-height: 2;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+
+
+

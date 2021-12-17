@@ -1,0 +1,366 @@
+<div class="custom-manage-cases">
+  <div class="custom-button">
+    <div class="custom-btn-Case-blog">
+      <div class="btnClickCreate">
+        <button class="btnCreate" (click)="createCasetoogleTag()">Create Case</button>
+      </div>
+      <!-- z-1001 -->
+      <!-- *ngIf="showCasePopup" -->
+      <div class="create-case-popup"  *ngIf="showCasePopup">
+        <form [formGroup]="creatingCaseForm" (ngSubmit)="formSubmitted(creatingCaseForm.value)">
+          <div class="custom-show-create-case-blog">
+            <div class="case-blog-container">
+              <div class="title-case-container">
+                <h4>New Case</h4>
+              </div>
+
+              <!-- <div class="custom-btnClose">
+                <button class="btn-close" (click)="createCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
+              </div> -->
+            </div>
+
+            <div class="case-info-lbl-container">
+
+              <hr class="line-break">
+              <div class="caselabel">
+                <label class="case-info-lbl">Case Information</label>
+              </div>
+
+              <div class="caseNumber-Container">
+                <div class="custom-case-number">
+                  <label class="case-number-lbl">Case Number</label>
+                  <input type="text" name="caseNumber" formControlName="caseNumber" required>
+                </div>
+
+                <div class="custom-select">
+                  <label class="status-lbl">Status</label>
+                  <div class="select-box">
+                    <select name="status" formControlName="status" required>
+                      <option *ngFor="let item of arrStatuses" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="priority-agentDept-Container">
+                <div class="custom-select-Prority">
+                  <label class="priority-lbl">Priority</label>
+                  <div class="select-box-priority" required>
+                    <select name="priority" formControlName="priority" required>
+                      <option *ngFor="let item of arrPriorities" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="custom-select-agentDept">
+                  <label class="agentDept-label">Agent Department</label>
+                  <div class="select-agentDept">
+                    <select name="agentDepartment" formControlName="agentDepartment" required (change)="selectDepartmentChanged($event)">
+                      <option *ngFor="let item of arrAgentDepartment" value={{item.id}}>{{item?.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="customer-select-agent">
+                <label>Select Agent</label>
+                <div class="select-dropdown">
+                  <select name="agentname" formControlName="agentname" required>
+                    <option *ngFor="let item of agentsBySelectedDepartment" value={{item.id}}>{{item?.username}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="desc-info-lbl-container">
+              <div class="descLabel">
+                <label class="desc-info-lbl">Description Information</label>
+              </div>
+
+              <div class="DESC-Container">
+                <div class="custom-subject">
+                  <label class="desc-subject-lbl">Subject</label>
+                    <input class="desc-subject-input" type="text" name="subject" formControlName="subject" required>
+                </div>
+
+                <div class="custom-desc-textarea">
+                  <label class="desc-lbl">Description</label>
+                  <div class="textarea-container">
+                    <textarea name="description" formControlName="description" required></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-button-Container">
+            <div class="custom-button-Click">
+              <div class="btn-ClickCancel">
+                <button class="btn-Cancel" (click)="createCasetoogleTag()">Cancel</button>
+              </div>
+
+              <div class="btn-ClickSave">
+                <button class="btn-Save" (click)="btnSubmitClicked()">Save</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- p-relative -->
+  <div class="custom-table">
+    <!-- p-absolute z-1000 w-100 h-100 -->
+    <div class="invisible-blur-container" [ngClass]=" showCasePopup || showAssignPopup ? 'show-invisible-blur-container': ''"></div>
+
+    <mat-tab-group>
+      <mat-tab label="View Incoming Cases">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Subject</th>
+                <th>Description</th>
+                <th>Assigned By</th>
+                <th>Assigned Date</th>
+                <th>Created By</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Case Owner</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of arrCases; let i = index">
+               <td>
+                {{i+1}}
+               </td>
+
+               <td>
+                <input type="checkbox" [checked]="checks">
+               </td>
+
+               <td>{{item?.caseNumber}}</td>
+
+               <td>{{item.subject}}</td>
+
+               <td>{{item.description}}</td>
+
+               <td>{{item?.manager?.username }}</td>
+
+               <td>{{item.createdDate}}</td>
+
+               <td>{{item?.customer?.username || item?.manager?.username }}</td>
+
+               <td>{{item?.status?.name}}</td>
+
+               <td>{{item?.priority?.name}}</td>
+
+               <td>{{item?.agent?.username}}</td>
+
+               <td>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item mat-button (click)="onClickDelete(item.id)">
+                    <i class="fi-rr-trash"></i>
+                    <span>Delete</span>
+                  </button>
+
+                  <button mat-menu-item mat-button (click)="onClickUpdate()">
+                    <i class="fi-rr-pencil"></i>
+                    <span>Edit</span>
+                  </button>
+                </mat-menu>
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="View Case by Product">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Subject</th>
+                <th>Description</th>
+                <th>Assigned By</th>
+                <th>Assigned Date</th>
+                <th>Created By</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of arrCases; let i = index">
+               <td>
+                {{i+1}}
+               </td>
+
+               <td>
+                <input type="checkbox" [checked]="checks">
+               </td>
+
+               <td>
+                {{item.caseNumber}}
+               </td>
+
+               <td>
+                {{item.subject}}
+               </td>
+
+               <td>{{item.description}}</td>
+
+               <td>{{item?.manager?.username }}</td>
+
+               <td>{{item.createdDate}}</td>
+
+               <td>{{item?.customer?.username || item?.manager?.username }}</td>
+
+               <td>{{item?.status?.name}}</td>
+
+               <td>{{item?.priority?.name}}</td>
+
+               <td>{{item?.agent?.username}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+<!-- <mat-tab label="View Current Cases">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Contact Name</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Date/Time Opened</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of this.rows">
+               <td>
+                {{item.n}}
+               </td>
+
+               <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+               </td>
+
+               <td>
+                {{item.caseNumber}}
+               </td>
+
+               <td>
+                {{item.contactName}}
+               </td>
+
+               <td>
+                {{item.subject}}
+               </td>
+
+               <td>
+                {{item.status}}
+               </td>
+
+               <td>
+                {{item.priority}}
+               </td>
+
+               <td>
+                {{item.dateTime}}
+               </td>
+
+               <td>
+                {{item.caseOwner}}
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab> -->
+
+      <!-- <mat-tab label="View Old Cases">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Contact Name</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Date/Time Opened</th>
+                <th>Case Owner</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of this.rows">
+               <td>
+                {{item.n}}
+               </td>
+
+               <td>
+                <input type="checkbox" [checked]="checks">
+                {{item.all}}
+               </td>
+
+               <td>
+                {{item.caseNumber}}
+               </td>
+
+               <td>
+                {{item.contactName}}
+               </td>
+
+               <td>
+                {{item.subject}}
+               </td>
+
+               <td>
+                {{item.status}}
+               </td>
+
+               <td>
+                {{item.priority}}
+               </td>
+
+               <td>
+                {{item.dateTime}}
+               </td>
+
+               <td>
+                {{item.caseOwner}}
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab> -->
+    </mat-tab-group>
+  </div>
+</div>

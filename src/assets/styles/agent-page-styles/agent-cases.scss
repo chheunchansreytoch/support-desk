@@ -1,0 +1,376 @@
+// .defaultContent {
+//   .status-sort-case{
+//     padding: 10px;
+//     span{
+//       font-size: 12px;
+//     }
+
+//   }
+
+//   .list-Container {
+//     text-align: center;
+
+//     table {
+//       width: 100%;
+//     }
+
+//     th {
+//       background-color: #eeeeee;
+//       padding: 7px;
+
+//     }
+
+//      table, th, td {
+//        border: 1px solid #d8dadd;
+//        border-collapse: collapse;
+//        color: #343a40;
+//      }
+
+//      td {
+//        font-size: 12px;
+//        padding: 5px;
+//      }
+
+//      td select{
+//       //-webkit-appearance: none;
+//        width: 20px;
+//        height: 20px;
+//        border: 1px solid $gray1;
+//        border-radius: 5px;
+//        //background-color: #eeeff0;
+//        outline: none;
+
+//        option{
+//         font-size: 14px;
+//        }
+//      }
+
+
+//      td .edit_hover_class {
+//       padding: 5px;
+//     }
+
+//     td .edit_hover_class .icon-edit-href{
+//       visibility:hidden;
+//       padding: 10px;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class:hover .icon-edit-href {
+//      visibility:visible;
+//      color: $color9;
+
+//     }
+
+//      td .case-num-href {
+//        text-decoration: none;
+//        color: $black1;
+//      }
+
+//      td .case-num-href:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .edit_hover_class .name-href {
+//       text-decoration: none;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class .name-href:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .edit_hover_class .subject-href {
+//       text-decoration: none;
+//       color: $black1;
+//     }
+
+//     td .edit_hover_class .subject-href:hover {
+//       text-decoration: underline;
+//       color: $color9;
+//     }
+
+//     td .status-cases {
+//       width: 90px;
+//       margin-left: -8px;
+//       position: relative;
+//     }
+
+//     td .status-cases .select-status{
+//       height: 30px;
+//       padding: 7px;
+//       margin-left: 15px;
+//       font-size: 11px;
+//       width: 100%;
+//       background: none;
+//       border: none;
+//      -webkit-appearance: none;
+//       appearance: none;
+//     }
+
+//     td .status-cases:after {
+//       content: "";
+//       position: absolute;
+//       text-align: center;
+//       right: 5px;
+//       top: 50%;
+//       margin-top: -4px;
+//       border-top: 6px solid #ccc;
+//       border-left: 4px solid transparent;
+//       border-right: 4px solid transparent;
+//       pointer-events: none;
+//     }
+
+//     td .status-cases .select-status:focus {
+//       background: #faf9f8;
+//       border: 1px solid #54adf7;
+//       box-shadow: 0 0 3px #54adf7;
+//     }
+
+//     td .status-cases .select-status option {
+//       font-size: 11px;
+//     }
+
+//     td .priority-cases {
+//       width: 90px;
+//       margin-left: -8px;
+//       position: relative;
+//     }
+
+//     td .priority-cases .select-priority{
+//       height: 30px;
+//       padding: 7px;
+//       margin-left: 15px;
+//       font-size: 11px;
+//       width: 100%;
+//       background: none;
+//       border: none;
+//       -webkit-appearance: none;
+//       appearance: none;
+//     }
+
+//     td .priority-cases:after {
+//       content: "";
+//       position: absolute;
+//       text-align: center;
+//       right: 5px;
+//       top: 50%;
+//       margin-top: -4px;
+//       border-top: 6px solid #ccc;
+//       border-left: 4px solid transparent;
+//       border-right: 4px solid transparent;
+//       pointer-events: none;
+//     }
+
+//     td .priority-cases .select-priority:focus {
+//       background: #faf9f8;
+//       border: 1px solid #54adf7;
+//       box-shadow: 0 0 3px #54adf7;
+//     }
+
+//     td .priority-cases .select-priority option {
+//       font-size: 11px;
+//     }
+
+//     td .custom-option-case {
+//       display: flex;
+//       margin-left: 15px;
+
+//       .edit-icon-container {
+//         width: 25px;
+//         height: 25px;
+//         padding: 5px;
+//         position: relative;
+//         display: inline-block;
+
+//         .btn-edit {
+//           border: none;
+//           background: none;
+//         }
+
+//         .edit-tooltiptext {
+//           visibility: hidden;
+//           font-size: 10px;
+//           width: 50px;
+//           background: #e9ecef;
+//           color: $color9;
+//           text-align: center;
+//           border-radius: 6px;
+//           padding: 5px 0;
+//           position: absolute;
+//           z-index: 1;
+//           top: 150%;
+//           left: 50%;
+//           margin-left: -25px;
+//         }
+
+//         .edit-tooltiptext::after {
+//           content: "";
+//           position: absolute;
+//           bottom: 100%;
+//           left: 50%;
+//           margin-left: -5px;
+//           border-width: 5px;
+//           border-style: solid;
+//           border-color: transparent transparent #e9ecef transparent;
+//         }
+//       }
+
+//       .edit-icon-container:hover {
+//         background: #e9ecef;
+//         border-radius: 50%;
+//       }
+
+//       .edit-icon-container:hover .edit-tooltiptext {
+//         visibility: visible;
+//       }
+
+//       .delete-icon-container {
+//         width: 25px;
+//         height: 25px;
+//         padding: 5px;
+//         position: relative;
+//         display: inline-block;
+
+//         .btn-delete {
+//           border: none;
+//           background: none;
+//         }
+
+//         .delete-tooltiptext {
+//           visibility: hidden;
+//           font-size: 10px;
+//           width: 50px;
+//           background: #e9ecef;
+//           color: $color9;
+//           text-align: center;
+//           border-radius: 6px;
+//           padding: 5px 0;
+//           position: absolute;
+//           z-index: 1;
+//           top: 150%;
+//           left: 50%;
+//           margin-left: -25px;
+//         }
+
+//         .delete-tooltiptext::after {
+//           content: "";
+//           position: absolute;
+//           bottom: 100%;
+//           left: 50%;
+//           margin-left: -5px;
+//           border-width: 5px;
+//           border-style: solid;
+//           border-color: transparent transparent #e9ecef transparent;
+//         }
+//       }
+
+//       .delete-icon-container:hover {
+//         background: #e9ecef;
+//         border-radius: 50%;
+//       }
+
+//       .delete-icon-container:hover .delete-tooltiptext {
+//         visibility: visible;
+//       }
+
+//       .changeOwner-icon-container {
+//         width: 25px;
+//         height: 25px;
+//         padding: 5px;
+//         position: relative;
+//         display: inline-block;
+
+//         .btn-changeOwner {
+//           border: none;
+//           background: none;
+//         }
+
+//         .changeOwner-tooltiptext {
+//           visibility: hidden;
+//           font-size: 10px;
+//           width: 80px;
+//           background: #e9ecef;
+//           color: $color9;
+//           text-align: center;
+//           border-radius: 6px;
+//           padding: 5px 0;
+//           position: absolute;
+//           z-index: 1;
+//           top: 150%;
+//           left: 50%;
+//           margin-left: -40px;
+//         }
+
+//         .changeOwner-tooltiptext::after {
+//           content: "";
+//           position: absolute;
+//           bottom: 100%;
+//           left: 50%;
+//           margin-left: -5px;
+//           border-width: 5px;
+//           border-style: solid;
+//           border-color: transparent transparent #e9ecef transparent;
+//         }
+//       }
+
+//       .changeOwner-icon-container:hover {
+//         background: #e9ecef;
+//         border-radius: 50%;
+//       }
+
+//       .changeOwner-icon-container:hover .changeOwner-tooltiptext {
+//         visibility: visible;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 898px) {
+//   .defaultContainer{
+//     .defaultHeader {
+//       padding-top: 5px;
+//       .logo_navbar{
+//         width: 150px;
+//         position: absolute;
+
+//         img{
+//           width: 100%;
+//           margin-bottom: 10px;
+
+//         }
+//       }
+
+//       .custom-position {
+//         width: 50%;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//       }
+
+//       .custom-position .select-dropdown-opt {
+//         border: 1px solid $gray1;
+//         border-top-left-radius: 5px;
+//         border-bottom-left-radius: 5px;
+//         margin-top: 80px;
+//        .select-option {
+//         border: none;
+//        }
+//       }
+//       .custom-position .searchBarContainer {
+//         display: flex;
+//         flex-direction: row;
+//         margin-left: 97%;
+
+//         .Custom-searchForm {
+//           //padding-left: 20px;
+//           margin-top: 80px;
+//           padding-right: 150px;
+//         }
+//       }
+//     }
+//   }
+// }

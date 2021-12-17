@@ -1,0 +1,76 @@
+ <div class="custom-agents">
+   <div class="btnClick">
+    <button class="btnCreate" mat-button (click)="onCreate()">Create Agent</button>
+   </div>
+
+  <div class="customTable">
+    <table>
+      <thead>
+        <tr>
+          <th>N.</th>
+          <th>Agents Name</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Job Position</th>
+          <th>Agent Info</th>
+          <th>Action</th>
+          <th>Profile</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of arrAgents; let i = index">
+         <td>
+          {{i+1}}
+         </td>
+
+         <td>
+          {{item.username}}
+         </td>
+
+         <td>
+          {{item.gender}}
+         </td>
+
+         <td class="email">
+          {{item.email}}
+         </td>
+
+         <td>
+          {{item.agentDepartment.name}}
+         </td>
+
+         <td>
+          {{item.agentInfo}}
+          <div class="btnDetailClick">
+            <button class="detail-btn" mat-button (click)="onMoreDetailDialog()">More Details</button>
+          </div>
+         </td>
+
+          <td>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="onSelectedAgent(item.id)">
+                <i class="fi-rr-trash"></i>
+                <span>Delete</span>
+              </button>
+
+              <button mat-menu-item>
+                <i class="fi-rr-pencil"></i>
+                <span>Edit</span>
+              </button>
+            </mat-menu>
+          </td>
+
+          <td>
+            <img src="{{item.imageDownloadUrl}}">
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
