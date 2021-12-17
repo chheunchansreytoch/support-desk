@@ -8,1143 +8,738 @@
       font-family: $Roboto-font;
 
       .custom-button {
-        display: flex;
+        //display: flex;
 
         .custom-btn-Case-blog {
-          .btnClickCreate {
-            float: left;
-            margin-right: 5px;
-            text-align: center;
-            line-height: 2;
-            width: 100px;
-            background: #b3d4df;
-            border: 1px solid #b3d4df;
+          button {
             border-radius: 5px;
-
-            .btnCreate {
-              border: none;
-              background: none;
-            }
+            border: 1px solid #b3d4df;
+            background-color: #b3d4df;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 8px 10px;
+            transition: transform 80ms ease-in;
           }
 
-          .btnClickCreate:hover {
-            padding: 1px;
-            border: #cedde4;
-            background: #cedde4;
+          button:active {
+            transform: scale(0.95);
           }
+
+          button:focus {
+            outline: none;
+          }
+
+          button.ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+          }
+          // .btnClickCreate {
+          //   float: left;
+          //   margin-right: 5px;
+          //   text-align: center;
+          //   line-height: 2;
+          //   width: 100px;
+          //   background: #b3d4df;
+          //   border: 1px solid #b3d4df;
+          //   border-radius: 5px;
+
+          //   .btnCreate {
+          //     border: none;
+          //     background: none;
+          //   }
+          // }
+
+          // .btnClickCreate:hover {
+          //   padding: 1px;
+          //   border: #cedde4;
+          //   background: #cedde4;
+          // }
 
           .create-case-popup {
             display: flex;
             flex-direction: column;
             margin-top: 30px;
 
-            .custom-show-create-case-blog {
-              overflow-x: hidden;
-              z-index: 1001;
-              position: absolute;
-              width: 500px;
-              height: 330px;
-              background: $color7;
-              border-bottom: 1px solid $color7;
-              border-top-left-radius: 5px;
-              border-top-right-radius: 5px;
-              box-shadow: 0 5px 15px #d4d7da;
+            form {
+              .custom-show-create-case-blog {
+                overflow-x: hidden;
+                z-index: 1001;
+                position: absolute;
+                width: 500px;
+                height: 330px;
+                margin-top: -30px;
+                background: $color7;
+                border-bottom: 1px solid $color7;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                box-shadow: 0 5px 15px #d4d7da;
 
-              .case-blog-container {
-                display: flex;
-                justify-content: space-between;
+                .case-blog-container {
+                  display: flex;
+                  justify-content: space-between;
 
-                .title-case-container {
-                  h4 {
-                    font-size: 16px;
-                    margin: 10px;
+                  .title-case-container {
+                    h4 {
+                      font-size: 16px;
+                      margin: 10px;
+                    }
                   }
+
+                  // .custom-btnClose {
+                  //   padding: 10px;
+
+                  //   .btn-close {
+                  //     width: 20px;
+                  //     height: 20px;
+                  //     line-height: 2px;
+                  //     border: none;
+                  //     outline: none;
+                  //     background: none;
+
+                  //     .fi-rr-cross-small {
+                  //       font-size: 14px;
+                  //     }
+                  //   }
+
+                  //   .btn-close:hover {
+                  //     background: #b3d4df;
+                  //     border-radius: 50%;
+                  //     transition: 0.5s;
+                  //   }
+                  // }
                 }
 
-                .custom-btnClose {
+                .case-info-lbl-container {
                   padding: 10px;
 
-                  .btn-close {
-                    width: 20px;
-                    height: 20px;
-                    line-height: 2px;
-                    border: none;
-                    outline: none;
-                    background: none;
+                  .line-break {
+                    border-top: 1px solid $gray1;
+                  }
 
-                    .fi-rr-cross-small {
+                  .caselabel {
+                    padding: 5px;
+                    height: 30px;
+                    background-color: #dee9f3;
+                    border-radius: 5px;
+                    .case-info-lbl {
                       font-size: 14px;
+                      padding: 10px;
                     }
                   }
 
-                  .btn-close:hover {
-                    background: #b3d4df;
-                    border-radius: 50%;
-                    transition: 0.5s;
-                  }
-                }
-              }
+                  .caseNumber-Container {
+                    display: flex;
+                    justify-content: space-between;
 
-              .case-info-lbl-container {
-                padding: 10px;
+                    .custom-case-number {
+                      padding: 14px;
 
-                .line-break {
-                  border-top: 1px solid $gray1;
-                }
-
-                .caselabel {
-                  padding: 5px;
-                  height: 30px;
-                  background-color: #dee9f3;
-                  border-radius: 5px;
-                  .case-info-lbl {
-                    font-size: 14px;
-                    padding: 10px;
-                  }
-                }
-
-                .custom-Case-Container {
-                  display: flex;
-                  justify-content: space-between;
-                  .case-owner-container {
-                    padding: 20px;
-                    .case-owner-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .case-owner-name {
-                      font-size: 14px;
-                      color: $black1;
-                    }
-
-                  }
-
-                  .custom-select {
-                    padding: 14px;
-
-                    .status-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .status-lbl:before {
-                      content:"*";
-                      color: red;
-                    }
-
-                    .select-box {
-                      width: 170px;
-                      position: relative;
-                    }
-
-                    .select-box select{
-                      height: 35px;
-                      padding: 10px 15px;
-                      line-height: 15px;
-                      font-size: 12px;
-                      width: 100%;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                     -webkit-appearance: none;
-                      appearance: none;
-                      outline: none;
-                    }
-
-                    .select-box:after{
-                      content: "";
-                      position: absolute;
-                      right: 8px;
-                      top: 50%;
-                      margin-top: -4px;
-                      border-top: 8px solid #ccc;
-                      border-left: 6px solid transparent;
-                      border-right: 6px solid transparent;
-                      pointer-events: none;
-                    }
-
-                    .select-box select:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-
-                    .select-box select option {
-                      font-size: 14px;
-                      line-height: 200%;
-                    }
-                  }
-                }
-
-                .caseNumber-Container {
-                  display: flex;
-                  justify-content: space-between;
-
-                  .custom-case-number {
-                    padding: 20px;
-
-                    .case-number-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .case-number {
-                      font-size: 14px;
-                      color: $black1;
-                    }
-                  }
-
-                  .custom-select-Prority {
-                    padding: 14px;
-
-                    .priority-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .select-box-priority {
-                      width: 170px;
-                      position: relative;
-                    }
-
-                    .select-box-priority select{
-                      height: 35px;
-                      padding: 10px 15px;
-                      line-height: 15px;
-                      font-size: 12px;
-                      width: 100%;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                     -webkit-appearance: none;
-                      appearance: none;
-                      outline: none;
-                    }
-
-                    .select-box-priority:after{
-                      content: "";
-                      position: absolute;
-                      right: 8px;
-                      top: 50%;
-                      margin-top: -4px;
-                      border-top: 8px solid #ccc;
-                      border-left: 6px solid transparent;
-                      border-right: 6px solid transparent;
-                      pointer-events: none;
-                    }
-
-                    .select-box-priority select:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-
-                    .select-box-priority select option {
-                      font-size: 14px;
-                      line-height: 200%;
-                    }
-                  }
-                }
-
-                .contactName-Container {
-                  display: flex;
-                  justify-content: space-between;
-
-                  .custom-contactName {
-                    width: 350px;
-                    padding: 20px;
-                    margin-top: -31px;
-
-                    .contact-name-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .custom-Contact-Name-icon {
-                      display: flex;
-                      .contactNameIcon {
-                        float: left;
-                        margin-right: 5px;
-                        .contact-image {
-                          float: right;
-                          width: 20px;
-                          height: 20px;
-                        }
+                      .case-number-lbl:before {
+                        content:"*";
+                        color: red;
                       }
-                    }
 
-                    .search-input-contactName form input{
-                      font-size: 12px;
-                      color: $black1;
-                      border: none;
-                      outline: none;
-                    }
-
-                    .search-input-contactName form .fi-rr-search{
-                      margin-left: 50px;
-                    }
-
-                    .select-box-contactName select:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-                  }
-
-                  .custom-select-CaseOrigin {
-                    padding: 13px;
-                    margin-top: -25px;
-
-                    .origin-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .origin-lbl:before {
-                      content:"*";
-                      color: red;
-                    }
-
-                    .select-box-origin {
-                      width: 170px;
-                      position: relative;
-                    }
-
-                    .select-box-origin select{
-                      height: 35px;
-                      padding: 10px 15px;
-                      line-height: 15px;
-                      font-size: 12px;
-                      width: 100%;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                     -webkit-appearance: none;
-                      appearance: none;
-                      outline: none;
-                    }
-
-                    .select-box-origin:after{
-                      content: "";
-                      position: absolute;
-                      right: 8px;
-                      top: 50%;
-                      margin-top: -4px;
-                      border-top: 8px solid #ccc;
-                      border-left: 6px solid transparent;
-                      border-right: 6px solid transparent;
-                      pointer-events: none;
-                    }
-
-                    .select-box-origin select:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-
-                    .select-box-origin select option {
-                      font-size: 14px;
-                      line-height: 200%;
-                    }
-                  }
-                }
-
-                .accountNumber-Container {
-                  display: flex;
-                  justify-content: space-between;
-
-                  .custom-account-number {
-                    width: 282px;
-                    padding: 21px;
-                    margin-top: -31px;
-
-                    .account-number-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .custom-Account-Name-icon {
-                      display: flex;
-                      .accountNameIcon {
-                        float: left;
-                        margin-right: 5px;
-                        .account-image {
-                          float: right;
-                          width: 20px;
-                          height: 20px;
-                        }
+                      .case-number-lbl {
+                        font-size: 11px;
+                        color: $black1;
                       }
-                    }
-                  }
-                }
 
-                .type-Container {
-                  display: flex;
-                  justify-content: space-between;
-
-                  .custom-select-type {
-                    padding: 14px;
-                    margin-top: -20px;
-
-                    .type-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .select-box-type {
-                      width: 170px;
-                      position: relative;
-                    }
-
-                    .select-box-type select{
-                      height: 35px;
-                      padding: 10px 15px;
-                      line-height: 15px;
-                      font-size: 12px;
-                      width: 100%;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                     -webkit-appearance: none;
-                      appearance: none;
-                      outline: none;
-                    }
-
-                    .select-box-type:after{
-                      content: "";
-                      position: absolute;
-                      right: 8px;
-                      top: 50%;
-                      margin-top: -4px;
-                      border-top: 8px solid #ccc;
-                      border-left: 6px solid transparent;
-                      border-right: 6px solid transparent;
-                      pointer-events: none;
-                    }
-
-                    .select-box-type select:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-
-                    .select-box-type select option {
-                      font-size: 14px;
-                      line-height: 200%;
-                    }
-                  }
-                }
-              }
-
-              .desc-info-lbl-container {
-                padding: 10px;
-
-                .descLabel {
-                  padding: 5px;
-                  height: 30px;
-                  background-color: #dee9f3;
-                  border-radius: 5px;
-                  .desc-info-lbl {
-                    font-size: 14px;
-                    padding: 10px;
-                  }
-                }
-
-                .DESC-Container {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-
-                  .custom-subject {
-                    padding: 6px;
-                    .desc-subject-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                   form {
-                    .desc-subject-input {
-                      width: 430px;
-                      height: 35px;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                      background: $color7;
-                      outline: none;
-                      text-indent: 10px;
-                    }
-
-                    .desc-subject-input:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-                   }
-                  }
-
-                  .custom-desc-textarea {
-                    padding: 3px;
-
-                    .desc-lbl {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    .textarea-container {
-                      textarea {
-                        width: 430px;
-                        height: 70px;
+                      input {
+                        padding: 9px 1px;
+                        border: 1px solid ;
                         border: 1px solid #ccc;
                         border-radius: 5px;
-                        background: $color7;
+                       -webkit-appearance: none;
+                        appearance: none;
                         outline: none;
-                        padding: 10px;
+                      }
+                    }
+
+
+                    .custom-select {
+                      padding: 14px;
+
+                      .status-lbl {
+                        font-size: 11px;
+                        color: $black1;
                       }
 
-                      textarea:focus {
+                      .status-lbl:before {
+                        content:"*";
+                        color: red;
+                      }
+
+                      .select-box {
+                        width: 170px;
+                        position: relative;
+                      }
+
+                      .select-box select{
+                        height: 35px;
+                        padding: 10px 15px;
+                        line-height: 15px;
+                        font-size: 12px;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                       -webkit-appearance: none;
+                        appearance: none;
+                        outline: none;
+                      }
+
+                      .select-box:after{
+                        content: "";
+                        position: absolute;
+                        right: 8px;
+                        top: 50%;
+                        margin-top: -4px;
+                        border-top: 8px solid #ccc;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        pointer-events: none;
+                      }
+
+                      .select-box select:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
+
+                      .select-box select option {
+                        font-size: 14px;
+                        line-height: 200%;
+                      }
+                    }
+                  }
+
+                  .priority-agentDept-Container{
+                    display: flex;
+                    justify-content: space-between;
+
+                    .custom-select-Prority {
+                      padding: 14px;
+
+                      .priority-lbl:before {
+                        content:"*";
+                        color: red;
+                      }
+
+                      .priority-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .select-box-priority {
+                        width: 170px;
+                        position: relative;
+                      }
+
+                      .select-box-priority select{
+                        height: 35px;
+                        padding: 10px 15px;
+                        line-height: 15px;
+                        font-size: 12px;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                       -webkit-appearance: none;
+                        appearance: none;
+                        outline: none;
+                      }
+
+                      .select-box-priority:after{
+                        content: "";
+                        position: absolute;
+                        right: 8px;
+                        top: 50%;
+                        margin-top: -4px;
+                        border-top: 8px solid #ccc;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        pointer-events: none;
+                      }
+
+                      .select-box-priority select:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
+
+                      .select-box-priority select option {
+                        font-size: 14px;
+                        line-height: 200%;
+                      }
+                    }
+
+                    .custom-select-agentDept{
+                      padding: 14px;
+                      .agentDept-label {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .agentDept-label:before {
+                        content:"*";
+                        color: red;
+                      }
+
+                      .select-agentDept {
+                        width: 170px;
+                        position: relative;
+                      }
+
+                      .select-agentDept select{
+                        height: 35px;
+                        padding: 10px 15px;
+                        line-height: 15px;
+                        font-size: 12px;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                       -webkit-appearance: none;
+                        appearance: none;
+                        outline: none;
+                      }
+
+                      .select-agentDept:after{
+                        content: "";
+                        position: absolute;
+                        right: 8px;
+                        top: 50%;
+                        margin-top: -4px;
+                        border-top: 8px solid #ccc;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        pointer-events: none;
+                      }
+
+                      .select-agentDept select:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
+
+                      .select-agentDept select option {
+                        font-size: 14px;
+                        line-height: 200%;
+                      }
+                    }
+                  }
+
+                  .customer-select-agent{
+                    padding: 14px;
+                    label {
+                      font-size: 11px;
+                      color: $black1;
+                    }
+
+                    label:before {
+                      content:"*";
+                      color: red;
+                    }
+
+                    .select-dropdown {
+                      position: relative;
+                    }
+
+                    .select-dropdown select{
+                      height: 35px;
+                      padding: 10px 15px;
+                      line-height: 15px;
+                      font-size: 12px;
+                      width: 100%;
+                      border: 1px solid #ccc;
+                      border-radius: 5px;
+                     -webkit-appearance: none;
+                      appearance: none;
+                      outline: none;
+                    }
+
+                    .select-dropdown:after{
+                      content: "";
+                      position: absolute;
+                      right: 8px;
+                      top: 50%;
+                      margin-top: -4px;
+                      border-top: 8px solid #ccc;
+                      border-left: 6px solid transparent;
+                      border-right: 6px solid transparent;
+                      pointer-events: none;
+                    }
+
+                    .select-dropdown select:focus {
+                      border: 1px solid #54adf7;
+                      box-shadow: 0 0 3px #54adf7;
+                    }
+
+                    .select-dropdown select option {
+                      font-size: 14px;
+                      line-height: 200%;
+                    }
+                  }
+
+                  .contactName-Container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .custom-contactName {
+                      width: 350px;
+                      padding: 20px;
+                      margin-top: -31px;
+
+                      .contact-name-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .custom-Contact-Name-icon {
+                        display: flex;
+                        .contactNameIcon {
+                          float: left;
+                          margin-right: 5px;
+                          .contact-image {
+                            float: right;
+                            width: 20px;
+                            height: 20px;
+                          }
+                        }
+                      }
+
+                      .search-input-contactName form input{
+                        font-size: 12px;
+                        color: $black1;
+                        border: none;
+                        outline: none;
+                      }
+
+                      .search-input-contactName form .fi-rr-search{
+                        margin-left: 50px;
+                      }
+
+                      .select-box-contactName select:focus {
                         border: 1px solid #54adf7;
                         box-shadow: 0 0 3px #54adf7;
                       }
                     }
+
+                    .custom-select-CaseOrigin {
+                      padding: 13px;
+                      margin-top: -25px;
+
+                      .origin-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .origin-lbl:before {
+                        content:"*";
+                        color: red;
+                      }
+
+                      .select-box-origin {
+                        width: 170px;
+                        position: relative;
+                      }
+
+                      .select-box-origin select{
+                        height: 35px;
+                        padding: 10px 15px;
+                        line-height: 15px;
+                        font-size: 12px;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                       -webkit-appearance: none;
+                        appearance: none;
+                        outline: none;
+                      }
+
+                      .select-box-origin:after{
+                        content: "";
+                        position: absolute;
+                        right: 8px;
+                        top: 50%;
+                        margin-top: -4px;
+                        border-top: 8px solid #ccc;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        pointer-events: none;
+                      }
+
+                      .select-box-origin select:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
+
+                      .select-box-origin select option {
+                        font-size: 14px;
+                        line-height: 200%;
+                      }
+                    }
+                  }
+
+                  .accountNumber-Container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .custom-account-number {
+                      width: 282px;
+                      padding: 21px;
+                      margin-top: -31px;
+
+                      .account-number-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .custom-Account-Name-icon {
+                        display: flex;
+                        .accountNameIcon {
+                          float: left;
+                          margin-right: 5px;
+                          .account-image {
+                            float: right;
+                            width: 20px;
+                            height: 20px;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .type-Container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .custom-select-type {
+                      padding: 14px;
+                      margin-top: -20px;
+
+                      .type-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .select-box-type {
+                        width: 170px;
+                        position: relative;
+                      }
+
+                      .select-box-type select{
+                        height: 35px;
+                        padding: 10px 15px;
+                        line-height: 15px;
+                        font-size: 12px;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                       -webkit-appearance: none;
+                        appearance: none;
+                        outline: none;
+                      }
+
+                      .select-box-type:after{
+                        content: "";
+                        position: absolute;
+                        right: 8px;
+                        top: 50%;
+                        margin-top: -4px;
+                        border-top: 8px solid #ccc;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        pointer-events: none;
+                      }
+
+                      .select-box-type select:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
+
+                      .select-box-type select option {
+                        font-size: 14px;
+                        line-height: 200%;
+                      }
+                    }
                   }
                 }
-              }
-            }
 
-            .custom-button-Container {
-              position: absolute;
-              height: 70px;
-              z-index: 1001;
-              position: absolute;
-              width: 500px;
-              margin-top: 330px;
-              background: $color7;
-              border-top: 1px solid $color7;
-              border-bottom-left-radius: 5px;
-              border-bottom-right-radius: 5px;
-              box-shadow: 0 -1px 5px #ffffff ,0 1px 5px #d4d7da;
-
-              .custom-button-Click {
-                display: flex;
-                float: right;
-                margin-right: 20px;
-                .btn-ClickCancel {
-                  margin-top: 17px;
-                  float: left;
-                  margin-right: 15px;
-                  width: 65px;
-                  height: 30px;
-                  text-align: center;
-                  line-height: 2.2;
-                  border: 1px solid #779bee;
-                  border-radius: 5px;
-                  .btn-Cancel {
-                    color: #779bee;
-                    background: none;
-                    border: none;
-                  }
-
-                  .btn-Cancel:hover {
-                    color: $color7;
-                    transition: 0.5s;
-                  }
-                }
-
-                .btn-ClickCancel:hover {
-                  background: #779bee;
-                  transition: 0.5s;
-                }
-
-                .btn-ClickSave {
-                  float: right;
-                  margin-top: 17px;
-                  width: 60px;
-                  height: 30px;
-                  text-align: center;
-                  line-height: 2.2;
-                  background: #779bee;
-                  border-radius: 5px;
-                  .btn-Save {
-                    color: $color7;
-                    background: none;
-                    border: none;
-                  }
-                }
-
-                .btn-ClickSave:hover {
-                  background: #6e88c4;
-                  transition: 0.5s;
-                }
-              }
-            }
-          }
-        }
-
-        .custom-btn-Assign-blog {
-          position: relative;
-          .btnClickAssign {
-            float: right;
-            // margin-top: -10px;
-            text-align: center;
-            line-height: 2;
-            width: 80px;
-            background: #b3d4df;
-            border: 1px solid #b3d4df;
-            border-radius: 5px;
-            .btnAssignCase {
-              border: none;
-              background: none;
-            }
-          }
-
-          .btnClickAssign:hover {
-            padding: 1px;
-            border: #cedde4;
-            background: #cedde4;
-          }
-
-          .custom-assign-popup {
-            display: flex;
-            flex-direction: column;
-            margin-top: 30px;
-
-            .custom-show-assign-blog {
-              z-index: 1001;
-              position: absolute;
-              width: 700px;
-              height: 420px;
-              background: $color7;
-              border-bottom: 1px solid $color7;
-              border-top-left-radius: 5px;
-              border-top-right-radius: 5px;
-              box-shadow: 0 5px 15px #d4d7da;
-
-              .title-assign-container {
-                display: flex;
-                justify-content: space-between;
-
-                h4 {
-                  font-size: 14px;
-                  margin: 10px;
-                }
-
-                .custom-btnClose {
+                .desc-info-lbl-container {
                   padding: 10px;
 
-                  .btn-close {
-                    width: 20px;
-                    height: 20px;
-                    line-height: 2px;
-                    border: none;
-                    outline: none;
-                    background: none;
-
-                    .fi-rr-cross-small {
+                  .descLabel {
+                    padding: 5px;
+                    height: 30px;
+                    background-color: #dee9f3;
+                    border-radius: 5px;
+                    .desc-info-lbl {
                       font-size: 14px;
+                      padding: 10px;
                     }
                   }
 
-                  .btn-close:hover {
-                    background: #b3d4df;
-                    border-radius: 50%;
-                    transition: 0.5s;
+                  .DESC-Container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .custom-subject {
+                      padding: 20px;
+                      .desc-subject-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                        padding: 3px;
+                        input {
+                          width: 430px;
+                          height: 70px;
+                          border: 1px solid #ccc;
+                          border-radius: 5px;
+                          background: $color7;
+                          outline: none;
+                          padding: 10px;
+                        }
+
+                        input:focus {
+                          border: 1px solid #54adf7;
+                          box-shadow: 0 0 3px #54adf7;
+                        }
+                      }
+
+                      .desc-subject-input {
+                        width: 430px;
+                        height: 35px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background: $color7;
+                        outline: none;
+                        text-indent: 10px;
+                      }
+
+                      .desc-subject-input:focus {
+                        border: 1px solid #54adf7;
+                        box-shadow: 0 0 3px #54adf7;
+                      }
+                    }
+
+                    .custom-desc-textarea {
+                      padding: 3px;
+
+                      .desc-lbl {
+                        font-size: 11px;
+                        color: $black1;
+                      }
+
+                      .textarea-container {
+                        textarea {
+                          width: 430px;
+                          height: 70px;
+                          border: 1px solid #ccc;
+                          border-radius: 5px;
+                          background: $color7;
+                          outline: none;
+                          padding: 10px;
+                        }
+
+                        textarea:focus {
+                          border: 1px solid #54adf7;
+                          box-shadow: 0 0 3px #54adf7;
+                        }
+                      }
+                    }
                   }
                 }
               }
 
-              .line-break {
-                border-top: 1px solid $gray1;
-              }
+              .custom-button-Container {
+                position: absolute;
+                height: 70px;
+                z-index: 1001;
+                //position: absolute;
+                width: 500px;
+                margin-top: 300px;
+                background: $color7;
+                border-top: 1px solid $color7;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                box-shadow: 0 -1px 5px #ffffff ,0 1px 5px #d4d7da;
 
-              .select-agent-toAssign-container {
-                .assign-lbl-container {
+                .custom-button-Click {
                   display: flex;
-                  justify-content: space-between;
+                  float: right;
+                  margin-right: 20px;
+                  .btn-ClickCancel {
+                    margin-top: 17px;
+                    float: left;
+                    margin-right: 15px;
 
-                  .testing {
-                    // height: 60vh;
-                    height: 375px;
-                    box-shadow: 1px 0 0 #d4d7da;
+                    button {
+                      border: none;
+                      outline: none;
+                      background-color: $color9;
+                      color: $color7;
+                      border-radius: 5px;
+                      padding: 5px 14px;
+                      font-size: 13px;
+                      font-weight: bold;
+                      letter-spacing: 1px;
+                      transition: transform 80ms ease-in;
+                    }
 
-                    .test .agents-lbl {
-                      padding: 10px;
-                      font-size: 11px;
-                      margin-right: 20px;
-                      color: $black1;
+                    button:hover{
+                      background-color: rgb(14, 14, 179);
+                      transition: 0.5s;
+                    }
+
+                    button:active {
+                      transform: scale(0.85);
+                    }
+
+                    button:focus {
+                      outline: none;
+                    }
+
+                    button.ghost {
+                      background-color: transparent;
+                      border-color: #FFFFFF;
                     }
                   }
 
-                  .custom-select-agent {
-                    padding: 10px;
-                    width: 150px;
-                    position: relative;
-                  }
-
-                  .custom-select-agent select {
-                    height: 30px;
-                    padding: 1px 15px;
-                    line-height: 15px;
-                    font-size: 12px;
-                    width: 100%;
-                    outline: none;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                   -webkit-appearance: none;
-                    appearance: none;
-                  }
-
-                  .custom-select-agent select option {
-                    font-size: 13px;
-                  }
-
-                  .custom-select-agent:after {
-                    content: "";
-                    position: absolute;
-                    right: 15px;
-                    top: 50%;
-                    margin-top: -4px;
-                   // margin-left: -5px;
-                    border-top: 8px solid #ccc;
-                    border-left: 6px solid transparent;
-                    border-right: 6px solid transparent;
-                    pointer-events: none;
-                  }
-
-                  .custom-select-agent select:focus {
-                    border: 1px solid #54adf7;
-                    box-shadow: 0 0 3px #54adf7;
-                  }
-
-                  .custom-none-option {
-                    .custom-image{
-                      margin: 40px;
-
-                      img {
-                        width: 70%;
-                        height: 20%;
-                        margin-left: 100px;
-                      }
+                  .btn-ClickSave {
+                    float: right;
+                    margin-top: 17px;
+                    button {
+                      border: none;
+                      outline: none;
+                      background-color: $color8;
+                      color: $color7;
+                      border-radius: 5px;
+                      padding: 5px 14px;
+                      font-size: 13px;
+                      //font-weight: bold;
+                      letter-spacing: 1px;
+                      transition: transform 80ms ease-in;
                     }
 
-                    .custom-instruction {
-                      margin-top: -60px;
-                      margin-left: 170px;
+                    button:hover{
+                      // background-color: rgb(180, 12, 12);
+                      background-color: rgb(23, 133, 23);
+                      transition: 0.5s;
+                    }
 
-                      h5{
-                        color: #6fb5cc;
-                        font-size: 14px;
+                    button:active {
+                      transform: scale(0.85);
+                    }
 
-                        .fi-rr-sad {
-                          color: #6fb5cc;
-                          font-size: 18px;
-                        }
-                      }
+                    button:focus {
+                      outline: none;
+                    }
+
+                    button.ghost {
+                      background-color: transparent;
+                      border-color: #FFFFFF;
                     }
                   }
 
-                  .custom_department_IT {
-                    .custom-dept_IT_lbl {
-                      //background: red;
-                      padding: 10px;
-                      .dept_IT_lbl {
-                        padding: 5px;
-                        font-size: 14px;
-                        color: #6fb5cc;
-
-
-                      }
-                    }
-
-                    .department_IT {
-                      overflow: auto;
-                      width: 550px;
-                      height: 280px;
-                      padding-left: 1px;
-                      padding-right: 1px;
-                      box-shadow: 0 4px 3px -3px #d4d7da;
-
-                      table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        box-shadow: 0 5px 10px #eff0f1;
-                        background: $color7;
-                        text-align: left;
-
-                        thead {
-                          width: 100%;
-                          box-shadow: 0 5px 10px #eff0f1;
-                        }
-
-                        thead tr {
-                          box-shadow: 0 1px 1px #ebeef1;
-                        }
-
-                        thead tr th {
-                          padding:  0.5rem 1rem;
-                          background-color: #b3d4df;
-                          line-height: 2.3;
-                          font-size: 13px;
-                        }
-
-                        tbody tr {
-                          box-shadow: 0 1px 1px #ebeef1;
-                        }
-
-                        tbody tr:hover {
-                          background-color: #dee2ff;
-                          //color: white;
-                          transition: 0.5s;
-                        }
-
-                        tbody tr th {
-                          padding:  0.5rem 2rem;
-                          background-color: #ced2f0;
-                          line-height: 2.3;
-                          font-size: 13px;
-                        }
-
-                        tbody tr td {
-                          padding:  0.5rem 1rem;
-                          line-height: 2;
-                          font-size: 13px;
-                        }
-                      }
-                    }
-
-                    .custom-Button {
-                      display: flex;
-                      position: absolute;
-                      margin-left: 370px;
-                      margin-top: 15px;
-
-                      .click-cancel2 {
-                        float: left;
-                        margin-right: 10px;
-                        text-align: center;
-                        line-height: 2;
-                        width: 70px;
-                        height: 28px;
-                        //background: $color7;
-                       // border: 1px solid #779bee;
-
-                        background: #ff002b;
-                        border-radius: 5px;
-
-                        .btn-cancel2 {
-                          border: none;
-                          background: none;
-                          color: $color7;
-                          font-weight: bold;
-                        }
-
-                      }
-
-                      .click-cancel2:hover {
-                        background: #c00021;
-                        transition: 0.5s;
-                      }
-
-                      .click-assign {
-                        float: right;
-                        text-align: center;
-                        line-height: 2;
-                        width: 70px;
-                        height: 28px;
-                        background: #6fb5cc;
-                        border-radius: 5px;
-
-                        .btn-assign {
-                          border: none;
-                          background: none;
-                          //color: $black1;
-                          color: #f7fff7;
-                          //font-weight: bold;
-                        }
-
-                        // .btn-assign:hover {
-                        //   color: #f7fff7;
-                        // }
-                      }
-
-                      .click-assign:hover {
-                        background: #5fa0b6;
-                        transition: 0.5s;
-                      }
-                    }
+                  .btn-ClickSave:hover {
+                    background: #6e88c4;
+                    transition: 0.5s;
                   }
-
-
-                  .custom_department_account {
-                    .custom-dept_acc_lbl {
-                      //background: red;
-                      padding: 10px;
-                      .dept_acc_lbl {
-                        padding: 5px;
-                        font-size: 14px;
-                        color: #6fb5cc;
-
-
-                      }
-                    }
-
-                    .department_acc {
-                      overflow: auto;
-                      width: 550px;
-                      height: 280px;
-                      padding-left: 1px;
-                      padding-right: 1px;
-                      box-shadow: 0 4px 3px -3px #d4d7da;
-
-                      table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        box-shadow: 0 5px 10px #eff0f1;
-                        background: $color7;
-                        text-align: left;
-
-                        thead {
-                          width: 100%;
-                          box-shadow: 0 5px 10px #eff0f1;
-                        }
-
-                        thead tr {
-                          box-shadow: 0 1px 1px #ebeef1;
-                        }
-
-                        thead tr th {
-                          padding:  0.5rem 1rem;
-                          background-color: #b3d4df;
-                          line-height: 2.3;
-                          font-size: 13px;
-                        }
-
-                        tbody tr {
-                          box-shadow: 0 1px 1px #ebeef1;
-                        }
-
-                        tbody tr:hover {
-                          background-color: #dee2ff;
-                          //color: white;
-                          transition: 0.5s;
-                        }
-
-                        tbody tr th {
-                          padding:  0.5rem 2rem;
-                          background-color: #ced2f0;
-                          line-height: 2.3;
-                          font-size: 13px;
-                        }
-
-                        tbody tr td {
-                          padding:  0.5rem 1rem;
-                          line-height: 2;
-                          font-size: 13px;
-                        }
-                      }
-                    }
-
-                    .custom-Button {
-                      display: flex;
-                      position: absolute;
-                      margin-left: 370px;
-                      margin-top: 15px;
-
-                      .click-cancel2 {
-                        float: left;
-                        margin-right: 10px;
-                        text-align: center;
-                        line-height: 2;
-                        width: 70px;
-                        height: 28px;
-                        //background: $color7;
-                       // border: 1px solid #779bee;
-
-                        background: #ff002b;
-                        border-radius: 5px;
-
-                        .btn-cancel2 {
-                          border: none;
-                          background: none;
-                          color: $color7;
-                          font-weight: bold;
-                        }
-
-                      }
-
-                      .click-cancel2:hover {
-                        background: #c00021;
-                        transition: 0.5s;
-                      }
-
-                      .click-assign {
-                        float: right;
-                        text-align: center;
-                        line-height: 2;
-                        width: 70px;
-                        height: 28px;
-                        background: #6fb5cc;
-                        border-radius: 5px;
-
-                        .btn-assign {
-                          border: none;
-                          background: none;
-                          color: #f7fff7;
-                        }
-                      }
-
-                      .click-assign:hover {
-                        background: #5fa0b6;
-                        transition: 0.5s;
-                      }
-                    }
-                  }
-
-                  .custom_department_payroll {
-                    .custom-dept_payroll_lbl {
-                      //background: red;
-                      padding: 10px;
-
-                      .dept_payroll_lbl {
-                        padding: 5px;
-                        font-size: 14px;
-                        color: #6fb5cc;
-
-
-                      }
-                    }
-
-                    .department_payroll {
-                      overflow: auto;
-                      width: 550px;
-                      height: 280px;
-                      padding-left: 1px;
-                      padding-right: 1px;
-                      box-shadow: 0 4px 3px -3px #d4d7da;
-
-                      table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        box-shadow: 0 5px 10px #eff0f1;
-                        background: $color7;
-                        text-align: left;
-
-                        thead {
-                          width: 100%;
-                          box-shadow: 0 5px 10px #eff0f1;
-                        }
-
-                        thead tr {
-                          box-shadow: 0 1px 1px #ebeef1;
-                        }
-
-                        thead tr th {
-                          padding:  0.5rem 1rem;
-                          background-color: #b3d4df;
-                          line-height: 2.3;
-                          font-size: 13px;
-                        }
-
-                        tbody tr {
-                          box-shadow: 0 1px 1px #ebeef1;
-                        }
-
-                        tbody tr:hover {
-                          background-color: #dee2ff;
-                          //color: white;
-                          transition: 0.5s;
-                        }
-
-                        tbody tr th {
-                          padding:  0.5rem 2rem;
-                          background-color: #ced2f0;
-                          line-height: 2.3;
-                          font-size: 13px;
-                        }
-
-                        tbody tr td {
-                          padding:  0.5rem 1rem;
-                          line-height: 2;
-                          font-size: 13px;
-                        }
-                      }
-                    }
-
-                    .custom-Button {
-                      display: flex;
-                      position: absolute;
-                      margin-left: 370px;
-                      margin-top: 15px;
-
-                      .click-cancel2 {
-                        float: left;
-                        margin-right: 10px;
-                        text-align: center;
-                        line-height: 2;
-                        width: 70px;
-                        height: 28px;
-                        //background: $color7;
-                       // border: 1px solid #779bee;
-
-                        background: #ff002b;
-                        border-radius: 5px;
-
-                        .btn-cancel2 {
-                          border: none;
-                          background: none;
-                          color: $color7;
-                          font-weight: bold;
-                        }
-
-                      }
-
-                      .click-cancel2:hover {
-                        background: #c00021;
-                        transition: 0.5s;
-                      }
-
-                      .click-assign {
-                        float: right;
-                        text-align: center;
-                        line-height: 2;
-                        width: 70px;
-                        height: 28px;
-                        background: #6fb5cc;
-                        border-radius: 5px;
-
-                        .btn-assign {
-                          border: none;
-                          background: none;
-                          color: #f7fff7;
-                        }
-                      }
-
-                      .click-assign:hover {
-                        background: #5fa0b6;
-                        transition: 0.5s;
-                      }
-                    }
-                  }
-
-                  // .custom_department_payroll {
-                  //   overflow-x: hidden;
-                  //   width: 382px;
-                  //   height: 200px;
-                  //   background: #f8f9fa;
-                  //   border-radius: 7px;
-                  //   padding: 10px 30px;
-                  //   margin-top: 10px;
-                  //   box-shadow: 0 0 5px #d4d7da;
-
-
-                  //   .dept_payroll_lbl {
-                  //     font-size: 12px;
-                  //     color: #54adf7;
-                  //   }
-
-                  //   .department_payroll {
-                  //     padding: 5px;
-                  //     margin-top: 10px;
-                  //   }
-
-                  //   .department_payroll:hover {
-                  //     background: #e2ece9;
-                  //     border-radius: 5px;
-
-                  //   }
-                  //   .payroll_agent_name {
-                  //     font-size: 12px;
-                  //   }
-                  // }
                 }
               }
             }
@@ -1230,5 +825,25 @@
         }
       }
     }
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  .fi-rr-trash {
+    font-size: 15px;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+
+  .fi-rr-pencil {
+    font-size: 15px;
   }
 }

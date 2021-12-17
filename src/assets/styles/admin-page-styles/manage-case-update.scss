@@ -1,0 +1,113 @@
+.UpdateContainer {
+
+  form {
+    width: 100%;
+    .container1 {
+      display: flex;
+      justify-content: space-between;
+
+      .case-number {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin-right: 20px;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          padding: 10px 50px;
+        }
+      }
+
+      .status {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          padding: 10px 50px;
+        }
+      }
+
+      .priority {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          padding: 10px 50px;
+        }
+      }
+    }
+
+    .container2 {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .department {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          padding: 10px 50px;
+        }
+      }
+
+      .agent-name {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          padding: 10px 50px;
+        }
+      }
+
+      .subject {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          padding: 10px 50px;
+        }
+      }
+    }
+
+    .container3 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        width: 32%;
+        padding: 10px 30px;
+      }
+    }
+  }
+}

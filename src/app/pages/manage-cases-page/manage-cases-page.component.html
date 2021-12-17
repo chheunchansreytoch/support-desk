@@ -5,379 +5,106 @@
         <button class="btnCreate" (click)="createCasetoogleTag()">Create Case</button>
       </div>
       <!-- z-1001 -->
-      <div class="create-case-popup" *ngIf="showCasePopup">
-        <div class="custom-show-create-case-blog">
-          <div class="case-blog-container">
-            <div class="title-case-container">
-              <h4>New Case</h4>
-            </div>
-
-            <div class="custom-btnClose">
-              <button class="btn-close" (click)="createCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
-            </div>
-          </div>
-
-          <div class="case-info-lbl-container">
-
-            <hr class="line-break">
-            <div class="caselabel">
-              <label class="case-info-lbl">Case Information</label>
-            </div>
-
-            <div class="custom-Case-Container">
-              <div class="case-owner-container">
-                <label class="case-owner-lbl">Case Owner</label>
-                <p class="case-owner-name">Chheun Chansreytoch</p>
+      <!-- *ngIf="showCasePopup" -->
+      <div class="create-case-popup"  *ngIf="showCasePopup">
+        <form [formGroup]="creatingCaseForm" (ngSubmit)="formSubmitted(creatingCaseForm.value)">
+          <div class="custom-show-create-case-blog">
+            <div class="case-blog-container">
+              <div class="title-case-container">
+                <h4>New Case</h4>
               </div>
 
-              <div class="custom-select">
-                <label class="status-lbl">Status</label>
-                <div class="select-box" required>
-                  <select>
-                    <option>New</option>
-                    <option>Working</option>
-                    <option>Escalated</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="caseNumber-Container">
-              <div class="custom-case-number">
-                <label class="case-number-lbl">Case Number</label>
-                <p class="case-number">00001001</p>
-              </div>
-
-              <div class="custom-select-Prority">
-                <label class="priority-lbl">Priority</label>
-                <div class="select-box-priority" required>
-                  <select>
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="contactName-Container">
-              <div class="custom-contactName">
-                <label class="contact-name-lbl">Contact Name</label>
-
-                <div class="custom-Contact-Name-icon">
-                  <div class="contactNameIcon">
-                    <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
-                  </div>
-                  <div class="contact-name">
-                    <p>Chheun Chansreytoch</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="custom-select-CaseOrigin">
-                <label class="origin-lbl">Case Origin</label>
-                <div class="select-box-origin" required>
-                  <select>
-                    <option>Phone</option>
-                    <option>Email</option>
-                    <option>Web</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="accountNumber-Container">
-              <div class="custom-account-number">
-                <label class="account-number-lbl">Account Name</label>
-
-                <div class="custom-Account-Name-icon">
-                  <div class="accountNameIcon">
-                    <img class="account-image" src="./assets/images/selection-icons/account.png">
-                  </div>
-                  <div class="account-name">
-                    <p>Chheun Chansreytoch</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="type-Container">
-              <div class="custom-select-type">
-                <label class="type-lbl">Type</label>
-                <div class="select-box-type" required>
-                  <select>
-                    <option>--None--</option>
-                    <option>Machenical</option>
-                    <option>Electrical</option>
-                    <option>Electronic</option>
-                    <option>Structural</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="type-Container">
-              <div class="custom-select-type">
-                <label class="type-lbl">Case Reason</label>
-                <div class="select-box-type" required>
-                  <select>
-                    <option>--None--</option>
-                    <option>Installation</option>
-                    <option>Equipement Complexity</option>
-                    <option>Performance</option>
-                    <option>Breakdown</option>
-                    <option>Equipment Design</option>
-                    <option>Feedback</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="desc-info-lbl-container">
-            <div class="descLabel">
-              <label class="desc-info-lbl">Description Information</label>
-            </div>
-
-            <div class="DESC-Container">
-              <div class="custom-subject">
-                <label class="desc-subject-lbl">Subject</label>
-                <form>
-                  <input class="desc-subject-input" type="text" name="search">
-                </form>
-              </div>
-
-              <div class="custom-desc-textarea">
-                <label class="desc-lbl">Description</label>
-                <div class="textarea-container">
-                  <textarea></textarea>
-                </div>
-              </div>
-
-              <div class="custom-desc-textarea">
-                <label class="desc-lbl">Internal Comments</label>
-                <div class="textarea-container">
-                  <textarea></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="custom-button-Container">
-          <div class="custom-button-Click">
-            <div class="btn-ClickCancel">
-              <button class="btn-Cancel" (click)="createCasetoogleTag()">Cancel</button>
-            </div>
-
-            <div class="btn-ClickSave">
-              <button class="btn-Save">Save</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="custom-btn-Assign-blog">
-      <div class="btnClickAssign">
-        <button class="btnAssignCase" (click)="assignCasetoogleTag()">Assign To</button>
-      </div>
-
-      <div class="custom-assign-popup" *ngIf=" showAssignPopop">
-        <div class="custom-show-assign-blog">
-          <div class="title-assign-container">
-            <h4>Assign Case To</h4>
-            <div class="custom-btnClose">
-              <button class="btn-close" (click)="assignCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
-            </div>
-          </div>
-
-          <hr class="line-break">
-
-          <div class="select-agent-toAssign-container">
-            <div class="assign-lbl-container">
-              <div class="testing">
-                <div class="test">
-                  <label class="agents-lbl" for="department">Departments</label>
-                </div>
-
-                <div class="custom-select-agent">
-                  <select [(ngModel)]="selectedValue">
-                    <!-- <option hidden>Choose Department</option> -->
-                    <option value="none">--None--</option>
-                    <option value="dept_IT">IT</option>
-                    <option value="dept_Acc">Accounting</option>
-                    <option value="dept_Payroll">Payroll</option>
-                    <!-- <option *ngFor="let dept of departments" [value]="dept.id">
-                      {{dept.name}}
-                    </option> -->
-
-                    <!-- <option value="dept_IT">IT</option>
-                    <option value="dept_Acc">Accounting</option> -->
-                  </select>
-                </div>
-              </div>
-
-              <div class="custom-none-option" *ngIf="selectedValue == 'none'">
-                <div class="custom-image">
-                  <img src="./assets/images/admin-iconList/selection3.png">
-                </div>
-
-                <div class="custom-instruction">
-                  <h5>There is nothing to show &nbsp; <i class="fi fi-rr-sad"></i></h5>
-                </div>
-              </div>
-
-              <div class="custom_department_IT" *ngIf="selectedValue == 'dept_IT'">
-                <div class="custom-dept_IT_lbl">
-                  <label class="dept_IT_lbl">Choose Agent of IT Department</label>
-                </div>
-
-                <div class="department_IT">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Checkbox</th>
-                        <th>Agents Name</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr *ngFor="let depts_IT of departments_IT">
-                        <td>
-                          <input type="checkbox" [checked]="Checked">
-                          {{depts_IT.all}}
-                        </td>
-
-                        <td>
-                          {{depts_IT.name}}
-                        </td>
-
-                        <td>
-                          {{depts_IT.status}}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="custom-Button">
-                  <div class="click-cancel2">
-                    <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
-                  </div>
-
-                  <div class="click-assign">
-                    <button class="btn-assign">Assign</button>
-                  </div>
-                </div>
-                <!-- <p>You have selected: {{ SelectAgentName}}</p> -->
-              </div>
-
-              <div class="custom_department_account" *ngIf="selectedValue == 'dept_Acc'">
-                <div class="custom-dept_acc_lbl">
-                  <label class="dept_acc_lbl">Choose Agent of Accounting Department</label>
-                </div>
-
-                <div class="department_acc">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Checkbox</th>
-                        <th>Agents Name</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr *ngFor="let depts_acc of departments_account">
-                        <td>
-                          <input type="checkbox" [checked]="Checked">
-                          {{depts_acc.all}}
-                        </td>
-
-                        <td>
-                          {{depts_acc.name}}
-                        </td>
-
-                        <td>
-                          {{depts_acc.status}}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="custom-Button">
-                  <div class="click-cancel2">
-                    <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
-                  </div>
-
-                  <div class="click-assign">
-                    <button class="btn-assign">Assign</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- <div class="custom_department_payroll" *ngIf="selectedValue == 'dept_Payroll'">
-                <label class="dept_payroll_lbl">Choose Agent of Payroll Department</label>
-                <div class="department_payroll" *ngFor="let depts_payroll of departments_payroll">
-                   <label class="payroll_agent_name" >
-                    <input type="radio" name="departmentPayroll" value="{{depts_payroll.name}}" (change)="radioChangeHandler($event)">
-                     {{depts_payroll.name}}
-                  </label>
-                </div>
+              <!-- <div class="custom-btnClose">
+                <button class="btn-close" (click)="createCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
               </div> -->
+            </div>
 
-              <div class="custom_department_payroll" *ngIf="selectedValue == 'dept_Payroll'">
-                <div class="custom-dept_payroll_lbl">
-                  <label class="dept_payroll_lbl">Choose Agent of Payroll Department</label>
+            <div class="case-info-lbl-container">
+
+              <hr class="line-break">
+              <div class="caselabel">
+                <label class="case-info-lbl">Case Information</label>
+              </div>
+
+              <div class="caseNumber-Container">
+                <div class="custom-case-number">
+                  <label class="case-number-lbl">Case Number</label>
+                  <input type="text" name="caseNumber" formControlName="caseNumber" required>
                 </div>
 
-                <div class="department_payroll">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Checkbox</th>
-                        <th>Agents Name</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr *ngFor="let depts_payroll of departments_payroll">
-                        <td>
-                          <input type="checkbox" [checked]="Checked">
-                          {{depts_payroll.all}}
-                        </td>
-
-                        <td>
-                          {{depts_payroll.name}}
-                        </td>
-
-                        <td>
-                          {{depts_payroll.status}}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="custom-Button">
-                  <div class="click-cancel2">
-                    <button class="btn-cancel2" (click)="assignCasetoogleTag()">Cancel</button>
-                  </div>
-
-                  <div class="click-assign">
-                    <button class="btn-assign">Assign</button>
+                <div class="custom-select">
+                  <label class="status-lbl">Status</label>
+                  <div class="select-box">
+                    <select name="status" formControlName="status" required>
+                      <option *ngFor="let item of arrStatuses" value="{{item.id}}">{{item.name}}</option>
+                    </select>
                   </div>
                 </div>
-                <!-- <p>You have selected: {{ SelectAgentName}}</p> -->
+              </div>
+
+              <div class="priority-agentDept-Container">
+                <div class="custom-select-Prority">
+                  <label class="priority-lbl">Priority</label>
+                  <div class="select-box-priority" required>
+                    <select name="priority" formControlName="priority" required>
+                      <option *ngFor="let item of arrPriorities" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="custom-select-agentDept">
+                  <label class="agentDept-label">Agent Department</label>
+                  <div class="select-agentDept">
+                    <select name="agentDepartment" formControlName="agentDepartment" required (change)="selectDepartmentChanged($event)">
+                      <option *ngFor="let item of arrAgentDepartment" value={{item.id}}>{{item?.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="customer-select-agent">
+                <label>Select Agent</label>
+                <div class="select-dropdown">
+                  <select name="agentname" formControlName="agentname" required>
+                    <option *ngFor="let item of agentsBySelectedDepartment" value={{item.id}}>{{item?.username}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="desc-info-lbl-container">
+              <div class="descLabel">
+                <label class="desc-info-lbl">Description Information</label>
+              </div>
+
+              <div class="DESC-Container">
+                <div class="custom-subject">
+                  <label class="desc-subject-lbl">Subject</label>
+                    <input class="desc-subject-input" type="text" name="subject" formControlName="subject" required>
+                </div>
+
+                <div class="custom-desc-textarea">
+                  <label class="desc-lbl">Description</label>
+                  <div class="textarea-container">
+                    <textarea name="description" formControlName="description" required></textarea>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <div class="custom-button-Container">
+            <div class="custom-button-Click">
+              <div class="btn-ClickCancel">
+                <button class="btn-Cancel" (click)="createCasetoogleTag()">Cancel</button>
+              </div>
+
+              <div class="btn-ClickSave">
+                <button class="btn-Save" (click)="btnSubmitClicked()">Save</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -385,7 +112,7 @@
   <!-- p-relative -->
   <div class="custom-table">
     <!-- p-absolute z-1000 w-100 h-100 -->
-    <div class="invisible-blur-container" [ngClass]=" showCasePopup || showAssignPopop ? 'show-invisible-blur-container': ''"></div>
+    <div class="invisible-blur-container" [ngClass]=" showCasePopup || showAssignPopup ? 'show-invisible-blur-container': ''"></div>
 
     <mat-tab-group>
       <mat-tab label="View Incoming Cases">
@@ -400,7 +127,77 @@
                 <th>Description</th>
                 <th>Assigned By</th>
                 <th>Assigned Date</th>
-                <th>Contact Name</th>
+                <th>Created By</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Case Owner</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of arrCases; let i = index">
+               <td>
+                {{i+1}}
+               </td>
+
+               <td>
+                <input type="checkbox" [checked]="checks">
+               </td>
+
+               <td>{{item?.caseNumber}}</td>
+
+               <td>{{item.subject}}</td>
+
+               <td>{{item.description}}</td>
+
+               <td>{{item?.manager?.username }}</td>
+
+               <td>{{item.createdDate}}</td>
+
+               <td>{{item?.customer?.username || item?.manager?.username }}</td>
+
+               <td>{{item?.status?.name}}</td>
+
+               <td>{{item?.priority?.name}}</td>
+
+               <td>{{item?.agent?.username}}</td>
+
+               <td>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item mat-button (click)="onClickDelete(item.id)">
+                    <i class="fi-rr-trash"></i>
+                    <span>Delete</span>
+                  </button>
+
+                  <button mat-menu-item mat-button (click)="onClickUpdate()">
+                    <i class="fi-rr-pencil"></i>
+                    <span>Edit</span>
+                  </button>
+                </mat-menu>
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="View Case by Product">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>N.</th>
+                <th><input type="checkbox" (change)="checkAll($event)"></th>
+                <th>Case Number</th>
+                <th>Subject</th>
+                <th>Description</th>
+                <th>Assigned By</th>
+                <th>Assigned Date</th>
+                <th>Created By</th>
                 <th>Status</th>
                 <th>Priority</th>
                 <th>Case Owner</th>
@@ -417,92 +214,33 @@
                 <input type="checkbox" [checked]="checks">
                </td>
 
-               <td>{{item.caseNumber}}</td>
-
-               <td>{{item.subject}}</td>
-
-               <td>{{item.description}}</td>
-
-               <td>{{item.manager.username}}</td>
-
-               <td>{{item.createdDate}}</td>
-
-               <td>{{item.customer.username}}</td>
-
-               <td>{{item.status.name}}</td>
-
-               <td>{{item.priority.name}}</td>
-
-               <td>{{item.agent.username}}</td>
-
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </mat-tab>
-
-      <!-- <mat-tab label="View Case by Product">
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>N.</th>
-                <th><input type="checkbox" (change)="checkAll($event)"></th>
-                <th>Case Number</th>
-                <th>Contact Name</th>
-                <th>Subject</th>
-                <th>Status</th>
-                <th>Priority</th>
-                <th>Date/Time Opened</th>
-                <th>Case Owner</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr *ngFor="let item of this.rows">
-               <td>
-                {{item.n}}
-               </td>
-
-               <td>
-                <input type="checkbox" [checked]="checks">
-                {{item.all}}
-               </td>
-
                <td>
                 {{item.caseNumber}}
-               </td>
-
-               <td>
-                {{item.contactName}}
                </td>
 
                <td>
                 {{item.subject}}
                </td>
 
-               <td>
-                {{item.status}}
-               </td>
+               <td>{{item.description}}</td>
 
-               <td>
-                {{item.priority}}
-               </td>
+               <td>{{item?.manager?.username }}</td>
 
-               <td>
-                {{item.dateTime}}
-               </td>
+               <td>{{item.createdDate}}</td>
 
-               <td>
-                {{item.caseOwner}}
-               </td>
+               <td>{{item?.customer?.username || item?.manager?.username }}</td>
+
+               <td>{{item?.status?.name}}</td>
+
+               <td>{{item?.priority?.name}}</td>
+
+               <td>{{item?.agent?.username}}</td>
               </tr>
             </tbody>
           </table>
         </div>
-      </mat-tab> -->
-<!--
-      <mat-tab label="View Current Cases">
+      </mat-tab>
+<!-- <mat-tab label="View Current Cases">
         <div class="table-scroll">
           <table>
             <thead>

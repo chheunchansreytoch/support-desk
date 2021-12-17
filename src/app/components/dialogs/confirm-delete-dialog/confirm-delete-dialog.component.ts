@@ -32,10 +32,6 @@ export class ConfirmDeleteDialogComponent implements OnInit {
   }
 
   onClickDeleteAgent() {
-
     this.dialogRef.close(this.data);
   }
-
-
-
 }

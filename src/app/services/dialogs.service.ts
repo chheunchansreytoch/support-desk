@@ -10,6 +10,8 @@ import { CreateCaseDialogComponent } from '../components/dialogs/create-case-dia
 import { AssignToDialogComponent } from '../components/dialogs/assign-to-dialog/assign-to-dialog.component';
 import { ViewNotificationDialogComponent } from '../components/dialogs/view-notification-dialog/view-notification-dialog.component';
 import { ConfirmDeleteDialogComponent } from '../components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
+import { DialogDeleteComponent } from '../components/dialogs/crud-manageCase-page/dialog-delete/dialog-delete.component';
+import { DialogUpdateComponent } from '../components/dialogs/crud-manageCase-page/dialog-update/dialog-update.component';
 
 
 @Injectable({
@@ -58,6 +60,14 @@ export class DialogsService {
 
   openViewNotificationDialog() {
     this.dialog.open(ViewNotificationDialogComponent);
+  }
+
+  openDeleteCaseDialog() {
+    this.dialog.open(DialogDeleteComponent);
+  }
+
+  openUpdateCaseDialog() {
+    this.dialog.open(DialogUpdateComponent);
   }
 
 }

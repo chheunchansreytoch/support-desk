@@ -95,6 +95,8 @@ import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-pa
 import { CustomerLoginPageComponent } from './pages/customer-login-page/customer-login-page.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { ConfirmDeleteDialogComponent } from './components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
+import { DialogDeleteComponent } from './components/dialogs/crud-manageCase-page/dialog-delete/dialog-delete.component';
+import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page/dialog-update/dialog-update.component';
 
 @NgModule({
   declarations: [
@@ -166,6 +168,8 @@ import { ConfirmDeleteDialogComponent } from './components/dialogs/confirm-delet
     AgentLoginPageComponent,
     CustomerLoginPageComponent,
     ConfirmDeleteDialogComponent,
+    DialogDeleteComponent,
+    DialogUpdateComponent,
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [

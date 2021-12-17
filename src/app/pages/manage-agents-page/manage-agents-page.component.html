@@ -48,15 +48,20 @@
          </td>
 
           <td>
-            <div class="btnClick-CrudIcon">
-              <div class="btnEditIcon">
-                <button class="btnEdit"><i class="fi-rr-pencil"></i></button>
-              </div>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="onSelectedAgent(item.id)">
+                <i class="fi-rr-trash"></i>
+                <span>Delete</span>
+              </button>
 
-              <div class="btnDeleteIcon">
-                <button class="btnDelete" mat-button (click)="onSelectedAgent(item.id)"><i class="fi-rr-trash"></i></button>
-              </div>
-            </div>
+              <button mat-menu-item>
+                <i class="fi-rr-pencil"></i>
+                <span>Edit</span>
+              </button>
+            </mat-menu>
           </td>
 
           <td>

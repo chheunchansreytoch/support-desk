@@ -88,7 +88,7 @@ export class CaseStore {
   }
 
   @action
-  addCustomer(data: ICase): Observable<ICase> {
+  addCase(data: ICase): Observable<ICase> {
     return this.httpClient.post<ICase>(this.endpoint + '/cases/create', JSON.stringify(data), this.httpHeader)
     .pipe(
       retry(1),
@@ -96,22 +96,16 @@ export class CaseStore {
     )
   }
 
-  // @action
-  // updateUser(id, data): Observable<IManager> {
-  //   return this.httpClient.put<IManager>(this.endpoint + '/managers/' + id, JSON.stringify(data), this.httpHeader)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
-  // }
+  @action
+  async updateUser(id, data){
+   const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + id, this.httpHeader).toPromise();
+   return result;
+  }
 
   @action
-  deleteCustomer(id){
-    return this.httpClient.delete<ICase>(this.endpoint + '/cases/' + id, this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+  async deleteCase(id){
+    const result = await this.httpClient.delete<ICase>(this.endpoint + '/cases/' + id, this.httpHeader).toPromise();
+    return result;
   }
 
   processError(err: { error: { message: string; }; status: any; message: any; }) {

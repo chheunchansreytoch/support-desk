@@ -27,6 +27,8 @@ export class ManageAgentsPageComponent implements OnInit {
     });
   }
 
+
+
   onCreate() {
     this.dialogService.openCreateDialog();
   }
@@ -48,7 +50,7 @@ export class ManageAgentsPageComponent implements OnInit {
         if(!result) return;
         await this.agentStore.deleteAgent(result);
         console.log(result);
-        //alert("Delete Successfully!");
+        alert("Delete Successfully!");
       });
     }
     return;

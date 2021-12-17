@@ -170,3 +170,24 @@
     }
   }
 }
+
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  .fi-rr-trash {
+    font-size: 15px;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+
+  .fi-rr-pencil {
+    font-size: 15px;
+  }
+}

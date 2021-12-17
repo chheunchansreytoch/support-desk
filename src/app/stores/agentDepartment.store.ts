@@ -85,8 +85,22 @@ export class AgentDepartmentStore {
       retry(1),
       catchError(this.processError)
     )
-
   }
+
+  // @action
+  // async getAgentsByDepartment() {
+  //   try {
+  //     const agentDepartment = JSON.parse(localStorage.getItem('agent_auth') || '{}');
+  //     if(!agentDepartment) return
+  //     const result = await this.httpClient.get<IAgentDepartment>(this.endpoint + '/agentDepartments/' + agentDepartment.id + '/departmentId', this.httpHeaderWithToken).toPromise()
+  //     //return result;
+  //     console.log(result);
+
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //  return;
+  // }
 
   @action
   addAgent(data: IAgentDepartment): Observable<IAgentDepartment> {

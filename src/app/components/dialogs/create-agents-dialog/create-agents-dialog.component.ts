@@ -68,7 +68,7 @@ export class CreateAgentsDialogComponent implements OnInit {
         this.registrationForm.reset();
       });
 
-      console.log("Form is valid");
+      alert("Agent was Created");
     }
 
     return;
