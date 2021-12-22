@@ -42,4 +42,8 @@ export class AdminHeaderFrontComponent implements OnInit {
     this.clickNotification();
     this.dialogService.openViewNotificationDialog();
   }
+
+  getDateTime() {
+    return new Date();
+  }
 }

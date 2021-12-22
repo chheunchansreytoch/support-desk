@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 import { IntroductionBlockComponent } from './components/introduction-block/introduction-block.component';
 import { HeaderFrontComponent } from './shared/header-front/header-front.component';
 import { FooterFrontComponent } from './shared/footer-front/footer-front.component';
@@ -88,8 +90,6 @@ import { AdminSidebarLayoutComponent } from './layouts/admin-sidebar-layout/admi
 import { MatBadgeModule } from '@angular/material/badge';
 import { ViewNotificationDialogComponent } from './components/dialogs/view-notification-dialog/view-notification-dialog.component';
 import { ManagerLoginPageComponent } from './pages/manager-login-page/manager-login-page.component';
-import { FormControl } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-page.component';
 import { CustomerLoginPageComponent } from './pages/customer-login-page/customer-login-page.component';
@@ -97,6 +97,15 @@ import { MatTreeModule } from '@angular/material/tree';
 import { ConfirmDeleteDialogComponent } from './components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
 import { DialogDeleteComponent } from './components/dialogs/crud-manageCase-page/dialog-delete/dialog-delete.component';
 import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page/dialog-update/dialog-update.component';
+import { AlertInformationDialogComponent } from './components/alert-information-dialog/alert-information-dialog.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { TableSkeletonLoadingComponent } from './components/table-skeleton-loading/table-skeleton-loading.component';
+import {SkeletonModule} from 'primeng/skeleton';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -170,6 +179,10 @@ import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page
     ConfirmDeleteDialogComponent,
     DialogDeleteComponent,
     DialogUpdateComponent,
+    AlertInformationDialogComponent,
+    ConfirmationDialogComponent,
+    NotFoundPageComponent,
+    TableSkeletonLoadingComponent
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [
@@ -184,6 +197,7 @@ import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page
     MatTabsModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    MatProgressBarModule,
     FormsModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -196,10 +210,10 @@ import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page
     MatNativeDateModule,
     ReactiveFormsModule,
     MatBadgeModule,
-    // FormControl,
-    // FormGroup,
     HttpClientModule,
     MatTreeModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    SkeletonModule
   ],
 
   providers: [],

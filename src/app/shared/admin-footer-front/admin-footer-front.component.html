@@ -1,7 +1,5 @@
 <div class="Custom-admin-footer">
-  <mat-paginator [length]="10"
-    [pageSize]="6"
-    aria-label="Select page">
-</mat-paginator>
+  <mat-paginator [length]="paginationStore.length" [pageSize]="paginationStore.pageSize" [pageSizeOptions]="[10, 20, 50]"
+    [showFirstLastButtons]="true" (page)="handlePage($event)"></mat-paginator>
 </div>
 

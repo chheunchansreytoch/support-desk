@@ -2,9 +2,9 @@ import { action, computed, observable } from "mobx";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { IAgentDepartment } from "../models/IAgent.model";
 import { catchError, retry } from "rxjs/operators";
 import { Observable, throwError } from "rxjs";
+import { IAgentDepartment } from "../models/IAgentDepartment.model";
 
 
 
