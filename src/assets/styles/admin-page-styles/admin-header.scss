@@ -1,17 +1,14 @@
  .customAdminPage {
   .adminContainer {
-    width: 500px;
-    float: right;
-    //position: absolute;
     font-family: $Roboto-font;
     flex: 1;
+    transition: 0.5s;
     display: flex;
-    //transition: 0.5s;
     flex-direction: column;
     justify-content: space-between;
     overflow-x: hidden;
 
-    .CustomAdminHeader {
+    .custom-admin-header {
       padding: 10px;
       width: 100%;
       display: flex;
@@ -22,6 +19,15 @@
 
       .custom-image-SidebarIcon {
         display: flex;
+        align-items: center;
+
+        h4 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: $primary-font;
+        }
+
         .sideBar-icons {
           margin: 7px;
           float: left;
@@ -88,37 +94,38 @@
         // text-align: center;
 
         form {
-          padding: 1px;
           display: flex;
           flex-direction: row;
+          margin-right: 20px;
+
+          overflow: hidden;
+          border-radius: 20px;
+          border: 1px solid #ccc;
+
+          input, button {
+            border: none;
+            outline: none;
+          }
 
           input[type=text] {
             padding: 8px 150px;
             padding-left: 15px;
             font-size: 12px;
-            border-top: 1px solid #ccc;
-            border-left: 1px solid #ccc;
-            border-right: none;
-            border-bottom: 1px solid #ccc;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+
             background: $color7;
             outline: none;
             text-indent: 10px;
           }
 
-          input:focus {
-            border: 1px solid transparent;
-            border-color: #54adf7;
-            box-shadow: 0 0 3px #54adf7;
-          }
-
           .custom-search-btn {
-            width: 30px;
-            line-height: 2.3;
-            border: 1px solid $gray1;
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 2px;
+            padding: 10px 12px;
+            border-radius: 50%;
+            background-color: #ddd;
 
             .btn-icon-search {
               border: none;
@@ -126,8 +133,6 @@
 
               .fi-rr-search {
                 font-size: 13px;
-                padding-left: 7px;
-                // margin-right: 15px;
               }
             }
           }
@@ -140,17 +145,19 @@
 
       .custom-notify-userAcc {
         display: flex;
-        z-index: 2000;
+        align-items: center;
 
         .btnNotification-Click {
-          float: left;
-          margin-right: 5px;
           width: 33px;
           height: 33px;
-          //background: red;
           text-align: center;
+
+          float: left;
           padding: 4px;
-          //border-radius: 50%;
+          padding-right: 50px;
+          margin-right: 20px;
+          border-right: 1px solid #ccc;
+
           .btn-Notification {
             color: $black1;
             font-size: 24px;
@@ -316,6 +323,11 @@
         }
       }
     }
+  }
+
+  .adminContentFront {
+    flex: 1;
+    overflow: auto;
   }
 }
 

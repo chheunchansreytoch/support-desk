@@ -11,7 +11,6 @@ export class ManagerLoginPageComponent implements OnInit {
 
   loginForm: any;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private managerStore: ManagerStore,
@@ -24,7 +23,6 @@ export class ManagerLoginPageComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // const control = new FormControl('Nancy');
 
   }
 

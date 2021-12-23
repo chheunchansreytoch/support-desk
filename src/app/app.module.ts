@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 import { IntroductionBlockComponent } from './components/introduction-block/introduction-block.component';
 import { HeaderFrontComponent } from './shared/header-front/header-front.component';
 import { FooterFrontComponent } from './shared/footer-front/footer-front.component';
@@ -88,8 +90,6 @@ import { AdminSidebarLayoutComponent } from './layouts/admin-sidebar-layout/admi
 import { MatBadgeModule } from '@angular/material/badge';
 import { ViewNotificationDialogComponent } from './components/dialogs/view-notification-dialog/view-notification-dialog.component';
 import { ManagerLoginPageComponent } from './pages/manager-login-page/manager-login-page.component';
-import { FormControl } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-page.component';
 import { CustomerLoginPageComponent } from './pages/customer-login-page/customer-login-page.component';
@@ -101,6 +101,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { AgentDeleteCaseDialogComponent } from './components/dialogs/agent-delete-case-dialog/agent-delete-case-dialog.component';
 //import { UpdateCaseDialogComponent } from './components/dialogs/update-case-dialog/update-case-dialog.component';
 import { AgentUpdateDialogComponent } from './components/dialogs/agent-update-dialog/agent-update-dialog.component';
+import { AlertInformationDialogComponent } from './components/alert-information-dialog/alert-information-dialog.component';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { TableSkeletonLoadingComponent } from './components/table-skeleton-loading/table-skeleton-loading.component';
+import {SkeletonModule} from 'primeng/skeleton';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -177,6 +186,10 @@ import { AgentUpdateDialogComponent } from './components/dialogs/agent-update-di
     AgentDeleteCaseDialogComponent,
     //UpdateCaseDialogComponent,
     AgentUpdateDialogComponent,
+    AlertInformationDialogComponent,
+    ConfirmationDialogComponent,
+    NotFoundPageComponent,
+    TableSkeletonLoadingComponent
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [
@@ -191,6 +204,7 @@ import { AgentUpdateDialogComponent } from './components/dialogs/agent-update-di
     MatTabsModule,
     MatPaginatorModule,
     MatFormFieldModule,
+    MatProgressBarModule,
     FormsModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -203,11 +217,11 @@ import { AgentUpdateDialogComponent } from './components/dialogs/agent-update-di
     MatNativeDateModule,
     ReactiveFormsModule,
     MatBadgeModule,
-    // FormControl,
-    // FormGroup,
     HttpClientModule,
     MatTreeModule,
     MatButtonModule,
+    LottieModule.forRoot({ player: playerFactory }),
+    SkeletonModule
   ],
 
   providers: [],

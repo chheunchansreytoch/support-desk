@@ -5,6 +5,9 @@
 @import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css');
 
+$primary-font: 'Lato', sans-serif;
+$Roboto-font: 'Roboto';
+
 $color1: #a3e7f5;
 $color2: #6fa7f0;
 $color3: #b0c4df;
@@ -28,6 +31,31 @@ $gray3: #818181;
 $gray4: #e1e2e4;
 $gray5: rgb(62,62,60);
 
+$primary-color: #02A1FF;
+$secondary-color: #E0F4FF;
+$grey-color: #9AA8BB;
+$lighter-grey-color: #F4F6F8;
 
-$primary-font: 'Lato', Arial, sans-serif;
-$Roboto-font: 'Roboto'
+// -----------------------------------------------------------------------------------------------------------------
+
+$success-bg-color: #d4edda;
+$success-border-color: #c3e6cb;
+$success-text-color: #155724;
+
+$warning-bg-color: #fff3cd;
+$warning-border-color: #ffeeba;
+$warning-text-color: #856404;
+
+$failed-bg-color: #f8d7da;
+$failed-border-color: #f5c6cb;
+$failed-text-color: #721c24;
+
+$information-bg-color: #D1ECF1;
+$information-border-color: #BEE5EB;
+$information-text-color: #0c5460;
+
+$question-bg-color: #cce5ff;
+$question-border-color: #b8daff;
+$question-text-color: #004085;
+
+// -----------------------------------------------------------------------------------------------------------------

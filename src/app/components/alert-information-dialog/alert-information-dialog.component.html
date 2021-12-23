@@ -1,0 +1,25 @@
+<div class="alert-dialog-wrapper">
+  <div class="dialog-header flex-center-space">
+    <h2>{{ data?.title }}</h2>
+    <button mat-icon-button [mat-dialog-close]="'yes'">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="dialog-content flex-start-start" [ngClass]="cls">
+    <span class="material-icons" *ngIf="data.type === 'warning'">warning</span>
+    <span class="material-icons" *ngIf="data.type === 'success'">check_circle</span>
+    <span class="material-icons" *ngIf="data.type === 'error'">error</span>
+    <span class="material-icons" *ngIf="data.type === 'information'">info</span>
+    <span class="material-icons" *ngIf="data.type === 'question'">help</span>
+
+    <p>{{data.content}}</p>
+  </div>
+
+  <div class="dialog-footer flex-center-end">
+    <button mat-stroked-button class="btn-material-no flex-center-center" color="accent" [mat-dialog-close]="'no'">
+      <span class="material-icons">close</span>
+      <span style="margin-left: 10px">Close</span>
+    </button>
+  </div>
+</div>

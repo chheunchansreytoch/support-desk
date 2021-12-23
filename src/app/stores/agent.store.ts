@@ -2,10 +2,9 @@ import { action, computed, observable } from "mobx";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { IAgent } from "../models/IAgentDepartment.model";
 import { catchError, retry } from "rxjs/operators";
 import { Observable, throwError } from "rxjs";
-
+import { IAgent } from "../models/IAgent.model";
 
 
 @Injectable({providedIn:'root'})
@@ -20,7 +19,8 @@ export class AgentStore {
   endpoint = 'http://localhost:3000/api';
   httpHeader = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      'enctype': 'multipart/form-data',
+      // 'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
     })
@@ -28,7 +28,8 @@ export class AgentStore {
 
   httpHeaderWithToken = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      'enctype': 'multipart/form-data',
+      // 'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
       'Authorization': 'Bearer ' + this.agentJSONMapping()?.token
@@ -74,7 +75,7 @@ export class AgentStore {
 
   @action
   getAgents(): Observable<IAgent> {
-    this.isLoading = true;
+    // this.isLoading = true;
     return this.httpClient.get<IAgent>(this.endpoint + '/agents', this.httpHeaderWithToken)
     .pipe(
       retry(1),
@@ -165,14 +166,18 @@ export class AgentStore {
   // }
 
   @action
-  addAgent(data: IAgent): Observable<IAgent> {
-    return this.httpClient.post<IAgent>(this.endpoint + '/agents/create', JSON.stringify(data), this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+  async addAgent(data: IAgent): Promise<IAgent> {
+    const result = await this.httpClient.post<IAgent>(this.endpoint + '/agents/create', JSON.stringify(data), this.httpHeader).toPromise();
+    return result;
   }
 
+  @action
+  async addAgent_FormData(data: FormData): Promise<IAgent> {
+    this.isLoading = true;
+    const result = await this.httpClient.post<IAgent>(this.endpoint + '/agents/create', data, this.httpHeader).toPromise();
+    this.isLoading = false;
+    return result;
+  }
 
   // @action
   // getAgentsByDepartment(): Observable<IAgent> {
@@ -210,6 +215,14 @@ export class AgentStore {
       console.log(error)
     }
     return;
+  }
+
+  @action
+  async updateAgent_FormData(agentId: string, data: FormData): Promise<IAgent> {
+    this.isLoading = true;
+    const result = await this.httpClient.put<IAgent>(this.endpoint + '/agents/' + agentId, data, this.httpHeader).toPromise();
+    this.isLoading = false;
+    return result;
   }
 
   @action

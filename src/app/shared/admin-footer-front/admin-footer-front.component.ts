@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginationStore } from 'src/app/stores/pagination.store';
 
 @Component({
   selector: 'app-admin-footer-front',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminFooterFrontComponent implements OnInit {
 
-  constructor() { }
+  public pageSize = 10;
+  public currentPage = 0;
+  public totalSize = 0;
+
+  constructor(
+    public paginationStore: PaginationStore
+  ) { }
 
   ngOnInit(): void {
+    this.handlePage(null);
+  }
+
+  async handlePage(e: any) {
+    this.currentPage = e?.pageIndex || 0;
+    this.pageSize = e?.pageSize || 10;
+    await this.paginationStore.getAgentsWithPagination(this.pageSize, this.currentPage, '');
   }
 
 }

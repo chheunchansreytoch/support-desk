@@ -1,42 +1,78 @@
 .customAdminPage {
   background: #f8f9fa;
+
   .adminContainer {
     .custom-agents {
       margin-top: -0.5px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 10px;
+      padding: 20px;
       width: 100%;
       color: $black1;
       font-family: $Roboto-font;
-      //background-color: #edeef5;
 
-      .btnClick {
-        margin-bottom: 10px;
-        text-align: center;
-        line-height: 2;
-        width: 100px;
-        background: #b3d4df;
-        border: 1px solid #b3d4df;
-        border-radius: 5px;
+      .page-header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        .btnCreate {
-          border: none;
-          background: none;
+        .header-title-container {
+          display: flex;
+          align-items: center;
+
+          .custom-icon {
+            color: $primary-color;
+            font-size: 38px;
+            margin-right: 10px;
+          }
+        }
+
+        h1 {
+          color: $primary-color;
+          font-size: 26px;
+          font-weight: bold;
+          font-family: $primary-font;
+          margin-bottom: 0px;
         }
       }
 
-      .btnClick:hover {
-        padding: 1px;
-        border: #cedde4;
-        background: #cedde4;
+      .btnCreate {
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: $primary-color;
+        background-color: $secondary-color;
+
+        display: flex;
+        align-items: center;
+
+        font-size: 14px;
+        font-weight: bold;
+        font-family: $primary-font;
+
+        span {
+          margin: 0;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $grey-color;
+          background: $lighter-grey-color
+        }
       }
 
       .customTable {
-        height:430px;
+        flex: 1;
         overflow:auto;
         margin-top:20px;
+
+        .scrollable-table {
+          width: 100%;
+          overflow: auto;
+          height: calc(100vh - 362px);
+        }
 
         table {
           width: 100%;

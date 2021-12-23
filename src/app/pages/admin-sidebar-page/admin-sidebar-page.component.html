@@ -1,37 +1,89 @@
-<div class="CustomAdminContent">
-  <nav>
-    <div class="custom-image-SidebarIcon">
-      <!-- <div class="sideBar-icons">
-        <button (click)="onClickBtnSideBar()"><i class="fi fi-rr-menu-burger"></i></button>
-      </div> -->
+<div class="sidebar-container">
+  <div class="above-container">
+    <div class="sidebar-logo-container">
+      <img class="image-logo" src="./assets/images/schoollink-logo.png">
+    </div>
 
-      <div class="imageSrc">
-        <a href="#">
-          <img class="image-logo" src="./assets/images/logo.png">
-        </a>
+    <div class="navigation-container">
+      <div class="line-title-container">
+        <div class="line"></div>
+        <h4>Case Management Dashboard</h4>
+        <div class="line"></div>
+      </div>
+
+      <div class="nav-elements-container">
+        <div class="nav-element-container" [routerLink]="'/admin-homepage'" [routerLinkActive]="'nav-element-container-active'">
+          <span class="material-icons span-icon">home</span>
+          <!-- <div class="nav-element-icon">
+            <img src="/assets/icons/house.png">
+          </div> -->
+          <h4 class="nav-element-text">Home</h4>
+        </div>
+
+        <div class="nav-element-container" [routerLink]="'/admin-manage-cases'" [routerLinkActive]="'nav-element-container-active'">
+          <span class="material-icons span-icon">business_center</span>
+          <!-- <div class="nav-element-icon">
+            <img src="/assets/icons/documents.png">
+          </div> -->
+          <h4 class="nav-element-text">Cases</h4>
+        </div>
+
+        <div class="nav-element-container" [routerLink]="'/admin-manage-customers'" [routerLinkActive]="'nav-element-container-active'">
+          <span class="material-icons span-icon">group</span>
+          <!-- <div class="nav-element-icon">
+            <img src="/assets/icons/people (1).png">
+          </div> -->
+          <h4 class="nav-element-text">Customers</h4>
+        </div>
+
+        <div class="nav-element-container" [routerLink]="'/admin-manage-agents'" [routerLinkActive]="'nav-element-container-active'">
+          <span class="material-icons span-icon">group</span>
+          <!-- <div class="nav-element-icon">
+            <img src="/assets/icons/support.png">
+          </div> -->
+          <h4 class="nav-element-text">Agents</h4>
+        </div>
+
+        <div class="nav-element-container" [routerLink]="'/admin-manage-managers'" [routerLinkActive]="'nav-element-container-active'">
+          <span class="material-icons span-icon">group</span>
+          <!-- <div class="nav-element-icon">
+            <img src="/assets/icons/people.png">
+          </div> -->
+          <h4 class="nav-element-text">Managers</h4>
+        </div>
+
+        <div class="nav-element-container" [routerLink]="'/agents'" [routerLinkActive]="'nav-element-container-active'">
+          <span class="material-icons span-icon">assignment</span>
+          <!-- <div class="nav-element-icon">
+            <img src="/assets/icons/report.png">
+          </div> -->
+          <h4 class="nav-element-text">Report</h4>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="list_Sidebar">
-      <mat-list>
-        <mat-list-item *ngFor="let item of items">
-          <div class="option-list" (click)="onClickListItems(item)" [ngClass]="selectedItem === item ? 'listItem' : ''">
-            <a routerLink="{{item.route}}">
-              <mat-icon mat-list-icon>
-                <div mat-list-icon class="admin-icon">
-                  <img src="{{item.icon}}">
-                </div>
-              </mat-icon>
-
-              <div mat-line class="admin-listName" [ngStyle]="{'margin-left': sideBarService.isBtnSideBar ? '10px' : '0px'}" >
-                {{item.name}}
-                <!-- <p *ngIf="!checkIfRouteIsActivated(item.name)">{{ item.name }}</p>
-                <p *ngIf="checkIfRouteIsActivated(item.name)" selected>{{ item.name }}</p> -->
-              </div>
-            </a>
-          </div>
-        </mat-list-item>
-      </mat-list>
+  <div class="below-container">
+    <div class="line-title-container">
+      <div class="line"></div>
+      <h4>Support & Sign Out</h4>
+      <div class="line"></div>
     </div>
-  </nav>
+
+    <div class="nav-element-container">
+      <span class="material-icons span-icon">help</span>
+      <!-- <div class="nav-element-icon">
+        <img src="/assets/icons/help.png">
+      </div> -->
+      <h4 class="nav-element-text">Help & Support</h4>
+    </div>
+
+    <div class="nav-element-container">
+      <span class="material-icons span-icon">logout</span>
+      <!-- <div class="nav-element-icon">
+        <img src="/assets/icons/logout.png">
+      </div> -->
+      <h4 class="nav-element-text">Sign Out</h4>
+    </div>
+  </div>
 </div>

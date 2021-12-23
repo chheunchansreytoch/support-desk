@@ -1,64 +1,90 @@
-<div class="create-agent-container">
-  <h4 mat-dialog-title>Create Agents</h4>
+<div class="form-dialog-container">
+  <h4 mat-dialog-title>
+    <span>
+      <ng-container *ngIf="!data">Create</ng-container>
+      <ng-container *ngIf="data">Update</ng-container>
+      Agent
+    </span>
+    <button class="btn-close" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </h4>
 
   <div mat-dialog-content>
     <form [formGroup]="registrationForm" (ngSubmit)="formSubmitted(registrationForm.value)">
-      <div class="loginform">
-        <label class="custom-field">
-          <input class="form-input" type="text" name="username" required formControlName="username">
-          <span class="placeholder">Username</span>
-        </label>
-        <p class="errorMessageLabel" *ngIf="registrationForm.controls['username']?.touched && registrationForm.controls['username']?.errors?.required">Please Input Username.</p>
-
-        <label class="custom-field">
-          <input class="form-input" type="email" name="email" required formControlName="email">
-          <span class="placeholder">Email</span>
-        </label>
-
-        <label class="custom-field">
-          <input class="form-input" type="password" name="password" required formControlName="password">
-          <span class="placeholder">Password</span>
-        </label>
-
-        <label class="custom-field">
-          <input class="form-input" type="password" name="password" required formControlName="confirmPassword">
-          <span class="placeholder">Repeat Password</span>
-        </label>
-        <p class="errorMessageLabel" *ngIf="registrationForm.controls['confirmPassword']?.touched && registrationForm.controls['confirmPassword']?.errors?.confirmedValidator">Confirm Password is not match.</p>
+      <div class="custom-field-0">
+        <label class="label" for="username">Username</label>
+        <input class="input" type="text" id="username" placeholder="enter your username" required formControlName="username" autocomplete="new-password">
+        <p class="error-message" *ngIf="registrationForm.controls['username']?.touched && registrationForm.controls['username']?.errors?.required">Please Input Username.</p>
       </div>
 
-      <div class="position">
-        <label class="department-container">
-          <div class="custom-dept" required >
-            <select formControlName="department" >
-              <!-- <option hidden>Select Department</option> -->
-              <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option>
-            </select>
-          </div>
-        </label>
-
-        <label class="gender-container">
-          <div class="custom-gender" *ngFor="let gender of genders">
-            <label class="agent-gender" >
-              <input type="radio" name="gender" value="{{gender}}" (change)="radioChangeHandler($event)" formControlName="gender">
-              {{gender}}
-            </label>
-          </div>
-        </label>
+      <div class="custom-field-0">
+        <label class="label" for="email">Email</label>
+        <input class="input" type="email" id="email" placeholder="enter your email" required formControlName="email" autocomplete="new-password">
+        <p class="error-message" *ngIf="registrationForm.controls['email']?.touched && registrationForm.controls['email']?.errors?.required">Please Input Email.</p>
       </div>
 
-      <div class="custom-create-btn">
-        <div mat-dialog-actions>
-          <div class="close-btn">
-            <button mat-button mat-dialog-close>Close</button>
-          </div>
+      <div class="custom-field-0">
+        <label class="label" for="password">Password</label>
+        <input class="input" type="password" id="password" placeholder="enter your password" formControlName="password" autocomplete="new-password">
+        <p class="error-message" *ngIf="registrationForm.controls['password']?.touched && registrationForm.controls['password']?.errors?.required">Please Input Password.</p>
+      </div>
 
-          <div class="create-btn">
-            <button (click)="btnSubmitClicked()">Create</button>
+      <div class="custom-field-0">
+        <label class="label" for="confirmPassword">Confirm Password</label>
+        <input class="input" type="password" id="confirmPassword" placeholder="enter your confirmPassword" formControlName="confirmPassword" autocomplete="new-password">
+        <p class="error-message" *ngIf="registrationForm.controls['confirmPassword']?.touched && registrationForm.controls['confirmPassword']?.errors?.required">Please Input Confirm Password.</p>
+        <p class="error-message" *ngIf="registrationForm.controls['confirmPassword']?.touched && registrationForm.controls['confirmPassword']?.errors?.confirmedValidator">Confirm Password is not match.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="department">Department</label>
+        <select class="input" id="department" required formControlName="department">
+          <option [value]="null" disabled>please select a department</option>
+          <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="registrationForm.controls['department']?.touched && registrationForm.controls['department']?.errors?.required">Please Select Any Department.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="department">Gender</label>
+        <div class="radio-button-container">
+          <div class="radio-button" *ngFor="let gender of genders">
+            <input type="radio" name="gender" value="{{gender}}" (change)="radioChangeHandler($event)" formControlName="gender">
+            <span class="radio-label">{{gender}}</span>
+          </div>
+        </div>
+        <p class="error-message" *ngIf="registrationForm.controls['department']?.touched && registrationForm.controls['department']?.errors?.required">Please Select Any Department.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="password">Upload Profile</label>
+        <div class="upload-file-container">
+          <input type="file" class="input-upload-file" id="input-upload-file" (change)="onUploadProfileChanged($event)">
+          <label class="btn-upload-file" for="input-upload-file">
+            Upload Profile
+            <ng-container *ngIf="selectedProfiles">: {{selectedProfiles.item(0)?.name}}</ng-container>
+          </label>
+        </div>
+        <p class="error-message" *ngIf="registrationForm.controls['password']?.touched && registrationForm.controls['password']?.errors?.required">Please Input Password.</p>
+
+        <div class="progress-bar-container" *ngIf="agentStore.isLoading">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          <div class="text-progress-container">
+            <h4>Uploading...</h4>
+            <!-- <h4>90% Completed</h4> -->
           </div>
         </div>
       </div>
     </form>
+  </div>
+
+  <div class="custom-matdialog-footer" mat-dialog-actions>
+    <button class="btn btn-close" mat-button mat-dialog-close>Close</button>
+    <button class="btn btn-submit" (click)="formSubmitted(registrationForm.value)">
+      <ng-container *ngIf="!data">Create</ng-container>
+      <ng-container *ngIf="data">Save</ng-container>
+    </button>
   </div>
 </div>
 

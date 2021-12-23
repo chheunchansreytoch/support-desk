@@ -14,7 +14,6 @@ export class AdminSidebarPageComponent implements OnInit {
   public Items;
   public items;
   currentRoute: string = '';
-  //isSelected: Boolean = false;
 
   homeImage = './assets/images/admin-iconList/home.png';
   agentImage = './assets/images/admin-iconList/target.png';
@@ -46,53 +45,6 @@ export class AdminSidebarPageComponent implements OnInit {
 
   onClickListItems(listItem: any) {
     this.selectedItem = listItem;
-
-    // if (this.selectedItem == this.Items[0]) {
-    //   this.isSelected = true;
-    // }else if (this.selectedItem == this.Items[1]){
-
-    // }
-
-
-   // const checkValue = this.selectedItem;
-    //var itemValue = this.Items;
-    // switch(this.Items) {
-    //   case 1: {
-    //     this.selectedItem = this.Items[0];
-    //     break;
-    //   }
-
-    //   case 2: {
-    //     this.selectedItem = this.Items[1];
-    //     break;
-    //   }
-
-    //   case 3: {
-    //     this.selectedItem = this.Items[2];
-    //     break;
-    //   }
-
-    //   case 4: {
-    //     this.selectedItem = this.Items[3];
-    //     break;
-    //   }
-
-    //   return this.selectedItem;
-    // }
-
-    // for (let value of Object.values(checkValue)) {
-    //   console.log(value);
-    // }
-
-
-
-    // console.log(itemValue);
-    // if (checkValue == itemValue) {
-    //   this.isSelected = true;
-    // }
-    // else {
-    //   this.isSelected = false;
-    // }
   }
 
   onClickBtnSideBar() {

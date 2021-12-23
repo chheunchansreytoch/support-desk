@@ -2,19 +2,14 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminFrontLayoutComponent } from './layouts/admin-front-layout/admin-front-layout.component';
 import { DefaultFrontLayoutComponent } from './layouts/default-front-layout/default-front-layout.component';
-import { LoginFrontLayoutComponent } from './layouts/login-front-layout/login-front-layout.component';
-import { MainFrontLayoutComponent } from './layouts/main-front-layout/main-front-layout.component';
 import { AccountPageComponent } from './pages/account-page/account-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { AdminSidebarPageComponent } from './pages/admin-sidebar-page/admin-sidebar-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-// import { ManageAgentAccountPageComponent } from './pages/manage-agent-account-page/manage-agent-account-page.component';
 import { ManageCasesPageComponent } from './pages/manage-cases-page/manage-cases-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ReportPageComponent } from './pages/report-page/report-page.component';
 import { ManageAgentsPageComponent } from './pages/manage-agents-page/manage-agents-page.component';
 import { MyCasesPageComponent } from './pages/my-cases-page/my-cases-page.component';
-import { AgentCasesComponent } from './shared/agent-cases/agent-cases.component';
 import { TabDefaultpageFrontLayoutComponent } from './layouts/tab-defaultpage-front-layout/tab-defaultpage-front-layout.component';
 import { AllOpenCasesPageComponent } from './pages/all-open-cases-page/all-open-cases-page.component';
 import { AllClosedCasesPageComponent } from './pages/all-closed-cases-page/all-closed-cases-page.component';
@@ -42,7 +37,6 @@ import { AccountDetailsPageComponent } from './pages/account-details-page/accoun
 import { AccountChatterPageComponent } from './pages/account-chatter-page/account-chatter-page.component';
 import { ManagerLoginPageComponent } from './pages/manager-login-page/manager-login-page.component';
 import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-page.component';
-
 
 
 const routes: Routes = [
@@ -200,15 +194,8 @@ const routes: Routes = [
     ],
   },
 
-  {
-    path: 'test',
-    component: TestingPageComponent
-  },
-
-  {
-    path: '**',
-    component: NotFoundPageComponent
-  }
+  { path: 'test', component: TestingPageComponent },
+  { path: '**', component: NotFoundPageComponent }
 ];
 
 @NgModule({

@@ -1,30 +1,22 @@
-<div class="CustomAdminHeader">
+<div class="custom-admin-header">
   <div class="custom-image-SidebarIcon">
     <div class="sideBar-icons">
       <button (click)="onClickBtnSideBar()"><i class="fi fi-rr-menu-burger"></i></button>
     </div>
 
-    <!-- <div class="imageSrc">
-      <a href="#">
-        <img class="image-logo" src="./assets/images/logo.png">
-      </a>
-    </div> -->
-  </div>
-
-  <div class="search-form">
-    <!-- <form>
-      <i class="fi-rr-search"></i>
-      <input class="search-input" type="text" name="contactName" placeholder="Search...">
-    </form> -->
-    <form>
-      <input type="text" name="search-item" placeholder="Search...">
-      <div class="custom-search-btn">
-        <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
-      </div>
-  </form>
+    <h4>{{ getDateTime() | date : 'fullDate' }}</h4>
   </div>
 
   <div class="custom-notify-userAcc">
+    <div class="search-form">
+      <form>
+        <input type="text" name="search-item" placeholder="Search...">
+        <div class="custom-search-btn">
+          <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
+        </div>
+      </form>
+    </div>
+
     <div class="btnNotification-Click">
       <mat-icon matBadge="5" matBadgeColor="warn">
         <button class="btn-Notification" (click)="clickNotification()"><i class="fi-rr-bell"></i></button>
@@ -36,7 +28,9 @@
             <label class="notification-lbl">Notifications <i class="fi-sr-bell"></i></label>
             <button class="btn-close" (click)="clickNotification()"><i class="fi-rr-cross-small"></i></button>
           </div>
+
           <hr>
+
           <div class="notification-text" >
             <ul *ngFor="let notifyValue of notifyValues">
               <div class="notificationList-custom">
@@ -63,7 +57,6 @@
                     <button><i class="fi fi-rr-trash"></i></button>
                   </div>
                 </div>
-
               </div>
             </ul>
           </div>
@@ -71,7 +64,6 @@
         <hr>
       </div>
     </div>
-
 
     <div class="profile-account">
       <img id="image-click" class="avatarImg" src="./assets/images/avatar.png">
