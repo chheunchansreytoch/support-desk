@@ -54,14 +54,12 @@ export class ManageCasesPageComponent implements OnInit {
       status: new FormControl('New', Validators.required),
       priority: new FormControl('High', Validators.required),
       agentDepartment: new FormControl('', Validators.required),
-      agentname:  new  FormControl('', Validators.required),
+      agent:  new  FormControl('', Validators.required),
       subject: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
     },
     {
-      // validators: ConfirmedValidator('status', 'priority')
     });
-    // console.log("hiiiiiiiii",this.creatingCaseForm.hasError());
   }
 
 
@@ -114,13 +112,14 @@ export class ManageCasesPageComponent implements OnInit {
   formSubmitted(formData: any) {
     //console.log(formData.agentDepartment);
     if(this.creatingCaseForm.valid) {
-      const { status, priority } = formData;
+      const { status, priority, agent } = formData;
       console.log(formData);
       const finalData = {
         ...formData,
         createdBy: this.managerStore.getCurrentUser.id,
         status: { id: status },
         priority: { id: priority },
+        agent: {id: agent},
       };
 
       this.caseStore.addCase(finalData).subscribe((res: {}) => {

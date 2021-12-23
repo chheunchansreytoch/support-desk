@@ -11,20 +11,21 @@
           <th><input type="checkbox" (change)="checkAll($event)"></th>
           <th>Case Number</th>
           <th>Contact Name</th>
-          <th>Contact Number</th>
+          <th>Email</th>
           <th>Subject</th>
           <th>Description</th>
           <th>Status</th>
           <th>Priority</th>
-          <th>Date|Time</th>
-          <th>Assigned Date</th>
+          <th>Date | Time</th>
+          <th>Assigned Date | Time</th>
           <th>Case Owner</th>
           <th>Actions</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let item of arrCases; let i = index" routerLink="/cases/case-details">
+        <!-- routerLink="/cases/case-details" -->
+        <tr *ngFor="let item of arrCases; let i = index" >
           <td>{{i+1}}</td>
 
           <td>
@@ -37,21 +38,19 @@
             </a>
           </td>
 
-          <td>
+          <td class="subject-td">
             <div class='edit_hover_class'>
               <a class="name-href" href="#">
-                {{item.customer.username}}
+                {{item?.customer?.username || item?.manager?.username}}
               </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
 
           <td>
             <div class='edit_hover_class'>
               <a class="name-href" href="#">
-                {{item.customer.phone}}
+                {{item?.customer?.email || item?.manager?.email}}
               </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
 
@@ -69,7 +68,6 @@
               <a class="subject-href" href="/contacts/contact-details">
                 {{item.subject}}
               </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
 
@@ -78,63 +76,50 @@
               <a class="subject-href" href="/contacts/contact-details">
                 {{item.description}}
               </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
 
           <td>
-            {{item.status.name}}
-            <!-- <div class="status-cases">
-            <select class="select-status">
-              <option selected>Closed</option>
-              <option>New</option>
-              <option>Working</option>
-              <option>Escalated</option>
-            </select>
-            </div> -->
+            {{item?.status?.name}}
           </td>
 
           <td>
-            <!-- <div class="priority-cases">
-              <select class="select-priority">
-                <option>High</option>
-                <option>Medium</option>
-                <option>Low</option>
-              </select>
-            </div> -->
-            {{item.priority.name}}
+            {{item?.priority?.name}}
           </td>
 
-          <td>{{convertUTCtoDate(item.createdDate)}}</td>
-          <td>{{convertUTCtoDate(item.assignedDate)}}</td>
-
-          <td>{{item.agent.username}}</td>
-
-          <td>
-            <div class="tree-action">
-
+          <td class="subject-td">
+            <div class="dateTime">
+              {{convertUTCtoDate(item.createdDate)}}
             </div>
-            <!-- <div class="custom-option-case">
-              <div class="edit-icon-container">
-                <button class="btn-edit"><i class="fi-rr-pencil"></i></button>
-                <span class="edit-tooltiptext">Edit</span>
-              </div>
-
-              <div class="delete-icon-container">
-                <button class="btn-delete"><i class="fi-rr-trash"></i></button>
-                <span class="delete-tooltiptext">Delete</span>
-              </div>
-
-              <div class="changeOwner-icon-container">
-                <button class="btn-changeOwner"><i class="fi-rr-mode-landscape"></i></button>
-                <span class="changeOwner-tooltiptext">Change Owner</span>
-              </div>
-            </div> -->
           </td>
 
-          <!-- <td>
-            <img src="{{item.imageDownloadUrl}}">
-          </td> -->
+          <td class="subject-td">
+            <div class="dateTime">
+              {{convertUTCtoDate(item.assignedDate)}}
+            </div>
+          </td>
+
+          <td>{{item?.agent?.username}}</td>
+
+          <td>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)=" onClickEdit(item.id)">
+                <i class="fas fa-pen"></i>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="onClickDeleteCase(item.id)">
+                <i class="fas fa-trash"></i>
+                <span>Delete</span>
+              </button>
+              <button mat-menu-item>
+                <i class="fas fa-people-arrows"></i>
+                <span>Change Owner</span>
+              </button>
+            </mat-menu>
+          </td>
         </tr>
       </tbody>
     </table>

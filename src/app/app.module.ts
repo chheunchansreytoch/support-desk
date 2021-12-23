@@ -97,6 +97,10 @@ import { MatTreeModule } from '@angular/material/tree';
 import { ConfirmDeleteDialogComponent } from './components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
 import { DialogDeleteComponent } from './components/dialogs/crud-manageCase-page/dialog-delete/dialog-delete.component';
 import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page/dialog-update/dialog-update.component';
+import {MatButtonModule} from '@angular/material/button';
+import { AgentDeleteCaseDialogComponent } from './components/dialogs/agent-delete-case-dialog/agent-delete-case-dialog.component';
+//import { UpdateCaseDialogComponent } from './components/dialogs/update-case-dialog/update-case-dialog.component';
+import { AgentUpdateDialogComponent } from './components/dialogs/agent-update-dialog/agent-update-dialog.component';
 
 @NgModule({
   declarations: [
@@ -170,6 +174,9 @@ import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page
     ConfirmDeleteDialogComponent,
     DialogDeleteComponent,
     DialogUpdateComponent,
+    AgentDeleteCaseDialogComponent,
+    //UpdateCaseDialogComponent,
+    AgentUpdateDialogComponent,
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [
@@ -200,6 +207,7 @@ import { DialogUpdateComponent } from './components/dialogs/crud-manageCase-page
     // FormGroup,
     HttpClientModule,
     MatTreeModule,
+    MatButtonModule,
   ],
 
   providers: [],

@@ -37,6 +37,11 @@
           background-color: #b3d4df;
           line-height: 2.3;
           font-size: 13px;
+
+          width : 100px;
+          overflow:hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         tbody tr {
@@ -45,7 +50,6 @@
 
         tbody tr:hover {
           background-color: #dee2ff;
-          //color: white;
           transition: 0.5s;
         }
 
@@ -54,6 +58,11 @@
           background-color: #ced2f0;
           line-height: 2.3;
           font-size: 13px;
+
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 50px;
+          white-space: nowrap;
         }
 
         tbody tr td {
@@ -71,6 +80,23 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+          }
+        }
+
+        tbody tr .subject-td {
+          .edit_hover_class{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100px;
+            white-space: nowrap;
+          }
+
+          .dateTime {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 80px;
+            white-space: nowrap;
+            font-size: 12px;
           }
         }
 

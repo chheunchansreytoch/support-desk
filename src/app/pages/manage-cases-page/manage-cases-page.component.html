@@ -65,7 +65,7 @@
               <div class="customer-select-agent">
                 <label>Select Agent</label>
                 <div class="select-dropdown">
-                  <select name="agentname" formControlName="agentname" required>
+                  <select name="agent" formControlName="agent" required>
                     <option *ngFor="let item of agentsBySelectedDepartment" value={{item.id}}>{{item?.username}}</option>
                   </select>
                 </div>
@@ -125,9 +125,8 @@
                 <th>Case Number</th>
                 <th>Subject</th>
                 <th>Description</th>
-                <th>Assigned By</th>
-                <th>Assigned Date</th>
                 <th>Created By</th>
+                <th>Created Date</th>
                 <th>Status</th>
                 <th>Priority</th>
                 <th>Case Owner</th>
@@ -151,11 +150,9 @@
 
                <td>{{item.description}}</td>
 
-               <td>{{item?.manager?.username }}</td>
+               <td>{{item?.customer?.username || item?.manager?.username }}</td>
 
                <td>{{item.createdDate}}</td>
-
-               <td>{{item?.customer?.username || item?.manager?.username }}</td>
 
                <td>{{item?.status?.name}}</td>
 

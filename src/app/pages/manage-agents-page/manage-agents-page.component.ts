@@ -20,6 +20,10 @@ export class ManageAgentsPageComponent implements OnInit {
     private agentStore: AgentStore
   ) { }
 
+  ngOnInit(): void {
+    this.fetchAgents();
+  }
+
   fetchAgents() {
     return this.agentStore.getAgents().subscribe((res: any) => {
       this.arrAgents = res;
@@ -54,10 +58,6 @@ export class ManageAgentsPageComponent implements OnInit {
       });
     }
     return;
-  }
-
-  ngOnInit(): void {
-    this.fetchAgents();
   }
 }
 

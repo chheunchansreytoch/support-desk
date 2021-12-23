@@ -1,0 +1,65 @@
+<div class="update-form-container">
+  <h3>Update Case</h3>
+  <form>
+    <div class="form-row1">
+      <div class="subject">
+        <label>Subject</label>
+        <input type="text">
+      </div>
+
+      <div class="description">
+        <label>Description</label>
+        <input type="text">
+      </div>
+    </div>
+
+    <div class="form-row2">
+      <div class="status">
+        <label>Status</label>
+        <div class="status-cases">
+          <mat-form-field appearance="fill">
+            <mat-select disableRipple>
+              <mat-option class="custom-mat-select">New</mat-option>
+              <mat-option class="custom-mat-select">Closed</mat-option>
+              <mat-option class="custom-mat-select">Working</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="priority">
+        <label>Priority</label>
+        <select>
+          <option></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="new-label">
+      <div class="case-owner-lbl">
+        <label>Case Owner</label>
+      </div>
+
+      <p>You can change the case owner here by selecting the agent's department and the <br>
+       agent's name.
+      </p>
+    </div>
+
+
+    <div class="form-row3">
+      <div class="agent-department">
+        <label>Agent Department</label>
+        <select>
+          <option selected>Select Agent Department</option>
+        </select>
+      </div>
+
+      <div class="agent-name">
+        <label>Agent Name</label>
+        <select>
+          <option selected>Select Agent Name</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>

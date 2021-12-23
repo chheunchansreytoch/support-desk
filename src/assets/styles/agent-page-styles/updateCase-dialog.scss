@@ -1,0 +1,228 @@
+.update-form-container {
+  h3 {
+    font-weight: bold;
+  }
+
+  form{
+    .form-row1{
+      display: flex;
+      justify-content: space-between;
+
+      .subject {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin-right: 10px;
+
+        label{
+          font-size: 12px;
+        }
+
+        input {
+          padding: 10px 20px;
+          border: 1px solid #aeb1b4;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        input:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+
+        label{
+          font-size: 12px;
+        }
+
+        input {
+          padding: 10px 20px;
+          border: 1px solid #aeb1b4;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        input:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+      }
+    }
+
+    .form-row2{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .status {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin-right: 10px;
+
+        label{
+          font-size: 12px;
+        }
+
+        .status-cases {
+          width: 90px;
+          margin-left: -8px;
+          position: relative;
+        }
+
+        select {
+          padding: 10px 95px;
+          border: 1px solid #aeb1b4;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        select:after {
+          content: "";
+          position: absolute;
+          text-align: center;
+          right: 5px;
+          top: 50%;
+          margin-top: -4px;
+          border-top: 6px solid #ccc;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          pointer-events: none;
+        }
+
+        select:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+      }
+
+      .priority {
+        display: flex;
+        flex-direction: column;
+
+        label{
+          font-size: 12px;
+        }
+
+        select {
+          padding: 10px 95px;
+          border: 1px solid #aeb1b4;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        select:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+      }
+    }
+
+    .new-label {
+      margin-top: 40px;
+      margin-bottom: 25px;
+      .case-owner-lbl {
+        label {
+          font-weight: bold;
+        }
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    .form-row3{
+      display: flex;
+      justify-content: space-between;
+
+      .agent-department {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin-right: 10px;
+
+        label{
+          font-size: 12px;
+        }
+
+        // .status-cases {
+
+        // }
+
+        select {
+          padding: 10px 20px;
+          border: 1px solid #aeb1b4;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        select:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+      }
+
+      .agent-name {
+        display: flex;
+        flex-direction: column;
+
+        label{
+          font-size: 12px;
+        }
+
+        // .status-cases {
+
+        // }
+
+        select {
+          padding: 10px 38px;
+          border: 1px solid #aeb1b4;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        select:after {
+          content: "";
+          position: absolute;
+          text-align: center;
+          right: 5px;
+          top: 50%;
+          margin-top: -4px;
+          border-top: 6px solid #ccc;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          pointer-events: none;
+        }
+
+        select:focus {
+          border: 1px solid #54adf7;
+          box-shadow: 0 0 3px #54adf7;
+        }
+      }
+    }
+  }
+}
+
+.menuClass {
+  background: $color2;
+  color: $color7;
+  transition: 0.5s;
+}
+
+.activityClass {
+  background: $color2;
+  color: $color7;
+  transition: 0.5s;
+}
+
+.mat-select-panel-wrap {
+  margin-top: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+

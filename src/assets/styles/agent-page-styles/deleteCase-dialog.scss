@@ -1,0 +1,97 @@
+.question {
+  padding: 18px 50px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #b2d6df;
+  display: flex;
+  background: #ccf5ff;
+  margin: 15px;
+
+  .fa-question-circle {
+    margin: 5px;
+    font-size: 17px;
+    color: #102752;
+  }
+
+  p{
+    margin: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #102752;
+  }
+}
+
+.btn-No {
+  float: left;
+  margin-right: 10px;
+
+  button {
+    border: none;
+    outline: none;
+    background-color: #e73a7b;
+    color: $color7;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: transform 80ms ease-in;
+  }
+
+  button:hover{
+    background-color: #d33a74;
+    transition: 0.5s;
+  }
+
+  button:active {
+    transform: scale(0.85);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+  }
+}
+
+.btn-Yes {
+  float: left;
+  margin-right: 10px;
+
+  button {
+    padding: 10px 20px;
+    font-size: 13px;
+    color: $color7;
+    outline: none;
+    border: 1px solid #5dacc0;
+    border-radius: 5px;
+    background-color: #6fcce4;
+
+
+
+
+    font-weight: bold;
+    //letter-spacing: 1px;
+    transition: transform 80ms ease-in;
+  }
+
+  button:hover{
+    background-color: #5dacc0;
+    transition: 0.5s;
+  }
+
+  button:active {
+    transform: scale(0.85);
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+  }
+}

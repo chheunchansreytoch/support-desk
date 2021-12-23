@@ -39,27 +39,23 @@
 
 .custom-btn-delete-popup {
   font-family: $Roboto-font;
+  .btn-delete-container {
+    display: flex;
+    float: right;
 
-  // .mat-dialog-actions {
+    .custom-btn-cancel {
+      width: 45px;
+      height: 23px;
+      text-align: center;
+      line-height: 1.7;
+      background: red;
+      border-radius: 5px;
 
-    .btn-delete-container {
-      display: flex;
-      float: right;
-
-      .custom-btn-cancel {
-        width: 45px;
-        height: 23px;
-        text-align: center;
-        line-height: 1.7;
-        background: red;
-        border-radius: 5px;
-
-        .btn-cancel {
-          border: none;
-          background: none;
-        }
+      .btn-cancel {
+        border: none;
+        background: none;
       }
     }
-  // }
+  }
 }
 

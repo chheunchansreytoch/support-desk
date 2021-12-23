@@ -5,6 +5,11 @@ import { Router } from '@angular/router';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import * as moment from 'moment';
+import { ConfirmDeleteDialogComponent } from 'src/app/components/dialogs/confirm-delete-dialog/confirm-delete-dialog.component';
+import { DialogsService } from 'src/app/services/dialogs.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AgentDeleteCaseDialogComponent } from 'src/app/components/dialogs/agent-delete-case-dialog/agent-delete-case-dialog.component';
+import { AgentUpdateDialogComponent } from 'src/app/components/dialogs/agent-update-dialog/agent-update-dialog.component';
 
 @Component({
   selector: 'app-all-closed-cases-page',
@@ -21,16 +26,49 @@ export class AllClosedCasesPageComponent implements OnInit {
     public router: Router,
     private location: Location,
     private caseStore: CaseStore,
-
+    private dialog: MatDialog,
 
   ) {}
 
+  ngOnInit(): void {
+    this.fetchCases();
+  }
 
   fetchCases() {
     this.caseStore.getCases().subscribe((res: any) => {
       this.arrCases = res;
-      console.log(this.arrCases);
+      console.log('cases:', this.arrCases);
     });
+  }
+
+  onClickDeleteCase(caseId) {
+    if (caseId) {
+      const dialogRef = this.dialog.open(AgentDeleteCaseDialogComponent, {
+        data: caseId
+      });
+
+      dialogRef.afterClosed().subscribe(async (result: any) => {
+        if(!result) return;
+        await this.caseStore.deleteCase(result).then((res: any) => {
+          this.fetchCases()
+         console.log();
+
+        });
+        //console.log(result);
+        alert("Delete Successfully!");
+      });
+    }
+    return;
+  }
+
+  onClickEdit(caseId) {
+    const dialogRef = this.dialog.open(AgentUpdateDialogComponent, {
+      data: caseId,
+      width: '35vw',
+      height: '100vh',
+      role: 'dialog',
+    });
+    dialogRef.updatePosition({ top: '0', right: '0', bottom: '0'});
   }
 
 //select checkbox
@@ -44,15 +82,10 @@ export class AllClosedCasesPageComponent implements OnInit {
     }
   }
 
-
-  ngOnInit(): void {
-    this.fetchCases();
-  }
-
   convertUTCtoDate(UTC: string) {
     const date = new Date(UTC);
-    const strDate = moment(date).format('LLLL');
+    //const strDate = date.toLocaleDateString();
+    const strDate = date.toLocaleDateString() + '\n' + date.toLocaleTimeString();
     return strDate;
   }
-
 }

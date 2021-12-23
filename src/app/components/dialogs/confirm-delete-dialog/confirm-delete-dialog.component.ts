@@ -21,10 +21,6 @@ export class ConfirmDeleteDialogComponent implements OnInit {
 
   }
 
-  onNoClick(): void {
-    this.dialogRef.close(null);
-  }
-
   fetchAgents() {
     this.agentStore.getAgents().subscribe((res: any) => {
       this.arrAgents = res;
@@ -33,5 +29,9 @@ export class ConfirmDeleteDialogComponent implements OnInit {
 
   onClickDeleteAgent() {
     this.dialogRef.close(this.data);
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close(null);
   }
 }

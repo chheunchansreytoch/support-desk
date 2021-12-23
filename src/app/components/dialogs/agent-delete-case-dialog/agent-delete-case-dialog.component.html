@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Delete Case</h2>
+<mat-dialog-content class="mat-typography">
+  <!-- <hr> -->
+  <div class="question">
+    <i class="fas fa-question-circle"></i>
+    <p>Are you sure that you want to delete this case?</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="btn-No">
+    <button (click)="onNoClick()">No</button>
+  </div>
+
+  <div class="btn-Yes">
+    <button (click)="onClickDelete()">Yes</button>
+  </div>
+</mat-dialog-actions>
