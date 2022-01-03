@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, throwError } from "rxjs";
 import { IAgent } from "../models/IAgent.model";
+import { ICase } from "../models/ICase.model";
 
 
 @Injectable({providedIn:'root'})
@@ -11,6 +12,7 @@ export class PaginationStore {
 
   @observable public isLoading: boolean = false;
   @observable public arrAgent: Array<IAgent> = [];
+  @observable public arrCase: Array<ICase> = [];
 
   @observable public length: number = 100;
   @observable public pageIndex: number = 1;
@@ -53,6 +55,21 @@ export class PaginationStore {
 
     this.length = count;
     this.arrAgent = agents;
+    this.pageSize = pageSize;
+    this.pageIndex = pageIndex;
+
+    this.isLoading = false;
+    return result;
+  }
+
+  @action
+  async getCasesWithPagination(pageSize: number, pageIndex: number, keyword: string) {
+    this.isLoading = true;
+    const result = await this.httpClient.get<any>(this.endpoint + `/cases/${pageSize}/${pageIndex}/${keyword || 'null'}`, this.httpHeaderWithToken).toPromise();
+    const { cases, count } = result;
+
+    this.length = count;
+    this.arrCase = cases;
     this.pageSize = pageSize;
     this.pageIndex = pageIndex;
 

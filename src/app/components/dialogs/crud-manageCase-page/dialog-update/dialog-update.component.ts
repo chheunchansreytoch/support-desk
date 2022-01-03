@@ -22,8 +22,8 @@ export class DialogUpdateComponent implements OnInit {
 
   }
 
-  onNoClick(): void {
-    this.dialogRef.close(null);
+  onCancelClick(): void {
+    this.dialogRef.close();
   }
 
   fetchAgents() {
@@ -33,7 +33,7 @@ export class DialogUpdateComponent implements OnInit {
   }
 
   onClickUpdateCase() {
-    this.dialogRef.close(this.data);
+
   }
 
 }

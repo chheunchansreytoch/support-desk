@@ -3,9 +3,6 @@
   form {
     width: 100%;
     .container1 {
-      display: flex;
-      justify-content: space-between;
-
       .case-number {
         display: flex;
         flex-direction: column;
@@ -48,12 +45,6 @@
           padding: 10px 50px;
         }
       }
-    }
-
-    .container2 {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
 
       .department {
         display: flex;
@@ -93,21 +84,29 @@
           padding: 10px 50px;
         }
       }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          width: 32%;
+          padding: 10px 30px;
+        }
+      }
     }
 
-    .container3 {
-      display: flex;
-      flex-direction: column;
-      margin-top: 20px;
+    // .container2 {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   margin-top: 20px;
 
-      label {
-        font-weight: bold;
-      }
 
-      input {
-        width: 32%;
-        padding: 10px 30px;
-      }
-    }
+    // }
+
   }
 }

@@ -32,8 +32,9 @@ export class CasesPageComponent implements OnInit {
   }
 
   checkIfRouteIsActivated(item: string) {
-    console.log(this.currentRoute)
-    console.log(item)
+    this.currentRoute;
+    // console.log(this.currentRoute)
+    // console.log(item)
     return this.currentRoute.includes(item);
   }
 

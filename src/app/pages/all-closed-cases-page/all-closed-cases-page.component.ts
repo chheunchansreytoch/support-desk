@@ -44,7 +44,10 @@ export class AllClosedCasesPageComponent implements OnInit {
   onClickDeleteCase(caseId) {
     if (caseId) {
       const dialogRef = this.dialog.open(AgentDeleteCaseDialogComponent, {
-        data: caseId
+        data: caseId,
+        width: '40vw',
+        height: '40vh',
+        role: 'dialog',
       });
 
       dialogRef.afterClosed().subscribe(async (result: any) => {
@@ -64,11 +67,14 @@ export class AllClosedCasesPageComponent implements OnInit {
   onClickEdit(caseId) {
     const dialogRef = this.dialog.open(AgentUpdateDialogComponent, {
       data: caseId,
-      width: '35vw',
-      height: '100vh',
+      width: '600px',
+      height: '96vh',
       role: 'dialog',
     });
-    dialogRef.updatePosition({ top: '0', right: '0', bottom: '0'});
+    dialogRef.updatePosition({ top: '2vh', right: '2vh' });
+    dialogRef.afterClosed().subscribe(() => {
+      this.fetchCases();
+    })
   }
 
 //select checkbox

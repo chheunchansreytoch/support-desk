@@ -828,6 +828,11 @@
   }
 }
 
+.action-btn {
+  display: flex;
+  flex-direction: column;
+}
+
 button {
   border: none;
   outline: none;
@@ -835,15 +840,15 @@ button {
 }
 
 button {
-  .fi-rr-trash {
-    font-size: 15px;
+  .fa-pen {
+    font-size: 16px;
   }
 
   span {
-    margin-left: 10px;
+    font-size: 16px;
   }
 
-  .fi-rr-pencil {
-    font-size: 15px;
+  .fa-trash {
+    font-size: 16px;
   }
 }

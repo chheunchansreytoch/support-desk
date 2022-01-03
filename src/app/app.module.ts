@@ -104,8 +104,8 @@ import { AgentUpdateDialogComponent } from './components/dialogs/agent-update-di
 import { AlertInformationDialogComponent } from './components/alert-information-dialog/alert-information-dialog.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { TableSkeletonLoadingComponent } from './components/table-skeleton-loading/table-skeleton-loading.component';
-import {SkeletonModule} from 'primeng/skeleton';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { SkeletonModule } from 'primeng/skeleton';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export function playerFactory() {
   return player;

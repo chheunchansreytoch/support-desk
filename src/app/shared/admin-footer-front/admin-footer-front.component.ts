@@ -17,7 +17,7 @@ export class AdminFooterFrontComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.handlePage(null);
+    // this.handlePage(null);
   }
 
   async handlePage(e: any) {

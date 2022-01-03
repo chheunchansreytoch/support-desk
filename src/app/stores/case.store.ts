@@ -97,9 +97,34 @@ export class CaseStore {
   }
 
   @action
-  async updateUser(id, data){
-   const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + id, this.httpHeader).toPromise();
-   return result;
+  async addCase_FormData(data: FormData): Promise<ICase> {
+    this.isLoading = true;
+    const result = await this.httpClient.post<ICase>(this.endpoint + '/cases/create', data, this.httpHeader).toPromise();
+    this.isLoading = false;
+    return result;
+  }
+
+  @action
+  async updateCaseFormData(caseId: string, data: FormData): Promise<ICase> {
+    this.isLoading = true;
+    const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + caseId, data, this.httpHeader).toPromise();
+    this.isLoading = false;
+    return result;
+  }
+
+
+  // @action
+  // async updateCase(id, data){
+  //  const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + id, this.httpHeader).toPromise();
+  //  return result;
+  // }
+
+  @action
+  async updateCase_FormData(caseId: string, data: FormData): Promise<ICase> {
+    this.isLoading = true;
+    const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + caseId, data, this.httpHeader).toPromise();
+    this.isLoading = false;
+    return result;
   }
 
   @action

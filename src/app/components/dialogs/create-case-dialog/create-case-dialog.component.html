@@ -1,12 +1,85 @@
-<!-- <h2 mat-dialog-title>Install Angular</h2>
-<mat-dialog-content class="mat-typography">
-  <h3>Develop across all platforms</h3>
-  <p>Learn one way to build applications with Angular and reuse your code and abilities to build
-    apps for any deployment target. For web, mobile web, native mobile and native desktop.</p>
+<!-- <div class="form-dialog-container">
+  <h4 mat-dialog-title>
+    <span>
+      <ng-container *ngIf="!data">Create</ng-container>
+      <ng-container *ngIf="data">Update</ng-container>
+      Agent
+    </span>
+    <button class="btn-close" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </h4>
 
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-</mat-dialog-actions> -->
+  <div mat-dialog-content>
+    <form [formGroup]="registrationForm" (ngSubmit)="formSubmitted(registrationForm.value)">
+      <div class="custom-field-0">
+        <label class="label" for="caseNumber">Case Number</label>
+        <input class="input" type="text" id="caseNumber" required formControlName="caseNumber">
+        <p class="error-message" *ngIf="registrationForm.controls['caseNumber']?.touched && registrationForm.controls['caseNumber']?.errors?.required">Please Input Case Number.</p>
+      </div>
 
+      <div class="custom-field-0">
+        <label class="label" for="status">Status</label>
+        <select class="input" id="status" formControlName="status" required>
+          <option *ngFor="let item of arrStatuses" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="registrationForm.controls['status']?.touched && registrationForm.controls['status']?.errors?.required">Please Select Status.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="priority">Priority</label>
+        <select class="input" id="priority" formControlName="priority" required>
+          <option *ngFor="let item of arrPriorities" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="registrationForm.controls['priority']?.touched && registrationForm.controls['priority']?.errors?.required">Please Select Priority.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="agentDepartment">Priority</label>
+        <select class="input" id="agentDepartment" formControlName="agentDepartment" required>
+          <option *ngFor="let item of arrPriorities" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="registrationForm.controls['agentDepartment']?.touched && registrationForm.controls['agentDepartment']?.errors?.required">Please Select agent Department.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="department">Agent Department</label>
+        <select class="input" id="department" required formControlName="department">
+          <option [value]="null" disabled>please select a agent department</option>
+          <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="registrationForm.controls['department']?.touched && registrationForm.controls['department']?.errors?.required">Please Select Agent Department.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="agent">Agent Name</label>
+        <select class="input" id="agent" required formControlName="agent">
+          <option [value]="null" disabled>please select a agent name</option>
+          <option *ngFor="let item of arrAgentsByDepartments" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="registrationForm.controls['agent']?.touched && registrationForm.controls['agent']?.errors?.required">Please Select Agent Name.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="subject">Subject</label>
+        <input class="input" type="text" id="subject" required formControlName="subject">
+        <p class="error-message" *ngIf="registrationForm.controls['subject']?.touched && registrationForm.controls['subject']?.errors?.required">Please Input Subject.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="description">Description</label>
+        <input class="input" type="text" id="description" required formControlName="description">
+        <p class="error-message" *ngIf="registrationForm.controls['description']?.touched && registrationForm.controls['description']?.errors?.required">Please Input Description.</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="custom-matdialog-footer" mat-dialog-actions>
+    <button class="btn btn-close" mat-button mat-dialog-close>Close</button>
+    <button class="btn btn-submit" (click)="formSubmitted(registrationForm.value)">
+      <ng-container *ngIf="!data">Create</ng-container>
+      <ng-container *ngIf="data">Save</ng-container>
+    </button>
+  </div>
+</div>
+ -->

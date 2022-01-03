@@ -13,10 +13,6 @@
               <div class="title-case-container">
                 <h4>New Case</h4>
               </div>
-
-              <!-- <div class="custom-btnClose">
-                <button class="btn-close" (click)="createCasetoogleTag()"><i class="fi-rr-cross-small"></i></button>
-              </div> -->
             </div>
 
             <div class="case-info-lbl-container">
@@ -161,20 +157,36 @@
                <td>{{item?.agent?.username}}</td>
 
                <td>
+
                 <button mat-icon-button [matMenuTriggerFor]="menu">
                   <mat-icon>more_vert</mat-icon>
                 </button>
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item mat-button (click)="onClickDelete(item.id)">
-                    <i class="fi-rr-trash"></i>
-                    <span>Delete</span>
-                  </button>
 
-                  <button mat-menu-item mat-button (click)="onClickUpdate()">
-                    <i class="fi-rr-pencil"></i>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="onClickUpdate(item.id)">
+                    <span class="material-icons">create</span>
                     <span>Edit</span>
                   </button>
+
+                  <button mat-menu-item (click)="onClickDelete(item.id)">
+                    <span class="material-icons">delete</span>
+                    <span>Delete</span>
+                  </button>
                 </mat-menu>
+
+                <!-- <mat-menu #menu="matMenu">
+                  <div class="action-btn">
+                    <button mat-button (click)="onClickUpdate()">
+                      <i class="fas fa-pen"></i>
+                      <span>Edit</span>
+                    </button>
+
+                    <button mat-button (click)="onClickDelete(item.id)">
+                      <i class="fas fa-trash"></i>
+                      <span>Delete</span>
+                    </button>
+                  </div>
+                </mat-menu> -->
                </td>
               </tr>
             </tbody>
@@ -182,7 +194,7 @@
         </div>
       </mat-tab>
 
-      <mat-tab label="View Case by Product">
+      <!-- <mat-tab label="View Case by Product">
         <div class="table-scroll">
           <table>
             <thead>
@@ -236,7 +248,7 @@
             </tbody>
           </table>
         </div>
-      </mat-tab>
+      </mat-tab> -->
 <!-- <mat-tab label="View Current Cases">
         <div class="table-scroll">
           <table>

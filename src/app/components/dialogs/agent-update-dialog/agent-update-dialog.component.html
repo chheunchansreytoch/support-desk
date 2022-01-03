@@ -1,65 +1,68 @@
 <div class="update-form-container">
-  <h3>Update Case</h3>
-  <form>
-    <div class="form-row1">
-      <div class="subject">
-        <label>Subject</label>
-        <input type="text">
+  <h3 mat-dialog-title>Update Case</h3>
+
+  <div mat-dialog-content>
+    <form [formGroup]="form" (ngSubmit)="updateCase(form)">
+      <div class="custom-field-0">
+        <label class="label" for="subject">Subject</label>
+        <input class="input" type="text" id="subject">
       </div>
 
-      <div class="description">
-        <label>Description</label>
-        <input type="text">
-      </div>
-    </div>
-
-    <div class="form-row2">
-      <div class="status">
-        <label>Status</label>
-        <div class="status-cases">
-          <mat-form-field appearance="fill">
-            <mat-select disableRipple>
-              <mat-option class="custom-mat-select">New</mat-option>
-              <mat-option class="custom-mat-select">Closed</mat-option>
-              <mat-option class="custom-mat-select">Working</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+      <div class="custom-field-0">
+        <label class="label" for="description">Description</label>
+        <input class="input" type="text" id="description">
       </div>
 
-      <div class="priority">
-        <label>Priority</label>
-        <select>
+      <div class="custom-field-0">
+        <label class="label" for="status">Status</label>
+        <select class="input" id="status">
           <option></option>
-        </select>
-      </div>
-    </div>
-
-    <div class="new-label">
-      <div class="case-owner-lbl">
-        <label>Case Owner</label>
-      </div>
-
-      <p>You can change the case owner here by selecting the agent's department and the <br>
-       agent's name.
-      </p>
-    </div>
-
-
-    <div class="form-row3">
-      <div class="agent-department">
-        <label>Agent Department</label>
-        <select>
-          <option selected>Select Agent Department</option>
+          <!-- <option [value]="null" disabled>please select a department</option> -->
+          <!-- <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option> -->
         </select>
       </div>
 
-      <div class="agent-name">
-        <label>Agent Name</label>
-        <select>
-          <option selected>Select Agent Name</option>
+      <div class="custom-field-0">
+        <label class="label" for="priority">Priority</label>
+        <select class="input" id="priority">
+          <option></option>
+          <!-- <option [value]="null" disabled>please select a department</option> -->
+          <!-- <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option> -->
         </select>
       </div>
-    </div>
-  </form>
+
+      <div class="custom-field-0">
+        <div class="case-owner-lbl">
+          <h3>Case Owner</h3>
+        </div>
+        <p>You can change the case owner by selecting the agent's department then <br> select the agent's name.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="subject">Subject</label>
+        <select class="input" id="department">
+          <option></option>
+          <!-- <option [value]="null" disabled>please select a department</option> -->
+          <!-- <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option> -->
+        </select>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="description">Description</label>
+        <select class="input" id="department">
+          <option></option>
+          <!-- <option [value]="null" disabled>please select a department</option> -->
+          <!-- <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option> -->
+        </select>
+      </div>
+    </form>
+  </div>
+
+  <div class="custom-matdialog-footer" mat-dialog-actions>
+    <button class="btn btn-close" mat-button mat-dialog-close>Close</button>
+    <button class="btn btn-submit">
+      <ng-container *ngIf="!data">Create</ng-container>
+      <ng-container *ngIf="data">Save</ng-container>
+    </button>
+  </div>
 </div>

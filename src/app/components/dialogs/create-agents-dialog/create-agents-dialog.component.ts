@@ -64,18 +64,6 @@ export class CreateAgentsDialogComponent implements OnInit {
     if (this.registrationForm.valid) {
       this.registrationForm.disable();
       const { confirmPassword, department, email, gender, password, username } = formData;
-
-      // const finalData = {
-      //   ...formData,
-      //   createdBy: this.managerStore.getCurrentUser.id,
-      //   department: { id: department },
-      //   gender: gender,
-      //   profile: this.selectedProfiles?.item(0)
-      // };
-
-      // await this.agentStore.addAgent(finalData);
-      // this.arrAgents.push(finalData);
-
       if(!this.data) {
         const fd = new FormData();
 
@@ -102,7 +90,6 @@ export class CreateAgentsDialogComponent implements OnInit {
 
         await this.agentStore.updateAgent_FormData(this.data?.id, fd);
       }
-
       this.registrationForm.enable();
       this.registrationForm.reset();
 
@@ -115,10 +102,8 @@ export class CreateAgentsDialogComponent implements OnInit {
         } as IDialogData,
         disableClose: true,
       });
-
       this.selectedProfiles = null;
     }
-
     return;
   }
 

@@ -13,6 +13,9 @@ import { AgentStore } from 'src/app/stores/agent.store';
 import { AgentDepartmentStore } from 'src/app/stores/agentDepartment.store';
 import { DialogDeleteComponent } from 'src/app/components/dialogs/crud-manageCase-page/dialog-delete/dialog-delete.component';
 import { DialogUpdateComponent } from 'src/app/components/dialogs/crud-manageCase-page/dialog-update/dialog-update.component';
+import { IDialogData } from 'src/app/models/IDialog.model';
+import { AlertInformationDialogComponent } from 'src/app/components/alert-information-dialog/alert-information-dialog.component';
+import { PaginationStore } from 'src/app/stores/pagination.store';
 
 @Component({
   selector: 'app-manage-cases-page',
@@ -45,7 +48,8 @@ export class ManageCasesPageComponent implements OnInit {
     private statusStore: StatusStore,
     private priorityStore: PriorityStore,
     private managerStore: ManagerStore,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public paginationStore: PaginationStore,
   )
   {
 
@@ -126,6 +130,7 @@ export class ManageCasesPageComponent implements OnInit {
         // console.log(res);
         this.arrManagers.push(finalData);
         this.creatingCaseForm.reset();
+        this.fetchCases();
         this.createCasetoogleTag();
         alert("Case was created successfully!");
       });
@@ -155,27 +160,52 @@ export class ManageCasesPageComponent implements OnInit {
     this.showdepartmentBtn=!this.showdepartmentBtn
   }
 
-  // onClickDelete() {
-  //   this.dialogService.openDeleteCaseDialog();
-  // }
-
   onClickDelete(caseId) {
-    if(caseId) {
+    if (caseId) {
       const dialogRef = this.dialog.open(DialogDeleteComponent, {
-        data: caseId
+        width: '500px',
+        data: {
+          title: 'Delete Case',
+          type: 'question',
+          content: 'Are you sure that you want to delete this selected case?'
+        } as IDialogData,
+        disableClose: true,
       });
+
       dialogRef.afterClosed().subscribe(async (result: any) => {
-        if(!result) return;
-        await this.caseStore.deleteCase(result);
-        console.log(result);
-        alert("Delete Successfully!");
+        if(!result || result === 'no') return;
+        await this.caseStore.deleteCase(caseId).then((res: any) => {
+          this.fetchCases();
+        });
+
+        this.dialog.open(AlertInformationDialogComponent, {
+          width: '500px',
+          data: {
+            title: 'Delete Case',
+            type: 'success',
+            content: `Case is deleted.`
+          } as IDialogData,
+          disableClose: true,
+        });
+
+       // this.paginationStore.getCasesWithPagination(10, 0, '');
       });
     }
     return;
   }
 
-  onClickUpdate() {
-    this.dialogService.openUpdateCaseDialog();
+  onClickUpdate(caseId) {
+    const dialogRef = this.dialog.open(DialogUpdateComponent, {
+      data: caseId,
+      width: '600px',
+      height: '96vh',
+      role: 'dialog',
+    });
+
+    dialogRef.updatePosition({top: '2vh', right: '2vh'});
+    dialogRef.afterClosed().subscribe(() => {
+      this.fetchCases();
+    })
   }
 
   // onClickUpdate(caseId) {
@@ -287,6 +317,5 @@ export class ManageCasesPageComponent implements OnInit {
     this.fetchManagers();
     this.fetchAgentsDepartment();
     this.fetchAgentsByDepartment();
-
   }
 }
