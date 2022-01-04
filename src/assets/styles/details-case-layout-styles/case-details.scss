@@ -1,10 +1,23 @@
 .detailCaseContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  .wraper{
+    display: flex;
+    grid-gap: 20px;
+    max-width: 1800px;
+    padding: 20px;
+    // flex-wrap: wrap;
+    overflow-x: auto;
+  }
   .customCaseDetailsContainer {
-    left: 30%;
-    width: 35%;
-    padding: 10px;
-    height: 457px;
-    overflow-x: hidden;
+    // left: 30%;
+    // width: 33%;
+    // padding: 10px;
+    height: 100%;
+    // overflow-x: hidden;
+    flex: 1;
 
     .customCaseDetail {
       width: 100%;
@@ -458,5 +471,11 @@
       }
     }
   }
+  // .customChatSideContainer{
+  //   height: 100%;
+  //   .CasesDetailContainer{
+  //     height: 100%;
+  //   }
+  // }
 }
 
