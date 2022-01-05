@@ -189,75 +189,75 @@
             </ng-container>
           </div>
 
-          <div class="custom-Email-layout">
-            <ng-container *ngIf="selectedActivityList === 'Email'">
-              <div class="custom-email-container">
-                <div class="custom-from-email">
-                  <div class="from-email-span">
-                    <span>From</span>
-                  </div>
+          <ng-container *ngIf="selectedActivityList === 'Email'">
+            <div class="custom-Email-layout">
+                <div class="custom-email-container">
+                  <div class="custom-from-email">
+                    <div class="from-email-span">
+                      <span>From</span>
+                    </div>
 
-                  <div class="from-email-form">
-                    <form>
-                      <input type="text">
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <div class="custom-To-container">
-                <div class="custom-To-email">
-                  <div class="To-email-span">
-                    <span>To</span>
-                  </div>
-
-                  <div class="To-email-form">
-                    <form>
-                      <input type="text">
-                    </form>
+                    <div class="from-email-form">
+                      <form>
+                        <input type="text">
+                      </form>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="custom-Bcc-container">
-                <div class="custom-Bcc-email">
-                  <div class="Bcc-email-span">
-                    <span>Bcc</span>
-                  </div>
+                <div class="custom-To-container">
+                  <div class="custom-To-email">
+                    <div class="To-email-span">
+                      <span>To</span>
+                    </div>
 
-                  <div class="Bcc-email-form">
-                    <form>
-                      <input type="text">
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <div class="custom-subject-container">
-                <div class="custom-subject-email">
-                  <div class="subject-email-span">
-                    <span>Subject</span>
-                  </div>
-
-                  <div class="subject-email-form">
-                    <form>
-                      <input type="text" placeholder="Enter Subject...">
-                    </form>
+                    <div class="To-email-form">
+                      <form>
+                        <input type="text">
+                      </form>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="input-text-container">
-                <quill-editor></quill-editor>
-              </div>
+                <div class="custom-Bcc-container">
+                  <div class="custom-Bcc-email">
+                    <div class="Bcc-email-span">
+                      <span>Bcc</span>
+                    </div>
 
-              <div class="SendButtonContainer">
-                <div class="custom-send-button">
-                  <button>Send</button>
+                    <div class="Bcc-email-form">
+                      <form>
+                        <input type="text">
+                      </form>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </ng-container>
-          </div>
+
+                <div class="custom-subject-container">
+                  <div class="custom-subject-email">
+                    <div class="subject-email-span">
+                      <span>Subject</span>
+                    </div>
+
+                    <div class="subject-email-form">
+                      <form>
+                        <input type="text" placeholder="Enter Subject...">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-text-container">
+                  <quill-editor></quill-editor>
+                </div>
+
+                <div class="SendButtonContainer">
+                  <div class="custom-send-button">
+                    <button>Send</button>
+                  </div>
+                </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </mat-tab>

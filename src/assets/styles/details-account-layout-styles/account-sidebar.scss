@@ -1,19 +1,16 @@
 .detailAccountContainer {
-  width: 100%;
   display: flex;
-  background: rgb(196, 196, 247);
-  height: 565px;
-  overflow-x: hidden;
+  grid-gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
   .accountSidebarContainer {
-    left: 0;
     width: 30%;
-    padding: 10px;
   }
 
   .customAccountSidebar {
     width: 100%;
-    height: 472px;
-    float: left;
+    height: 100%;
     color: $black1;
     background: #f8f9fa;
     box-shadow: 0 5px 15px #d4d7da;
@@ -21,10 +18,12 @@
     font-family: $Roboto-font;
 
     .CaseSidebarHeaderContainer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       .customCaseSidebarHeader {
         display: flex;
         justify-content: space-between;
-        margin-top: 20px;
 
         .spanNumColumn {
           margin-top: 5px;
@@ -126,9 +125,9 @@
 
       .customListItems {
         //margin-top: 10px;
-        max-height: 310px;
+        // max-height: 310px;
         overflow-x: hidden;
-
+        height: 100%;
         ul {
           position: relative;
         }

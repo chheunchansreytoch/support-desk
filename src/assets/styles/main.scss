@@ -777,6 +777,8 @@ app-contact-page{
       .list-Container{
         height: 100%;
         overflow: auto;
+        padding: 10px;
+
       }
     }
   }
@@ -794,6 +796,7 @@ app-cases-page{
       .list-Container1{
         height: 100%;
         overflow: auto;
+        padding: 10px;
       }
     }
   }
@@ -811,6 +814,8 @@ app-account-page{
       .list-Container2{
         height: 100%;
         overflow: auto;
+        padding: 10px;
+
       }
     }
   }
@@ -822,4 +827,8 @@ app-account-page{
 
 .page-wraper{
   height: calc(100% - 60px);
+}
+
+.bg-page{
+  background-color: #c4c4f7;
 }

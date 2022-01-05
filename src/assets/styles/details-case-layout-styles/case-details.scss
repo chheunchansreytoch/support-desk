@@ -5,9 +5,9 @@
   justify-content: center;
   .wraper{
     display: flex;
-    grid-gap: 20px;
+    grid-gap: 10px;
     max-width: 1800px;
-    padding: 20px;
+    padding: 10px;
     // flex-wrap: wrap;
     overflow-x: auto;
   }
@@ -21,7 +21,7 @@
 
     .customCaseDetail {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 10px;
       box-shadow: 0 5px 15px #d4d7da;
       float: right;
@@ -306,7 +306,7 @@
     .customContactDetail {
       width: 100%;
       margin-top: 10px;
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 10px;
       box-shadow: 0 5px 15px #d4d7da;
       float: right;

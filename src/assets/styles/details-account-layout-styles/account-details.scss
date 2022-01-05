@@ -1,11 +1,17 @@
 .detailAccountContainer {
   .customAccountInfomation {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height: 100%;
     .customAccountDetailChatter {
-      position: absolute;
-      width: 70%;
       display: flex;
-      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      // position: absolute;
+      // width: 70%;
+      // display: flex;
+      // justify-content: space-between;
 
       .accountDetailsContainer {
         width: 50%;
@@ -15,7 +21,7 @@
         .customAccountDetail {
           background: #f8f9fa;
           border-radius: 5px;
-
+          height: 100%;
           .customAccountRelated {
             padding: 5px;
             margin-top: 10px;

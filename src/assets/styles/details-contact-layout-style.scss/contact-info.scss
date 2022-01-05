@@ -1,14 +1,12 @@
 .detailContactContainer {
   font-family: $Roboto-font;
   .customContactInfomation {
-    margin-top: 10px;
+    // margin-top: 10px;
+    display: flex;
+    flex-direction: column;
     .contactInfoContainer {
-      left: 30%;
-      flex: 0;
       overflow-x: hidden;
-      padding-left: 1px;
-      padding-right: 11px;
-
+      min-height: 112px;
       .customContactInfo {
         //background: greenyellow;
         border-radius: 5px;
