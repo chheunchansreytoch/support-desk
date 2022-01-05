@@ -1,10 +1,11 @@
 .tabDefaultContentContainer {
-  width: 100%;
   .defaultContent {
+    width: 100%;
     .page-header {
-      background-color: #f8f9fa;
+      // background-color: #f8f9fa;
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       .custom-case-list {
         display: flex;
@@ -16,7 +17,7 @@
           display: flex;
           background-color: #eeeff0;
           height: 60px;
-          
+
           .custom-case-image {
             float: left;
             margin-right: 23px;

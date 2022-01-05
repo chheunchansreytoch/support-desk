@@ -763,3 +763,63 @@
   color: $primary-color;
   background-color: $secondary-color;
 }
+
+
+app-contact-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .page-wraper{
+    .defaultContent{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .list-Container{
+        height: 100%;
+        overflow: auto;
+      }
+    }
+  }
+}
+
+app-cases-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .page-wraper{
+    .defaultContent{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .list-Container1{
+        height: 100%;
+        overflow: auto;
+      }
+    }
+  }
+}
+
+app-account-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .page-wraper{
+    .defaultContent{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .list-Container2{
+        height: 100%;
+        overflow: auto;
+      }
+    }
+  }
+}
+
+.tabDefaultContentContainer{
+  height: 100%;
+}
+
+.page-wraper{
+  height: calc(100% - 60px);
+}
