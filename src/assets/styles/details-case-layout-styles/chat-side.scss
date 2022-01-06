@@ -15,7 +15,8 @@
       background-color: #f8f9fa;
       color: $black1;
       font-family: $Roboto-font;
-      height: auto;
+      height: 100%;
+      min-height: 638px;
       .post-pull-container {
         border: 1px solid #dadbdc;
         margin: 10px;

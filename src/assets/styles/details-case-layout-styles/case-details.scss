@@ -24,19 +24,18 @@
       border-radius: 5px;
       padding: 10px;
       box-shadow: 0 5px 15px #d4d7da;
-      float: right;
       background-color: #f8f9fa;
       color: $black1;
       font-family: $Roboto-font;
+      flex: 1;
 
       .case-list-container {
         display: flex;
 
         .custom-case-image {
-          float: left;
-          margin-right: 23px;
+          display: grid;
+          place-items: center;
           padding: 5px;
-
           .case-image {
             padding: 4px ;
             width: 33px;
@@ -479,3 +478,9 @@
   // }
 }
 
+app-case-details-page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}

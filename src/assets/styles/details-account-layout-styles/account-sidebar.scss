@@ -4,8 +4,15 @@
   width: 100%;
   height: 100%;
   padding: 10px;
+  overflow: auto;
   .accountSidebarContainer {
     width: 30%;
+    display: grid;
+    place-items: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .customAccountSidebar {
@@ -187,4 +194,9 @@
       }
     }
   }
+}
+
+app-account-sidebar-page{
+  width: 100%;
+  height: 100%;
 }

@@ -18,12 +18,10 @@
           display: flex;
           background-color: #eeeff0;
           height: 60px;
-
           .custom-case-image {
-            float: left;
-            margin-right: 23px;
+            display: grid;
+            place-items: center;
             padding: 5px;
-            //height: 40px;
             .case-image {
               position: absolute;
               padding: 4px ;
