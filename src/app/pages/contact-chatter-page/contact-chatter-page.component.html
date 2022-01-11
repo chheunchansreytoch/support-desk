@@ -189,75 +189,75 @@
             </ng-container>
           </div>
 
-          <div class="custom-Email-layout">
-            <ng-container *ngIf="selectedActivityList === 'Email'">
-              <div class="custom-email-container">
-                <div class="custom-from-email">
-                  <div class="from-email-span">
-                    <span>From</span>
-                  </div>
+          <ng-container *ngIf="selectedActivityList === 'Email'">
+            <div class="custom-Email-layout">
+                <div class="custom-email-container">
+                  <div class="custom-from-email">
+                    <div class="from-email-span">
+                      <span>From</span>
+                    </div>
 
-                  <div class="from-email-form">
-                    <form>
-                      <input type="text">
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <div class="custom-To-container">
-                <div class="custom-To-email">
-                  <div class="To-email-span">
-                    <span>To</span>
-                  </div>
-
-                  <div class="To-email-form">
-                    <form>
-                      <input type="text">
-                    </form>
+                    <div class="from-email-form">
+                      <form>
+                        <input type="text">
+                      </form>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="custom-Bcc-container">
-                <div class="custom-Bcc-email">
-                  <div class="Bcc-email-span">
-                    <span>Bcc</span>
-                  </div>
+                <div class="custom-To-container">
+                  <div class="custom-To-email">
+                    <div class="To-email-span">
+                      <span>To</span>
+                    </div>
 
-                  <div class="Bcc-email-form">
-                    <form>
-                      <input type="text">
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <div class="custom-subject-container">
-                <div class="custom-subject-email">
-                  <div class="subject-email-span">
-                    <span>Subject</span>
-                  </div>
-
-                  <div class="subject-email-form">
-                    <form>
-                      <input type="text" placeholder="Enter Subject...">
-                    </form>
+                    <div class="To-email-form">
+                      <form>
+                        <input type="text">
+                      </form>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="input-text-container">
-                <quill-editor></quill-editor>
-              </div>
+                <div class="custom-Bcc-container">
+                  <div class="custom-Bcc-email">
+                    <div class="Bcc-email-span">
+                      <span>Bcc</span>
+                    </div>
 
-              <div class="SendButtonContainer">
-                <div class="custom-send-button">
-                  <button>Send</button>
+                    <div class="Bcc-email-form">
+                      <form>
+                        <input type="text">
+                      </form>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </ng-container>
-          </div>
+
+                <div class="custom-subject-container">
+                  <div class="custom-subject-email">
+                    <div class="subject-email-span">
+                      <span>Subject</span>
+                    </div>
+
+                    <div class="subject-email-form">
+                      <form>
+                        <input type="text" placeholder="Enter Subject...">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-text-container">
+                  <quill-editor></quill-editor>
+                </div>
+
+                <div class="SendButtonContainer">
+                  <div class="custom-send-button">
+                    <button>Send</button>
+                  </div>
+                </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </mat-tab>
@@ -294,55 +294,56 @@
             </ng-container>
           </div>
 
-          <div class="custom-poll-layout">
-            <ng-container *ngIf="selectedList === 'Poll'">
-              <div class="poll-layout">
-                <div class="question-lbl">
-                  <label>Question</label>
+          <ng-container *ngIf="selectedList === 'Poll'">
+            <div class="custom-poll-layout">
+                <div class="poll-layout">
+                  <div class="question-lbl">
+                    <label>Question</label>
+                  </div>
+
+                  <div class="input-question">
+                    <form>
+                      <textarea placeholder="What whould you like to ask?"></textarea>
+                    </form>
+                  </div>
                 </div>
 
-                <div class="input-question">
-                  <form>
-                    <textarea placeholder="What whould you like to ask?"></textarea>
-                  </form>
-                </div>
-              </div>
+                <ul>
+                  <li *ngFor="let item of choices; let i = index">
+                    <div class="custom-choice">
+                      <div class="choice-lbl">
+                        <label> Choice
+                          {{i+1}}
+                        </label>
+                      </div>
 
-              <ul>
-                <li *ngFor="let item of choices; let i = index">
-                  <div class="custom-choice">
-                    <div class="choice-lbl">
-                      <label> Choice
-                        {{i+1}}
-                      </label>
+                      <div class="input-choice">
+                        <form>
+                          <textarea></textarea>
+                        </form>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="custom-addnewchoice">
+                  <div class="newchoice-lbl">
+                    <label><span>To</span>  this case</label>
+                  </div>
+
+                  <div class="add-ask-container">
+                    <div class="btn-newchoice">
+                      <button (click)="onClickAdd(choices)"><i class="fi-rr-plus"></i> Add new choice</button>
                     </div>
 
-                    <div class="input-choice">
-                      <form>
-                        <textarea></textarea>
-                      </form>
+                    <div class="custom-ask-button">
+                      <button>Ask</button>
                     </div>
                   </div>
-                </li>
-              </ul>
-
-              <div class="custom-addnewchoice">
-                <div class="newchoice-lbl">
-                  <label><span>To</span>  this case</label>
                 </div>
+            </div>
+          </ng-container>
 
-                <div class="add-ask-container">
-                  <div class="btn-newchoice">
-                    <button (click)="onClickAdd(choices)"><i class="fi-rr-plus"></i> Add new choice</button>
-                  </div>
-
-                  <div class="custom-ask-button">
-                    <button>Ask</button>
-                  </div>
-                </div>
-              </div>
-            </ng-container>
-          </div>
 
           <div class="custom-question-layout">
             <ng-container *ngIf="selectedList === 'Question'">

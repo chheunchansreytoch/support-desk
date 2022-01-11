@@ -1,21 +1,23 @@
 .tabDefaultContentContainer {
   .defaultContent {
     .page-header {
-      background-color: #f8f9fa;
+      // background-color: #f8f9fa;
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       .custom-contact-list {
         display: flex;
         height: 60px;
         background-color: #f8f9fa;
         font-family: $Roboto-font;
+        box-shadow: 0 1px 2px #0003;
 
         .case-contact-container {
           display: flex;
           background-color: #eeeff0;
           height: 60px;
-          
+
           .custom-contact-image {
             float: left;
             margin-right: 23px;

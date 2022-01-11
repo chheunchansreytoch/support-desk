@@ -1,9 +1,10 @@
 .detailCaseContainer {
   .customChatSideContainer {
-    left: 30%;
-    width: 35%;
+    // left: 30%;
+    // width: 33%;
     // height: 337px;
-    padding: 10px;
+    // padding: 10px;
+    flex: 1;
 
     .CasesDetailContainer {
       width: 100%;
@@ -14,7 +15,8 @@
       background-color: #f8f9fa;
       color: $black1;
       font-family: $Roboto-font;
-
+      height: 100%;
+      min-height: 638px;
       .post-pull-container {
         border: 1px solid #dadbdc;
         margin: 10px;
@@ -53,7 +55,7 @@
 
         .post-poll-layout {
           align-items: center;
-          height: 337px;
+          height: auto;
           // height: 200px;
           // //max-height: 100%;
           // //max-height: 90%;
@@ -196,7 +198,7 @@
 
             .custom-addnewchoice {
               padding: 15px;
-              
+
               .newchoice-lbl {
                 label {
                   font-size: 12px;

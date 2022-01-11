@@ -2,15 +2,20 @@
   width: 100%;
   height: 457px;
   display: flex;
-  background: rgb(196, 196, 247);
+  // background: rgb(196, 196, 247);
   overflow-y: scroll;
   .customCaseSideBarContainer {
-    left: 0;
-    width: 30%;
-    padding: 10px;
-    height: 100px;
+    // left: 0;
+    // width: 33%;
+    // padding: 10px;
+    // height: 100px;
+    flex: 1;
+    min-height: 638px;
 
     .customCaseSidebar {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       width: 100%;
       float: left;
       color: $black1;
@@ -18,12 +23,15 @@
       box-shadow: 0 5px 15px #d4d7da;
       border-radius: 5px;
       font-family: $Roboto-font;
+      // height: 100%;
 
       .CaseSidebarHeaderContainer {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         .customCaseSidebarHeader {
           display: flex;
           justify-content: space-between;
-          margin-top: 20px;
 
           .spanNumColumn {
             margin-top: 5px;
@@ -125,9 +133,9 @@
 
         .customListItems {
           //margin-top: 10px;
-          max-height: 310px;
+          // max-height: 310px;
           overflow-x: hidden;
-
+          flex:1;
           ul {
             position: relative;
           }
@@ -179,17 +187,15 @@
     }
   }
 
-  .customCaseDetailsContainer {
-    left: 30%;
-    width: 20%;
+  // .customCaseDetailsContainer {
+  //   left: 30%;
+  //   width: 20%;
+  // }
 
-  }
-
-  .customChatSideContainer {
-    flex: 1;
-    width: 50%;
-
-  }
+  // .customChatSideContainer {
+  //   flex: 1;
+  //   width: 50%;
+  // }
 }
 
 .detailCaseContainer::-webkit-scrollbar {

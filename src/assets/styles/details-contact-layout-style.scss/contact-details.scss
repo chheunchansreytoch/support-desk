@@ -2,17 +2,16 @@
   .customContactInfomation {
     width: 100%;
     .customContactDetailChatter {
-      position: absolute;
-      width: 70%;
       display: flex;
-      justify-content: space-between;
+      flex: 1;
       .contactDetailsContainer {
-        width: 50%;
+        min-width: 50%;
         padding-right: 5px;
 
         .customContactDetail {
           background: #f8f9fa;
           border-radius: 5px;
+          height: 100%;
 
           .customAccountRelated {
             padding: 5px;
@@ -20,17 +19,15 @@
             height: 294px;
 
             .account-contactRelated {
-              margin-top: 10px;
               display: flex;
+              margin-top: 10px;
               background: #f0f0f0;
-              border: 1px solid $gray4;
+              border: 1px solid #e1e2e4;
               border-radius: 5px;
-
-              .custom-contact-image {
-                float: left;
-                margin-right: 10px;
+              .custom-contact-image{
+                display: grid;
+                place-items: center;
                 padding: 5px;
-
                 .contact-image {
                   padding: 4px ;
                   width: 33px;
@@ -39,20 +36,16 @@
               }
 
               .contacts-title {
-                margin-top: 15px;
                 display: flex;
-
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
                 .contact-panel-container {
-                  float: left;
-                  margin-right: 180px;
-
                   a {
                     text-decoration: none;
-
                     .custom-contact-span {
                       color: $black2;
                       font-size: 16px;
-                      margin-left: -5px;
                       font-weight: bold;
                     }
 
@@ -68,26 +61,25 @@
                 }
 
                 .btn-container-contact {
-                  float: right;
                   display: flex;
-                  margin-top: -5px;
                   line-height: 1.8;
-                  text-align: center;
 
                   .btn-view-all-contact {
-                    width: 60px;
-                    height: 27px;
                     border: 1px solid $color2;
                     border-radius: 5px;
                     background: #f8f9fa;
-                    float: left;
+                    height: 27px;
                     margin-right: 10px;
-
                     button{
                       font-size: 13px;
+                      line-height: 1.6;
                       color: $color2;
                       background: none;
                       border: none;
+                      padding: 0;
+                      span{
+                        margin: 0;
+                      }
                     }
                   }
 
@@ -103,18 +95,22 @@
                   }
 
                   .btn-New-contact {
-                    float: right;
-                    width: 60px;
-                    height: 27px;
                     border: 1px solid $color2;
                     background: #f8f9fa;
                     border-radius: 5px;
+                    height: 27px;
+                    margin-right: 10px;
 
                     button {
                       font-size: 13px;
+                      line-height: 1.6;
                       color: $color2;
                       background: none;
                       border: none;
+                      padding: 0;
+                      span{
+                        margin: 0;
+                      }
                     }
                   }
 
@@ -130,24 +126,22 @@
                   }
                 }
               }
-
               .contacts-title:hover {
                 color: $color2;
               }
             }
 
             .account-caseRelated {
-              margin-top: 10px;
               display: flex;
+              margin-top: 10px;
               background: #f0f0f0;
-              border: 1px solid $gray4;
+              border: 1px solid #e1e2e4;
               border-radius: 5px;
 
               .custom-case-image {
-                float: left;
-                margin-right: 10px;
+                display: grid;
+                place-items: center;
                 padding: 5px;
-
                 .case-image {
                   padding: 4px ;
                   width: 33px;
@@ -156,12 +150,12 @@
               }
 
               .cases-title {
-                margin-top: 15px;
                 display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
 
                 .case-panel-container {
-                  float: left;
-                  margin-right: 200px;
 
                   a {
                     text-decoration: none;
@@ -169,7 +163,6 @@
                     .custom-case-span {
                       color: $black2;
                       font-size: 16px;
-                      margin-left: -5px;
                       font-weight: bold;
                     }
 
@@ -185,30 +178,26 @@
                 }
 
                 .btn-container-case {
-                  //float: right;
                   display: flex;
-                  margin-top: -5px;
-                  margin-left: 35px;
                   line-height: 1.8;
-                  text-align: center;
 
                   .btn-view-all-case {
-                    width: 60px;
-                    height: 27px;
-                    border: 1px solid $color2;
+                    border: 1px solid #6fa7f0;
                     border-radius: 5px;
                     background: #f8f9fa;
-                    float: right;
-                    //margin-right: 10px;
-
+                    height: 27px;
+                    margin-right: 10px;
                     button{
                       font-size: 13px;
-                      color: $color2;
+                      line-height: 1.6;
+                      color: #6fa7f0;
                       background: none;
                       border: none;
+                      padding: 0;
+                      span{
+                        margin: 0;
+                      }
                     }
-
-
                   }
 
                   .btn-view-all-case:hover {
@@ -278,7 +267,7 @@
           }
 
           .details-info-container {
-            height: 280px;
+            // height: 280px;
             overflow-x: hidden;
             .custom-caseowner-info {
               display: flex;

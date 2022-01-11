@@ -3,138 +3,210 @@
 
   .adminContainer {
     .custom-page-admin {
-      margin-top: -0.5px;
       display: flex;
-      flex-direction: column;
-      padding: 20px;
+      justify-content: center;
       width: 100%;
-      color: $black1;
-      font-family: $Roboto-font;
-
-      .page-header-container {
+      height: 100%;
+      .page-wraper{
+        margin-top: -0.5px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .header-title-container {
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        color: $black1;
+        font-family: $Roboto-font;
+        max-width: 1800px;
+        .page-header-container {
           display: flex;
           align-items: center;
+          justify-content: space-between;
 
-          .custom-icon {
-            color: $primary-color;
-            font-size: 38px;
-            margin-right: 10px;
-          }
-        }
+          .header-title-container {
+            display: flex;
+            align-items: center;
 
-        h1 {
-          color: $primary-color;
-          font-size: 26px;
-          font-weight: bold;
-          font-family: $primary-font;
-          margin-bottom: 0px;
-        }
-      }
-
-      .btnCreate {
-        border: none;
-        outline: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        color: $primary-color;
-        background-color: $secondary-color;
-
-        display: flex;
-        align-items: center;
-
-        font-size: 14px;
-        font-weight: bold;
-        font-family: $primary-font;
-
-        span {
-          margin: 0;
-          margin-right: 10px;
-        }
-
-        &:hover {
-          cursor: pointer;
-          color: $grey-color;
-          background: $lighter-grey-color
-        }
-      }
-
-      .customTable {
-        flex: 1;
-        overflow:auto;
-        margin-top:20px;
-
-        .scrollable-table {
-          width: 100%;
-          overflow: auto;
-          height: calc(100vh - 362px);
-        }
-
-        table {
-          width: 100%;
-          border-collapse: collapse;
-          box-shadow: 0 5px 10px #eff0f1;
-          background: $color7;
-          text-align: left;
-          //overflow: hidden;
-
-          thead {
-            width: 100%;
-            box-shadow: 0 5px 10px #eff0f1;
-          }
-
-          thead tr {
-            box-shadow: 0 1px 1px #ebeef1;
-          }
-
-          thead tr th {
-            padding:  0.5rem 1rem;
-            background-color: #b3d4df;
-            line-height: 2.3;
-            font-size: 13px;
-          }
-
-          tbody tr {
-            box-shadow: 0 1px 1px #ebeef1;
-          }
-
-          tbody tr:hover {
-            background-color: #dee2ff;
-            //color: white;
-            transition: 0.5s;
-          }
-
-          tbody tr th {
-            padding:  0.5rem 2rem;
-            background-color: #ced2f0;
-            line-height: 2.3;
-            font-size: 13px;
-          }
-
-          tbody tr td {
-            padding:  0.8rem 1rem;
-            line-height: 2;
-            font-size: 13px;
-
-            img {
-              display: inline-block;
-              width: 38px;
-              height: 38px;
-              border-radius: 50%;
-              object-fit: cover;
-
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
+            .custom-icon {
+              color: $primary-color;
+              font-size: 38px;
+              margin-right: 10px;
             }
           }
 
-          .email {
-            color: #00b4d8;
+          h1 {
+            color: $primary-color;
+            font-size: 26px;
+            font-weight: bold;
+            font-family: $primary-font;
+            margin-bottom: 0px;
+          }
+        }
+
+        .btnCreate {
+          border: none;
+          outline: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          color: $primary-color;
+          background-color: $secondary-color;
+
+          display: flex;
+          align-items: center;
+
+          font-size: 14px;
+          font-weight: bold;
+          font-family: $primary-font;
+
+          span {
+            margin: 0;
+            margin-right: 10px;
+          }
+
+          &:hover {
+            cursor: pointer;
+            color: $grey-color;
+            background: $lighter-grey-color
+          }
+        }
+
+        .customTable {
+          flex: 1;
+          overflow:auto;
+          margin-top:20px;
+
+          .scrollable-table {
+            width: 100%;
+            overflow: auto;
+            // height: calc(100vh - 362px);
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 5px 10px #eff0f1;
+            background: $color7;
+            text-align: left;
+            //overflow: hidden;
+
+            thead {
+              width: 100%;
+              box-shadow: 0 5px 10px #eff0f1;
+            }
+
+            thead tr {
+              box-shadow: 0 1px 1px #ebeef1;
+            }
+
+            thead tr th {
+              padding:  0.5rem 1rem;
+              background-color: #b3d4df;
+              line-height: 2.3;
+              font-size: 13px;
+            }
+
+            tbody tr {
+              box-shadow: 0 1px 1px #ebeef1;
+            }
+
+            tbody tr:hover {
+              background-color: #dee2ff;
+              //color: white;
+              transition: 0.5s;
+            }
+
+            tbody tr th {
+              padding:  0.5rem 2rem;
+              background-color: #ced2f0;
+              line-height: 2.3;
+              font-size: 13px;
+            }
+
+            tbody tr td {
+              padding:  0.8rem 1rem;
+              line-height: 2;
+              font-size: 13px;
+
+              img {
+                display: inline-block;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                object-fit: cover;
+
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+              }
+            }
+
+            .email {
+              color: #00b4d8;
+            }
+
+            .btnDetailClick {
+              text-align: center;
+              width: 80px;
+              border: 1px solid #00b4d8;
+              border-radius: 5px;
+
+              .btnDetail {
+                color: #00b4d8;
+                font-size: 11px;
+                border: none;
+                background: none;
+              }
+
+              .detail-btn {
+                font-size: 11px;
+                color: #00b4d8;
+                border: none;
+                background: none;
+              }
+            }
+
+            .btnDetailClick:hover {
+              background: #dee2ff;
+            }
+
+            .btnClick-CrudIcon {
+              display: flex;
+              .btnEditIcon {
+                float: left;
+                margin-right: 5px;
+                width: 30px;
+                height: 30px;
+                padding: 4px;
+                text-align: center;
+                background: #dee2ff;
+                border-radius: 50%;
+                .btnEdit {
+                  border: none;
+                  background: none;
+                }
+              }
+
+              .btnEditIcon:hover {
+                background: #ced4da;
+              }
+
+              .btnDeleteIcon {
+                float: right;
+                width: 30px;
+                height: 30px;
+                padding: 4px;
+                text-align: center;
+                background: #dee2ff;
+                border-radius: 50%;
+                .btnDelete {
+                  border: none;
+                  background: none;
+                }
+              }
+
+              .btnDeleteIcon:hover {
+                background: #ced4da;
+              }
+            }
           }
         }
       }

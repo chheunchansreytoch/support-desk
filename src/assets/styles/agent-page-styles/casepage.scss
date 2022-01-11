@@ -1,27 +1,27 @@
 .tabDefaultContentContainer {
-  width: 100%;
   .defaultContent {
+    width: 100%;
     .page-header {
-      background-color: #f8f9fa;
+      // background-color: #f8f9fa;
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       .custom-case-list {
         display: flex;
         height: 60px;
         background-color: #f8f9fa;
         font-family: $Roboto-font;
+        box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
 
         .case-list-container {
           display: flex;
           background-color: #eeeff0;
           height: 60px;
-          
           .custom-case-image {
-            float: left;
-            margin-right: 23px;
+            display: grid;
+            place-items: center;
             padding: 5px;
-            //height: 40px;
             .case-image {
               position: absolute;
               padding: 4px ;

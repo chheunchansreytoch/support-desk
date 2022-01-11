@@ -1,6 +1,4 @@
 .tabDefaultContentContainer {
-  background: #faf9f8;
-  height: 100vh;
   .defaultContent {
     .status-sort-case{
       margin-top: 10px;
@@ -11,26 +9,26 @@
     }
 
     .list-Container1 {
-      padding: 15px;
-      height: 445px;
+      // padding: 15px;
+      // height: 445px;
       overflow: scroll;
       //margin: 0px 10px;
       table {
         width: 100%;
         background: $color7;
         border-collapse: collapse;
-        box-shadow: 0 5px 10px #eff0f1;
+        // box-shadow: 0 5px 10px #eff0f1;
         background: $color7;
         text-align: left;
 
         thead {
           width: 100%;
-          box-shadow: 0 5px 10px #eff0f1;
+          // box-shadow: 0 5px 10px #eff0f1;
         }
 
-        thead tr {
-          box-shadow: 0 1px 1px #ebeef1;
-        }
+        // thead tr {
+        //   box-shadow: 0 1px 1px #ebeef1;
+        // }
 
         thead tr th {
           padding:  0.5rem 1rem;

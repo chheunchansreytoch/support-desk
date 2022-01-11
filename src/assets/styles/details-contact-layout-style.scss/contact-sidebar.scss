@@ -1,18 +1,22 @@
 .detailContactContainer {
   width: 100%;
+  height: 100%;
   display: flex;
-  background: rgb(196, 196, 247);
-  height: 565px;
-  overflow-x: hidden;
+  // background: rgb(196, 196, 247);custom-case-list
+  // height: 565px;
+  // overflow-x: hidden;
+  overflow: auto;
+  padding: 10px;
+  grid-gap: 10px;
   .contactSidebarContainer {
     left: 0;
     width: 30%;
-    padding: 10px;
+    // padding: 10px;
 
     .customContactSidebar {
       width: 100%;
-      height: 472px;
-      float: left;
+      height: 100%;
+      // float: left;
       color: $black1;
       background: #f8f9fa;
       box-shadow: 0 5px 15px #d4d7da;
@@ -20,10 +24,13 @@
       font-family: $Roboto-font;
 
       .CaseSidebarHeaderContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
         .customCaseSidebarHeader {
           display: flex;
           justify-content: space-between;
-          margin-top: 20px;
 
           .spanNumColumn {
             margin-top: 5px;
@@ -124,8 +131,8 @@
         }
 
         .customListItems {
-          //margin-top: 10px;
-          max-height: 310px;
+          flex: 1;
+
           overflow-x: hidden;
 
           ul {

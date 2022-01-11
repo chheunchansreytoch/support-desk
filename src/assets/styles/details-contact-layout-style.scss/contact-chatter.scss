@@ -4,16 +4,27 @@
       margin-top: 10px;
 
       .contactChatterContainer {
-        width: 50%;
+        min-width: 50%;
         padding-left: 5px;
 
         .customContactChatter {
+          display: flex;
+          flex-direction: column;
           background: #f8f9fa;
           border-radius: 5px;
-
+          height: 100%;
+          .mat-tab-group{
+            height: 100%;
+          }
+          .mat-tab-body-wrapper{
+            height: 100%;
+          }
           .activity-panel-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             border: 1px solid #dadbdc;
-            margin: 10px;
+            padding: 10px;
             border-radius: 5px;
             background: rgb(253, 253, 253);
 
@@ -48,9 +59,11 @@
             }
 
             .tab-layout-container {
-              height: 250px;
+              // height: 250px;
               // //max-height: 100%;
               // //max-height: 90%;
+              // display: flex;
+              flex: 1;
               overflow-x: hidden;
 
               .custom-newTask-layout {
@@ -853,7 +866,8 @@
               }
 
               .custom-Email-layout {
-                height: 245px;
+                // height: 245px;
+                height: 100%;
                 overflow-x: hidden;
                 .custom-email-container {
                   padding: 10px;

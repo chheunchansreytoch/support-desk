@@ -97,6 +97,16 @@ export class CreateCaseDialogComponent implements OnInit {
 
       this.registrationForm.enable();
       this.registrationForm.reset();
+
+      this.dialog.open(AlertInformationDialogComponent, {
+        width: '500px',
+        data: {
+          title: this.data ? 'Update Case' : 'Create Case',
+          type: 'success',
+          content: this.data ? `Case is updated.` : `Case is created.`
+        } as IDialogData,
+        disableClose: true,
+      });
     }
     this.getDepartmentIdFromFormData = formData.agentDepartment;
     console.log(this.getDepartmentIdFromFormData);

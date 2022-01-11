@@ -1,9 +1,10 @@
 .tabDefaultContentContainer {
   .defaultContent {
     .page-header {
-      background-color: #f8f9fa;
+      // background-color: #f8f9fa;
       display: flex;
       flex-direction: column;
+      width: 100%;
 
       .custom-account-list {
         display: flex;
