@@ -3,6 +3,7 @@ import { DialogsService } from 'src/app/services/dialogs.service';
 import { ContactNewEvents } from 'src/app/typeScripts/contact_newevents';
 import { AccountNewEvents } from 'src/app/typeScripts/account_newevent';
 import { OwnerContactNewEvents } from 'src/app/typeScripts/owner-newEvent';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-chatter-page',
@@ -30,6 +31,7 @@ export class ContactChatterPageComponent implements OnInit {
 
 
   currentDate = new Date();
+  editorForm!: FormGroup;
 
   menuLists = ['Post', 'Poll','Question'];
 
@@ -38,7 +40,40 @@ export class ContactChatterPageComponent implements OnInit {
   choices = [''];
   optionSubjects = ['Call', ' Email', 'Send Letter', 'Send Quote', 'Others'];
 
-  constructor( public dialogService: DialogsService) {}
+  constructor(
+    public dialogService: DialogsService
+  )
+  {}
+
+  ngOnInit(): void {
+    this.selectedList = this.menuLists[0];
+    this.selectedActivityList = this.activityLists[0];
+
+    this.getDate();
+
+    this.formEmailSubmit();
+  }
+
+  formEmailSubmit() {
+    this.editorForm = new FormGroup ({
+      'editor': new FormControl(null)
+    })
+  }
+
+  onSubmit() {
+    console.log(this.editorForm.get('editor')?.value);
+  }
+
+  onSendTo() {
+    if(!this.editorForm) {
+      console.log(this.onSubmit());
+    }
+    else {
+      console.log('null');
+
+    }
+    //this.dialogService.openSendToDialog();
+  }
 
   optionContacts: ContactNewEvents [] = [
     {image: this.contactImageSrc, name: 'Park Haram'},
@@ -70,10 +105,6 @@ export class ContactChatterPageComponent implements OnInit {
 
   openActivityList(activityList:any) {
     this.selectedActivityList = activityList;
-  }
-
-  onSendTo() {
-    this.dialogService.openSendToDialog();
   }
 
   onClickAdd(addnewchoice) {
@@ -120,12 +151,5 @@ export class ContactChatterPageComponent implements OnInit {
   onEndTime(e) {
     this.endTime = e.target.value;
     console.log(this.endTime);
-  }
-
-  ngOnInit(): void {
-    this.selectedList = this.menuLists[0];
-    this.selectedActivityList = this.activityLists[0];
-
-    this.getDate();
   }
 }

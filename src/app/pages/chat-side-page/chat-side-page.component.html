@@ -16,17 +16,19 @@
           <div class="custom-post-layout">
             <ng-container *ngIf="selectedList === 'Post'">
               <div class="post-layout">
-                  <quill-editor></quill-editor>
-              </div>
+                <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
+                  <quill-editor formControlName="editor" name="editor"></quill-editor>
+                </form>
 
-              <div class="custom-sendTo-shareBtn">
-                <div class="sendTo">
-                  <p><span>To</span> this case</p>
-                  <button class="send-btn" mat-button (click)="onSendTo()"><i class="fi-rr-clip"></i></button>
-                </div>
+                <div class="custom-sendTo-shareBtn">
+                  <div class="sendTo">
+                    <p><span>To</span> this case</p>
+                    <button class="send-btn" mat-button (click)="onSendTo()"><i class="fi-rr-clip"></i></button>
+                  </div>
 
-                <div class="custom-btn-share">
-                  <button type="button" class="share-btn">Share</button>
+                  <div class="custom-btn-share">
+                    <button type="button" class="share-btn">Share</button>
+                  </div>
                 </div>
               </div>
             </ng-container>
