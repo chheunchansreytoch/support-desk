@@ -2,7 +2,7 @@
   background: #f8f9fa;
 
   .adminContainer {
-    .custom-agents {
+    .custom-page-admin {
       margin-top: -0.5px;
       display: flex;
       flex-direction: column;
@@ -136,71 +136,6 @@
           .email {
             color: #00b4d8;
           }
-
-          .btnDetailClick {
-            text-align: center;
-            width: 80px;
-            border: 1px solid #00b4d8;
-            border-radius: 5px;
-
-            .btnDetail {
-              color: #00b4d8;
-              font-size: 11px;
-              border: none;
-              background: none;
-            }
-
-            .detail-btn {
-              font-size: 11px;
-              color: #00b4d8;
-              border: none;
-              background: none;
-            }
-          }
-
-          .btnDetailClick:hover {
-            background: #dee2ff;
-          }
-
-          .btnClick-CrudIcon {
-            display: flex;
-            .btnEditIcon {
-              float: left;
-              margin-right: 5px;
-              width: 30px;
-              height: 30px;
-              padding: 4px;
-              text-align: center;
-              background: #dee2ff;
-              border-radius: 50%;
-              .btnEdit {
-                border: none;
-                background: none;
-              }
-            }
-
-            .btnEditIcon:hover {
-              background: #ced4da;
-            }
-
-            .btnDeleteIcon {
-              float: right;
-              width: 30px;
-              height: 30px;
-              padding: 4px;
-              text-align: center;
-              background: #dee2ff;
-              border-radius: 50%;
-              .btnDelete {
-                border: none;
-                background: none;
-              }
-            }
-
-            .btnDeleteIcon:hover {
-              background: #ced4da;
-            }
-          }
         }
       }
     }
@@ -208,22 +143,16 @@
 }
 
 
-button {
-  border: none;
-  outline: none;
-  background: none;
-}
+// button {
+//   .fi-rr-trash {
+//     font-size: 15px;
+//   }
 
-button {
-  .fi-rr-trash {
-    font-size: 15px;
-  }
+//   span {
+//     margin-left: 10px;
+//   }
 
-  span {
-    margin-left: 10px;
-  }
-
-  .fi-rr-pencil {
-    font-size: 15px;
-  }
-}
+//   .fi-rr-pencil {
+//     font-size: 15px;
+//   }
+// }

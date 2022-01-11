@@ -28,8 +28,6 @@ export class ContactPageComponent implements OnInit {
   }
 
   checkIfRouteIsActivated(item: string) {
-    console.log(this.currentRoute)
-    console.log(item)
     return this.currentRoute.includes(item);
   }
 
@@ -41,7 +39,7 @@ export class ContactPageComponent implements OnInit {
 
   onSelectedOption(event: any) {
     this.itemSelected(event);
-    
+
     this.selectedItems = event.target.value;
     const value = this.selectedItems;
 

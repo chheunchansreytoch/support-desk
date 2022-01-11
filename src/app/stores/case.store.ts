@@ -49,25 +49,6 @@ export class CaseStore {
     return agent != null ? true : false;
   }
 
-  // @action
-  // login(firstname: string, lastname: string, email: string, password: string) {
-  //   try {
-  //     this.httpClient.post<ICase>(
-  //       this.endpoint + '/cases/login',
-  //       JSON.stringify({ firstname, lastname, email, password }), this.httpHeader)
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.processError)
-  //     ).subscribe((result) => {
-  //       localStorage.setItem("agent_auth", JSON.stringify(result));
-  //       this.router.navigate(['/cases']);
-  //       console.log("correct");
-  //     });
-  //   } catch(error) {
-  //     console.log('login errer ln.52: ', error)
-  //   }
-  // }
-
   @action
   getCases(): Observable<ICase> {
     return this.httpClient.get<ICase>(this.endpoint + '/cases', this.httpHeaderWithToken)
@@ -97,34 +78,17 @@ export class CaseStore {
   }
 
   @action
-  async addCase_FormData(data: FormData): Promise<ICase> {
-    this.isLoading = true;
-    const result = await this.httpClient.post<ICase>(this.endpoint + '/cases/create', data, this.httpHeader).toPromise();
-    this.isLoading = false;
-    return result;
-  }
+  async updateCase(caseData: any) {
+    console.log(caseData.id);
 
-  @action
-  async updateCaseFormData(caseId: string, data: FormData): Promise<ICase> {
-    this.isLoading = true;
-    const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + caseId, data, this.httpHeader).toPromise();
-    this.isLoading = false;
-    return result;
-  }
+    try {
+      const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + caseData.id, JSON.stringify(caseData), this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error)
+    }
 
-
-  // @action
-  // async updateCase(id, data){
-  //  const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + id, this.httpHeader).toPromise();
-  //  return result;
-  // }
-
-  @action
-  async updateCase_FormData(caseId: string, data: FormData): Promise<ICase> {
-    this.isLoading = true;
-    const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + caseId, data, this.httpHeader).toPromise();
-    this.isLoading = false;
-    return result;
+    return;
   }
 
   @action

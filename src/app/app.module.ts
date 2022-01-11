@@ -106,6 +106,7 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
 import { TableSkeletonLoadingComponent } from './components/table-skeleton-loading/table-skeleton-loading.component';
 import { SkeletonModule } from 'primeng/skeleton';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CaseUpdateDialogComponent } from './components/dialogs/case-update-dialog/case-update-dialog.component';
 
 export function playerFactory() {
   return player;
@@ -189,7 +190,8 @@ export function playerFactory() {
     AlertInformationDialogComponent,
     ConfirmationDialogComponent,
     NotFoundPageComponent,
-    TableSkeletonLoadingComponent
+    TableSkeletonLoadingComponent,
+    CaseUpdateDialogComponent
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [

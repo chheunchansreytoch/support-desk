@@ -8,4 +8,13 @@ export class ICustomer {
   imageFilePath: string | undefined;
   createdDate: string | undefined;
   updatedDate: string | undefined;
+  customerDepartment!: {
+    id?: string;
+    name: string | undefined;
+  };
+
+  customerCompany!: {
+    id?: string;
+    name: string | undefined;
+  };
 }

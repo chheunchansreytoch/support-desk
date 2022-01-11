@@ -1,4 +1,4 @@
- <div class="custom-agents">
+ <div class="custom-page-admin">
    <div class="page-header-container">
      <div class="header-title-container">
        <span class="material-icons custom-icon">group</span>
@@ -95,12 +95,6 @@
              <td>{{item.gender}}</td>
              <td class="email">{{item.email}}</td>
              <td>{{item?.agentDepartment?.name}}</td>
-             <!-- <td>
-               {{item?.agentInfo}}
-               <div class="btnDetailClick">
-                 <button class="detail-btn" mat-button (click)="onMoreDetailDialog()">More Details</button>
-               </div>
-             </td> -->
              <td>
                <ng-container *ngIf="item.imageDownloadUrl">
                  <img class="image-preview" [src]="checkLocalStoragePath(item.imageDownloadUrl)">

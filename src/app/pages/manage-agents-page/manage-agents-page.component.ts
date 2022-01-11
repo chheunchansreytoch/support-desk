@@ -29,9 +29,6 @@ export class ManageAgentsPageComponent implements OnInit {
 
   fetchAgents() {
     return this.paginationStore.getAgentsWithPagination(10, 0, '');
-    // return this.agentStore.getAgents().subscribe((res: any) => {
-    //   this.arrAgents = res;
-    // });
   }
 
   onCreate(item: any) {

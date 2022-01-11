@@ -16,6 +16,8 @@ import { DialogUpdateComponent } from 'src/app/components/dialogs/crud-manageCas
 import { IDialogData } from 'src/app/models/IDialog.model';
 import { AlertInformationDialogComponent } from 'src/app/components/alert-information-dialog/alert-information-dialog.component';
 import { PaginationStore } from 'src/app/stores/pagination.store';
+import { CreateCaseDialogComponent } from 'src/app/components/dialogs/create-case-dialog/create-case-dialog.component';
+import { ConfirmationDialogComponent } from 'src/app/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-manage-cases-page',
@@ -36,7 +38,6 @@ export class ManageCasesPageComponent implements OnInit {
   arrManagers: Array<any> = [];
   creatingCaseForm: any;
 
-  //id= '6d5d9e39-3fd2-4994-8588-f2c151466049';
   getDepartmentIdFromFormData= '';
 
   constructor(
@@ -66,6 +67,31 @@ export class ManageCasesPageComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+    this.fetchCases();
+    this.fetchStatuses();
+    this.fetchPriorities();
+    this.fetchManagers();
+    this.fetchAgentsDepartment();
+    this.fetchAgentsByDepartment();
+
+    const obj = document.getElementById("animatedNumber0");
+    this.animateValue(obj, 0, 260, 2000);
+  }
+
+  animateValue(obj, start, end, duration) {
+    let startTimestamp = null || 0;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
 
   fetchCases() {
     this.caseStore.getCases().subscribe((res: any) => {
@@ -80,10 +106,9 @@ export class ManageCasesPageComponent implements OnInit {
   }
 
   fetchAgentsByDepartment() {
-    console.log("jenh ey ot ng?", this.agentStore.getAgentsByDepartment(this.getDepartmentIdFromFormData).then((res: any) => {
+    this.agentStore.getAgentsByDepartment(this.getDepartmentIdFromFormData).then((res: any) => {
       this.arrAgentsByDepartment = res;
-    }));
-
+    });
   }
 
   fetchStatuses() {
@@ -141,6 +166,65 @@ export class ManageCasesPageComponent implements OnInit {
     return;
   }
 
+  onCreate(item: any) {
+    const dialogRef = this.dialog.open(CreateCaseDialogComponent, {
+      width: '600px',
+      height: '96vh',
+      data: item
+
+    });
+
+    dialogRef.updatePosition({ top: '2vh', right: '2vh' });
+    dialogRef.afterClosed().subscribe(() => {
+      this.fetchCases();
+    })
+  }
+
+  onMoreDetailDialog() {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '500px',
+      data: {
+        title: 'Delete Case',
+        type: 'question',
+        content: 'Are you sure that you want to delete this selected case?'
+      } as IDialogData,
+      disableClose: true,
+    });
+  }
+
+  onSelectedAgent(caseId) {
+    if(caseId) {
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+        width: '500px',
+        data: {
+          title: 'Delete Case',
+          type: 'question',
+          content: 'Are you sure that you want to delete this selected case?'
+        } as IDialogData,
+        disableClose: true,
+      });
+
+      dialogRef.afterClosed().subscribe(async (result: any) => {
+        if(!result || result === 'no') return;
+        await this.caseStore.deleteCase(caseId);
+
+        this.dialog.open(AlertInformationDialogComponent, {
+          width: '500px',
+          data: {
+            title: 'Delete Case',
+            type: 'success',
+            content: `Case is deleted.`
+          } as IDialogData,
+          disableClose: true,
+        });
+
+        //this.paginationStore.getAgentsWithPagination(10, 0, '');
+      });
+    }
+    return;
+  }
+
+
   //createCasetoogleTag
   showCasePopup:boolean=false
   createCasetoogleTag() {
@@ -194,19 +278,19 @@ export class ManageCasesPageComponent implements OnInit {
     return;
   }
 
-  onClickUpdate(caseId) {
-    const dialogRef = this.dialog.open(DialogUpdateComponent, {
-      data: caseId,
-      width: '600px',
-      height: '96vh',
-      role: 'dialog',
-    });
+  // onClickUpdate(caseId) {
+  //   const dialogRef = this.dialog.open(DialogUpdateComponent, {
+  //     data: caseId,
+  //     width: '600px',
+  //     height: '96vh',
+  //     role: 'dialog',
+  //   });
 
-    dialogRef.updatePosition({top: '2vh', right: '2vh'});
-    dialogRef.afterClosed().subscribe(() => {
-      this.fetchCases();
-    })
-  }
+  //   dialogRef.updatePosition({top: '2vh', right: '2vh'});
+  //   dialogRef.afterClosed().subscribe(() => {
+  //     this.fetchCases();
+  //   })
+  // }
 
   // onClickUpdate(caseId) {
   //   if(caseId) {
@@ -222,6 +306,13 @@ export class ManageCasesPageComponent implements OnInit {
   //   }
   //   return;
   //}
+
+  convertUTCtoDate(UTC: string) {
+    const date = new Date(UTC);
+    //const strDate = date.toLocaleDateString();
+    const strDate = date.toLocaleDateString();
+    return strDate;
+  }
 
 
 // *** create select departments ***
@@ -308,14 +399,5 @@ export class ManageCasesPageComponent implements OnInit {
     else {
       this.Checked=false;
     }
-  }
-
-  ngOnInit(): void {
-    this.fetchCases();
-    this.fetchStatuses();
-    this.fetchPriorities();
-    this.fetchManagers();
-    this.fetchAgentsDepartment();
-    this.fetchAgentsByDepartment();
   }
 }

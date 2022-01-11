@@ -14,13 +14,11 @@ export class AgentStore {
   @observable public agent: IAgent | undefined;
   @observable public agentData = null;
   @observable public selectedAgent;
-  //@observable public arrAgentsByDepartment: Array<any> = [];
 
   endpoint = 'http://localhost:3000/api';
   httpHeader = {
     headers: new HttpHeaders({
       'enctype': 'multipart/form-data',
-      // 'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
     })
@@ -29,7 +27,6 @@ export class AgentStore {
   httpHeaderWithToken = {
     headers: new HttpHeaders({
       'enctype': 'multipart/form-data',
-      // 'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
       'Authorization': 'Bearer ' + this.agentJSONMapping()?.token
@@ -94,49 +91,6 @@ export class AgentStore {
     )
   }
 
-  // @action
-  // async getAgentsByDepartment(departmentId: string) {
-  //   try {
-  //     const result = await this.httpClient.get<IAgent>(this.endpoint + '/tableOrder/orderId' + departmentId, this.httpHeader).toPromise();
-  //     return result;
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  //   return;
-  // }
-
-
-  // getAgentsByDepartment(): void | Observable<IAgent> {
-  //   const department = JSON.parse(localStorage.getItem('agent_auth') || '{}');
-  //   if(!department) return
-  //   return this.httpClient.get<IAgent>(this.endpoint + '/agents/:agentDepartmentId/' + department.id, this.httpHeaderWithToken)
-
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
-  // }
-
-
-  // @action
-  // getAgentsByDepartment(departmentId): Observable<IAgent> {
-  //   return this.httpClient.get<IAgent>(this.endpoint + '/agents/:agentDepartmentId/' + departmentId, this.httpHeader)
-  // }
-
-  // @action
-  // async getAgentsByDepartment(departmentId) {
-  //   //const departmentId = JSON.parse(localStorage.getItem('agent_auth') || '{}');
-  //   try {
-  //     const result = await this.httpClient.get<IAgent>(this.endpoint + '/agents/:agentDepartmentId/' + departmentId, this.httpHeader).subscribe((data: any) => {
-  //       this.arrAgentsByDepartment = data;
-  //     });
-  //     return result;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   return;
-  // }
-
   @action
   async getAgentsByDepartment(agentDepartmentId: string) {
     try {
@@ -148,22 +102,6 @@ export class AgentStore {
     }
    return;
   }
-
-
-  // const auth = localStorage.getItem('agent_auth');
-  // if (auth) {
-  //   const abc = JSON.parse(auth);
-  //   console.log(abc);
-  // }
-
-  // @action
-  // getAgent(id, data): Observable<IAgent> {
-  //   return this.httpClient.get<IAgent>(this.endpoint + '/agents/' + id, this.httpHeader)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
-  // }
 
   @action
   async addAgent(data: IAgent): Promise<IAgent> {
@@ -178,33 +116,6 @@ export class AgentStore {
     this.isLoading = false;
     return result;
   }
-
-  // @action
-  // getAgentsByDepartment(): Observable<IAgent> {
-  //   this.isLoading = true;
-  //   return this.httpClient.get<IAgent>(this.endpoint + '/agents/', this.httpHeaderWithToken)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
-  // }
-
-  // @action
-  // getAgentsByDepartment(): void | Observable<IAgent> {
-  //   const agentData = JSON.parse(localStorage.getItem('agent_auth') || '{}');
-  //   if(!agentData) return
-  //   return this.httpClient.get<IAgent>(this.endpoint + '/agents/' + agentData.id, this.httpHeaderWithToken)
-
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.processError)
-  //   )
-  // }
-
-  // @action
-  // getAgentsByDepartment(): Observable<IAgent> {
-  //   return this.httpClient.post<IAgent>()
-  // }
 
   @action
   async updateAgent(agentData) {

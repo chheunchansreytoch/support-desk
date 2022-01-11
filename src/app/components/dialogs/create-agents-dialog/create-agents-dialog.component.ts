@@ -64,6 +64,7 @@ export class CreateAgentsDialogComponent implements OnInit {
     if (this.registrationForm.valid) {
       this.registrationForm.disable();
       const { confirmPassword, department, email, gender, password, username } = formData;
+
       if(!this.data) {
         const fd = new FormData();
 
@@ -90,6 +91,7 @@ export class CreateAgentsDialogComponent implements OnInit {
 
         await this.agentStore.updateAgent_FormData(this.data?.id, fd);
       }
+
       this.registrationForm.enable();
       this.registrationForm.reset();
 

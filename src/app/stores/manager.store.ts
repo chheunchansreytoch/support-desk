@@ -69,7 +69,7 @@ export class ManagerStore {
         console.log("correct");
       });
     } catch(error) {
-      console.log('login errer ln.52: ', error)
+      console.log('login error ln.52: ', error)
     }
   }
 

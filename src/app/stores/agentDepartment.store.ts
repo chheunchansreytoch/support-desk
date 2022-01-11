@@ -17,7 +17,8 @@ export class AgentDepartmentStore {
   endpoint = 'http://localhost:3000/api';
   httpHeader = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      'enctype': 'multipart/form-data',
+      // 'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
     })
@@ -25,10 +26,11 @@ export class AgentDepartmentStore {
 
   httpHeaderWithToken = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
+      'enctype': 'multipart/form-data',
+      // 'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-      'Authorization': 'Bearer ' + this.agentDepartmentJSONMapping()?.token
+      //'Authorization': 'Bearer ' + this.agentDepartmentJSONMapping()?.token
     })
   };
 
@@ -43,31 +45,6 @@ export class AgentDepartmentStore {
     const result = localStorage.getItem("agentDepartment_auth") ? JSON.parse(localStorage.getItem("agentDepartment_auth") || '{}') : undefined;
     return result;
   }
-
-  @computed
-  get isLoggedIn(): boolean {
-    const agent = localStorage.getItem('agentDepartment_auth');
-    return agent != null ? true : false;
-  }
-
-  // @action
-  // login(username: string, email: string, password: string) {
-  //   try {
-  //     this.httpClient.post<IAgent>(
-  //       this.endpoint + '/agents/login',
-  //       JSON.stringify({ username, email, password }), this.httpHeader)
-  //     .pipe(
-  //       retry(1),
-  //       catchError(this.processError)
-  //     ).subscribe((result) => {
-  //       localStorage.setItem("agent_auth", JSON.stringify(result));
-  //       this.router.navigate(['/cases']);
-  //       console.log("correct");
-  //     });
-  //   } catch(error) {
-  //     console.log('login errer ln.52: ', error)
-  //   }
-  // }
 
   @action
   getAgentDepartments(): Observable<IAgentDepartment> {

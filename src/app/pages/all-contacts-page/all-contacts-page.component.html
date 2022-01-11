@@ -11,17 +11,17 @@
           <th>N.</th>
           <th><input type="checkbox" (change)="checkAll($event)"></th>
           <th>Name</th>
+          <th>Department</th>
           <th>Account Name</th>
-          <th>Title</th>
           <th>Phone</th>
           <th>Email</th>
-          <th>Contact Owner</th>
+          <!-- <th>Contact Owner</th> -->
           <th>Option</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of this.rows">
-          <td>{{item.n}}</td>
+        <tr *ngFor="let item of arrCustomers; let i = index">
+          <td>{{i+1}}</td>
           <td>
             <input type="checkbox" [checked]="checks">
             {{item.all}}
@@ -29,27 +29,29 @@
           <td>
             <div class='edit_hover_class'>
               <a class="name-href" href="./contacts/contact-details">
-                {{item.name}}
+                {{item.username}}
               </a>
               <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
+
+          <td>
+            <div class='edit_hover_class'>
+              <a class="title-href" href="#">
+                {{item?.customerDepartment?.name}}
+              </a>
+              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
+            </div>
+          </td>
+
           <td>
             <div class='edit_hover_class'>
               <a class="acc-num-href" href="#">
-                {{item.accountNumber}}
+                {{item.customerCompany?.name}}
               </a>
               <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
 
-          </td>
-          <td>
-            <div class='edit_hover_class'>
-              <a class="title-href" href="#">
-                {{item.title}}
-              </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-            </div>
           </td>
           <td>
             <div class='edit_hover_class'>
@@ -67,7 +69,7 @@
               <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
             </div>
           </td>
-          <td>{{item.contactOwnerAlias}}</td>
+          <!-- <td>{{item.contactOwnerAlias}}</td> -->
           <td>
             <div class="custom-option-contact">
               <div class="edit-icon-container">
