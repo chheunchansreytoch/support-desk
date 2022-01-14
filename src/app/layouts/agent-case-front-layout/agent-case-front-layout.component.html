@@ -1,0 +1,17 @@
+<div class="customAgentCasePage">
+  <div class="wraper">
+    <div class="caseSideBar">
+      <app-case-sidebar-page></app-case-sidebar-page>
+    </div>
+
+    <div class="agentCaseContainer">
+      <div class="caseDetail">
+        <router-outlet></router-outlet>
+      </div>
+
+      <div class="caseChatSide">
+        <router-outlet name='child2'></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

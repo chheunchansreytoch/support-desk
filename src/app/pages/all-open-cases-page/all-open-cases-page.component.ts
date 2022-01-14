@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { CaseStore } from 'src/app/stores/case.store';
 
 @Component({
   selector: 'app-all-open-cases-page',
@@ -9,48 +11,32 @@ export class AllOpenCasesPageComponent implements OnInit {
 
   selectedOption = '3';
 
-  //create data table
-  rows = [
-    {
-      n: "1",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: "",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-    {
-      n: "2",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  arrOpenCases: Array<any> = [];
+  fontStyleControl = new FormControl();
+  fontStyle?: string;
 
-    {
-      n: "3",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-  ]
+  constructor(
+    private caseStore: CaseStore,
+  ) { }
 
-  // selectedOption = '3';
+  ngOnInit(): void {
+    this.fetchOpenCases();
+  }
+
+  fetchOpenCases() {
+    this.caseStore.getOpenCases().subscribe((res: any) => {
+      this.arrOpenCases = res;
+      console.log(res);
+    })
+  }
+
+  onCreate(item) {
+
+  }
+
+  onSelectedAgent(item) {
+
+  }
 
 //select checkbox
   checks=false;
@@ -62,10 +48,4 @@ export class AllOpenCasesPageComponent implements OnInit {
       this.checks=false;
     }
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

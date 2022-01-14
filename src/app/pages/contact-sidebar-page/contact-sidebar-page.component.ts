@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerStore } from 'src/app/stores/customer.store';
 
 @Component({
   selector: 'app-contact-sidebar-page',
@@ -7,25 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactSidebarPageComponent implements OnInit {
 
-  values = [
-    {n: '1', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '2', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '3', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '4', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '5', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '6', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '7', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '8', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '9', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '10', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '11', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '12', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-    {n: '13', name: 'Park Haram', accountNumber: 'SM Entertainment', title: 'Artist', phone: '086 262 408'},
-  ]
+  arrCustomers: Array<any> = [];
 
-  constructor() { }
+  constructor(
+    private customerStore: CustomerStore,
+  ) { }
 
   ngOnInit(): void {
+    this.fetchCustomers();
+  }
+
+  fetchCustomers() {
+    this.customerStore.getCustomers().subscribe((res: any) => {
+      this.arrCustomers = res;
+    })
   }
 
 }

@@ -37,6 +37,11 @@ import { AccountDetailsPageComponent } from './pages/account-details-page/accoun
 import { AccountChatterPageComponent } from './pages/account-chatter-page/account-chatter-page.component';
 import { ManagerLoginPageComponent } from './pages/manager-login-page/manager-login-page.component';
 import { AgentLoginPageComponent } from './pages/agent-login-page/agent-login-page.component';
+import { ManageCustomersPageComponent } from './pages/manage-customers-page/manage-customers-page.component';
+import { ManageManagersPageComponent } from './pages/manage-managers-page/manage-managers-page.component';
+import { ManagerReportPageComponent } from './pages/manager-report-page/manager-report-page.component';
+import { DefaultReportPagesComponent } from './pages/default-report-pages/default-report-pages.component';
+import { AgentCaseFrontLayoutComponent } from './layouts/agent-case-front-layout/agent-case-front-layout.component';
 
 
 const routes: Routes = [
@@ -59,6 +64,9 @@ const routes: Routes = [
       { path: 'admin-homepage', component: AdminPageComponent},
       { path: 'admin-manage-agents', component: ManageAgentsPageComponent},
       { path: 'admin-manage-cases', component: ManageCasesPageComponent},
+      { path: 'admin-manage-customers', component: ManageCustomersPageComponent},
+      { path: 'admin-manage-managers', component: ManageManagersPageComponent},
+      { path: 'admin-reports', component: ManagerReportPageComponent},
     ]
   },
 
@@ -78,26 +86,33 @@ const routes: Routes = [
               { path: 'agent-all-closed-cases', component: AllClosedCasesPageComponent },
               {
                 path: 'case-details',
-                component: DetailsCaseFrontLayoutComponent,
+                component: AgentCaseFrontLayoutComponent,
                 children: [
-                  {
-                    path: '',
-                    component: CaseSidebarPageComponent,
-                    outlet: 'child1'
-                  },
-
-                  {
-                    path: '',
-                    component: CaseDetailsPageComponent,
-                    outlet: 'child2'
-                  },
-
-                  {
-                    path: '',
-                    component: ChatSidePageComponent,
-                    outlet: 'child3'
-                  },
+                  { path: ':id', component: CaseDetailsPageComponent},
+                  { path: ':id', component: ChatSidePageComponent, outlet:'child2'}
                 ]
+
+
+                // children: [
+                //   {
+                //     path: ':key',
+                //     component: CaseSidebarPageComponent,
+                //     //outlet: 'child1'
+                //     children: [
+                //       {
+                //         path: '',
+                //         component: CaseDetailsPageComponent,
+                //         // outlet: 'child1'
+                //       },
+
+                //       // {
+                //       //   path: '',
+                //       //   component: ChatSidePageComponent,
+                //       //   outlet: 'child2'
+                //       // },
+                //     ]
+                //   },
+                // ]
               },
               { path: 'agent-all-open-cases', component: AllOpenCasesPageComponent},
               { path: 'agent-my-cases', component: MyCasesPageComponent},
@@ -187,7 +202,14 @@ const routes: Routes = [
 
           {
             path: 'reports',
-            component: ReportPageComponent
+            component: ReportPageComponent,
+            children: [
+              { path: '', redirectTo: 'agent-default-report', pathMatch: 'full' },
+              { path: 'agent-default-report', component: DefaultReportPagesComponent},
+              // { path: 'agent-daily-report', component: DetailsAccountLayoutComponent},
+              // { path: 'agent-monthly-report', component: MyAccountsPageComponent},
+              // { path: 'agent-yearly-report', component: RecentlyViewedAccountsPageComponent},
+            ]
           },
         ]
       }

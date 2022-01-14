@@ -10,6 +10,7 @@ import { DialogsService } from 'src/app/services/dialogs.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AgentDeleteCaseDialogComponent } from 'src/app/components/dialogs/agent-delete-case-dialog/agent-delete-case-dialog.component';
 import { AgentUpdateDialogComponent } from 'src/app/components/dialogs/agent-update-dialog/agent-update-dialog.component';
+import { ArrayDataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-all-closed-cases-page',
@@ -20,7 +21,8 @@ export class AllClosedCasesPageComponent implements OnInit {
 
   currentRoute: string = '';
   selectedOption = '3';
-  arrCases: Array<any> = [];
+  //arrCases: Array<any> = [];
+  arrClosedCase: Array<any> = [];
 
   constructor(
     public router: Router,
@@ -31,13 +33,25 @@ export class AllClosedCasesPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchCases();
+    this.fetchClosedCases();
   }
 
-  fetchCases() {
-    this.caseStore.getCases().subscribe((res: any) => {
-      this.arrCases = res;
-      console.log('cases:', this.arrCases);
+  onSelectedItem(item) {
+    this.caseStore.getClosedCase(item.id).then((res: any) => {
+      this.arrClosedCase = res;
+      //console.log(this.arrClosedCase);
+    });
+
+    this.router.navigate(
+      [{outlets: { primary: '/cases/case-details/' + item?.id, child2: '/cases/case-details/' + item?.id}}],
+      { queryParams: { key: item?.key } }
+    )
+  }
+
+  fetchClosedCases() {
+    this.caseStore.getClosedCases().subscribe((res: any) => {
+      this.arrClosedCase = res;
+      //console.log('cases:', this.arrCases);
     });
   }
 
@@ -53,8 +67,8 @@ export class AllClosedCasesPageComponent implements OnInit {
       dialogRef.afterClosed().subscribe(async (result: any) => {
         if(!result) return;
         await this.caseStore.deleteCase(result).then((res: any) => {
-          this.fetchCases()
-         console.log();
+          this.fetchClosedCases()
+         //console.log();
 
         });
         //console.log(result);
@@ -73,7 +87,7 @@ export class AllClosedCasesPageComponent implements OnInit {
     });
     dialogRef.updatePosition({ top: '2vh', right: '2vh' });
     dialogRef.afterClosed().subscribe(() => {
-      this.fetchCases();
+      this.fetchClosedCases();
     })
   }
 

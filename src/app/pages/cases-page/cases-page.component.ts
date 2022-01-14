@@ -31,6 +31,10 @@ export class CasesPageComponent implements OnInit {
     });
   }
 
+
+  ngOnInit(): void {
+  }
+
   checkIfRouteIsActivated(item: string) {
     this.currentRoute;
     // console.log(this.currentRoute)
@@ -71,8 +75,4 @@ export class CasesPageComponent implements OnInit {
     //   console.log('review case works');
     // }
   }
-
-  ngOnInit(): void {
-  }
-
 }

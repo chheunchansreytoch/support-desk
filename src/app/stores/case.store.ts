@@ -65,7 +65,65 @@ export class CaseStore {
       retry(1),
       catchError(this.processError)
     )
+  }
 
+  @action
+  getClosedCases(): Observable<ICase> {
+    return this.httpClient.get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
+    .pipe(
+      retry(1),
+      catchError(this.processError)
+    )
+  }
+
+  @action
+  async getClosedCase(caseId) {
+    try {
+      this.isLoading = true;
+      const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/closed/' + caseId, this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      this.isLoading = false;
+      console.log(error);
+    }
+    return;
+  }
+
+  @action
+  getOpenCases(): Observable<ICase> {
+    return this.httpClient.get<ICase>(this.endpoint + '/cases/open', this.httpHeaderWithToken)
+    .pipe(
+      retry(1),
+      catchError(this.processError)
+    )
+  }
+
+
+  // @action
+  // async getOpenCases() {
+  //   try {
+  //     this.isLoading = true;
+  //     const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/open', this.httpHeaderWithToken).toPromise();
+  //     return result;
+  //   } catch (error) {
+  //     this.isLoading = false;
+  //     console.log(error);
+
+  //   }
+  //   return;
+  // }
+
+  @action
+  async getOpenCase(caseId) {
+    try {
+      this.isLoading = true;
+      const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/open/' + caseId, this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      this.isLoading = false;
+      console.log(error);
+    }
+    return;
   }
 
   @action

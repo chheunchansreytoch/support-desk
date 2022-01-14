@@ -17,7 +17,7 @@ export class ChatSidePageComponent implements OnInit {
   public selectedList;
   public selectedChoices;
   panelOpenState = false;
-  editorForm!: FormGroup;
+  //editorForm!: FormGroup;
 
   menuLists = ['Post', 'Poll']
   choices = [''];
@@ -27,22 +27,12 @@ export class ChatSidePageComponent implements OnInit {
     public dialog: MatDialog,
     public dialogService: DialogsService,
     private formGroupBuilder: FormBuilder,
-    //private chatService:
     )
   { }
 
   ngOnInit(): void {
     this.selectedList = this.menuLists[0];
-  }
-
-  formEmailSubmit() {
-    this.editorForm = new FormGroup ({
-      'editor': new FormControl(null)
-    })
-  }
-
-  onSubmit() {
-    console.log(this.editorForm.get('editor')?.value);
+    console.log("child2")
   }
 
   openMenuList(menuList:any) {

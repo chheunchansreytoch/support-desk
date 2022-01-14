@@ -1,0 +1,134 @@
+<div class="custom-page-admin">
+  <div class="page-wraper">
+    <!-- <div class="page-header-container">
+      <div class="header-title-container">
+        <span class="material-icons custom-icon">group</span>
+        <h1>Agents</h1>
+      </div>
+      <button class="btnCreate" mat-button (click)="onCreate(null)">
+        <span class="material-icons">add_circle</span>
+        Create Agent
+      </button>
+    </div> -->
+
+    <div class="page-statistic-container">
+      <div class="card-container first">
+        <div class="card-title">
+          <h4>New Managers</h4>
+        </div>
+        <div class="card-content">
+          <h2 class="animatedNumber0" id="animatedNumber0">245</h2>
+          <div class="more-info">
+            impression 20%
+          </div>
+        </div>
+      </div>
+
+      <div class="card-container second">
+        <div class="card-title">
+          <h4>New Managers</h4>
+        </div>
+        <div class="card-content">
+          <h2>245</h2>
+          <div class="more-info">
+            impression 20%
+          </div>
+        </div>
+      </div>
+
+      <div class="card-container third">
+        <div class="card-title">
+          <h4>New Managers</h4>
+        </div>
+        <div class="card-content">
+          <h2>245</h2>
+          <div class="more-info">
+            impression 20%
+          </div>
+        </div>
+      </div>
+
+      <div class="card-container fourth">
+        <div class="card-title">
+          <h4>New Managers</h4>
+        </div>
+        <div class="card-content">
+          <h2>245</h2>
+          <div class="more-info">
+            impression 20%
+          </div>
+        </div>
+      </div>
+
+      <div class="card-container fifth">
+        <div class="card-title">
+          <h4>New Managers</h4>
+        </div>
+        <div class="card-content">
+          <h2>245</h2>
+          <div class="more-info">
+            impression 20%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-table-0">
+      <div class="scrollable-table">
+        <table>
+          <thead>
+            <tr>
+              <th>N.</th>
+              <th>Manager Name</th>
+              <th>Email</th>
+              <th>Job Position</th>
+              <th>Profile</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+        <tbody>
+          <tr *ngFor="let item of arrManagers; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.username}}</td>
+            <td class="email">{{item.email}}</td>
+            <td>{{item?.department}}</td>
+            <td>
+              <ng-container *ngIf="item.imageDownloadUrl">
+                <!-- <img class="image-preview" [src]="checkLocalStoragePath(item.imageDownloadUrl)"> -->
+              </ng-container>
+
+                <ng-container *ngIf="!item.imageDownloadUrl">
+                  <img class="image-preview"
+                    [src]="item.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
+                </ng-container>
+              </td>
+              <td>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="onCreate(item)">
+                    <span class="material-icons">create</span>
+                    <span>Edit</span>
+                  </button>
+
+                  <button mat-menu-item (click)="onSelectedAgent(item.id)">
+                    <span class="material-icons">delete</span>
+                    <span>Delete</span>
+                  </button>
+                </mat-menu>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- <ng-container *ngIf="paginationStore.isLoading">
+      <app-table-skeleton-loading></app-table-skeleton-loading>
+    </ng-container> -->
+  </div>
+</div>
+

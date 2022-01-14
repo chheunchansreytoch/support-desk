@@ -25,17 +25,16 @@
 
       <tbody>
         <!-- routerLink="/cases/case-details" -->
-        <tr *ngFor="let item of arrCases; let i = index">
-          <td>
-            {{i+1}}
-          </td>
+        <tr *ngFor="let item of arrClosedCase; let i = index" (click)="onSelectedItem(item)">
+          <td>{{i+1}}</td>
 
           <td>
             <input type="checkbox" [checked]="checks">
           </td>
 
           <td>
-            <a class="case-num-href" href="/cases/case-details" >
+            <!-- href="/cases/case-details" -->
+            <a class="case-num-href" >
               {{item.caseNumber}}
             </a>
           </td>

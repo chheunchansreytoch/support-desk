@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule,} from '@angular/router';
+import { Router} from '@angular/router';
 import {Location} from '@angular/common';
 
 @Component({
@@ -14,17 +14,22 @@ export class ContactPageComponent implements OnInit {
   public Items;
   public selectedItems;
 
-  constructor(public router: Router, private location: Location){
+  constructor(
+    public router: Router,
+    private location: Location
+    ){
     this.Items = [
       {name: 'All Contacts', label: 'contacts/agent-all-contacts'},
       {name: 'My Contacts', label: 'contacts/agent-my-contacts'},
-      // {name: 'Recently Viewed'},
       {name: 'Recently Viewed Contacts', label: 'contacts/agent-recently-viewed-contacts'},
     ];
 
     router.events.subscribe(val => {
       this.currentRoute = location.path();
     });
+  }
+
+  ngOnInit(): void {
   }
 
   checkIfRouteIsActivated(item: string) {
@@ -57,8 +62,5 @@ export class ContactPageComponent implements OnInit {
     else if (value == 'Recently Viewed Contacts'){
       this.router.navigate(['/contacts/agent-recently-viewed-contacts']);
     }
-  }
-
-  ngOnInit(): void {
   }
 }

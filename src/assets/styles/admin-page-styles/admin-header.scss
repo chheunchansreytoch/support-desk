@@ -149,14 +149,14 @@
 
         .btnNotification-Click {
           width: 33px;
-          height: 33px;
+          //height: 33px;
           text-align: center;
 
           float: left;
           padding: 4px;
           padding-right: 50px;
           margin-right: 20px;
-          border-right: 1px solid #ccc;
+          //border-right: 1px solid #ccc;
 
           .btn-Notification {
             color: $black1;
@@ -164,153 +164,13 @@
             border: none;
             background: none;
           }
-
-          .custom-notification-popup {
-            position: absolute;
-            margin-top: 4px;
-            transition: width 2s, height 4s;
-
-            .notification-popup-container {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              overflow-x: hidden;
-              background-color: $color7;
-              margin-left: -360px;
-              width: 400px;
-              // height: 300px;
-              // overflow-x: hidden;
-
-              //border: 1px solid #d4d7da;
-              border-radius: 5px;
-              color: $black1;
-              font-family: $primary-font;
-              box-shadow: 0 5px 25px #d4d7da;
-              transition: width 2s, height 4s;
-
-              .custom-notification-lbl {
-                padding: 10px;
-
-                .notification-lbl {
-                  float: left;
-                  font-size: 14px;
-                  font-weight: bold;
-                  text-indent: 3px;
-                  color: $black2;
-
-                  .fi-sr-bell {
-                    font-size: 12px;
-                  }
-                }
-
-                .btn-close {
-                  border: none;
-                  background: none;
-                  float: right;
-                  width: 20px;
-                  height: 20px;
-                  padding: 2px;
-
-                  .fi-rr-cross-small {
-                    font-size: 16px;
-                  }
-                }
-
-                .btn-close:hover {
-                  border-radius: 50%;
-                  background: #cedde4;
-                }
-              }
-
-              .notification-text {
-                width: 400px;
-                height: 300px;
-                overflow-x: hidden;
-
-                ul {
-                  list-style-type: none;
-                  padding: 5px;
-                  box-shadow: 0 1px 1px #ddd;
-                  display: flex;
-                  justify-content: space-between;
-                  position: relative;
-                }
-
-                ul:hover {
-                  background-color: #eff0f1;
-                }
-
-                ul .notificationList-custom .notificationList li {
-                  //padding: 8px 16px;
-                  text-align: left;
-                  text-indent: 7px;
-                  //border-bottom: 1px solid #ddd;
-                }
-
-                ul .notificationList-custom .from-account li{
-                  text-align: left;
-                  text-indent: 7px;
-
-                  span {
-                    font-size: 10px;
-                    color: $gray3;
-                  }
-                }
-
-                ul .notification-info {
-                  .custom-duration {
-                    margin-top: -8px;
-                    li label{
-                      font-size: 10px;
-                      color: $gray3;
-                    }
-                  }
-
-                  .custom-button {
-                    display: flex;
-
-                    .btn-view {
-                      float: left;
-                      margin-right: 10px;
-                      padding: 1px 13px;
-                      background: $color8;
-                      border-radius: 3px;
-
-                      button{
-                        font-size: 12px;
-                        color: $color7;
-                        background: none;
-                        border: none;
-                        outline: none;
-                      }
-                    }
-
-                    .btn-delete {
-                      //line-height: 2;
-                      button {
-                        background: none;
-                        border: none;
-                        outline: none;
-
-                        .fi-rr-trash{
-                          font-size: 16px;
-                          color: $black1;
-                          //line-height: 2;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
 
-        .btnNotification-Click:hover {
-          background-color: #cedde4;
-          transition: 0.5s;
-          border-radius: 50%;
-        }
+        // .btnNotification-Click:hover {
+        //   background-color: #cedde4;
+        //   transition: 0.5s;
+        //   border-radius: 50%;
+        // }
 
         .profile-account {
           .avatarImg {
@@ -329,5 +189,56 @@
     flex: 1;
     overflow: auto;
   }
+}
+
+.custom-notifications {
+  // padding: 5px;
+  // margin: 0;
+  h3 {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .customer-list-item {
+    ul {
+      li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        .list-item {
+          padding: 10px;
+          .subject {
+            span {
+              font-size: 12px;
+            }
+          }
+
+          .customer-name {
+            span {
+              font-size: 10px;
+            }
+          }
+
+          .description {
+            font-size: 12px;
+          }
+
+          .duration {
+            span {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+
+      li:nth-child(odd) {
+        background: rgb(245, 245, 245);
+      }
+    }
+  }
+}
+
+.mat-menu-panel {
+  min-width: 400px !important;
 }
 

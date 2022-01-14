@@ -29,21 +29,21 @@
 
     <div class="customListItems">
       <ul>
-        <li *ngFor="let value of this.values">
+        <li *ngFor="let item of arrCustomers; let i = index">
           <div class="listItemContainer">
             <div class="customCaseIssueDetail">
               <div class="customCheckboxContainer">
                 <div class="customCheckbox">
-                  {{value.n}}
+                  {{i+1}}
                 </div>
 
                 <div class="customCaseNumber" href="/cases/case-detail">
                   <div class="caseNumber">
-                    <label>{{value.name}}</label>
+                    <label>{{item.username}}</label>
                   </div>
 
                   <div class="caseSubject">
-                    {{value.accountNumber}}
+                    {{item?.customerDepartment?.name}}
                   </div>
                 </div>
               </div>
@@ -51,11 +51,11 @@
 
             <div class="customCaseNameDetail">
               <div class="nameCaseOwner">
-                <label>{{value.title}}</label>
+                <label>{{item?.customerCompany?.name}}</label>
               </div>
 
               <div class="status">
-                <span>{{value.phone}}</span>
+                <span>{{item?.phone}}</span>
               </div>
             </div>
           </div>

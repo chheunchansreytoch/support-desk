@@ -9,78 +9,70 @@
     </div>
   </div>
 
-  <div class="case-numberContainer">
-    <div class="custom-case-number">
-      <span class="caseNum-span">Case Number</span>
-      <div class="case-number">
-        <span>000010000</span>
+  <!-- <div> -->
+    <div class="case-numberContainer">
+      <div class="custom-case-number">
+        <span class="caseNum-span">Case Number</span>
+        <div class="case-number">
+          <span>{{arrClosedCase?.caseNumber}}</span>
+        </div>
+      </div>
+
+      <div class="custom-case-owner">
+        <span class="caseOwner-span">Case Owner</span>
+        <div class="name-caseOwner">
+          <span>{{arrClosedCase?.agent?.username}}</span>
+        </div>
       </div>
     </div>
 
-    <div class="custom-case-owner">
-      <span class="caseOwner-span">Case Owner</span>
-      <div class="name-caseOwner">
-        <span>Chheun Chansreytoch</span>
+    <div class="custom-status-priority">
+      <div class="custom-status">
+        <span class="status-span">Status</span>
+
+        <div class="name-status">
+          <span>{{arrClosedCase?.status?.name}}</span>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="custom-status-priority">
-    <div class="custom-status">
-      <span class="status-span">Status</span>
+      <div class="custom-priority">
+        <span class="priority-span">Priority</span>
 
-      <div class="custom-select-status">
-        <select class="select-status">
-          <option selected>Closed</option>
-          <option>New</option>
-          <option>Working</option>
-          <option>Escalated</option>
-        </select>
+        <div class="name-priority">
+          <span>{{arrClosedCase?.priority?.name}}</span>
+        </div>
       </div>
     </div>
 
-    <div class="custom-priority">
-      <span class="priority-span">Priority</span>
-
-      <div class="custom-select-priority">
-        <select class="select-priority">
-          <option>High</option>
-          <option>Medium</option>
-          <option>Low</option>
-        </select>
+    <div class="custom-subject">
+      <span class="subject-span">Subject</span>
+      <div class="form-subject">
+        <form>
+          <textarea>{{arrClosedCase?.subject}}</textarea>
+        </form>
       </div>
     </div>
-  </div>
 
-  <div class="custom-subject">
-    <span class="subject-span">Subject</span>
-    <div class="form-subject">
-      <form>
-        <textarea></textarea>
-      </form>
-    </div>
-  </div>
-
-  <div class="custom-desc">
-    <span class="desc-span">Description</span>
-    <div class="form-desc">
-      <form>
-       <textarea></textarea>
-      </form>
-    </div>
-  </div>
-
-  <div class="custom-cancel-save">
-    <div class="btn-cancel">
-      <button>Cancel</button>
+    <div class="custom-desc">
+      <span class="desc-span">Description</span>
+      <div class="form-desc">
+        <form>
+         <textarea>{{arrClosedCase?.description}}</textarea>
+        </form>
+      </div>
     </div>
 
-    <div class="btn-save">
-      <button>Save</button>
+    <div class="custom-cancel-save">
+      <div class="btn-cancel">
+        <button>Cancel</button>
+      </div>
+
+      <div class="btn-save">
+        <button>Save</button>
+      </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
-
 
 <!-- Contact Details -->
 <div class="customContactDetail">
@@ -98,7 +90,7 @@
     <div class="custom-contact-number">
       <span class="contactname-span">Name</span>
       <div class="contact-name">
-        <span>Park Haram</span>
+        <span>{{arrClosedCase?.customer?.username || arrClosedCase?.manager?.username}}</span>
         <!-- <i class="fi-rr-pencil"></i> -->
       </div>
     </div>
@@ -106,18 +98,18 @@
 
   <div class="custom-title-container">
     <div class="custom-title">
-      <span class="title-span">Title</span>
+      <span class="title-span">Department</span>
 
       <div class="title-name">
-        <span>SVP, Procurement</span>
+        <span>{{arrClosedCase?.customer?.customerDepartment?.name}}</span>
       </div>
     </div>
 
     <div class="custom-accName">
-      <span class="accName-span">Account Name</span>
+      <span class="accName-span">Company Name</span>
 
       <div class="title-accName">
-        <a href="#"> <span>Edge Communications</span></a>
+        <a href="#"> <span>{{arrClosedCase?.customer?.customerCompany?.name}}</span></a>
       </div>
     </div>
   </div>
@@ -127,7 +119,7 @@
       <span class="email-span">Email</span>
 
       <div class="email-name">
-        <a href="#"><span>rose@edge.com</span></a>
+        <span>{{arrClosedCase?.customer?.email || arrClosedCase?.manager?.email}}</span>
       </div>
     </div>
 
@@ -135,7 +127,7 @@
       <span class="phone-title-span">Phone</span>
 
       <div class="phone-number-span">
-        <span>(512) 757-6000</span>
+        <span>{{arrClosedCase?.customer?.phone || arrClosedCase?.manager?.phone}}</span>
       </div>
     </div>
   </div>

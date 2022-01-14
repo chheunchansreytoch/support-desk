@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CaseStore } from 'src/app/stores/case.store';
 
 @Component({
   selector: 'app-case-sidebar-page',
@@ -9,67 +10,41 @@ import { Router } from '@angular/router';
 export class CaseSidebarPageComponent implements OnInit {
   public Items;
   public selectedItems;
+  public selectedKey;
+  public selectedValue;
 
-  // constructor(public router: Router) {
-  //   this.Items = [
-  //     {name: 'All Closed Cases'},
-  //     {name: 'All Open Cases'},
-  //     {name: 'My Cases'},
-  //     {name: 'Recently Viewed Cases'},
-  //   ];
-  // }
+  selectedId: any;
 
-  // onSelectedOption(event: any) {
-  //   this.selectedItems = event.target.value;
-  //   const value = this.selectedItems;
+  arrClosedCases: Array<any> = [];
 
-  //   const allClosedCases = 'All Closed Cases';
-
-  //   if (value == allClosedCases) {
-  //     this.router.navigate(['/cases/agent-all-closed-cases']);
-  //   }
-  //   else if (value == 'All Open Cases') {
-  //     this.router.navigate(['/cases/agent-all-open-cases']);
-  //   }
-
-  //   else if (value == 'My Cases') {
-  //     this.router.navigate(['/cases/agent-my-cases']);
-  //   }
-
-  //   else if (value == 'Recently Viewed Cases'){
-  //     console.log('review case works');
-  //   }
-  // }
-
-  values = [
-    {n: '1', caseNumber: '00010001', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '2', caseNumber: '00010012', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '3', caseNumber: '00010021', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '4', caseNumber: '00010011', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '5', caseNumber: '00010031', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '6', caseNumber: '00010001', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '7', caseNumber: '00010012', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '8', caseNumber: '00010021', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '9', caseNumber: '00010011', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '10', caseNumber: '00010031', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '11', caseNumber: '00010021', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '12', caseNumber: '00010011', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-    {n: '13', caseNumber: '00010031', subject: 'Dialogs issue with text and form', accountName: 'Stella Pavlova', status: 'New'},
-  ]
-
-  //select checkbox
-  // checks=false;
-  // checkAll(e:any) {
-  //   if(e.target.checked==true) {
-  //     this.checks=true;
-  //   }
-  //   else {
-  //     this.checks=false;
-  //   }
-  // }
-
-
-  ngOnInit(): void {
+  constructor(
+    public router: Router,
+    private caseStore: CaseStore,
+    private activatedRoute : ActivatedRoute,
+    ) {
   }
 
+  ngOnInit(): void {
+    this.fetchClosedCases();
+    console.log("init")
+    this.activatedRoute.queryParams.subscribe((param)=>{
+      this.selectedId = param.key;
+      this.selectedKey = this.arrClosedCases[this.selectedId];
+    });
+  }
+
+  fetchClosedCases() {
+    this.caseStore.getClosedCases().subscribe((res: any) => {
+      this.arrClosedCases = res;
+      console.log(res);
+
+    })
+  }
+
+  onSelectedList (item) {
+    this.router.navigate(
+      [{outlets: { primary: '/cases/case-details/' + item, child2: '/cases/case-details/' + item?.key}}],
+      { queryParams: { key: item?.key } }
+    )
+  }
 }

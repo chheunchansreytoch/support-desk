@@ -107,6 +107,11 @@ import { TableSkeletonLoadingComponent } from './components/table-skeleton-loadi
 import { SkeletonModule } from 'primeng/skeleton';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CaseUpdateDialogComponent } from './components/dialogs/case-update-dialog/case-update-dialog.component';
+import { ManageCustomersPageComponent } from './pages/manage-customers-page/manage-customers-page.component';
+import { ManageManagersPageComponent } from './pages/manage-managers-page/manage-managers-page.component';
+import { ManagerReportPageComponent } from './pages/manager-report-page/manager-report-page.component';
+import { DefaultReportPagesComponent } from './pages/default-report-pages/default-report-pages.component';
+import { AgentCaseFrontLayoutComponent } from './layouts/agent-case-front-layout/agent-case-front-layout.component';
 
 export function playerFactory() {
   return player;
@@ -191,7 +196,12 @@ export function playerFactory() {
     ConfirmationDialogComponent,
     NotFoundPageComponent,
     TableSkeletonLoadingComponent,
-    CaseUpdateDialogComponent
+    CaseUpdateDialogComponent,
+    ManageCustomersPageComponent,
+    ManageManagersPageComponent,
+    ManagerReportPageComponent,
+    DefaultReportPagesComponent,
+    AgentCaseFrontLayoutComponent
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [

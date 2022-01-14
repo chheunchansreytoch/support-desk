@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CaseStore } from 'src/app/stores/case.store';
 
 @Component({
   selector: 'app-case-details-page',
@@ -10,15 +11,36 @@ export class CaseDetailsPageComponent implements OnInit {
 
   public Items;
   public selectedItems;
+  selectedId: any;
 
-  constructor(public router: Router) {
-    this.Items = [
-      {name: 'All Closed Cases'},
-      {name: 'All Open Cases'},
-      {name: 'My Cases'},
-      {name: 'Recently Viewed Cases'},
-    ];
+  arrClosedCase : any = null;
+
+  constructor(
+    public router: Router,
+    public caseStore: CaseStore,
+    private activatedRoute : ActivatedRoute,
+    ) {
+      console.log('hello')
   }
+
+
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((param)=>{
+      this.selectedId = param.key;
+      console.log('child 1');
+      const caseId = this.selectedId;
+      try{
+        this.caseStore.getClosedCase(caseId).then((res: any) => {
+          this.arrClosedCase = res;
+          console.log(res);
+
+        })
+      }catch(e){
+        console.log(e)
+      }
+    });
+  }
+
 
   onSelectedOption(event: any) {
     this.selectedItems = event.target.value;
@@ -40,9 +62,6 @@ export class CaseDetailsPageComponent implements OnInit {
     else if (value == 'Recently Viewed Cases'){
       console.log('review case works');
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }

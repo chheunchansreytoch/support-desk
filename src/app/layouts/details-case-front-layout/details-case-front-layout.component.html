@@ -1,15 +1,19 @@
 <div class="detailCaseContainer">
   <div class="wraper">
-    <div class="customCaseSideBarContainer">
-      <router-outlet name='child1'></router-outlet>
-    </div>
+    <div class="case-sidebar">
+      <div class="customCaseSideBarContainer">
+        <app-case-sidebar-page></app-case-sidebar-page>
+      </div>
 
-    <div class="customCaseDetailsContainer">
-      <router-outlet name='child2'></router-outlet>
-    </div>
+      <div class="next-tab-side">
+        <div class="customCaseDetailsContainer">
+          <router-outlet></router-outlet>
+        </div>
 
-    <div class="customChatSideContainer">
-      <router-outlet name='child3'></router-outlet>
+        <!-- <div class="customChatSideContainer">
+          <router-outlet name='child2'></router-outlet>
+        </div> -->
+      </div>
     </div>
   </div>
 </div>
