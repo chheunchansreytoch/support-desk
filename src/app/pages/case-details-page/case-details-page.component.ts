@@ -10,8 +10,10 @@ import { CaseStore } from 'src/app/stores/case.store';
 export class CaseDetailsPageComponent implements OnInit {
 
   public Items;
+  public caseId;
   public selectedItems;
-  selectedId: any;
+  public customer;
+  selectedKey: any;
 
   arrClosedCase : any = null;
 
@@ -20,19 +22,21 @@ export class CaseDetailsPageComponent implements OnInit {
     public caseStore: CaseStore,
     private activatedRoute : ActivatedRoute,
     ) {
-      console.log('hello')
+      //console.log('hello')
   }
 
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((param)=>{
-      this.selectedId = param.key;
-      console.log('child 1');
-      const caseId = this.selectedId;
+    this.activatedRoute.parent?.queryParams.subscribe((param)=>{
+      this.selectedKey = param.key;
+      this.caseId = this.selectedKey;
+
+
       try{
-        this.caseStore.getClosedCase(caseId).then((res: any) => {
+        this.caseStore.getClosedCase(this.caseId).then((res: any) => {
           this.arrClosedCase = res;
-          console.log(res);
+          console.log(res)
+          this.customer = res.customer;
 
         })
       }catch(e){

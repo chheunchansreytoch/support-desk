@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CaseStore } from 'src/app/stores/case.store';
 
@@ -8,6 +8,7 @@ import { CaseStore } from 'src/app/stores/case.store';
   styleUrls: ['./case-sidebar-page.component.scss']
 })
 export class CaseSidebarPageComponent implements OnInit {
+  @Input() customer;
   public Items;
   public selectedItems;
   public selectedKey;
@@ -16,6 +17,7 @@ export class CaseSidebarPageComponent implements OnInit {
   selectedId: any;
 
   arrClosedCases: Array<any> = [];
+  //arrClosedCase: Array<any> = [];
 
   constructor(
     public router: Router,
@@ -26,10 +28,8 @@ export class CaseSidebarPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchClosedCases();
-    console.log("init")
     this.activatedRoute.queryParams.subscribe((param)=>{
-      this.selectedId = param.key;
-      this.selectedKey = this.arrClosedCases[this.selectedId];
+      this.selectedKey = param.key;
     });
   }
 
@@ -37,14 +37,12 @@ export class CaseSidebarPageComponent implements OnInit {
     this.caseStore.getClosedCases().subscribe((res: any) => {
       this.arrClosedCases = res;
       console.log(res);
-
     })
   }
 
-  onSelectedList (item) {
-    this.router.navigate(
-      [{outlets: { primary: '/cases/case-details/' + item, child2: '/cases/case-details/' + item?.key}}],
-      { queryParams: { key: item?.key } }
-    )
-  }
+  // onSelectedItem (item) {
+  //   if (item === this.selectedKey) {
+  //     this.selectedId = item;
+  //   }
+  // }
 }

@@ -52,21 +52,25 @@ export class AgentStore {
   }
 
   @action
-  login(username: string, email: string, password: string) {
+  async login(email: string, password: string) {
     try {
-      this.httpClient.post<IAgent>(
+      await this.httpClient.post<IAgent>(
         this.endpoint + '/agents/login',
-        JSON.stringify({ username, email, password }), this.httpHeader)
-      .pipe(
-        retry(1),
-        catchError(this.processError)
-      ).subscribe((result) => {
+        {
+          email: email,
+          password: password
+        },
+        this.httpHeader
+        ).toPromise()
+        .then((result) => {
+          console.log(result);
+
         localStorage.setItem("agent_auth", JSON.stringify(result));
         this.router.navigate(['/cases']);
         console.log("correct");
       });
     } catch(error) {
-      console.log('login errer ln.52: ', error)
+      console.log('login error ln.52: ', error)
     }
   }
 

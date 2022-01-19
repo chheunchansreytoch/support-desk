@@ -121,8 +121,9 @@
 
           ul li:hover {
             z-index: 100;
-            transition: 0.5s;
-            background: #fff;
+            //transition: 0.5s;
+            color: $black1;
+            background: #c0d9f1;
 
           }
         }

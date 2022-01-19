@@ -5,385 +5,387 @@
     justify-content: space-between;
 
     .caseDetail {
-      width: 50%;
-      margin: 5px;
-      background-color:  #f8f9fa;
-      box-shadow: 0 5px 15px #d4d7da;
-      border-radius: 5px;
-
-      .customCaseDetail {
-        //width: 100%;
-        //border-radius: 5px;
-        margin-top: 10px;
-        padding: 10px;
-        flex: 1;
-        .case-list-container {
-          display: flex;
-          .custom-case-image {
-            display: grid;
-            place-items: center;
-            padding: 5px;
-
-            .case-image {
-              padding: 4px;
-              width: 33px;
-              height: 33px;
-            }
-          }
-
-          .case-title {
-            padding: 13px;
-
-            span {
-              font-size: 16px;
-              font-weight: bold;
-            }
-          }
-        }
-
-        .case-numberContainer {
-          display: flex;
-          justify-content: space-between;
-
-          .custom-case-number {
-            margin-left: 15px;
-
-            .caseNum-span {
-              font-size: 11px;
-              color: $gray2;
-            }
-
-            .case-number {
-              span {
-                font-size: 12px;
-              }
-            }
-          }
-
-          .custom-case-owner {
-            .caseOwner-span {
-              margin-left: 35px;
-              font-size: 11px;
-              color: $gray2;
-            }
-
-            .name-caseOwner {
-              span {
-                padding: 35px;
-                font-size: 12px;
-                color: $color2;
-              }
-            }
-          }
-        }
-
-        .custom-status-priority {
-          margin-top: 10px;
-          display: flex;
-          justify-content: space-between;
-
-          .custom-status {
-            margin-left: 15px;
-
-            .status-span {
-              font-size: 11px;
-              color: $gray2;
-            }
-
-            .name-status {
-              span {
-                font-size: 12px;
-              }
-            }
-          }
-
-          .custom-priority {
-            .priority-span {
-              margin-left: 28px;
-              font-size: 11px;
-              color: $gray2;
-            }
-            .name-priority {
-              span {
-                padding: 28px;
-                font-size: 12px;
-                color: $color2;
-              }
-            }
-          }
-        }
-
-        .custom-subject {
-          padding: 5px;
-          margin-left: 5px;
-
-          .subject-span {
-            font-size: 11px;
-            color: $gray2;
-          }
-
-          .form-subject {
-            padding: 2px;
-
-            form {
-              textarea {
-                width: 100%;
-                height: 35px;
-                border: 1px solid $gray2;
-                border-radius: 5px;
-                line-height: 1.5;
+      .next-tab-side {
+        display: flex;
+        justify-content: space-between;
+        .caseDetailContainer {
+          width: 50%;
+          margin: 5px;
+          .customCaseDetail {
+            background-color:  #f8f9fa;
+            box-shadow: 0 5px 15px #d4d7da;
+            border-radius: 5px;
+            padding: 10px;
+            flex: 1;
+            .case-list-container {
+              display: flex;
+              .custom-case-image {
+                display: grid;
+                place-items: center;
                 padding: 5px;
-                text-indent: 10px;
-                resize: none;
-                outline: none;
-                background: none;
+
+                .case-image {
+                  padding: 4px;
+                  width: 33px;
+                  height: 33px;
+                }
               }
 
-              textarea:focus {
-                border: 1px solid #54adf7;
-                box-shadow: 0 0 3px #54adf7;
+              .case-title {
+                padding: 13px;
+
+                span {
+                  font-size: 16px;
+                  font-weight: bold;
+                }
               }
             }
-          }
-        }
 
-        .custom-desc {
-          padding: 5px;
-          margin-left: 7px;
-          .desc-span {
-            font-size: 11px;
-            color: $gray2;
-          }
+            .case-numberContainer {
+              display: flex;
+              justify-content: space-between;
 
-          .form-desc {
-            form {
-              textarea {
-                padding: 10px;
-                width: 100%;
-                height: 70px;
-                border: 1px solid $gray2;
+              .custom-case-number {
+                margin-left: 15px;
+
+                .caseNum-span {
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .case-number {
+                  span {
+                    font-size: 12px;
+                  }
+                }
+              }
+
+              .custom-case-owner {
+                .caseOwner-span {
+                  margin-left: 35px;
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .name-caseOwner {
+                  span {
+                    padding: 35px;
+                    font-size: 12px;
+                    color: $color2;
+                  }
+                }
+              }
+            }
+
+            .custom-status-priority {
+              margin-top: 10px;
+              display: flex;
+              justify-content: space-between;
+
+              .custom-status {
+                margin-left: 15px;
+
+                .status-span {
+                  font-size: 11px;
+                  color: $gray2;
+                }
+
+                .name-status {
+                  span {
+                    font-size: 12px;
+                  }
+                }
+              }
+
+              .custom-priority {
+                .priority-span {
+                  margin-left: 28px;
+                  font-size: 11px;
+                  color: $gray2;
+                }
+                .name-priority {
+                  span {
+                    padding: 28px;
+                    font-size: 12px;
+                    color: $color2;
+                  }
+                }
+              }
+            }
+
+            .custom-subject {
+              padding: 5px;
+              margin-left: 5px;
+
+              .subject-span {
+                font-size: 11px;
+                color: $gray2;
+              }
+
+              .form-subject {
+                padding: 2px;
+
+                form {
+                  textarea {
+                    width: 100%;
+                    height: 35px;
+                    border: 1px solid $gray2;
+                    border-radius: 5px;
+                    line-height: 1.5;
+                    padding: 5px;
+                    text-indent: 10px;
+                    resize: none;
+                    outline: none;
+                    background: none;
+                  }
+
+                  textarea:focus {
+                    border: 1px solid #54adf7;
+                    box-shadow: 0 0 3px #54adf7;
+                  }
+                }
+              }
+            }
+
+            .custom-desc {
+              padding: 5px;
+              margin-left: 7px;
+              .desc-span {
+                font-size: 11px;
+                color: $gray2;
+              }
+
+              .form-desc {
+                form {
+                  textarea {
+                    padding: 10px;
+                    width: 100%;
+                    height: 70px;
+                    border: 1px solid $gray2;
+                    border-radius: 5px;
+                    background: none;
+                    overflow: auto;
+                    outline: none;
+                  }
+
+                  textarea:focus {
+                    border: 1px solid #54adf7;
+                    box-shadow: 0 0 3px #54adf7;
+                  }
+                }
+              }
+            }
+
+            .custom-cancel-save {
+              display: flex;
+              justify-content: space-around;
+              margin-top: 10px;
+              .btn-cancel {
+                padding: 5px 20px;
+                background: #f8f9fa;
+                border: 1px solid $gray1;
                 border-radius: 5px;
-                background: none;
-                overflow: auto;
-                outline: none;
+                button {
+                  color: $color2;
+                  border: none;
+                  background: none;
+                }
               }
 
-              textarea:focus {
-                border: 1px solid #54adf7;
-                box-shadow: 0 0 3px #54adf7;
+              .btn-cancel:hover {
+                background: #e7e8e9;
+                transition: 0.5s;
+
+                button {
+                  color: $color9;
+                }
+              }
+
+              .btn-save {
+                padding: 5px 20px;
+                background: $color2;
+                border-radius: 5px;
+
+                button {
+                  color: $color7;
+                  border: none;
+                  background: none;
+                }
+              }
+
+              .btn-save:hover {
+                background: #5784be;
+                transition: 0.5s;
               }
             }
           }
-        }
 
-        .custom-cancel-save {
-          display: flex;
-          justify-content: space-around;
-          margin-top: 10px;
-          .btn-cancel {
-            padding: 5px 20px;
-            background: #f8f9fa;
-            border: 1px solid $gray1;
-            border-radius: 5px;
-            button {
-              color: $color2;
-              border: none;
-              background: none;
-            }
-          }
-
-          .btn-cancel:hover {
-            background: #e7e8e9;
-            transition: 0.5s;
-
-            button {
-              color: $color9;
-            }
-          }
-
-          .btn-save {
-            padding: 5px 20px;
-            background: $color2;
-            border-radius: 5px;
-
-            button {
-              color: $color7;
-              border: none;
-              background: none;
-            }
-          }
-
-          .btn-save:hover {
-            background: #5784be;
-            transition: 0.5s;
-          }
-        }
-      }
-
-      /* Contact Details*/
-      .customContactDetail {
-        width: 100%;
-        //margin-top: 20px;
-        border-radius: 5px;
-        padding: 10px;
-        box-shadow: 0 5px 15px #d4d7da;
-        float: right;
-        background-color: #f8f9fa;
-        color: $black1;
-        font-family: $Roboto-font;
-
-        .contact-list-container {
-          display: flex;
-
-          .custom-contact-image {
-            float: left;
-            margin-right: 23px;
-            padding: 5px;
-
-            .contact-image {
-              //position: absolute;
-              padding: 4px ;
-              width: 33px;
-              height: 33px;
-              //margin-top: 5px
-            }
-          }
-
-          .contact-title {
-            padding: 13px;
-
-            span {
-              font-size: 16px;
-              font-weight: bold;
-              margin-left: -30px;
-            }
-          }
-        }
-
-        .contact-numberContainer {
-          display: flex;
-          justify-content: space-between;
-
-          .custom-contact-number {
-            margin-left: 10px;
-            //padding: 1px 15px;
+          /* Contact Details*/
+          .customContactDetail {
             width: 100%;
-            border-bottom: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 5px 15px #d4d7da;
+            float: right;
+            background-color: #f8f9fa;
+            color: $black1;
+            font-family: $Roboto-font;
 
-            .contactname-span{
-              font-size: 11px;
-              color: $gray2;
-              //margin-left: -10px;
+            .contact-list-container {
+              display: flex;
 
-            }
+              .custom-contact-image {
+                float: left;
+                margin-right: 23px;
+                padding: 5px;
 
-            .contact-name {
-              span {
-                font-size: 14px;
-              }
-            }
-          }
-        }
-
-        .custom-title-container {
-          display: flex;
-          justify-content: space-between;
-
-          .custom-title {
-            padding: 5px;
-            margin-left: 10px;
-            width: 100px;
-            border-bottom: 1px solid #ccc;
-
-            .title-span {
-              color: $gray2;
-              font-size: 11px;
-              margin-left: -5px;
-            }
-
-            .title-name {
-              width: 90px;
-              font-size: 13px;
-              margin-left: -5px;
-              position: relative;
-
-            }
-          }
-
-          .custom-accName {
-            padding: 5px;
-            margin-right: 10px;
-            width: 100px;
-            border-bottom: 1px solid #ccc;
-
-            .accName-span {
-              color: $gray2;
-              font-size: 11px;
-            }
-
-            .title-accName {
-              font-size: 13px;
-
-              a {
-                text-decoration: none;
-                color: $color9;
+                .contact-image {
+                  //position: absolute;
+                  padding: 4px ;
+                  width: 33px;
+                  height: 33px;
+                  //margin-top: 5px
+                }
               }
 
-              a:hover {
-                text-decoration: underline;
-                color: $color9;
+              .contact-title {
+                padding: 13px;
+
+                span {
+                  font-size: 16px;
+                  font-weight: bold;
+                  margin-left: -30px;
+                }
               }
             }
-          }
-        }
 
-        .custom-email-phone-container {
-          display: flex;
-          justify-content: space-between;
+            .contact-numberContainer {
+              display: flex;
+              justify-content: space-between;
 
-          .custom-email {
-            padding: 5px;
-            margin-left: 10px;
-            width: 100px;
-            border-bottom: 1px solid #ccc;
+              .custom-contact-number {
+                margin-left: 10px;
+                //padding: 1px 15px;
+                width: 100%;
+                border-bottom: 1px solid #ccc;
 
-            .email-span {
-              color: $gray2;
-              font-size: 11px;
-              margin-left: -5px;
-            }
+                .contactname-span{
+                  font-size: 11px;
+                  color: $gray2;
+                  //margin-left: -10px;
 
-            .email-name {
-              width: 90px;
-              font-size: 13px;
-              margin-left: -5px;
-              position: relative;
+                }
 
-              a {
-                text-decoration: none;
-                color: $color9;
-              }
-
-              a:hover {
-                text-decoration: underline;
-                color: $color9;
+                .contact-name {
+                  span {
+                    font-size: 14px;
+                  }
+                }
               }
             }
-          }
 
-          .custom-phone {
-            padding: 5px;
-            margin-right: 10px;
-            width: 100px;
-            border-bottom: 1px solid #ccc;
+            .custom-title-container {
+              display: flex;
+              justify-content: space-between;
 
-            .phone-title-span {
-              color: $gray2;
-              font-size: 11px;
+              .custom-title {
+                padding: 5px;
+                margin-left: 10px;
+                width: 100px;
+                border-bottom: 1px solid #ccc;
+
+                .title-span {
+                  color: $gray2;
+                  font-size: 11px;
+                  margin-left: -5px;
+                }
+
+                .title-name {
+                  width: 90px;
+                  font-size: 13px;
+                  margin-left: -5px;
+                  position: relative;
+
+                }
+              }
+
+              .custom-accName {
+                padding: 5px;
+                margin-right: 10px;
+                width: 100px;
+                border-bottom: 1px solid #ccc;
+
+                .accName-span {
+                  color: $gray2;
+                  font-size: 11px;
+                }
+
+                .title-accName {
+                  font-size: 13px;
+
+                  a {
+                    text-decoration: none;
+                    color: $color9;
+                  }
+
+                  a:hover {
+                    text-decoration: underline;
+                    color: $color9;
+                  }
+                }
+              }
             }
 
-            .phone-number-span {
-              font-size: 13px;
+            .custom-email-phone-container {
+              display: flex;
+              justify-content: space-between;
+
+              .custom-email {
+                padding: 5px;
+                margin-left: 10px;
+                width: 100px;
+                border-bottom: 1px solid #ccc;
+
+                .email-span {
+                  color: $gray2;
+                  font-size: 11px;
+                  margin-left: -5px;
+                }
+
+                .email-name {
+                  width: 90px;
+                  font-size: 13px;
+                  margin-left: -5px;
+                  position: relative;
+
+                  a {
+                    text-decoration: none;
+                    color: $color9;
+                  }
+
+                  a:hover {
+                    text-decoration: underline;
+                    color: $color9;
+                  }
+                }
+              }
+
+              .custom-phone {
+                padding: 5px;
+                margin-right: 10px;
+                width: 100px;
+                border-bottom: 1px solid #ccc;
+
+                .phone-title-span {
+                  color: $gray2;
+                  font-size: 11px;
+                }
+
+                .phone-number-span {
+                  font-size: 13px;
+                }
+              }
             }
           }
         }
@@ -397,4 +399,10 @@ app-case-details-page{
   flex-direction: column;
   height: 100%;
 
+}
+
+.active {
+  color: #2fc8ce ;
+  background: #f4f6f8;
+  transition: 0.1s;
 }

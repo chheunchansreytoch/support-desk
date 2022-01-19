@@ -22,7 +22,7 @@
     </div>
 
     <div class="customListItems">
-      <ul *ngFor="let item of arrClosedCases; let i = index" (click)="onSelectedList(item.id)" routerLinkActive="active">
+      <ul *ngFor="let item of arrClosedCases; let i = index" [routerLink]="['/cases/case-details/']" [queryParams]="{key: item.id}" routerLinkActive="active">
         <li>
           <div class="listItemContainer">
             <div class="customCaseIssueDetail">

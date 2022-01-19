@@ -1,136 +1,146 @@
-<div class="customCaseDetail">
-  <div class="case-list-container">
-    <div class="custom-case-image">
-      <img class="case-image" src="./assets/images/selection-icons/briefcase.png">
+<div class="next-tab-side">
+  <div class="caseDetailContainer">
+    <div class="customCaseDetail">
+      <div class="case-list-container">
+        <div class="custom-case-image">
+          <img class="case-image" src="./assets/images/selection-icons/briefcase.png">
+        </div>
+
+        <div class="case-title">
+          <span>Case Details</span>
+        </div>
+      </div>
+
+      <!-- <div> -->
+        <div class="case-numberContainer">
+          <div class="custom-case-number">
+            <span class="caseNum-span">Case Number</span>
+            <div class="case-number">
+              <span>{{arrClosedCase?.caseNumber}}</span>
+            </div>
+          </div>
+
+          <div class="custom-case-owner">
+            <span class="caseOwner-span">Case Owner</span>
+            <div class="name-caseOwner">
+              <span>{{arrClosedCase?.agent?.username}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-status-priority">
+          <div class="custom-status">
+            <span class="status-span">Status</span>
+
+            <div class="name-status">
+              <span>{{arrClosedCase?.status?.name}}</span>
+            </div>
+          </div>
+
+          <div class="custom-priority">
+            <span class="priority-span">Priority</span>
+
+            <div class="name-priority">
+              <span>{{arrClosedCase?.priority?.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-subject">
+          <span class="subject-span">Subject</span>
+          <div class="form-subject">
+            <form>
+              <textarea>{{arrClosedCase?.subject}}</textarea>
+            </form>
+          </div>
+        </div>
+
+        <div class="custom-desc">
+          <span class="desc-span">Description</span>
+          <div class="form-desc">
+            <form>
+             <textarea>{{arrClosedCase?.description}}</textarea>
+            </form>
+          </div>
+        </div>
+
+        <div class="custom-cancel-save">
+          <div class="btn-cancel">
+            <button>Cancel</button>
+          </div>
+
+          <div class="btn-save">
+            <button>Save</button>
+          </div>
+        </div>
+      <!-- </div> -->
     </div>
 
-    <div class="case-title">
-      <span>Case Details</span>
+    <!-- Contact Details -->
+    <div class="customContactDetail">
+      <div class="contact-list-container">
+        <div class="custom-contact-image">
+          <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
+        </div>
+
+        <div class="contact-title">
+          <span>Contact Details</span>
+        </div>
+      </div>
+
+      <div class="contact-numberContainer">
+        <div class="custom-contact-number">
+          <span class="contactname-span">Name</span>
+          <div class="contact-name">
+            <span>{{arrClosedCase?.customer?.username || arrClosedCase?.manager?.username}}</span>
+            <!-- <i class="fi-rr-pencil"></i> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-title-container">
+        <div class="custom-title">
+          <span class="title-span">Department</span>
+
+          <div class="title-name">
+            <span>{{arrClosedCase?.customer?.customerDepartment?.name}}</span>
+          </div>
+        </div>
+
+        <div class="custom-accName">
+          <span class="accName-span">Company Name</span>
+
+          <div class="title-accName">
+            <a href="#"> <span>{{arrClosedCase?.customer?.customerCompany?.name}}</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-email-phone-container">
+        <div class="custom-email">
+          <span class="email-span">Email</span>
+
+          <div class="email-name">
+            <span>{{arrClosedCase?.customer?.email || arrClosedCase?.manager?.email}}</span>
+          </div>
+        </div>
+
+        <div class="custom-phone">
+          <span class="phone-title-span">Phone</span>
+
+          <div class="phone-number-span">
+            <span>{{arrClosedCase?.customer?.phone || arrClosedCase?.manager?.phone}}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- <div> -->
-    <div class="case-numberContainer">
-      <div class="custom-case-number">
-        <span class="caseNum-span">Case Number</span>
-        <div class="case-number">
-          <span>{{arrClosedCase?.caseNumber}}</span>
-        </div>
-      </div>
-
-      <div class="custom-case-owner">
-        <span class="caseOwner-span">Case Owner</span>
-        <div class="name-caseOwner">
-          <span>{{arrClosedCase?.agent?.username}}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="custom-status-priority">
-      <div class="custom-status">
-        <span class="status-span">Status</span>
-
-        <div class="name-status">
-          <span>{{arrClosedCase?.status?.name}}</span>
-        </div>
-      </div>
-
-      <div class="custom-priority">
-        <span class="priority-span">Priority</span>
-
-        <div class="name-priority">
-          <span>{{arrClosedCase?.priority?.name}}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="custom-subject">
-      <span class="subject-span">Subject</span>
-      <div class="form-subject">
-        <form>
-          <textarea>{{arrClosedCase?.subject}}</textarea>
-        </form>
-      </div>
-    </div>
-
-    <div class="custom-desc">
-      <span class="desc-span">Description</span>
-      <div class="form-desc">
-        <form>
-         <textarea>{{arrClosedCase?.description}}</textarea>
-        </form>
-      </div>
-    </div>
-
-    <div class="custom-cancel-save">
-      <div class="btn-cancel">
-        <button>Cancel</button>
-      </div>
-
-      <div class="btn-save">
-        <button>Save</button>
-      </div>
-    </div>
-  <!-- </div> -->
+  <div class="chatterContainer">
+    <app-chat-side-page [customer]="customer"></app-chat-side-page>
+  </div>
 </div>
 
-<!-- Contact Details -->
-<div class="customContactDetail">
-  <div class="contact-list-container">
-    <div class="custom-contact-image">
-      <img class="contact-image" src="./assets/images/selection-icons/contacts.png">
-    </div>
 
-    <div class="contact-title">
-      <span>Contact Details</span>
-    </div>
-  </div>
-
-  <div class="contact-numberContainer">
-    <div class="custom-contact-number">
-      <span class="contactname-span">Name</span>
-      <div class="contact-name">
-        <span>{{arrClosedCase?.customer?.username || arrClosedCase?.manager?.username}}</span>
-        <!-- <i class="fi-rr-pencil"></i> -->
-      </div>
-    </div>
-  </div>
-
-  <div class="custom-title-container">
-    <div class="custom-title">
-      <span class="title-span">Department</span>
-
-      <div class="title-name">
-        <span>{{arrClosedCase?.customer?.customerDepartment?.name}}</span>
-      </div>
-    </div>
-
-    <div class="custom-accName">
-      <span class="accName-span">Company Name</span>
-
-      <div class="title-accName">
-        <a href="#"> <span>{{arrClosedCase?.customer?.customerCompany?.name}}</span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="custom-email-phone-container">
-    <div class="custom-email">
-      <span class="email-span">Email</span>
-
-      <div class="email-name">
-        <span>{{arrClosedCase?.customer?.email || arrClosedCase?.manager?.email}}</span>
-      </div>
-    </div>
-
-    <div class="custom-phone">
-      <span class="phone-title-span">Phone</span>
-
-      <div class="phone-number-span">
-        <span>{{arrClosedCase?.customer?.phone || arrClosedCase?.manager?.phone}}</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 

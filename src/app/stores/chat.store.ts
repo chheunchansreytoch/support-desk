@@ -60,13 +60,37 @@ export class ChatStore {
 
   @action
   getCase(id, data): Observable<IChat> {
-    return this.httpClient.get<IChat>(this.endpoint + '/cases/' + id, this.httpHeader)
+    return this.httpClient.get<IChat>(this.endpoint + '/chats/' + id, this.httpHeader)
     .pipe(
       retry(1),
       catchError(this.processError)
     )
-
   }
+
+  @action
+  async sendEmailMessage (data) {
+    try {
+      this.isLoading = true;
+      const result = this.httpClient.post<IChat>(this.endpoint + '/chats/send', JSON.stringify(data), this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+    return;
+  }
+
+
+  // @action
+  // async sendEmailMessage (data: any) {
+  //   try {
+  //     this.isLoading = true;
+  //     const result = this.httpClient.post<IChat>(this.endpoint + '/chats/send/' + data.id + JSON.stringify(data), this.httpHeader).toPromise();
+  //     return result;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   return;
+  // }
 
   // @action
   // addCase(data: ICase): Observable<ICase> {

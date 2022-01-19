@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,7 +85,6 @@ import { DialogsComponent } from './components/dialogs/dialogs.component';
 import { ViewAllcasesDialogComponent } from './components/dialogs/view-allcases-dialog/view-allcases-dialog.component';
 import { TestPageComponent } from './pages/test-page/test-page.component';
 import { CreateCaseDialogComponent } from './components/dialogs/create-case-dialog/create-case-dialog.component';
-import { AssignToDialogComponent } from './components/dialogs/assign-to-dialog/assign-to-dialog.component';
 import { AdminSidebarLayoutComponent } from './layouts/admin-sidebar-layout/admin-sidebar-layout.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ViewNotificationDialogComponent } from './components/dialogs/view-notification-dialog/view-notification-dialog.component';
@@ -112,6 +111,7 @@ import { ManageManagersPageComponent } from './pages/manage-managers-page/manage
 import { ManagerReportPageComponent } from './pages/manager-report-page/manager-report-page.component';
 import { DefaultReportPagesComponent } from './pages/default-report-pages/default-report-pages.component';
 import { AgentCaseFrontLayoutComponent } from './layouts/agent-case-front-layout/agent-case-front-layout.component';
+import { AssignCaseDialogComponent } from './components/dialogs/assign-case-dialog/assign-case-dialog.component';
 
 export function playerFactory() {
   return player;
@@ -180,7 +180,6 @@ export function playerFactory() {
     ViewAllcasesDialogComponent,
     TestPageComponent,
     CreateCaseDialogComponent,
-    AssignToDialogComponent,
     AdminSidebarLayoutComponent,
     ViewNotificationDialogComponent,
     ManagerLoginPageComponent,
@@ -201,7 +200,8 @@ export function playerFactory() {
     ManageManagersPageComponent,
     ManagerReportPageComponent,
     DefaultReportPagesComponent,
-    AgentCaseFrontLayoutComponent
+    AgentCaseFrontLayoutComponent,
+    AssignCaseDialogComponent
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [
@@ -238,5 +238,6 @@ export function playerFactory() {
 
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA],
 })
 export class AppModule {}

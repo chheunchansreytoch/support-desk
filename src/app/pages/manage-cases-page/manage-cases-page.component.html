@@ -5,10 +5,17 @@
         <span class="material-icons custom-icon">work</span>
         <h1>Cases</h1>
       </div>
-      <button class="btnCreate" mat-button (click)="onCreate(null)">
-        <span class="material-icons">add_circle</span>
-        Create Case
-      </button>
+      <div class="custom-button">
+        <button class="btnCreate" mat-button (click)="onAssign(this.arrList)">
+          <span class="material-icons">add_circle</span>
+          Assign Case
+        </button>
+
+        <button class="btnCreate" mat-button (click)="onCreate(null)">
+          <span class="material-icons">add_circle</span>
+          Create Case
+        </button>
+      </div>
     </div>
 
     <div class="page-statistic-container">
@@ -86,7 +93,7 @@
                 <thead>
                   <tr>
                     <th>N.</th>
-                    <!-- <th><input type="checkbox" (change)="checkAll($event)"></th> -->
+                    <th><input type="checkbox" (change)="checkAll($event)"></th>
                     <th>Case Number</th>
                     <th>Subject</th>
                     <th>Description</th>
@@ -102,9 +109,7 @@
                 <tbody>
                   <tr *ngFor="let item of arrCases; let i = index">
                     <td>{{i+1}}</td>
-                    <!-- <td>
-                     <input type="checkbox" [checked]="checks">
-                    </td> -->
+                    <td><input type="checkbox" [checked]="checks" (change)="isChecked(item, $event)"></td>
                     <td>{{item?.caseNumber}}</td>
                     <td>{{item.subject}}</td>
                     <td>{{item.description}}</td>
@@ -144,7 +149,7 @@
                 <thead>
                   <tr>
                     <th>N.</th>
-                    <!-- <th><input type="checkbox" (change)="checkAll($event)"></th> -->
+                    <th><input type="checkbox" (change)="checkAll($event)"></th>
                     <th>Case Number</th>
                     <th>Subject</th>
                     <th>Description</th>
@@ -160,9 +165,7 @@
                 <tbody>
                   <tr *ngFor="let item of arrCases; let i = index">
                     <td>{{i+1}}</td>
-                    <!-- <td>
-                     <input type="checkbox" [checked]="checks">
-                    </td> -->
+                    <td><input type="checkbox" [checked]="checks"></td>
                     <td>{{item?.caseNumber}}</td>
                     <td>{{item.subject}}</td>
                     <td>{{item.description}}</td>
@@ -202,7 +205,7 @@
                 <thead>
                   <tr>
                     <th>N.</th>
-                    <!-- <th><input type="checkbox" (change)="checkAll($event)"></th> -->
+                    <th><input type="checkbox" (change)="checkAll($event)"></th>
                     <th>Case Number</th>
                     <th>Subject</th>
                     <th>Description</th>
@@ -218,9 +221,7 @@
                 <tbody>
                   <tr *ngFor="let item of arrCases; let i = index">
                     <td>{{i+1}}</td>
-                    <!-- <td>
-                     <input type="checkbox" [checked]="checks">
-                    </td> -->
+                    <td><input type="checkbox" [checked]="checks"></td>
                     <td>{{item?.caseNumber}}</td>
                     <td>{{item.subject}}</td>
                     <td>{{item.description}}</td>

@@ -18,6 +18,7 @@ import { AlertInformationDialogComponent } from 'src/app/components/alert-inform
 import { PaginationStore } from 'src/app/stores/pagination.store';
 import { CreateCaseDialogComponent } from 'src/app/components/dialogs/create-case-dialog/create-case-dialog.component';
 import { ConfirmationDialogComponent } from 'src/app/components/confirmation-dialog/confirmation-dialog.component';
+import { AssignCaseDialogComponent } from 'src/app/components/dialogs/assign-case-dialog/assign-case-dialog.component';
 
 @Component({
   selector: 'app-manage-cases-page',
@@ -26,6 +27,7 @@ import { ConfirmationDialogComponent } from 'src/app/components/confirmation-dia
 })
 export class ManageCasesPageComponent implements OnInit {
 
+  public selectedCheckedboxValue;
   selectedValue = 'none';
   public selecedBtnCancel;
   private departmentIT_statusValue;
@@ -36,6 +38,7 @@ export class ManageCasesPageComponent implements OnInit {
   arrStatuses: Array<any> = [];
   arrPriorities: Array<any> = [];
   arrManagers: Array<any> = [];
+  arrList: Array<any> = [];
   creatingCaseForm: any;
 
   getDepartmentIdFromFormData= '';
@@ -180,6 +183,20 @@ export class ManageCasesPageComponent implements OnInit {
     })
   }
 
+  onAssign(item: any) {
+    //console.log(item);
+    const dialogRef = this.dialog.open(AssignCaseDialogComponent, {
+      width: '600px',
+      height: '96vh',
+      data: item
+    });
+
+    dialogRef.updatePosition({ top: '2vh', right: '2vh' });
+    dialogRef.afterClosed().subscribe(() => {
+      this.fetchCases();
+    })
+  }
+
   onMoreDetailDialog() {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '500px',
@@ -278,35 +295,6 @@ export class ManageCasesPageComponent implements OnInit {
     return;
   }
 
-  // onClickUpdate(caseId) {
-  //   const dialogRef = this.dialog.open(DialogUpdateComponent, {
-  //     data: caseId,
-  //     width: '600px',
-  //     height: '96vh',
-  //     role: 'dialog',
-  //   });
-
-  //   dialogRef.updatePosition({top: '2vh', right: '2vh'});
-  //   dialogRef.afterClosed().subscribe(() => {
-  //     this.fetchCases();
-  //   })
-  // }
-
-  // onClickUpdate(caseId) {
-  //   if(caseId) {
-  //     const dialogRef = this.dialog.open(DialogUpdateComponent, {
-  //       data: caseId
-  //     });
-  //     dialogRef.afterClosed().subscribe(async (result: any) => {
-  //       if(!result) return;
-  //       await this.caseStore(result);
-  //       console.log(result);
-  //       alert("The Case was updated successfully!");
-  //     });
-  //   }
-  //   return;
-  //}
-
   convertUTCtoDate(UTC: string) {
     const date = new Date(UTC);
     //const strDate = date.toLocaleDateString();
@@ -314,74 +302,9 @@ export class ManageCasesPageComponent implements OnInit {
     return strDate;
   }
 
-
-// *** create select departments ***
-  SelectAgentName: string = '';
-
-  departments_IT: Department_IT [] = [
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Working",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Closed",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Working",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Closed",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Closed",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Working",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Working",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Working",
-    },
-
-    {
-      all: "",
-      name: "Chheun Chansreytoch",
-      status: "Closed",
-    },
-  ];
-
-  radioChangeHandler (e:any) {
-    this.SelectAgentName = e.target.value;
-  }
-
-
 // checkbox table
   checks=false;
-  checkAll(e:any) {
+  checkAll(e: any) {
     if(e.target.checked==true) {
       this.checks=true;
     }
@@ -391,13 +314,13 @@ export class ManageCasesPageComponent implements OnInit {
   }
 
   // checkToAssign list
-  Checked=false;
-  isChecked(e:any){
+  // Checked=false;
+  isChecked(item, e:any){
     if(e.target.checked==true) {
-      this.Checked=true;
+        return this.arrList = item;
     }
     else {
-      this.Checked=false;
+      return null;
     }
   }
 }

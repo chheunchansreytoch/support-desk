@@ -1,11 +1,11 @@
 <div class="custom-page-admin">
   <div class="page-wraper">
-    <div class="page-statistic-container">
+    <div class="page-container">
       <section>
         <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style">
-          <mat-button-toggle value="bold">Assign</mat-button-toggle>
-          <mat-button-toggle value="italic">Delete</mat-button-toggle>
-          <mat-button-toggle value="underline">Change Owner</mat-button-toggle>
+          <mat-button-toggle value="update">Update</mat-button-toggle>
+          <mat-button-toggle value="delete">Delete</mat-button-toggle>
+          <mat-button-toggle value="changeOwner">Change Owner</mat-button-toggle>
         </mat-button-toggle-group>
         <!-- <p>Chosen value is {{fontStyle}}</p> -->
       </section>
@@ -22,7 +22,7 @@
       </button>
     </div> -->
 
-    <!-- <div class="page-statistic-container">
+    <!-- <div clascontainer">
       <div class="card-container first">
         <div class="card-title">
           <h4>New Agents</h4>

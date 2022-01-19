@@ -1,0 +1,74 @@
+<div class="form-dialog-container">
+  <h4 mat-dialog-title>
+    <span>
+      <!-- <ng-container *ngIf="!data">Create</ng-container>
+      <ng-container *ngIf="data">Update</ng-container> -->
+      Case
+    </span>
+    <button class="btn-close" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </h4>
+
+  <div mat-dialog-content>
+    <form [formGroup]="assignForm" (ngSubmit)="formSubmitted(assignForm.value)">
+      <div class="custom-field-0">
+        <label class="label" for="caseNumber">Case Number</label>
+        <input class="input" type="text" id="caseNumber" required formControlName="caseNumber" readonly="readonly">
+        <p class="error-message" *ngIf="assignForm.controls['caseNumber']?.touched && assignForm.controls['caseNumber']?.errors?.required">Please Input Case Number.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="status">Status</label>
+        <select class="input" id="status" formControlName="status" required>
+          <option *ngFor="let item of arrStatuses" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="assignForm.controls['status']?.touched && assignForm.controls['status']?.errors?.required">Please Select Status.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="priority">Priority</label>
+        <select class="input" id="priority" formControlName="priority" required>
+          <option *ngFor="let item of arrPriorities" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="assignForm.controls['priority']?.touched && assignForm.controls['priority']?.errors?.required">Please Select Priority.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="agentDepartment">Agent Department</label>
+        <select class="input" id="agentDepartment" formControlName="agentDepartment" required (change)="selectDepartmentChanged($event)">
+          <option *ngFor="let item of arrAgentDepartments" value="{{item.id}}">{{item.name}}</option>
+        </select>
+        <p class="error-message" *ngIf="assignForm.controls['agentDepartment']?.touched && assignForm.controls['agentDepartment']?.errors?.required">Please Select agent Department.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="agent">Agent Name</label>
+        <select class="input" id="agent" required formControlName="agent">
+          <option>please select an agent name</option>
+          <option *ngFor="let item of agentsBySelectedDepartment" value="{{item.id}}">{{item?.username}}</option>
+        </select>
+        <p class="error-message" *ngIf="assignForm.controls['agent']?.touched && assignForm.controls['agent']?.errors?.required">Please Select Agent Name.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="subject">Subject</label>
+        <input class="input" type="text" id="subject" required formControlName="subject" readonly="readonly">
+        <p class="error-message" *ngIf="assignForm.controls['subject']?.touched && assignForm.controls['subject']?.errors?.required">Please Input Subject.</p>
+      </div>
+
+      <div class="custom-field-0">
+        <label class="label" for="description">Description</label>
+        <input class="input" type="text" id="description" required formControlName="description" readonly="readonly">
+        <p class="error-message" *ngIf="assignForm.controls['description']?.touched && assignForm.controls['description']?.errors?.required">Please Input Description.</p>
+      </div>
+    </form>
+  </div>
+
+  <div class="custom-matdialog-footer" mat-dialog-actions>
+    <button class="btn btn-close" mat-button mat-dialog-close>Close</button>
+    <button class="btn btn-submit" (click)="formSubmitted(assignForm.value)">
+      <ng-container *ngIf="data">Save</ng-container>
+    </button>
+  </div>
+</div>

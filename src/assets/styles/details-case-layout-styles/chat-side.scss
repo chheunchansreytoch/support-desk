@@ -1,10 +1,11 @@
 .wraper {
-  .agentCaseContainer {
-    .caseChatSide {
+  .agentCaseContainer .next-tab-side{
+    .chatterContainer{
       flex: 1;
       background: #f8f9fa;
       margin: 5px;
       border-radius: 5px;
+      max-width: 50%;
 
       .ChatSideContainer {
         width: 100%;
@@ -64,59 +65,37 @@
             .custom-post-layout {
               .post-layout {
                 padding: 20px;
+                form {
+                  .custom-btn-share {
+                    margin-right: 0;
+                    padding: 20px;
+                    display: flex;
+                    justify-content: flex-end;
 
-              }
-
-              .custom-sendTo-shareBtn {
-                display: flex;
-                justify-content: space-between;
-
-
-                .sendTo {
-                  margin-left: 20px;
-
-                  p {
-                    font-size: 12px;
-
-                    span {
-                      font-weight: bold;
-                    }
-                  }
-
-                  .send-btn {
-                    border: none;
-                    background: none;
-
-                    .fi-rr-clip {
+                    button {
+                      padding: 8px 20px;
+                      border-radius: 5px;
+                      border: 1px solid #6fa7f0;
+                      background-color: #6fa7f0;
+                      transition: transform 80ms ease-in;
+                      color: #FFFFFF;
                       font-size: 12px;
-                      margin-left: 20px;
+                      font-weight: bold;
+
+                      &:active {
+                        transform: scale(0.95);
+                      }
+
+                      &:focus {
+                        outline: none;
+                      }
                     }
 
-                    .fi-rr-clip:hover {
-                      color: $color9;
+                    button.ghost {
+                      background-color: transparent;
+                      border-color: #FFFFFF;
                     }
                   }
-                }
-
-                .custom-btn-share {
-                  margin-right: 20px;
-                  width: 90px;
-                  height: 30px;
-                  border-radius: 5px;
-                  background: $color2;
-
-                  .share-btn {
-                    color: $color7;
-                    padding: 7px;
-                    margin-left: 20px;
-                    border: none;
-                    background: none;
-                  }
-                }
-
-                .custom-btn-share:hover {
-                  background: #5784be;
-                  transition: 0.5s;
                 }
               }
             }
@@ -343,6 +322,11 @@
       }
     }
   }
+}
+
+
+.ql-editor {
+  word-break: break-all;
 }
 
 .menuClass {

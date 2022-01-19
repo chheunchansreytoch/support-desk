@@ -37,15 +37,7 @@ export class AllClosedCasesPageComponent implements OnInit {
   }
 
   onSelectedItem(item) {
-    this.caseStore.getClosedCase(item.id).then((res: any) => {
-      this.arrClosedCase = res;
-      //console.log(this.arrClosedCase);
-    });
-
-    this.router.navigate(
-      [{outlets: { primary: '/cases/case-details/' + item?.id, child2: '/cases/case-details/' + item?.id}}],
-      { queryParams: { key: item?.key } }
-    )
+    this.router.navigate(['/cases/case-details'], {queryParams: { key: item?.id }});
   }
 
   fetchClosedCases() {

@@ -88,8 +88,8 @@ const routes: Routes = [
                 path: 'case-details',
                 component: AgentCaseFrontLayoutComponent,
                 children: [
-                  { path: ':id', component: CaseDetailsPageComponent},
-                  { path: ':id', component: ChatSidePageComponent, outlet:'child2'}
+                  { path: '', component: CaseDetailsPageComponent},
+                  // { path: ':id', component: ChatSidePageComponent, outlet:'child2'}
                 ]
 
 

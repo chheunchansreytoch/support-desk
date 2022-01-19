@@ -19,745 +19,745 @@
         }
       }
 
-      .custom-button {
-        //display: flex;
-
-        .custom-btn-Case-blog {
-          button {
-            border-radius: 5px;
-            border: 1px solid #b3d4df;
-            background-color: #b3d4df;
-            font-size: 12px;
-            font-weight: bold;
-            padding: 8px 10px;
-            transition: transform 80ms ease-in;
-          }
-
-          button:active {
-            transform: scale(0.95);
-          }
-
-          button:focus {
-            outline: none;
-          }
-
-          button.ghost {
-            background-color: transparent;
-            border-color: #FFFFFF;
-          }
-          // .btnClickCreate {
-          //   float: left;
-          //   margin-right: 5px;
-          //   text-align: center;
-          //   line-height: 2;
-          //   width: 100px;
-          //   background: #b3d4df;
-          //   border: 1px solid #b3d4df;
-          //   border-radius: 5px;
-
-          //   .btnCreate {
-          //     border: none;
-          //     background: none;
-          //   }
-          // }
-
-          // .btnClickCreate:hover {
-          //   padding: 1px;
-          //   border: #cedde4;
-          //   background: #cedde4;
-          // }
-
-          .create-case-popup {
-            display: flex;
-            flex-direction: column;
-            margin-top: 30px;
-
-            form {
-              .custom-show-create-case-blog {
-                overflow-x: hidden;
-                z-index: 1001;
-                position: absolute;
-                width: 500px;
-                height: 330px;
-                margin-top: -30px;
-                background: $color7;
-                border-bottom: 1px solid $color7;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                box-shadow: 0 5px 15px #d4d7da;
-
-                .case-blog-container {
-                  display: flex;
-                  justify-content: space-between;
-
-                  .title-case-container {
-                    h4 {
-                      font-size: 16px;
-                      margin: 10px;
-                    }
-                  }
-
-                  // .custom-btnClose {
-                  //   padding: 10px;
-
-                  //   .btn-close {
-                  //     width: 20px;
-                  //     height: 20px;
-                  //     line-height: 2px;
-                  //     border: none;
-                  //     outline: none;
-                  //     background: none;
-
-                  //     .fi-rr-cross-small {
-                  //       font-size: 14px;
-                  //     }
-                  //   }
-
-                  //   .btn-close:hover {
-                  //     background: #b3d4df;
-                  //     border-radius: 50%;
-                  //     transition: 0.5s;
-                  //   }
-                  // }
-                }
-
-                .case-info-lbl-container {
-                  padding: 10px;
-
-                  .line-break {
-                    border-top: 1px solid $gray1;
-                  }
-
-                  .caselabel {
-                    padding: 5px;
-                    height: 30px;
-                    background-color: #dee9f3;
-                    border-radius: 5px;
-                    .case-info-lbl {
-                      font-size: 14px;
-                      padding: 10px;
-                    }
-                  }
-
-                  .caseNumber-Container {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .custom-case-number {
-                      padding: 14px;
-
-                      .case-number-lbl:before {
-                        content:"*";
-                        color: red;
-                      }
-
-                      .case-number-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      input {
-                        padding: 9px 1px;
-                        border: 1px solid ;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                       -webkit-appearance: none;
-                        appearance: none;
-                        outline: none;
-                      }
-                    }
-
-
-                    .custom-select {
-                      padding: 14px;
-
-                      .status-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .status-lbl:before {
-                        content:"*";
-                        color: red;
-                      }
-
-                      .select-box {
-                        width: 170px;
-                        position: relative;
-                      }
-
-                      .select-box select{
-                        height: 35px;
-                        padding: 10px 15px;
-                        line-height: 15px;
-                        font-size: 12px;
-                        width: 100%;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                       -webkit-appearance: none;
-                        appearance: none;
-                        outline: none;
-                      }
-
-                      .select-box:after{
-                        content: "";
-                        position: absolute;
-                        right: 8px;
-                        top: 50%;
-                        margin-top: -4px;
-                        border-top: 8px solid #ccc;
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
-                        pointer-events: none;
-                      }
-
-                      .select-box select:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-
-                      .select-box select option {
-                        font-size: 14px;
-                        line-height: 200%;
-                      }
-                    }
-                  }
-
-                  .priority-agentDept-Container{
-                    display: flex;
-                    justify-content: space-between;
-
-                    .custom-select-Prority {
-                      padding: 14px;
-
-                      .priority-lbl:before {
-                        content:"*";
-                        color: red;
-                      }
-
-                      .priority-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .select-box-priority {
-                        width: 170px;
-                        position: relative;
-                      }
-
-                      .select-box-priority select{
-                        height: 35px;
-                        padding: 10px 15px;
-                        line-height: 15px;
-                        font-size: 12px;
-                        width: 100%;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                       -webkit-appearance: none;
-                        appearance: none;
-                        outline: none;
-                      }
-
-                      .select-box-priority:after{
-                        content: "";
-                        position: absolute;
-                        right: 8px;
-                        top: 50%;
-                        margin-top: -4px;
-                        border-top: 8px solid #ccc;
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
-                        pointer-events: none;
-                      }
-
-                      .select-box-priority select:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-
-                      .select-box-priority select option {
-                        font-size: 14px;
-                        line-height: 200%;
-                      }
-                    }
-
-                    .custom-select-agentDept{
-                      padding: 14px;
-                      .agentDept-label {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .agentDept-label:before {
-                        content:"*";
-                        color: red;
-                      }
-
-                      .select-agentDept {
-                        width: 170px;
-                        position: relative;
-                      }
-
-                      .select-agentDept select{
-                        height: 35px;
-                        padding: 10px 15px;
-                        line-height: 15px;
-                        font-size: 12px;
-                        width: 100%;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                       -webkit-appearance: none;
-                        appearance: none;
-                        outline: none;
-                      }
-
-                      .select-agentDept:after{
-                        content: "";
-                        position: absolute;
-                        right: 8px;
-                        top: 50%;
-                        margin-top: -4px;
-                        border-top: 8px solid #ccc;
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
-                        pointer-events: none;
-                      }
-
-                      .select-agentDept select:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-
-                      .select-agentDept select option {
-                        font-size: 14px;
-                        line-height: 200%;
-                      }
-                    }
-                  }
-
-                  .customer-select-agent{
-                    padding: 14px;
-                    label {
-                      font-size: 11px;
-                      color: $black1;
-                    }
-
-                    label:before {
-                      content:"*";
-                      color: red;
-                    }
-
-                    .select-dropdown {
-                      position: relative;
-                    }
-
-                    .select-dropdown select{
-                      height: 35px;
-                      padding: 10px 15px;
-                      line-height: 15px;
-                      font-size: 12px;
-                      width: 100%;
-                      border: 1px solid #ccc;
-                      border-radius: 5px;
-                     -webkit-appearance: none;
-                      appearance: none;
-                      outline: none;
-                    }
-
-                    .select-dropdown:after{
-                      content: "";
-                      position: absolute;
-                      right: 8px;
-                      top: 50%;
-                      margin-top: -4px;
-                      border-top: 8px solid #ccc;
-                      border-left: 6px solid transparent;
-                      border-right: 6px solid transparent;
-                      pointer-events: none;
-                    }
-
-                    .select-dropdown select:focus {
-                      border: 1px solid #54adf7;
-                      box-shadow: 0 0 3px #54adf7;
-                    }
-
-                    .select-dropdown select option {
-                      font-size: 14px;
-                      line-height: 200%;
-                    }
-                  }
-
-                  .contactName-Container {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .custom-contactName {
-                      width: 350px;
-                      padding: 20px;
-                      margin-top: -31px;
-
-                      .contact-name-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .custom-Contact-Name-icon {
-                        display: flex;
-                        .contactNameIcon {
-                          float: left;
-                          margin-right: 5px;
-                          .contact-image {
-                            float: right;
-                            width: 20px;
-                            height: 20px;
-                          }
-                        }
-                      }
-
-                      .search-input-contactName form input{
-                        font-size: 12px;
-                        color: $black1;
-                        border: none;
-                        outline: none;
-                      }
-
-                      .search-input-contactName form .fi-rr-search{
-                        margin-left: 50px;
-                      }
-
-                      .select-box-contactName select:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-                    }
-
-                    .custom-select-CaseOrigin {
-                      padding: 13px;
-                      margin-top: -25px;
-
-                      .origin-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .origin-lbl:before {
-                        content:"*";
-                        color: red;
-                      }
-
-                      .select-box-origin {
-                        width: 170px;
-                        position: relative;
-                      }
-
-                      .select-box-origin select{
-                        height: 35px;
-                        padding: 10px 15px;
-                        line-height: 15px;
-                        font-size: 12px;
-                        width: 100%;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                       -webkit-appearance: none;
-                        appearance: none;
-                        outline: none;
-                      }
-
-                      .select-box-origin:after{
-                        content: "";
-                        position: absolute;
-                        right: 8px;
-                        top: 50%;
-                        margin-top: -4px;
-                        border-top: 8px solid #ccc;
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
-                        pointer-events: none;
-                      }
-
-                      .select-box-origin select:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-
-                      .select-box-origin select option {
-                        font-size: 14px;
-                        line-height: 200%;
-                      }
-                    }
-                  }
-
-                  .accountNumber-Container {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .custom-account-number {
-                      width: 282px;
-                      padding: 21px;
-                      margin-top: -31px;
-
-                      .account-number-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .custom-Account-Name-icon {
-                        display: flex;
-                        .accountNameIcon {
-                          float: left;
-                          margin-right: 5px;
-                          .account-image {
-                            float: right;
-                            width: 20px;
-                            height: 20px;
-                          }
-                        }
-                      }
-                    }
-                  }
-
-                  .type-Container {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .custom-select-type {
-                      padding: 14px;
-                      margin-top: -20px;
-
-                      .type-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .select-box-type {
-                        width: 170px;
-                        position: relative;
-                      }
-
-                      .select-box-type select{
-                        height: 35px;
-                        padding: 10px 15px;
-                        line-height: 15px;
-                        font-size: 12px;
-                        width: 100%;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                       -webkit-appearance: none;
-                        appearance: none;
-                        outline: none;
-                      }
-
-                      .select-box-type:after{
-                        content: "";
-                        position: absolute;
-                        right: 8px;
-                        top: 50%;
-                        margin-top: -4px;
-                        border-top: 8px solid #ccc;
-                        border-left: 6px solid transparent;
-                        border-right: 6px solid transparent;
-                        pointer-events: none;
-                      }
-
-                      .select-box-type select:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-
-                      .select-box-type select option {
-                        font-size: 14px;
-                        line-height: 200%;
-                      }
-                    }
-                  }
-                }
-
-                .desc-info-lbl-container {
-                  padding: 10px;
-
-                  .descLabel {
-                    padding: 5px;
-                    height: 30px;
-                    background-color: #dee9f3;
-                    border-radius: 5px;
-                    .desc-info-lbl {
-                      font-size: 14px;
-                      padding: 10px;
-                    }
-                  }
-
-                  .DESC-Container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    .custom-subject {
-                      padding: 20px;
-                      .desc-subject-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                        padding: 3px;
-                        input {
-                          width: 430px;
-                          height: 70px;
-                          border: 1px solid #ccc;
-                          border-radius: 5px;
-                          background: $color7;
-                          outline: none;
-                          padding: 10px;
-                        }
-
-                        input:focus {
-                          border: 1px solid #54adf7;
-                          box-shadow: 0 0 3px #54adf7;
-                        }
-                      }
-
-                      .desc-subject-input {
-                        width: 430px;
-                        height: 35px;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                        background: $color7;
-                        outline: none;
-                        text-indent: 10px;
-                      }
-
-                      .desc-subject-input:focus {
-                        border: 1px solid #54adf7;
-                        box-shadow: 0 0 3px #54adf7;
-                      }
-                    }
-
-                    .custom-desc-textarea {
-                      padding: 3px;
-
-                      .desc-lbl {
-                        font-size: 11px;
-                        color: $black1;
-                      }
-
-                      .textarea-container {
-                        textarea {
-                          width: 430px;
-                          height: 70px;
-                          border: 1px solid #ccc;
-                          border-radius: 5px;
-                          background: $color7;
-                          outline: none;
-                          padding: 10px;
-                        }
-
-                        textarea:focus {
-                          border: 1px solid #54adf7;
-                          box-shadow: 0 0 3px #54adf7;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-
-              .custom-button-Container {
-                position: absolute;
-                height: 70px;
-                z-index: 1001;
-                //position: absolute;
-                width: 500px;
-                margin-top: 300px;
-                background: $color7;
-                border-top: 1px solid $color7;
-                border-bottom-left-radius: 5px;
-                border-bottom-right-radius: 5px;
-                box-shadow: 0 -1px 5px #ffffff ,0 1px 5px #d4d7da;
-
-                .custom-button-Click {
-                  display: flex;
-                  float: right;
-                  margin-right: 20px;
-                  .btn-ClickCancel {
-                    margin-top: 17px;
-                    float: left;
-                    margin-right: 15px;
-
-                    button {
-                      border: none;
-                      outline: none;
-                      background-color: $color9;
-                      color: $color7;
-                      border-radius: 5px;
-                      padding: 5px 14px;
-                      font-size: 13px;
-                      font-weight: bold;
-                      letter-spacing: 1px;
-                      transition: transform 80ms ease-in;
-                    }
-
-                    button:hover{
-                      background-color: rgb(14, 14, 179);
-                      transition: 0.5s;
-                    }
-
-                    button:active {
-                      transform: scale(0.85);
-                    }
-
-                    button:focus {
-                      outline: none;
-                    }
-
-                    button.ghost {
-                      background-color: transparent;
-                      border-color: #FFFFFF;
-                    }
-                  }
-
-                  .btn-ClickSave {
-                    float: right;
-                    margin-top: 17px;
-                    button {
-                      border: none;
-                      outline: none;
-                      background-color: $color8;
-                      color: $color7;
-                      border-radius: 5px;
-                      padding: 5px 14px;
-                      font-size: 13px;
-                      //font-weight: bold;
-                      letter-spacing: 1px;
-                      transition: transform 80ms ease-in;
-                    }
-
-                    button:hover{
-                      // background-color: rgb(180, 12, 12);
-                      background-color: rgb(23, 133, 23);
-                      transition: 0.5s;
-                    }
-
-                    button:active {
-                      transform: scale(0.85);
-                    }
-
-                    button:focus {
-                      outline: none;
-                    }
-
-                    button.ghost {
-                      background-color: transparent;
-                      border-color: #FFFFFF;
-                    }
-                  }
-
-                  .btn-ClickSave:hover {
-                    background: #6e88c4;
-                    transition: 0.5s;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      // .custom-button {
+      //   //display: flex;
+
+      //   .custom-btn-Case-blog {
+      //     button {
+      //       border-radius: 5px;
+      //       border: 1px solid #b3d4df;
+      //       background-color: #b3d4df;
+      //       font-size: 12px;
+      //       font-weight: bold;
+      //       padding: 8px 10px;
+      //       transition: transform 80ms ease-in;
+      //     }
+
+      //     button:active {
+      //       transform: scale(0.95);
+      //     }
+
+      //     button:focus {
+      //       outline: none;
+      //     }
+
+      //     button.ghost {
+      //       background-color: transparent;
+      //       border-color: #FFFFFF;
+      //     }
+      //     // .btnClickCreate {
+      //     //   float: left;
+      //     //   margin-right: 5px;
+      //     //   text-align: center;
+      //     //   line-height: 2;
+      //     //   width: 100px;
+      //     //   background: #b3d4df;
+      //     //   border: 1px solid #b3d4df;
+      //     //   border-radius: 5px;
+
+      //     //   .btnCreate {
+      //     //     border: none;
+      //     //     background: none;
+      //     //   }
+      //     // }
+
+      //     // .btnClickCreate:hover {
+      //     //   padding: 1px;
+      //     //   border: #cedde4;
+      //     //   background: #cedde4;
+      //     // }
+
+      //     .create-case-popup {
+      //       display: flex;
+      //       flex-direction: column;
+      //       margin-top: 30px;
+
+      //       form {
+      //         .custom-show-create-case-blog {
+      //           overflow-x: hidden;
+      //           z-index: 1001;
+      //           position: absolute;
+      //           width: 500px;
+      //           height: 330px;
+      //           margin-top: -30px;
+      //           background: $color7;
+      //           border-bottom: 1px solid $color7;
+      //           border-top-left-radius: 5px;
+      //           border-top-right-radius: 5px;
+      //           box-shadow: 0 5px 15px #d4d7da;
+
+      //           .case-blog-container {
+      //             display: flex;
+      //             justify-content: space-between;
+
+      //             .title-case-container {
+      //               h4 {
+      //                 font-size: 16px;
+      //                 margin: 10px;
+      //               }
+      //             }
+
+      //             // .custom-btnClose {
+      //             //   padding: 10px;
+
+      //             //   .btn-close {
+      //             //     width: 20px;
+      //             //     height: 20px;
+      //             //     line-height: 2px;
+      //             //     border: none;
+      //             //     outline: none;
+      //             //     background: none;
+
+      //             //     .fi-rr-cross-small {
+      //             //       font-size: 14px;
+      //             //     }
+      //             //   }
+
+      //             //   .btn-close:hover {
+      //             //     background: #b3d4df;
+      //             //     border-radius: 50%;
+      //             //     transition: 0.5s;
+      //             //   }
+      //             // }
+      //           }
+
+      //           .case-info-lbl-container {
+      //             padding: 10px;
+
+      //             .line-break {
+      //               border-top: 1px solid $gray1;
+      //             }
+
+      //             .caselabel {
+      //               padding: 5px;
+      //               height: 30px;
+      //               background-color: #dee9f3;
+      //               border-radius: 5px;
+      //               .case-info-lbl {
+      //                 font-size: 14px;
+      //                 padding: 10px;
+      //               }
+      //             }
+
+      //             .caseNumber-Container {
+      //               display: flex;
+      //               justify-content: space-between;
+
+      //               .custom-case-number {
+      //                 padding: 14px;
+
+      //                 .case-number-lbl:before {
+      //                   content:"*";
+      //                   color: red;
+      //                 }
+
+      //                 .case-number-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 input {
+      //                   padding: 9px 1px;
+      //                   border: 1px solid ;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                  -webkit-appearance: none;
+      //                   appearance: none;
+      //                   outline: none;
+      //                 }
+      //               }
+
+
+      //               .custom-select {
+      //                 padding: 14px;
+
+      //                 .status-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .status-lbl:before {
+      //                   content:"*";
+      //                   color: red;
+      //                 }
+
+      //                 .select-box {
+      //                   width: 170px;
+      //                   position: relative;
+      //                 }
+
+      //                 .select-box select{
+      //                   height: 35px;
+      //                   padding: 10px 15px;
+      //                   line-height: 15px;
+      //                   font-size: 12px;
+      //                   width: 100%;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                  -webkit-appearance: none;
+      //                   appearance: none;
+      //                   outline: none;
+      //                 }
+
+      //                 .select-box:after{
+      //                   content: "";
+      //                   position: absolute;
+      //                   right: 8px;
+      //                   top: 50%;
+      //                   margin-top: -4px;
+      //                   border-top: 8px solid #ccc;
+      //                   border-left: 6px solid transparent;
+      //                   border-right: 6px solid transparent;
+      //                   pointer-events: none;
+      //                 }
+
+      //                 .select-box select:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+
+      //                 .select-box select option {
+      //                   font-size: 14px;
+      //                   line-height: 200%;
+      //                 }
+      //               }
+      //             }
+
+      //             .priority-agentDept-Container{
+      //               display: flex;
+      //               justify-content: space-between;
+
+      //               .custom-select-Prority {
+      //                 padding: 14px;
+
+      //                 .priority-lbl:before {
+      //                   content:"*";
+      //                   color: red;
+      //                 }
+
+      //                 .priority-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .select-box-priority {
+      //                   width: 170px;
+      //                   position: relative;
+      //                 }
+
+      //                 .select-box-priority select{
+      //                   height: 35px;
+      //                   padding: 10px 15px;
+      //                   line-height: 15px;
+      //                   font-size: 12px;
+      //                   width: 100%;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                  -webkit-appearance: none;
+      //                   appearance: none;
+      //                   outline: none;
+      //                 }
+
+      //                 .select-box-priority:after{
+      //                   content: "";
+      //                   position: absolute;
+      //                   right: 8px;
+      //                   top: 50%;
+      //                   margin-top: -4px;
+      //                   border-top: 8px solid #ccc;
+      //                   border-left: 6px solid transparent;
+      //                   border-right: 6px solid transparent;
+      //                   pointer-events: none;
+      //                 }
+
+      //                 .select-box-priority select:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+
+      //                 .select-box-priority select option {
+      //                   font-size: 14px;
+      //                   line-height: 200%;
+      //                 }
+      //               }
+
+      //               .custom-select-agentDept{
+      //                 padding: 14px;
+      //                 .agentDept-label {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .agentDept-label:before {
+      //                   content:"*";
+      //                   color: red;
+      //                 }
+
+      //                 .select-agentDept {
+      //                   width: 170px;
+      //                   position: relative;
+      //                 }
+
+      //                 .select-agentDept select{
+      //                   height: 35px;
+      //                   padding: 10px 15px;
+      //                   line-height: 15px;
+      //                   font-size: 12px;
+      //                   width: 100%;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                  -webkit-appearance: none;
+      //                   appearance: none;
+      //                   outline: none;
+      //                 }
+
+      //                 .select-agentDept:after{
+      //                   content: "";
+      //                   position: absolute;
+      //                   right: 8px;
+      //                   top: 50%;
+      //                   margin-top: -4px;
+      //                   border-top: 8px solid #ccc;
+      //                   border-left: 6px solid transparent;
+      //                   border-right: 6px solid transparent;
+      //                   pointer-events: none;
+      //                 }
+
+      //                 .select-agentDept select:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+
+      //                 .select-agentDept select option {
+      //                   font-size: 14px;
+      //                   line-height: 200%;
+      //                 }
+      //               }
+      //             }
+
+      //             .customer-select-agent{
+      //               padding: 14px;
+      //               label {
+      //                 font-size: 11px;
+      //                 color: $black1;
+      //               }
+
+      //               label:before {
+      //                 content:"*";
+      //                 color: red;
+      //               }
+
+      //               .select-dropdown {
+      //                 position: relative;
+      //               }
+
+      //               .select-dropdown select{
+      //                 height: 35px;
+      //                 padding: 10px 15px;
+      //                 line-height: 15px;
+      //                 font-size: 12px;
+      //                 width: 100%;
+      //                 border: 1px solid #ccc;
+      //                 border-radius: 5px;
+      //                -webkit-appearance: none;
+      //                 appearance: none;
+      //                 outline: none;
+      //               }
+
+      //               .select-dropdown:after{
+      //                 content: "";
+      //                 position: absolute;
+      //                 right: 8px;
+      //                 top: 50%;
+      //                 margin-top: -4px;
+      //                 border-top: 8px solid #ccc;
+      //                 border-left: 6px solid transparent;
+      //                 border-right: 6px solid transparent;
+      //                 pointer-events: none;
+      //               }
+
+      //               .select-dropdown select:focus {
+      //                 border: 1px solid #54adf7;
+      //                 box-shadow: 0 0 3px #54adf7;
+      //               }
+
+      //               .select-dropdown select option {
+      //                 font-size: 14px;
+      //                 line-height: 200%;
+      //               }
+      //             }
+
+      //             .contactName-Container {
+      //               display: flex;
+      //               justify-content: space-between;
+
+      //               .custom-contactName {
+      //                 width: 350px;
+      //                 padding: 20px;
+      //                 margin-top: -31px;
+
+      //                 .contact-name-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .custom-Contact-Name-icon {
+      //                   display: flex;
+      //                   .contactNameIcon {
+      //                     float: left;
+      //                     margin-right: 5px;
+      //                     .contact-image {
+      //                       float: right;
+      //                       width: 20px;
+      //                       height: 20px;
+      //                     }
+      //                   }
+      //                 }
+
+      //                 .search-input-contactName form input{
+      //                   font-size: 12px;
+      //                   color: $black1;
+      //                   border: none;
+      //                   outline: none;
+      //                 }
+
+      //                 .search-input-contactName form .fi-rr-search{
+      //                   margin-left: 50px;
+      //                 }
+
+      //                 .select-box-contactName select:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+      //               }
+
+      //               .custom-select-CaseOrigin {
+      //                 padding: 13px;
+      //                 margin-top: -25px;
+
+      //                 .origin-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .origin-lbl:before {
+      //                   content:"*";
+      //                   color: red;
+      //                 }
+
+      //                 .select-box-origin {
+      //                   width: 170px;
+      //                   position: relative;
+      //                 }
+
+      //                 .select-box-origin select{
+      //                   height: 35px;
+      //                   padding: 10px 15px;
+      //                   line-height: 15px;
+      //                   font-size: 12px;
+      //                   width: 100%;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                  -webkit-appearance: none;
+      //                   appearance: none;
+      //                   outline: none;
+      //                 }
+
+      //                 .select-box-origin:after{
+      //                   content: "";
+      //                   position: absolute;
+      //                   right: 8px;
+      //                   top: 50%;
+      //                   margin-top: -4px;
+      //                   border-top: 8px solid #ccc;
+      //                   border-left: 6px solid transparent;
+      //                   border-right: 6px solid transparent;
+      //                   pointer-events: none;
+      //                 }
+
+      //                 .select-box-origin select:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+
+      //                 .select-box-origin select option {
+      //                   font-size: 14px;
+      //                   line-height: 200%;
+      //                 }
+      //               }
+      //             }
+
+      //             .accountNumber-Container {
+      //               display: flex;
+      //               justify-content: space-between;
+
+      //               .custom-account-number {
+      //                 width: 282px;
+      //                 padding: 21px;
+      //                 margin-top: -31px;
+
+      //                 .account-number-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .custom-Account-Name-icon {
+      //                   display: flex;
+      //                   .accountNameIcon {
+      //                     float: left;
+      //                     margin-right: 5px;
+      //                     .account-image {
+      //                       float: right;
+      //                       width: 20px;
+      //                       height: 20px;
+      //                     }
+      //                   }
+      //                 }
+      //               }
+      //             }
+
+      //             .type-Container {
+      //               display: flex;
+      //               justify-content: space-between;
+
+      //               .custom-select-type {
+      //                 padding: 14px;
+      //                 margin-top: -20px;
+
+      //                 .type-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .select-box-type {
+      //                   width: 170px;
+      //                   position: relative;
+      //                 }
+
+      //                 .select-box-type select{
+      //                   height: 35px;
+      //                   padding: 10px 15px;
+      //                   line-height: 15px;
+      //                   font-size: 12px;
+      //                   width: 100%;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                  -webkit-appearance: none;
+      //                   appearance: none;
+      //                   outline: none;
+      //                 }
+
+      //                 .select-box-type:after{
+      //                   content: "";
+      //                   position: absolute;
+      //                   right: 8px;
+      //                   top: 50%;
+      //                   margin-top: -4px;
+      //                   border-top: 8px solid #ccc;
+      //                   border-left: 6px solid transparent;
+      //                   border-right: 6px solid transparent;
+      //                   pointer-events: none;
+      //                 }
+
+      //                 .select-box-type select:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+
+      //                 .select-box-type select option {
+      //                   font-size: 14px;
+      //                   line-height: 200%;
+      //                 }
+      //               }
+      //             }
+      //           }
+
+      //           .desc-info-lbl-container {
+      //             padding: 10px;
+
+      //             .descLabel {
+      //               padding: 5px;
+      //               height: 30px;
+      //               background-color: #dee9f3;
+      //               border-radius: 5px;
+      //               .desc-info-lbl {
+      //                 font-size: 14px;
+      //                 padding: 10px;
+      //               }
+      //             }
+
+      //             .DESC-Container {
+      //               display: flex;
+      //               flex-direction: column;
+      //               align-items: center;
+
+      //               .custom-subject {
+      //                 padding: 20px;
+      //                 .desc-subject-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                   padding: 3px;
+      //                   input {
+      //                     width: 430px;
+      //                     height: 70px;
+      //                     border: 1px solid #ccc;
+      //                     border-radius: 5px;
+      //                     background: $color7;
+      //                     outline: none;
+      //                     padding: 10px;
+      //                   }
+
+      //                   input:focus {
+      //                     border: 1px solid #54adf7;
+      //                     box-shadow: 0 0 3px #54adf7;
+      //                   }
+      //                 }
+
+      //                 .desc-subject-input {
+      //                   width: 430px;
+      //                   height: 35px;
+      //                   border: 1px solid #ccc;
+      //                   border-radius: 5px;
+      //                   background: $color7;
+      //                   outline: none;
+      //                   text-indent: 10px;
+      //                 }
+
+      //                 .desc-subject-input:focus {
+      //                   border: 1px solid #54adf7;
+      //                   box-shadow: 0 0 3px #54adf7;
+      //                 }
+      //               }
+
+      //               .custom-desc-textarea {
+      //                 padding: 3px;
+
+      //                 .desc-lbl {
+      //                   font-size: 11px;
+      //                   color: $black1;
+      //                 }
+
+      //                 .textarea-container {
+      //                   textarea {
+      //                     width: 430px;
+      //                     height: 70px;
+      //                     border: 1px solid #ccc;
+      //                     border-radius: 5px;
+      //                     background: $color7;
+      //                     outline: none;
+      //                     padding: 10px;
+      //                   }
+
+      //                   textarea:focus {
+      //                     border: 1px solid #54adf7;
+      //                     box-shadow: 0 0 3px #54adf7;
+      //                   }
+      //                 }
+      //               }
+      //             }
+      //           }
+      //         }
+
+      //         .custom-button-Container {
+      //           position: absolute;
+      //           height: 70px;
+      //           z-index: 1001;
+      //           //position: absolute;
+      //           width: 500px;
+      //           margin-top: 300px;
+      //           background: $color7;
+      //           border-top: 1px solid $color7;
+      //           border-bottom-left-radius: 5px;
+      //           border-bottom-right-radius: 5px;
+      //           box-shadow: 0 -1px 5px #ffffff ,0 1px 5px #d4d7da;
+
+      //           .custom-button-Click {
+      //             display: flex;
+      //             float: right;
+      //             margin-right: 20px;
+      //             .btn-ClickCancel {
+      //               margin-top: 17px;
+      //               float: left;
+      //               margin-right: 15px;
+
+      //               button {
+      //                 border: none;
+      //                 outline: none;
+      //                 background-color: $color9;
+      //                 color: $color7;
+      //                 border-radius: 5px;
+      //                 padding: 5px 14px;
+      //                 font-size: 13px;
+      //                 font-weight: bold;
+      //                 letter-spacing: 1px;
+      //                 transition: transform 80ms ease-in;
+      //               }
+
+      //               button:hover{
+      //                 background-color: rgb(14, 14, 179);
+      //                 transition: 0.5s;
+      //               }
+
+      //               button:active {
+      //                 transform: scale(0.85);
+      //               }
+
+      //               button:focus {
+      //                 outline: none;
+      //               }
+
+      //               button.ghost {
+      //                 background-color: transparent;
+      //                 border-color: #FFFFFF;
+      //               }
+      //             }
+
+      //             .btn-ClickSave {
+      //               float: right;
+      //               margin-top: 17px;
+      //               button {
+      //                 border: none;
+      //                 outline: none;
+      //                 background-color: $color8;
+      //                 color: $color7;
+      //                 border-radius: 5px;
+      //                 padding: 5px 14px;
+      //                 font-size: 13px;
+      //                 //font-weight: bold;
+      //                 letter-spacing: 1px;
+      //                 transition: transform 80ms ease-in;
+      //               }
+
+      //               button:hover{
+      //                 // background-color: rgb(180, 12, 12);
+      //                 background-color: rgb(23, 133, 23);
+      //                 transition: 0.5s;
+      //               }
+
+      //               button:active {
+      //                 transform: scale(0.85);
+      //               }
+
+      //               button:focus {
+      //                 outline: none;
+      //               }
+
+      //               button.ghost {
+      //                 background-color: transparent;
+      //                 border-color: #FFFFFF;
+      //               }
+      //             }
+
+      //             .btn-ClickSave:hover {
+      //               background: #6e88c4;
+      //               transition: 0.5s;
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
 
       .custom-table {
         position: relative;
@@ -862,5 +862,38 @@ button {
 
   .fa-trash {
     font-size: 16px;
+  }
+}
+
+
+.custom-button {
+  display: flex;
+  .btnCreate {
+    float: left;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: $primary-color;
+    background-color: $secondary-color;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: bold;
+    font-family: $primary-font;
+
+    span {
+      margin: 0;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $grey-color;
+      background: $lighter-grey-color
+    }
   }
 }
