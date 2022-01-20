@@ -89,30 +89,7 @@ const routes: Routes = [
                 component: AgentCaseFrontLayoutComponent,
                 children: [
                   { path: '', component: CaseDetailsPageComponent},
-                  // { path: ':id', component: ChatSidePageComponent, outlet:'child2'}
                 ]
-
-
-                // children: [
-                //   {
-                //     path: ':key',
-                //     component: CaseSidebarPageComponent,
-                //     //outlet: 'child1'
-                //     children: [
-                //       {
-                //         path: '',
-                //         component: CaseDetailsPageComponent,
-                //         // outlet: 'child1'
-                //       },
-
-                //       // {
-                //       //   path: '',
-                //       //   component: ChatSidePageComponent,
-                //       //   outlet: 'child2'
-                //       // },
-                //     ]
-                //   },
-                // ]
               },
               { path: 'agent-all-open-cases', component: AllOpenCasesPageComponent},
               { path: 'agent-my-cases', component: MyCasesPageComponent},
@@ -206,9 +183,6 @@ const routes: Routes = [
             children: [
               { path: '', redirectTo: 'agent-default-report', pathMatch: 'full' },
               { path: 'agent-default-report', component: DefaultReportPagesComponent},
-              // { path: 'agent-daily-report', component: DetailsAccountLayoutComponent},
-              // { path: 'agent-monthly-report', component: MyAccountsPageComponent},
-              // { path: 'agent-yearly-report', component: RecentlyViewedAccountsPageComponent},
             ]
           },
         ]

@@ -51,6 +51,12 @@ export class AgentStore {
     return agent != null ? true : false;
   }
 
+  @computed
+  get getCurrentAgentUser(): any {
+    const agent = localStorage.getItem('agent_auth');
+    return agent ? JSON.parse(agent) : {'id': null, 'username': null, 'password': null};
+  }
+
   @action
   async login(email: string, password: string) {
     try {
@@ -66,7 +72,6 @@ export class AgentStore {
           console.log(result);
 
         localStorage.setItem("agent_auth", JSON.stringify(result));
-        this.router.navigate(['/cases']);
         console.log("correct");
       });
     } catch(error) {
@@ -84,8 +89,8 @@ export class AgentStore {
     )
   }
 
-  getAgent(): void | Observable<IAgent> {
-    const agentData = JSON.parse(localStorage.getItem('agent_auth') || '{}');
+  getAgent(agentData) {
+    agentData = JSON.parse(localStorage.getItem('agent_auth') || '{}');
     if(!agentData) return
     return this.httpClient.get<IAgent>(this.endpoint + '/agents/' + agentData.id, this.httpHeaderWithToken)
 

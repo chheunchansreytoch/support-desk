@@ -17,51 +17,32 @@
       </div>
 
       <div class="Custom-Menu-icons">
-        <div class="notification-icon-container">
-          <div class="notification-icon">
-            <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu">
-              <i class="fas fa-bell"></i>
-            </button>
-            <mat-menu #menu1="matMenu">
-              <div class="nofify-inside-popup">
-                <div class="nofify">
-                  <span>Notifications</span>
-                  <i class="fas fa-bell"></i>
-                </div>
-
-                <div>
-
-                </div>
-              </div>
-
-              <button mat-menu-item>
-                <mat-icon>dialpad</mat-icon>
-                <span>Redial</span>
-              </button>
-              <button mat-menu-item disabled>
-                <mat-icon>voicemail</mat-icon>
-                <span>Check voice mail</span>
-              </button>
-              <button mat-menu-item>
-                <mat-icon>notifications_off</mat-icon>
-                <span>Disable alerts</span>
-              </button>
-            </mat-menu>
-          </div>
-        </div>
-
         <div class="custom-user-profile">
           <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with a menu">
-            <img class="avatarImg1" src="./assets/images/avatar.png">
+            <ng-container *ngIf="arrAgentAccount.imageDownloadUrl">
+              <img class="avatarImg1" [src]="checkLocalStoragePath(arrAgentAccount.imageDownloadUrl)">
+            </ng-container>
+
+              <!-- <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
+                <img class="image-preview"
+                  [src]="arrAgentAccount.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
+              </ng-container> -->
           </button>
 
           <mat-menu #menu2="matMenu">
             <div class="inside-popup">
-              <img class="avatarImg2" src="./assets/images/avatar.png">
+              <ng-container *ngIf="arrAgentAccount.imageDownloadUrl">
+                <img class="avatarImg2" [src]="checkLocalStoragePath(arrAgentAccount.imageDownloadUrl)">
+              </ng-container>
+
+                <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
+                  <img class="image-preview"
+                    [src]="arrAgentAccount.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
+                </ng-container>
               <div class="user-info">
-                <h4>Agent: Developer</h4>
-                <span class="span1">Name: Chheun Chansreytoch </span><br>
-                <span class="span2">chheunchansreytoch@gmail.com</span>
+                <h4>Agent: {{arrAgentAccount?.agentDepartment?.name}}</h4>
+                <span class="span1">Name: {{arrAgentAccount?.username}} </span><br>
+                <span class="span2">{{arrAgentAccount?.email}}</span>
               </div>
             </div>
 
@@ -79,7 +60,7 @@
             </button>
             <button mat-menu-item>
               <i class="fas fa-sign-out-alt"></i>
-              <span>Sign Out</span>
+              <span (click)="btnLogOutClicked()">Sign Out</span>
             </button>
           </mat-menu>
         </div>

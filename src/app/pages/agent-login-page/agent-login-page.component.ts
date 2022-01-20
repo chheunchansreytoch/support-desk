@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AgentStore } from 'src/app/stores/agent.store';
 
 @Component({
@@ -14,9 +15,10 @@ export class AgentLoginPageComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private agentStore: AgentStore,
+    private router: Router,
   ) {
     this.loginForm = this.formBuilder.group({
-     // username: new FormControl('', Validators.required),
+      id: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
@@ -29,6 +31,8 @@ export class AgentLoginPageComponent implements OnInit {
   formSubmited() {
     const {email, password } = this.loginForm.value;
     this.agentStore.login(email, password);
-    console.log(this.loginForm.value);
+    this.router.navigate(['/cases'], { queryParams: { key: this.agentStore.getCurrentAgentUser.id }}).then(() => {
+
+    });
   }
 }

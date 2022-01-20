@@ -31,13 +31,11 @@ export class CaseDetailsPageComponent implements OnInit {
       this.selectedKey = param.key;
       this.caseId = this.selectedKey;
 
-
       try{
         this.caseStore.getClosedCase(this.caseId).then((res: any) => {
           this.arrClosedCase = res;
           console.log(res)
           this.customer = res.customer;
-
         })
       }catch(e){
         console.log(e)

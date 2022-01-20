@@ -31,15 +31,4 @@ export class ConfirmationDialogComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close('no');
   }
-
-  // const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-  //   width: '500px',
-  //   data: {
-  //     title: 'Reset Password',
-  //     type: 'question',
-  //     content: 'Are you sure that you want to reset your password now?'
-  //   } as IDialogData,
-  //   disableClose: true,
-  // });
-
 }

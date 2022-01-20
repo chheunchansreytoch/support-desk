@@ -80,11 +80,7 @@
       </div>
     </div>
 
-    <!-- p-relative -->
-    <div>
-      <!-- p-absolute z-1000 w-100 h-100 -->
-      <!-- <div class="invisible-blur-container" [ngClass]=" showCasePopup || showAssignPopup ? 'show-invisible-blur-container': ''"></div> -->
-
+    <div class="tab-container">
       <mat-tab-group>
         <mat-tab label="View Incoming Cases">
           <div class="custom-table-0">
@@ -119,67 +115,11 @@
                     <td>{{item?.priority?.name}}</td>
                     <td>{{item?.agent?.username}}</td>
                     <td>
-                     <button mat-icon-button [matMenuTriggerFor]="menu">
+                     <button mat-icon-button [matMenuTriggerFor]="menu_case">
                        <mat-icon>more_vert</mat-icon>
                      </button>
 
-                     <mat-menu #menu="matMenu">
-                       <button mat-menu-item (click)="onCreate(item)">
-                         <span class="material-icons">create</span>
-                         <span>Edit</span>
-                       </button>
-
-                       <button mat-menu-item (click)="onClickDelete(item.id)">
-                         <span class="material-icons">delete</span>
-                         <span>Delete</span>
-                       </button>
-                     </mat-menu>
-                    <td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </mat-tab>
-
-        <mat-tab label="View Cases by Department">
-          <div class="custom-table-0">
-            <div class="scrollable-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th>N.</th>
-                    <th><input type="checkbox" (change)="checkAll($event)"></th>
-                    <th>Case Number</th>
-                    <th>Subject</th>
-                    <th>Description</th>
-                    <th>Created By</th>
-                    <th>Created Date</th>
-                    <th>Status</th>
-                    <th>Priority</th>
-                    <th>Case Owner</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr *ngFor="let item of arrCases; let i = index">
-                    <td>{{i+1}}</td>
-                    <td><input type="checkbox" [checked]="checks"></td>
-                    <td>{{item?.caseNumber}}</td>
-                    <td>{{item.subject}}</td>
-                    <td>{{item.description}}</td>
-                    <td>{{item?.customer?.username || item?.manager?.username }}</td>
-                    <td> {{convertUTCtoDate(item.createdDate)}}</td>
-                    <td>{{item?.status?.name}}</td>
-                    <td>{{item?.priority?.name}}</td>
-                    <td>{{item?.agent?.username}}</td>
-                    <td>
-                     <button mat-icon-button [matMenuTriggerFor]="menu">
-                       <mat-icon>more_vert</mat-icon>
-                     </button>
-
-                     <mat-menu #menu="matMenu">
+                     <mat-menu #menu_case="matMenu">
                        <button mat-menu-item (click)="onCreate(item)">
                          <span class="material-icons">create</span>
                          <span>Edit</span>
@@ -311,6 +251,68 @@
             </div>
           </div>
         </mat-tab>
+
+        <div class="tab-search">
+          <mat-tab label="View Cases by Department">
+            <div class="custom-table-0">
+              <div class="scrollable-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>N.</th>
+                      <th><input type="checkbox" (change)="checkAll($event)"></th>
+                      <th>Case Number</th>
+                      <th>Subject</th>
+                      <th>Description</th>
+                      <th>Created By</th>
+                      <th>Created Date</th>
+                      <th>Status</th>
+                      <th>Priority</th>
+                      <th>Case Owner</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngFor="let item of arrCases; let i = index">
+                      <td>{{i+1}}</td>
+                      <td><input type="checkbox" [checked]="checks"></td>
+                      <td>{{item?.caseNumber}}</td>
+                      <td>{{item.subject}}</td>
+                      <td>{{item.description}}</td>
+                      <td>{{item?.customer?.username || item?.manager?.username }}</td>
+                      <td> {{convertUTCtoDate(item.createdDate)}}</td>
+                      <td>{{item?.status?.name}}</td>
+                      <td>{{item?.priority?.name}}</td>
+                      <td>{{item?.agent?.username}}</td>
+                      <td>
+                       <button mat-icon-button [matMenuTriggerFor]="menu">
+                         <mat-icon>more_vert</mat-icon>
+                       </button>
+
+                       <mat-menu #menu="matMenu">
+                         <button mat-menu-item (click)="onCreate(item)">
+                           <span class="material-icons">create</span>
+                           <span>Edit</span>
+                         </button>
+
+                         <button mat-menu-item (click)="onClickDelete(item.id)">
+                           <span class="material-icons">delete</span>
+                           <span>Delete</span>
+                         </button>
+                       </mat-menu>
+                      <td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+
+           <!-- <mat-form-field class="input">
+          <input matInput placeholder="Search" >
+        </mat-form-field> -->
+        </div>
       </mat-tab-group>
     </div>
   </div>

@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Department_IT } from 'src/app/typeScripts/department_IT';
-import { Department_Accounting } from 'src/app/typeScripts/department_accounting';
-import { Department_Payroll } from 'src/app/typeScripts/department_payroll';
 import { DialogsService } from 'src/app/services/dialogs.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CaseStore } from 'src/app/stores/case.store';
@@ -195,18 +192,6 @@ export class ManageCasesPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.fetchCases();
     })
-  }
-
-  onMoreDetailDialog() {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '500px',
-      data: {
-        title: 'Delete Case',
-        type: 'question',
-        content: 'Are you sure that you want to delete this selected case?'
-      } as IDialogData,
-      disableClose: true,
-    });
   }
 
   onSelectedAgent(caseId) {

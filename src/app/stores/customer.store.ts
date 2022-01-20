@@ -104,13 +104,24 @@ export class CustomerStore {
   //   )
   // }
 
+  // @action
+  // deleteCustomer(id){
+  //   return this.httpClient.delete<ICustomer>(this.endpoint + '/customers/' + id, this.httpHeader)
+  //   .pipe(
+  //     retry(1),
+  //     catchError(this.processError)
+  //   )
+  // }
+
   @action
-  deleteCustomer(id){
-    return this.httpClient.delete<ICustomer>(this.endpoint + '/customers/' + id, this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+  async deleteCustomer(id){
+    try {
+      const result = await this.httpClient.delete<ICustomer>(this.endpoint + '/customers/' + id, this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+    return;
   }
 
   processError(err: { error: { message: string; }; status: any; message: any; }) {

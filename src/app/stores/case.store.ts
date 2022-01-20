@@ -90,8 +90,8 @@ export class CaseStore {
   }
 
   @action
-  getOpenCases(): Observable<ICase> {
-    return this.httpClient.get<ICase>(this.endpoint + '/cases/open', this.httpHeaderWithToken)
+  getOpenCases(id: string): Observable<ICase> {
+    return this.httpClient.get<ICase>(this.endpoint + '/cases/open/' + id, this.httpHeaderWithToken)
     .pipe(
       retry(1),
       catchError(this.processError)

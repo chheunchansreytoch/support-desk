@@ -112,6 +112,8 @@ import { ManagerReportPageComponent } from './pages/manager-report-page/manager-
 import { DefaultReportPagesComponent } from './pages/default-report-pages/default-report-pages.component';
 import { AgentCaseFrontLayoutComponent } from './layouts/agent-case-front-layout/agent-case-front-layout.component';
 import { AssignCaseDialogComponent } from './components/dialogs/assign-case-dialog/assign-case-dialog.component';
+import { UpdateCustomerDialogComponent } from './components/dialogs/crud-manageCustomer-dialogs/update-customer-dialog/update-customer-dialog.component';
+import { DeleteCustomerDialogComponent } from './components/dialogs/crud-manageCustomer-dialogs/delete-customer-dialog/delete-customer-dialog.component';
 
 export function playerFactory() {
   return player;
@@ -201,7 +203,9 @@ export function playerFactory() {
     ManagerReportPageComponent,
     DefaultReportPagesComponent,
     AgentCaseFrontLayoutComponent,
-    AssignCaseDialogComponent
+    AssignCaseDialogComponent,
+    UpdateCustomerDialogComponent,
+    DeleteCustomerDialogComponent,
   ],
   entryComponents: [CreateAgentsDialogComponent, MoreDetailDialogComponent, SendToDialogComponent],
   imports: [

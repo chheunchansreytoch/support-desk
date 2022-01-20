@@ -15,20 +15,33 @@ export class AllOpenCasesPageComponent implements OnInit {
   fontStyleControl = new FormControl();
   fontStyle?: string;
 
+  public selectedKey;
+
   constructor(
     private caseStore: CaseStore,
   ) { }
 
   ngOnInit(): void {
-    this.fetchOpenCases();
+    //this.fetchOpenCases();
+
+    try{
+      this.caseStore.getOpenCases(this.selectedKey)?.subscribe((res: any) => {
+        this.arrOpenCases = res;
+        console.log(res)
+      })
+    }catch(e){
+      console.log(e)
+    }
+    //const agentDepartmentId = localStorage.getItem('agent_auth');
+
   }
 
-  fetchOpenCases() {
-    this.caseStore.getOpenCases().subscribe((res: any) => {
-      this.arrOpenCases = res;
-      console.log(res);
-    })
-  }
+  // fetchOpenCases() {
+  //   this.caseStore.getOpenCases().subscribe((res: any) => {
+  //     this.arrOpenCases = res;
+  //     console.log(res);
+  //   })
+  // }
 
   onCreate(item) {
 

@@ -99,13 +99,14 @@
             }
 
             .custom-user-profile {
+              padding: 10px;
               span{
                 margin: 0!important;
               }
               .avatarImg1 {
-                width: 35px;
-                height: 35px;
-                border: 2px solid #ccc;
+                width: 45px;
+                height: 45px;
+                //border: 2px solid #ccc;
                 border-radius: 50%;
               }
             }
