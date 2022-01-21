@@ -60,6 +60,7 @@ export class AgentStore {
   @action
   async login(email: string, password: string) {
     try {
+      this.isLoading = true;
       await this.httpClient.post<IAgent>(
         this.endpoint + '/agents/login',
         {
@@ -75,6 +76,7 @@ export class AgentStore {
         console.log("correct");
       });
     } catch(error) {
+      this.isLoading=false;
       console.log('login error ln.52: ', error)
     }
   }

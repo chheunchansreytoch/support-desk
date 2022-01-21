@@ -34,7 +34,7 @@ export class CaseSidebarPageComponent implements OnInit {
   }
 
   fetchClosedCases() {
-    this.caseStore.getClosedCases().subscribe((res: any) => {
+    this.caseStore.getClosedCases().then((res: any) => {
       this.arrClosedCases = res;
       console.log(res);
     })

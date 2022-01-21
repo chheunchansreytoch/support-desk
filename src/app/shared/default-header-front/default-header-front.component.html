@@ -23,10 +23,10 @@
               <img class="avatarImg1" [src]="checkLocalStoragePath(arrAgentAccount.imageDownloadUrl)">
             </ng-container>
 
-              <!-- <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
-                <img class="image-preview"
+              <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
+                <img class="avatarImg1"
                   [src]="arrAgentAccount.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
-              </ng-container> -->
+              </ng-container>
           </button>
 
           <mat-menu #menu2="matMenu">
@@ -36,7 +36,7 @@
               </ng-container>
 
                 <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
-                  <img class="image-preview"
+                  <img class="avatarImg2"
                     [src]="arrAgentAccount.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
                 </ng-container>
               <div class="user-info">

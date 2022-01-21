@@ -68,12 +68,15 @@ export class CaseStore {
   }
 
   @action
-  getClosedCases(): Observable<ICase> {
-    return this.httpClient.get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+  async getClosedCases(): Promise<any> {
+    try {
+      this.isLoading = true;
+       const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken).toPromise();
+       return result;
+    } catch (error) {
+      this.isLoading = false;
+      console.log(error);
+    }
   }
 
   @action
@@ -90,13 +93,22 @@ export class CaseStore {
   }
 
   @action
-  getOpenCases(id: string): Observable<ICase> {
-    return this.httpClient.get<ICase>(this.endpoint + '/cases/open/' + id, this.httpHeaderWithToken)
+  getOpenCases(): Observable<ICase> {
+    return this.httpClient.get<ICase>(this.endpoint + '/cases/open', this.httpHeaderWithToken)
     .pipe(
       retry(1),
       catchError(this.processError)
     )
   }
+
+  // @action
+  // getOpenCases(id: string): Observable<ICase> {
+  //   return this.httpClient.get<ICase>(this.endpoint + '/cases/open/' + id, this.httpHeaderWithToken)
+  //   .pipe(
+  //     retry(1),
+  //     catchError(this.processError)
+  //   )
+  // }
 
 
   // @action
@@ -133,6 +145,19 @@ export class CaseStore {
       retry(1),
       catchError(this.processError)
     )
+  }
+
+  @action
+  async assignCase(caseData: any) {
+    //console.log(caseData.id);
+    try {
+      const result = await this.httpClient.post<ICase>(this.endpoint + '/cases/assign/' + caseData.id, JSON.stringify(caseData), this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error)
+    }
+
+    return;
   }
 
   @action

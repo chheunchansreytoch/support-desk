@@ -22,26 +22,24 @@ export class AllOpenCasesPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.fetchOpenCases();
+    this.fetchOpenCases();
 
-    try{
-      this.caseStore.getOpenCases(this.selectedKey)?.subscribe((res: any) => {
-        this.arrOpenCases = res;
-        console.log(res)
-      })
-    }catch(e){
-      console.log(e)
-    }
-    //const agentDepartmentId = localStorage.getItem('agent_auth');
-
+    // try{
+    //   this.caseStore.getOpenCases(this.selectedKey)?.subscribe((res: any) => {
+    //     this.arrOpenCases = res;
+    //     console.log(res)
+    //   })
+    // }catch(e){
+    //   console.log(e)
+    // }
   }
 
-  // fetchOpenCases() {
-  //   this.caseStore.getOpenCases().subscribe((res: any) => {
-  //     this.arrOpenCases = res;
-  //     console.log(res);
-  //   })
-  // }
+  fetchOpenCases() {
+    this.caseStore.getOpenCases().subscribe((res: any) => {
+      this.arrOpenCases = res;
+      console.log(res);
+    })
+  }
 
   onCreate(item) {
 

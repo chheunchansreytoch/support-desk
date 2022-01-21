@@ -22,7 +22,7 @@ export class AllClosedCasesPageComponent implements OnInit {
   currentRoute: string = '';
   selectedOption = '3';
   //arrCases: Array<any> = [];
-  arrClosedCase: Array<any> = [];
+  arrClosedCases: Array<any> = [];
 
   constructor(
     public router: Router,
@@ -41,9 +41,9 @@ export class AllClosedCasesPageComponent implements OnInit {
   }
 
   fetchClosedCases() {
-    this.caseStore.getClosedCases().subscribe((res: any) => {
-      this.arrClosedCase = res;
-      //console.log('cases:', this.arrCases);
+    this.caseStore.getClosedCases().then((res: any) => {
+      this.arrClosedCases = res;
+      console.log('cases:', res);
     });
   }
 

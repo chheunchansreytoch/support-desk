@@ -31,8 +31,6 @@ export class AgentLoginPageComponent implements OnInit {
   formSubmited() {
     const {email, password } = this.loginForm.value;
     this.agentStore.login(email, password);
-    this.router.navigate(['/cases'], { queryParams: { key: this.agentStore.getCurrentAgentUser.id }}).then(() => {
-
-    });
+    this.router.navigate(['/cases'], { queryParams: { key: this.agentStore.getCurrentAgentUser.id }});
   }
 }

@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router, RouterModule,} from '@angular/router';
 import {Location} from '@angular/common';
-
-import { map, filter, scan } from 'rxjs/operators';
-import { Observable, Subject, asapScheduler, pipe, of, from,
-  interval, merge, fromEvent } from 'rxjs';
 import { AgentStore } from 'src/app/stores/agent.store';
 
 @Component({
@@ -88,7 +84,7 @@ export class DefaultHeaderFrontComponent implements OnInit {
   }
 
   btnLogOutClicked() {
-    localStorage.removeItem("agent_auth");
+    const value = localStorage.removeItem("agent_auth");
     this.router.navigate(['/agent-login']);
   }
 }

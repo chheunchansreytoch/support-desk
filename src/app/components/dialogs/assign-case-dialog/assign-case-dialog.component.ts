@@ -81,7 +81,7 @@ export class AssignCaseDialogComponent implements OnInit {
           agent: {id: agent},
           id: this.data.id
         };
-        await this.caseStore.updateCase(caseData);
+        await this.caseStore.assignCase(caseData);
 
       }
 
