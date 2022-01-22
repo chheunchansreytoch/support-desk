@@ -139,5 +139,4 @@ export class AssignCaseDialogComponent implements OnInit {
       this.arrPriorities = res;
     })
   }
-
 }

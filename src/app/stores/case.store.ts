@@ -1,15 +1,13 @@
-import { action, computed, observable } from "mobx";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { ICase } from "../models/ICase.model";
-import { catchError, retry } from "rxjs/operators";
-import { Observable, throwError } from "rxjs";
+import { action, computed, observable } from 'mobx';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { ICase } from '../models/ICase.model';
+import { catchError, retry } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
 
-
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class CaseStore {
-
   @observable public isLoading: boolean = false;
   @observable public cases: ICase | undefined;
 
@@ -18,8 +16,8 @@ export class CaseStore {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
-    })
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+    }),
   };
 
   httpHeaderWithToken = {
@@ -27,19 +25,18 @@ export class CaseStore {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-      'Authorization': 'Bearer ' + this.caseJSONMapping()?.token
-    })
+      Authorization: 'Bearer ' + this.caseJSONMapping()?.token,
+    }),
   };
 
-  constructor(
-    private httpClient: HttpClient,
-    private router: Router
-  ) {
+  constructor(private httpClient: HttpClient, private router: Router) {
     this.getCases();
   }
 
   caseJSONMapping() {
-    const result = localStorage.getItem("case_auth") ? JSON.parse(localStorage.getItem("case_auth") || '{}') : undefined;
+    const result = localStorage.getItem('case_auth')
+      ? JSON.parse(localStorage.getItem('case_auth') || '{}')
+      : undefined;
     return result;
   }
 
@@ -51,28 +48,26 @@ export class CaseStore {
 
   @action
   getCases(): Observable<ICase> {
-    return this.httpClient.get<ICase>(this.endpoint + '/cases', this.httpHeaderWithToken)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+    return this.httpClient
+      .get<ICase>(this.endpoint + '/cases', this.httpHeaderWithToken)
+      .pipe(retry(1), catchError(this.processError));
   }
 
   @action
   getCase(id, data): Observable<ICase> {
-    return this.httpClient.get<ICase>(this.endpoint + '/cases/' + id, this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+    return this.httpClient
+      .get<ICase>(this.endpoint + '/cases/' + id, this.httpHeader)
+      .pipe(retry(1), catchError(this.processError));
   }
 
   @action
   async getClosedCases(): Promise<any> {
     try {
       this.isLoading = true;
-       const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken).toPromise();
-       return result;
+      const result = await this.httpClient
+        .get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
+        .toPromise();
+      return result;
     } catch (error) {
       this.isLoading = false;
       console.log(error);
@@ -83,7 +78,9 @@ export class CaseStore {
   async getClosedCase(caseId) {
     try {
       this.isLoading = true;
-      const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/closed/' + caseId, this.httpHeader).toPromise();
+      const result = await this.httpClient
+        .get<ICase>(this.endpoint + '/cases/closed/' + caseId, this.httpHeader)
+        .toPromise();
       return result;
     } catch (error) {
       this.isLoading = false;
@@ -92,24 +89,21 @@ export class CaseStore {
     return;
   }
 
-  @action
-  getOpenCases(): Observable<ICase> {
-    return this.httpClient.get<ICase>(this.endpoint + '/cases/open', this.httpHeaderWithToken)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
-  }
-
   // @action
-  // getOpenCases(id: string): Observable<ICase> {
-  //   return this.httpClient.get<ICase>(this.endpoint + '/cases/open/' + id, this.httpHeaderWithToken)
+  // getOpenCases(): Observable<ICase> {
+  //   return this.httpClient.get<ICase>(this.endpoint + '/cases/open', this.httpHeaderWithToken)
   //   .pipe(
   //     retry(1),
   //     catchError(this.processError)
   //   )
   // }
 
+  @action
+  getOpenCases(id: string): Observable<ICase> {
+    return this.httpClient
+      .get<ICase>(this.endpoint + '/cases/open/' + id, this.httpHeaderWithToken)
+      .pipe(retry(1), catchError(this.processError));
+  }
 
   // @action
   // async getOpenCases() {
@@ -126,10 +120,15 @@ export class CaseStore {
   // }
 
   @action
-  async getOpenCase(caseId) {
+  async getOpenCase(caseId: any, agentId: any) {
     try {
       this.isLoading = true;
-      const result = await this.httpClient.get<ICase>(this.endpoint + '/cases/open/' + caseId, this.httpHeader).toPromise();
+      const result = await this.httpClient
+        .get<ICase>(
+          this.endpoint + '/cases/open/departments/' + caseId + '/' + agentId,
+          this.httpHeader
+        )
+        .toPromise();
       return result;
     } catch (error) {
       this.isLoading = false;
@@ -140,21 +139,29 @@ export class CaseStore {
 
   @action
   addCase(data: ICase): Observable<ICase> {
-    return this.httpClient.post<ICase>(this.endpoint + '/cases/create', JSON.stringify(data), this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+    return this.httpClient
+      .post<ICase>(
+        this.endpoint + '/cases/create',
+        JSON.stringify(data),
+        this.httpHeader
+      )
+      .pipe(retry(1), catchError(this.processError));
   }
 
   @action
   async assignCase(caseData: any) {
-    //console.log(caseData.id);
+    console.log('abc', caseData.id);
     try {
-      const result = await this.httpClient.post<ICase>(this.endpoint + '/cases/assign/' + caseData.id, JSON.stringify(caseData), this.httpHeader).toPromise();
+      const result = await this.httpClient
+        .put<ICase>(
+          this.endpoint + '/cases/assign/' + caseData.id,
+          JSON.stringify(caseData),
+          this.httpHeader
+        )
+        .toPromise();
       return result;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
     return;
@@ -165,27 +172,35 @@ export class CaseStore {
     console.log(caseData.id);
 
     try {
-      const result = await this.httpClient.put<ICase>(this.endpoint + '/cases/' + caseData.id, JSON.stringify(caseData), this.httpHeader).toPromise();
+      const result = await this.httpClient
+        .put<ICase>(
+          this.endpoint + '/cases/' + caseData.id,
+          JSON.stringify(caseData),
+          this.httpHeader
+        )
+        .toPromise();
       return result;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
     return;
   }
 
   @action
-  async deleteCase(id){
-    const result = await this.httpClient.delete<ICase>(this.endpoint + '/cases/' + id, this.httpHeader).toPromise();
+  async deleteCase(id) {
+    const result = await this.httpClient
+      .delete<ICase>(this.endpoint + '/cases/' + id, this.httpHeader)
+      .toPromise();
     return result;
   }
 
-  processError(err: { error: { message: string; }; status: any; message: any; }) {
+  processError(err: { error: { message: string }; status: any; message: any }) {
     let message = '';
-    if(err.error instanceof ErrorEvent) {
-     message = err.error.message;
+    if (err.error instanceof ErrorEvent) {
+      message = err.error.message;
     } else {
-     message = `Error Code: ${err.status}\nMessage: ${err.message}`;
+      message = `Error Code: ${err.status}\nMessage: ${err.message}`;
     }
     console.log(message);
     return throwError(message);

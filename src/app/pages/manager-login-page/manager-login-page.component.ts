@@ -27,8 +27,8 @@ export class ManagerLoginPageComponent implements OnInit {
   }
 
   formSubmited(formData: any) {
-    const { username, email, password } = formData;
-    this.managerStore.login(username, email, password);
+    const {email, password } = formData;
+    this.managerStore.login(email, password);
     console.log(this.loginForm.value);
   }
 }

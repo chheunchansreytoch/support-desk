@@ -19,25 +19,25 @@
       <div class="Custom-Menu-icons">
         <div class="custom-user-profile">
           <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with a menu">
-            <ng-container *ngIf="arrAgentAccount.imageDownloadUrl">
+            <ng-container *ngIf="arrAgentAccount?.imageDownloadUrl">
               <img class="avatarImg1" [src]="checkLocalStoragePath(arrAgentAccount.imageDownloadUrl)">
             </ng-container>
 
-              <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
+              <ng-container *ngIf="!arrAgentAccount?.imageDownloadUrl">
                 <img class="avatarImg1"
-                  [src]="arrAgentAccount.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
+                  [src]="arrAgentAccount?.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
               </ng-container>
           </button>
 
           <mat-menu #menu2="matMenu">
             <div class="inside-popup">
-              <ng-container *ngIf="arrAgentAccount.imageDownloadUrl">
+              <ng-container *ngIf="arrAgentAccount?.imageDownloadUrl">
                 <img class="avatarImg2" [src]="checkLocalStoragePath(arrAgentAccount.imageDownloadUrl)">
               </ng-container>
 
-                <ng-container *ngIf="!arrAgentAccount.imageDownloadUrl">
+                <ng-container *ngIf="!arrAgentAccount?.imageDownloadUrl">
                   <img class="avatarImg2"
-                    [src]="arrAgentAccount.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
+                    [src]="arrAgentAccount?.gender === 'Male' ? '/assets/icons/boy.png' : '/assets/icons/girl.png'">
                 </ng-container>
               <div class="user-info">
                 <h4>Agent: {{arrAgentAccount?.agentDepartment?.name}}</h4>

@@ -40,6 +40,7 @@ export class DefaultHeaderFrontComponent implements OnInit {
     try{
       this.agentStore.getAgent(this.selectedKey)?.subscribe((res: any) => {
         this.arrAgentAccount = res;
+        localStorage.setItem('department_id',res.agentDepartment.id);
         console.log(res)
       })
     }catch(e){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { CaseStore } from 'src/app/stores/case.store';
 
 @Component({
   selector: 'app-cases-page',
@@ -15,9 +16,12 @@ export class CasesPageComponent implements OnInit {
   public selectedItems;
   public callItemSelected;
 
+  arrClosedCases: Array<any> = [];
+
   constructor(
     public router: Router,
-    private location: Location
+    private location: Location,
+    private caseStore: CaseStore,
     ) {
     this.Items = [
       {name: 'All Closed Cases', label:'cases/agent-all-closed-cases'},
@@ -26,6 +30,7 @@ export class CasesPageComponent implements OnInit {
       //{name: 'Recently Viewed Cases', label:'cases/agent-all-closed-cases'},
     ];
 
+
     router.events.subscribe(val => {
       this.currentRoute = location.path();
     });
@@ -33,6 +38,14 @@ export class CasesPageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.fetchClosedCases();
+  }
+
+  fetchClosedCases() {
+    this.caseStore.getClosedCases().then((res: any) => {
+      this.arrClosedCases = res;
+      console.log('cases:', res);
+    });
   }
 
   checkIfRouteIsActivated(item: string) {

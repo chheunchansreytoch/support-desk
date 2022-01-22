@@ -55,19 +55,17 @@ export class ManagerStore {
   }
 
   @action
-  login(username: string, email: string, password: string) {
+  async login(email: string, password: string) {
     try {
-      this.httpClient.post<IManager>(
+      this.isLoading = true;
+      await this.httpClient.post<IManager>(
         this.endpoint + '/managers/login',
-        JSON.stringify({ username, email, password }), this.httpHeader)
-      .pipe(
-        retry(1),
-        catchError(this.processError)
-      ).subscribe((result) => {
-        localStorage.setItem("manager_auth", JSON.stringify(result));
-        this.router.navigate(['/admin-homepage']);
-        console.log("correct");
-      });
+        JSON.stringify({email, password }), this.httpHeader).toPromise()
+        .then((result) => {
+          localStorage.setItem("manager_auth", JSON.stringify(result));
+          this.router.navigate(['/admin-homepage']);
+          console.log("correct");
+        });
     } catch(error) {
       console.log('login error ln.52: ', error)
     }
