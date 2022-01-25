@@ -7,82 +7,8 @@
           <mat-button-toggle value="delete">Delete</mat-button-toggle>
           <mat-button-toggle value="changeOwner">Change Owner</mat-button-toggle>
         </mat-button-toggle-group>
-        <!-- <p>Chosen value is {{fontStyle}}</p> -->
       </section>
     </div>
-
-    <!-- <div class="page-header-container">
-      <div class="header-title-container">
-        <span class="material-icons custom-icon">group</span>
-        <h1>Agents</h1>
-      </div>
-      <button class="btnCreate" mat-button (click)="onCreate(null)">
-        <span class="material-icons">add_circle</span>
-        Create Agent
-      </button>
-    </div> -->
-
-    <!-- <div clascontainer">
-      <div class="card-container first">
-        <div class="card-title">
-          <h4>New Agents</h4>
-        </div>
-        <div class="card-content">
-          <h2 class="animatedNumber0" id="animatedNumber0">245</h2>
-          <div class="more-info">
-            impression 20%
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container second">
-        <div class="card-title">
-          <h4>New Agents</h4>
-        </div>
-        <div class="card-content">
-          <h2>245</h2>
-          <div class="more-info">
-            impression 20%
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container third">
-        <div class="card-title">
-          <h4>New Agents</h4>
-        </div>
-        <div class="card-content">
-          <h2>245</h2>
-          <div class="more-info">
-            impression 20%
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container fourth">
-        <div class="card-title">
-          <h4>New Agents</h4>
-        </div>
-        <div class="card-content">
-          <h2>245</h2>
-          <div class="more-info">
-            impression 20%
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container fifth">
-        <div class="card-title">
-          <h4>New Agents</h4>
-        </div>
-        <div class="card-content">
-          <h2>245</h2>
-          <div class="more-info">
-            impression 20%
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <div class="custom-table-0">
       <div class="scrollable-table">
@@ -98,7 +24,6 @@
               <th>Priority</th>
               <th>Date/Time Opened</th>
               <th>Case Owner</th>
-              <th>Action</th>
             </tr>
           </thead>
 
@@ -113,131 +38,10 @@
               <td>{{item?.priority?.name}}</td>
               <td>{{item?.createdDate}}</td>
               <td>{{item?.agent?.username}}</td>
-              <td>
-                <button mat-icon-button [matMenuTriggerFor]="menu">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
-
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="onCreate(item)">
-                    <span class="material-icons">create</span>
-                    <span>Edit</span>
-                  </button>
-
-                  <button mat-menu-item (click)="onSelectedAgent(item.id)">
-                    <span class="material-icons">delete</span>
-                    <span>Delete</span>
-                  </button>
-                </mat-menu>
-              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-
-    <!-- <ng-container *ngIf="paginationStore.isLoading">
-      <app-table-skeleton-loading></app-table-skeleton-loading>
-    </ng-container> -->
   </div>
 </div>
-
-
-
-
-<!-- <div class="defaultContent">
-  <div class="status-sort-case">
-    <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
-  </div>
-
-  <div class="list-Container" >
-    <table>
-      <thead>
-          <tr>
-            <th>N.</th>
-            <th><input type="checkbox" (change)="checkAll($event)"></th>
-            <th>Case Number</th>
-            <th>Contact Name</th>
-            <th>Subject</th>
-            <th>Status</th>
-            <th>Priority</th>
-            <th>Date/Time Opened</th>
-            <th>Case Owner</th>
-            <th>Option</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let item of this.rows">
-              <td>{{item.n}}</td>
-              <td>
-<input type="checkbox" [checked]="checks">
-              </td>
-              <td>
-                <a class="case-num-href" href="">
-                  {{item.caseNumber}}
-                </a>
-
-              </td>
-              <td>
-                <div class='edit_hover_class'>
-                  <a class="name-href" href="#">
-                    {{item.contactName}}
-                  </a>
-                  <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-                </div>
-
-              </td>
-              <td>
-                <div class='edit_hover_class'>
-                  <a class="subject-href" href="#">
-                    {{item.subject}}
-                  </a>
-                  <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-                </div>
-              </td>
-              <td>
-                <div class="status-cases">
-                <select class="select-status">
-                  <option>Closed</option>
-                  <option selected>New</option>
-                  <option>Working</option>
-                  <option>Escalated</option>
-                </select>
-                </div>
-              </td>
-              <td>
-                <div class="priority-cases">
-                  <select class="select-priority">
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
-                  </select>
-                </div>
-              </td>
-              <td>{{item.dateTime}}</td>
-              <td>{{item.caseOwner}}</td>
-              <td>
-                <div class="custom-option-case">
-                  <div class="edit-icon-container">
-                    <button class="btn-edit"><i class="fi-rr-pencil"></i></button>
-                    <span class="edit-tooltiptext">Edit</span>
-                  </div>
-
-                  <div class="delete-icon-container">
-                    <button class="btn-delete"><i class="fi-rr-trash"></i></button>
-                    <span class="delete-tooltiptext">Delete</span>
-                  </div>
-
-                  <div class="changeOwner-icon-container">
-                    <button class="btn-changeOwner"><i class="fi-rr-mode-landscape"></i></button>
-                    <span class="changeOwner-tooltiptext">Change Owner</span>
-                  </div>
-                </div>
-              </td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
-</div> -->
-
-

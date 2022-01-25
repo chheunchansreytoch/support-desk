@@ -1,6 +1,13 @@
 <div class="defaultContent">
-  <div class="status-sort-case">
-    <span>3 items • Sorted by Case Number • Filtered by All cases - Closed</span>
+  <div class="page-container">
+    <section>
+      <mat-button-toggle-group>
+        <mat-button-toggle value="update" (click)="onClickUpdate(this.selectedCheckedboxValue)">Update</mat-button-toggle>
+        <mat-button-toggle value="delete" (click)="onClickDelete(this.selectedCheckedboxId)">Delete</mat-button-toggle>
+        <mat-button-toggle value="changeOwner" (click)="onClickChangeOwner(this.selectedCheckedboxValue)">Change Owner</mat-button-toggle>
+      </mat-button-toggle-group>
+      <!-- <p>Chosen value is {{fontStyle}}</p> -->
+    </section>
   </div>
 
   <div class="list-Container1" >
@@ -19,62 +26,39 @@
           <th>Date | Time</th>
           <th>Assigned Date | Time</th>
           <th>Case Owner</th>
-          <th>Actions</th>
+         <!-- <th>Actions</th> -->
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let item of arrClosedCases; let i = index" (click)="onSelectedItem(item)">
+        <tr *ngFor="let item of arrClosedCases; let i = index" (click)="onSelectedItem($event,item,i)">
           <td>{{i+1}}</td>
 
-          <td>
-            <input type="checkbox" [checked]="checks">
-          </td>
+          <td> <input id="checkbox{{i}}" type="checkbox" [checked]="checks" (change)="isChecked(item, $event)"> </td>
 
-          <td>
-            <a class="case-num-href" >
-              {{item.caseNumber}}
-            </a>
-          </td>
+          <td> {{item.caseNumber}} </td>
 
           <td class="subject-td">
             <div class='edit_hover_class'>
-              <a class="name-href" href="#">
-                {{item?.customer?.username || item?.manager?.username}}
-              </a>
-            </div>
-          </td>
-
-          <td>
-            <div class='edit_hover_class'>
-              <a class="name-href" href="#">
-                {{item?.customer?.email || item?.manager?.email}}
-              </a>
-            </div>
-          </td>
-
-          <!-- <td>
-            <div class='edit_hover_class'>
-              <a class="name-href" href="#">
-                {{item.email}}
-              </a>
-              <a class="icon-edit-href" href='#'><i class="fi-rr-pencil"></i></a>
-            </div>
-          </td> -->
-
-          <td class="subject-td">
-            <div class='edit_hover_class'>
-              <a class="subject-href" href="/contacts/contact-details">
-                {{item.subject}}
-              </a>
+              {{item?.customer?.username || item?.manager?.username}}
             </div>
           </td>
 
           <td class="subject-td">
             <div class='edit_hover_class'>
-              <a class="subject-href" href="/contacts/contact-details">
-                {{item.description}}
-              </a>
+              {{item?.customer?.email || item?.manager?.email}}
+            </div>
+          </td>
+
+          <td class="subject-td">
+            <div class='edit_hover_class'>
+              {{item.subject}}
+            </div>
+          </td>
+
+          <td class="subject-td">
+            <div class='edit_hover_class'>
+              {{item.description}}
             </div>
           </td>
 
@@ -100,7 +84,7 @@
 
           <td>{{item?.agent?.username}}</td>
 
-          <td>
+          <!-- <td>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -118,7 +102,7 @@
                 <span>Change Owner</span>
               </button>
             </mat-menu>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>

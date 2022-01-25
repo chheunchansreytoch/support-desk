@@ -30,7 +30,7 @@ export class CaseStore {
   };
 
   constructor(private httpClient: HttpClient, private router: Router) {
-    this.getCases();
+    this.getAllCases();
   }
 
   caseJSONMapping() {
@@ -47,7 +47,7 @@ export class CaseStore {
   }
 
   @action
-  getCases(): Observable<ICase> {
+  getAllCases(): Observable<ICase> {
     return this.httpClient
       .get<ICase>(this.endpoint + '/cases', this.httpHeaderWithToken)
       .pipe(retry(1), catchError(this.processError));
@@ -61,17 +61,66 @@ export class CaseStore {
   }
 
   @action
-  async getClosedCases(): Promise<any> {
+  async getSortCase(){
+    try {
+     const result = await  this.httpClient
+      .get<ICase>(this.endpoint + '/cases/sort', this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+
+  }
+
+  @action
+  async getCases(caseId: any, agentId: any) {
     try {
       this.isLoading = true;
       const result = await this.httpClient
-        .get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
+        .get<ICase>(
+          this.endpoint + '/cases/departments/' + caseId + '/' + agentId,
+          this.httpHeader
+        )
         .toPromise();
       return result;
     } catch (error) {
       this.isLoading = false;
       console.log(error);
     }
+    return;
+  }
+
+  // @action
+  // async getClosedCases(): Promise<any> {
+  //   try {
+  //     this.isLoading = true;
+  //     const result = await this.httpClient
+  //       .get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
+  //       .toPromise();
+  //     return result;
+  //   } catch (error) {
+  //     this.isLoading = false;
+  //     console.log(error);
+  //   }
+  // }
+
+  @action
+  async getAllClosedCases(caseId: any, agentId: any) {
+    try {
+      this.isLoading = true;
+      const result = await this.httpClient
+        .get<ICase>(
+          this.endpoint + '/cases/closed/departments/' + caseId + '/' + agentId,
+          this.httpHeader
+        )
+        .toPromise();
+      return result;
+    } catch (error) {
+      this.isLoading = false;
+      console.log(error);
+    }
+    return;
   }
 
   @action
@@ -120,7 +169,7 @@ export class CaseStore {
   // }
 
   @action
-  async getOpenCase(caseId: any, agentId: any) {
+  async getAllOpenCase(caseId: any, agentId: any) {
     try {
       this.isLoading = true;
       const result = await this.httpClient
@@ -204,5 +253,19 @@ export class CaseStore {
     }
     console.log(message);
     return throwError(message);
+  }
+
+  // Report
+  @action
+  async getReportCase(){
+    try {
+     const result = await  this.httpClient
+      .get<ICase>(this.endpoint + '/reports', this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+
   }
 }

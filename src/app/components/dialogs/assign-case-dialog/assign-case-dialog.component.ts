@@ -110,7 +110,7 @@ export class AssignCaseDialogComponent implements OnInit {
   }
 
   fetchCases() {
-    this.caseStore.getCases().subscribe((res: any) => {
+    this.caseStore.getAllCases().subscribe((res: any) => {
       this.arrCases = res;
     });
   }

@@ -27,7 +27,8 @@ export class ManageCasesPageComponent implements OnInit {
   public selectedCheckedboxValue;
   selectedValue = 'none';
   public selecedBtnCancel;
-  private departmentIT_statusValue;
+
+
   arrCases: Array<any> = [];
   arrAgents: Array<any> = [];
   arrAgentDepartment: Array<any> = [];
@@ -37,6 +38,8 @@ export class ManageCasesPageComponent implements OnInit {
   arrManagers: Array<any> = [];
   arrList: Array<any> = [];
   creatingCaseForm: any;
+
+
 
   getDepartmentIdFromFormData= '';
 
@@ -94,7 +97,7 @@ export class ManageCasesPageComponent implements OnInit {
 
 
   fetchCases() {
-    this.caseStore.getCases().subscribe((res: any) => {
+    this.caseStore.getAllCases().subscribe((res: any) => {
       this.arrCases = res;
     });
   }
@@ -300,12 +303,9 @@ export class ManageCasesPageComponent implements OnInit {
 
   // checkToAssign list
   // Checked=false;
-  isChecked(item, e:any){
-    if(e.target.checked==true) {
-        return this.arrList = item;
-    }
-    else {
-      return null;
+  isChecked(item, e:any):void{
+    if(e.target.checked) {
+      this.selectedCheckedboxValue = item;
     }
   }
 }

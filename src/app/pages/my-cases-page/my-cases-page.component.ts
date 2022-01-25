@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { CaseStore } from 'src/app/stores/case.store';
 
 @Component({
   selector: 'app-my-cases-page',
@@ -9,53 +11,33 @@ export class MyCasesPageComponent implements OnInit {
 
   selectedOption = '3';
 
-  //create data table
-  rows = [
-    {
-      n: "1",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-    {
-      n: "2",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
+  arrCases: Array<any> = [];
+  fontStyleControl = new FormControl();
+  fontStyle?: string;
 
-    {
-      n: "3",
-      all: "",
-      caseNumber: "00001002",
-      contactName: "Chheun Chansreytoch",
-      subject: "Dialog issues with text and form",
-      status: " ",
-      priority: " ",
-      dateTime: "5/19/2021, 2:07 PM",
-      caseOwner: "Chheun Chansreytoch",
-      option: "",
-    },
-  ]
+  public selectedKey;
 
-  constructor() { }
+
+
+
+  constructor(
+    private caseStore: CaseStore,
+  ) { }
 
   ngOnInit(): void {
+    try {
+      this.selectedKey = localStorage.getItem('department_id');
+      let agent_id = JSON.parse(localStorage.getItem('agent_auth') || '{}');
+      this.caseStore
+        .getCases(this.selectedKey, agent_id.id)
+        ?.then((res: any) => {
+          this.arrCases = res;
+          console.log(res);
+        });
+    } catch (e) {
+      console.log(e);
+    }
   }
-
-  // selectedOption = '3';
 
 //select checkbox
   checks=false;
@@ -67,10 +49,4 @@ export class MyCasesPageComponent implements OnInit {
       this.checks=false;
     }
   }
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
 }

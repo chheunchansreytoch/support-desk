@@ -38,15 +38,15 @@ export class CasesPageComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.fetchClosedCases();
+    // this.fetchClosedCases();
   }
 
-  fetchClosedCases() {
-    this.caseStore.getClosedCases().then((res: any) => {
-      this.arrClosedCases = res;
-      console.log('cases:', res);
-    });
-  }
+  // fetchClosedCases() {
+  //   this.caseStore.getAllClosedCases().then((res: any) => {
+  //     this.arrClosedCases = res;
+  //     console.log('cases:', res);
+  //   });
+  // }
 
   checkIfRouteIsActivated(item: string) {
     this.currentRoute;

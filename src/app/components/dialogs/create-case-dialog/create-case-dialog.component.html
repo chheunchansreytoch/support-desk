@@ -12,11 +12,14 @@
 
   <div mat-dialog-content>
     <form [formGroup]="registrationForm" (ngSubmit)="formSubmitted(registrationForm.value)">
-      <div class="custom-field-0">
+      <!-- <div class="custom-field-0">
         <label class="label" for="caseNumber">Case Number</label>
-        <input class="input" type="text" id="caseNumber" required formControlName="caseNumber">
+        <input class="input" type="text" id="caseNumber" formControlName="caseNumber" readonly='readonly'>
+        <button mat-button (click)="onCreateNumber()">
+          <span>add_circle</span>
+        </button>
         <p class="error-message" *ngIf="registrationForm.controls['caseNumber']?.touched && registrationForm.controls['caseNumber']?.errors?.required">Please Input Case Number.</p>
-      </div>
+      </div> -->
 
       <div class="custom-field-0">
         <label class="label" for="status">Status</label>

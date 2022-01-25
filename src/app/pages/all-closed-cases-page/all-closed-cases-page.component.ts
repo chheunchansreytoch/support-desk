@@ -11,6 +11,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { AgentDeleteCaseDialogComponent } from 'src/app/components/dialogs/agent-delete-case-dialog/agent-delete-case-dialog.component';
 import { AgentUpdateDialogComponent } from 'src/app/components/dialogs/agent-update-dialog/agent-update-dialog.component';
 import { ArrayDataSource } from '@angular/cdk/collections';
+import { CaseUpdateDialogComponent } from 'src/app/components/dialogs/case-update-dialog/case-update-dialog.component';
+import { IDialogData } from 'src/app/models/IDialog.model';
+import { AlertInformationDialogComponent } from 'src/app/components/alert-information-dialog/alert-information-dialog.component';
+import { ConfirmationDialogComponent } from 'src/app/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-all-closed-cases-page',
@@ -21,7 +25,10 @@ export class AllClosedCasesPageComponent implements OnInit {
 
   currentRoute: string = '';
   selectedOption = '3';
-  //arrCases: Array<any> = [];
+  public selectedKey;
+  public selectedCheckedboxValue;
+  public selectedCheckedboxId;
+
   arrClosedCases: Array<any> = [];
 
   constructor(
@@ -33,54 +40,80 @@ export class AllClosedCasesPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchClosedCases();
+    this.fetchAllClosedCases();
   }
 
-  onSelectedItem(item) {
-    this.router.navigate(['/cases/case-details'], {queryParams: { key: item?.id }});
+  onSelectedItem($event:MouseEvent , item,index) {
+
+   const checkboxElement = document.getElementById("checkbox"+index);
+   if(checkboxElement===$event.target) return;
+  this.router.navigate(['/cases/case-details'], {queryParams: { key: item?.id }});
   }
 
-  fetchClosedCases() {
-    this.caseStore.getClosedCases().then((res: any) => {
-      this.arrClosedCases = res;
-      console.log('cases:', res);
+  fetchAllClosedCases() {
+    try {
+      this.selectedKey = localStorage.getItem('department_id');
+      let agent_id = JSON.parse(localStorage.getItem('agent_auth') || '{}');
+      this.caseStore
+        .getAllClosedCases(this.selectedKey, agent_id.id)
+        ?.then((res: any) => {
+          this.arrClosedCases = res;
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  onClickUpdate(caseId) {
+ //console.log(item);
+    const dialogRef = this.dialog.open(CaseUpdateDialogComponent, {
+      width: '600px',
+      height: '96vh',
+      data: caseId
+    });
+
+    dialogRef.updatePosition({ top: '2vh', right: '2vh' });
+    dialogRef.afterClosed().subscribe(() => {
+      this.fetchAllClosedCases();
     });
   }
 
-  onClickDeleteCase(caseId) {
-    if (caseId) {
-      const dialogRef = this.dialog.open(AgentDeleteCaseDialogComponent, {
-        data: caseId,
-        width: '40vw',
-        height: '40vh',
-        role: 'dialog',
+  onClickDelete(caseId) {
+    if(caseId) {
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+        width: '500px',
+        data: {
+          title: 'Delete Case',
+          type: 'question',
+          content: 'Are you sure that you want to delete this selected case?'
+        } as IDialogData,
+        disableClose: true,
       });
 
       dialogRef.afterClosed().subscribe(async (result: any) => {
-        if(!result) return;
-        await this.caseStore.deleteCase(result).then((res: any) => {
-          this.fetchClosedCases()
-         //console.log();
-
+        if(!result || result === 'no') return;
+        await this.caseStore.deleteCase(caseId).then(()=> {
+          this.fetchAllClosedCases();
         });
-        //console.log(result);
-        alert("Delete Successfully!");
+
+        this.dialog.open(AlertInformationDialogComponent, {
+          width: '500px',
+          data: {
+            title: 'Delete Case',
+            type: 'success',
+            content: `Case is deleted.`
+          } as IDialogData,
+          disableClose: true,
+        });
+
+        //this.paginationStore.getAgentsWithPagination(10, 0, '');
       });
     }
     return;
   }
 
-  onClickEdit(caseId) {
-    const dialogRef = this.dialog.open(AgentUpdateDialogComponent, {
-      data: caseId,
-      width: '600px',
-      height: '96vh',
-      role: 'dialog',
-    });
-    dialogRef.updatePosition({ top: '2vh', right: '2vh' });
-    dialogRef.afterClosed().subscribe(() => {
-      this.fetchClosedCases();
-    })
+  onClickChangeOwner(caseId) {
+
   }
 
 //select checkbox
@@ -91,6 +124,17 @@ export class AllClosedCasesPageComponent implements OnInit {
     }
     else {
       this.checks=false;
+    }
+  }
+
+  // checkToAssign list
+  // Checked=false;
+  isChecked(item, e:any): void{
+    console.log('===', item);
+
+    if(e.target.checked===true) {
+        this.selectedCheckedboxValue = item;
+        this.selectedCheckedboxId = item.id;
     }
   }
 

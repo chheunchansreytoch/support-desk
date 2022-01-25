@@ -34,10 +34,14 @@ export class CaseSidebarPageComponent implements OnInit {
   }
 
   fetchClosedCases() {
-    this.caseStore.getClosedCases().then((res: any) => {
+    this.selectedKey = localStorage.getItem('department_id');
+    let agent_id = JSON.parse(localStorage.getItem('agent_auth') || '{}');
+    this.caseStore
+    .getAllClosedCases(this.selectedKey, agent_id.id)
+    ?.then((res: any) => {
       this.arrClosedCases = res;
-      console.log(res);
-    })
+      //console.log(res);
+    });
   }
 
   // onSelectedItem (item) {

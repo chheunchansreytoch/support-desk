@@ -24,6 +24,9 @@ export class CreateCaseDialogComponent implements OnInit {
   arrPriorities: Array<any> = [];
   arrManagers: Array<any> = [];
   arrCases: Array<any> = [];
+  //arrSortCases: Array<any> = [];
+
+  sortCase: any;
 
   getDepartmentIdFromFormData= '';
 
@@ -40,7 +43,7 @@ export class CreateCaseDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
     this.registrationForm = formBuilder.group({
-      caseNumber: new FormControl(data?.caseNumber ?? '', Validators.required),
+      // caseNumber: new FormControl(data?.caseNumber ?? '', Validators.required),
       status: new FormControl(data?.status?.id ?? 'New', Validators.required),
       priority: new FormControl(data?.priority?.id ?? 'High', Validators.required),
       agentDepartment: new FormControl(data?.agent?.agentDepartment?.id ?? '', Validators.required),
@@ -68,14 +71,30 @@ export class CreateCaseDialogComponent implements OnInit {
     //console.log(formData.agentDepartment);
     if(this.registrationForm.valid) {
       const { status, priority, agent } = formData;
+      await this.fetchSortCase();
+      if(this.sortCase.caseNumber){
+        console.log("==",this.sortCase.caseNumber);
 
+        let lastStrDigit:string=this.sortCase.caseNumber.slice(-1);
+        console.log('a', lastStrDigit);
+
+        let lastDigit=parseInt(lastStrDigit)+1;
+        console.log('b', lastDigit);
+
+        this.sortCase.caseNumber = this.sortCase.caseNumber.slice(0, -1) + lastDigit;
+        console.log('c', this.sortCase.caseNumber.slice(0, -1));
+
+
+      }
       if(!this.data) {
         const finalData = {
           ...formData,
+          caseNumber: this.sortCase.caseNumber?this.sortCase.caseNumber:"00001",
           createdBy: this.managerStore.getCurrentUser.id,
           status: { id: status },
           priority: { id: priority },
           agent: {id: agent},
+
         };
 
         this.caseStore.addCase(finalData).subscribe((res: {}) => {
@@ -113,6 +132,10 @@ export class CreateCaseDialogComponent implements OnInit {
     return;
   }
 
+  onCreateNumber() {
+    const counter = '0000'+1;
+  }
+
   fetchManagers() {
     this.managerStore.getManagers().subscribe((res: any) => {
       this.arrManagers = res;
@@ -120,9 +143,16 @@ export class CreateCaseDialogComponent implements OnInit {
   }
 
   fetchCases() {
-    this.caseStore.getCases().subscribe((res: any) => {
+    this.caseStore.getAllCases().subscribe((res: any) => {
       this.arrCases = res;
     });
+  }
+
+  async fetchSortCase() {
+
+      this.sortCase = await this.caseStore.getSortCase();
+
+
   }
 
   fetchAgentsDepartment() {

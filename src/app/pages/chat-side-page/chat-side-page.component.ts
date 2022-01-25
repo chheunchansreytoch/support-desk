@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DialogsService } from 'src/app/services/dialogs.service';
 import { ChatStore } from 'src/app/stores/chat.store';
 
@@ -15,6 +15,7 @@ export class ChatSidePageComponent implements OnInit {
   @Input() customer;
   public Items;
   public selectedItems;
+  public caseId;
 
   public selectedList;
   public selectedChoices;
@@ -30,9 +31,18 @@ export class ChatSidePageComponent implements OnInit {
     public dialog: MatDialog,
     public dialogService: DialogsService,
     private fb: FormBuilder,
+    public activatedRoute: ActivatedRoute,
   ) {
     this.messageForm = this.fb.group({
       messageText: [null, [Validators.required]],
+    });
+  }
+
+  ngOnInit(): void {
+    this.selectedList = this.menuLists[0];
+
+    this.activatedRoute.parent?.queryParams.subscribe((param)=>{
+      this.caseId = param.key;
     });
   }
 
@@ -42,17 +52,12 @@ export class ChatSidePageComponent implements OnInit {
     let reqObj = {
       messageText: messageText,
       customer: this.customer,
-      agent: 'dfca0309-bd1e-47b8-93fb-5b4ec3c5243f'
+      agent: 'dfca0309-bd1e-47b8-93fb-5b4ec3c5243f',
+      caseId: this.caseId,
     }
     this.chatStore.sendEmailMessage(reqObj).then(data => {
       console.log(data);
     })
-  }
-
-
-
-  ngOnInit(): void {
-    this.selectedList = this.menuLists[0];
   }
 
   openMenuList(menuList:any) {

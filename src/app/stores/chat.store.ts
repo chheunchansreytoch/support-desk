@@ -59,7 +59,7 @@ export class ChatStore {
   }
 
   @action
-  getCase(id, data): Observable<IChat> {
+  getChat(id, data): Observable<IChat> {
     return this.httpClient.get<IChat>(this.endpoint + '/chats/' + id, this.httpHeader)
     .pipe(
       retry(1),

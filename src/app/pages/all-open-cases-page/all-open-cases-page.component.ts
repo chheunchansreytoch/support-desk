@@ -16,7 +16,9 @@ export class AllOpenCasesPageComponent implements OnInit {
 
   public selectedKey;
 
-  constructor(private caseStore: CaseStore) {}
+  constructor(
+    private caseStore: CaseStore,
+  ) {}
 
   ngOnInit(): void {
     // this.fetchOpenCases();
@@ -25,7 +27,7 @@ export class AllOpenCasesPageComponent implements OnInit {
       this.selectedKey = localStorage.getItem('department_id');
       let agent_id = JSON.parse(localStorage.getItem('agent_auth') || '{}');
       this.caseStore
-        .getOpenCase(this.selectedKey, agent_id.id)
+        .getAllOpenCase(this.selectedKey, agent_id.id)
         ?.then((res: any) => {
           this.arrOpenCases = res;
           console.log(res);
@@ -34,13 +36,6 @@ export class AllOpenCasesPageComponent implements OnInit {
       console.log(e);
     }
   }
-
-  // fetchOpenCases() {
-  //   this.caseStore.getOpenCases().subscribe((res: any) => {
-  //     this.arrOpenCases = res;
-  //     console.log(res);
-  //   })
-  // }
 
   onCreate(item) {}
 

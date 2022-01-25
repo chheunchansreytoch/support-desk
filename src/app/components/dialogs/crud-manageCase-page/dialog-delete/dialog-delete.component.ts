@@ -35,7 +35,7 @@ export class DialogDeleteComponent implements OnInit {
   }
 
   fetchCases() {
-    this.caseStore.getCases().subscribe((res: any) => {
+    this.caseStore.getAllCases().subscribe((res: any) => {
       this.arrCases = res;
     });
   }

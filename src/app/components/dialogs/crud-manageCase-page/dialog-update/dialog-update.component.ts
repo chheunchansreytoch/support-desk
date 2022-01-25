@@ -27,7 +27,7 @@ export class DialogUpdateComponent implements OnInit {
   }
 
   fetchAgents() {
-    this.caseStore.getCases().subscribe((res: any) => {
+    this.caseStore.getAllCases().subscribe((res: any) => {
       this.arrCases = res;
     });
   }
