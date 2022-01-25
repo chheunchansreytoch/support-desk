@@ -10,102 +10,104 @@
     </section>
   </div>
 
-  <div class="list-Container1" >
-    <table>
-      <thead>
-        <tr>
-          <th>N.</th>
-          <th><input type="checkbox" (change)="checkAll($event)"></th>
-          <th>Case Number</th>
-          <th>Contact Name</th>
-          <th>Email</th>
-          <th>Subject</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>Priority</th>
-          <th>Date | Time</th>
-          <th>Assigned Date | Time</th>
-          <th>Case Owner</th>
-         <!-- <th>Actions</th> -->
-        </tr>
-      </thead>
+  <div class="custom-table-1" >
+    <div class="scrollable-table1">
+      <table>
+        <thead>
+          <tr>
+            <th>N.</th>
+            <th><input type="checkbox" (change)="checkAll($event)"></th>
+            <th>Case Number</th>
+            <th>Contact Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Date | Time</th>
+            <th>Assigned Date | Time</th>
+            <th>Case Owner</th>
+          <!-- <th>Actions</th> -->
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr *ngFor="let item of arrClosedCases; let i = index" (click)="onSelectedItem($event,item,i)">
-          <td>{{i+1}}</td>
+        <tbody>
+          <tr *ngFor="let item of arrClosedCases; let i = index" (click)="onSelectedItem($event,item,i)">
+            <td>{{i+1}}</td>
 
-          <td> <input id="checkbox{{i}}" type="checkbox" [checked]="checks" (change)="isChecked(item, $event)"> </td>
+            <td> <input id="checkbox{{i}}" type="checkbox" [checked]="checks" (change)="isChecked(item, $event)"> </td>
 
-          <td> {{item.caseNumber}} </td>
+            <td> {{item.caseNumber}} </td>
 
-          <td class="subject-td">
-            <div class='edit_hover_class'>
-              {{item?.customer?.username || item?.manager?.username}}
-            </div>
-          </td>
+            <td class="subject-td">
+              <div class='edit_hover_class'>
+                {{item?.customer?.username || item?.manager?.username}}
+              </div>
+            </td>
 
-          <td class="subject-td">
-            <div class='edit_hover_class'>
-              {{item?.customer?.email || item?.manager?.email}}
-            </div>
-          </td>
+            <td class="subject-td">
+              <div class='edit_hover_class'>
+                {{item?.customer?.email || item?.manager?.email}}
+              </div>
+            </td>
 
-          <td class="subject-td">
-            <div class='edit_hover_class'>
-              {{item.subject}}
-            </div>
-          </td>
+            <td class="subject-td">
+              <div class='edit_hover_class'>
+                {{item.subject}}
+              </div>
+            </td>
 
-          <td class="subject-td">
-            <div class='edit_hover_class'>
-              {{item.description}}
-            </div>
-          </td>
+            <td class="subject-td">
+              <div class='edit_hover_class'>
+                {{item.description}}
+              </div>
+            </td>
 
-          <td>
-            {{item?.status?.name}}
-          </td>
+            <td>
+              {{item?.status?.name}}
+            </td>
 
-          <td>
-            {{item?.priority?.name}}
-          </td>
+            <td>
+              {{item?.priority?.name}}
+            </td>
 
-          <td class="subject-td">
-            <div class="dateTime">
-              {{convertUTCtoDate(item.createdDate)}}
-            </div>
-          </td>
+            <td class="subject-td">
+              <div class="dateTime">
+                {{convertUTCtoDate(item.createdDate)}}
+              </div>
+            </td>
 
-          <td class="subject-td">
-            <div class="dateTime">
-              {{convertUTCtoDate(item.assignedDate)}}
-            </div>
-          </td>
+            <td class="subject-td">
+              <div class="dateTime">
+                {{convertUTCtoDate(item.assignedDate)}}
+              </div>
+            </td>
 
-          <td>{{item?.agent?.username}}</td>
+            <td>{{item?.agent?.username}}</td>
 
-          <!-- <td>
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item (click)=" onClickEdit(item.id)">
-                <i class="fas fa-pen"></i>
-                <span>Edit</span>
+            <!-- <td>
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
               </button>
-              <button mat-menu-item (click)="onClickDeleteCase(item.id)">
-                <i class="fas fa-trash"></i>
-                <span>Delete</span>
-              </button>
-              <button mat-menu-item>
-                <i class="fas fa-people-arrows"></i>
-                <span>Change Owner</span>
-              </button>
-            </mat-menu>
-          </td> -->
-        </tr>
-      </tbody>
-    </table>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)=" onClickEdit(item.id)">
+                  <i class="fas fa-pen"></i>
+                  <span>Edit</span>
+                </button>
+                <button mat-menu-item (click)="onClickDeleteCase(item.id)">
+                  <i class="fas fa-trash"></i>
+                  <span>Delete</span>
+                </button>
+                <button mat-menu-item>
+                  <i class="fas fa-people-arrows"></i>
+                  <span>Change Owner</span>
+                </button>
+              </mat-menu>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
