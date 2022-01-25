@@ -10,6 +10,7 @@ import { Observable, throwError } from 'rxjs';
 export class CaseStore {
   @observable public isLoading: boolean = false;
   @observable public cases: ICase | undefined;
+  public arrClosedCases: Array<any> = [];
 
   endpoint = 'http://localhost:3000/api';
   httpHeader = {
@@ -91,19 +92,19 @@ export class CaseStore {
     return;
   }
 
-  // @action
-  // async getClosedCases(): Promise<any> {
-  //   try {
-  //     this.isLoading = true;
-  //     const result = await this.httpClient
-  //       .get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
-  //       .toPromise();
-  //     return result;
-  //   } catch (error) {
-  //     this.isLoading = false;
-  //     console.log(error);
-  //   }
-  // }
+  @action
+  async getClosedCases(): Promise<any> {
+    try {
+      this.isLoading = true;
+      const result = await this.httpClient
+        .get<ICase>(this.endpoint + '/cases/closed', this.httpHeaderWithToken)
+        .toPromise();
+      return result;
+    } catch (error) {
+      this.isLoading = false;
+      console.log(error);
+    }
+  }
 
   @action
   async getAllClosedCases(caseId: any, agentId: any) {

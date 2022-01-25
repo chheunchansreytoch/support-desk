@@ -114,6 +114,7 @@ import { AgentCaseFrontLayoutComponent } from './layouts/agent-case-front-layout
 import { AssignCaseDialogComponent } from './components/dialogs/assign-case-dialog/assign-case-dialog.component';
 import { UpdateCustomerDialogComponent } from './components/dialogs/crud-manageCustomer-dialogs/update-customer-dialog/update-customer-dialog.component';
 import { DeleteCustomerDialogComponent } from './components/dialogs/crud-manageCustomer-dialogs/delete-customer-dialog/delete-customer-dialog.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 
 export function playerFactory() {
   return player;
@@ -237,7 +238,8 @@ export function playerFactory() {
     MatTreeModule,
     MatButtonModule,
     LottieModule.forRoot({ player: playerFactory }),
-    SkeletonModule
+    SkeletonModule,
+    NgxChartsModule
   ],
 
   providers: [],

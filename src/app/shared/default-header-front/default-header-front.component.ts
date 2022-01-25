@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router, RouterModule,} from '@angular/router';
 import {Location} from '@angular/common';
 import { AgentStore } from 'src/app/stores/agent.store';
+import { CaseStore } from 'src/app/stores/case.store';
+import { ICase } from 'src/app/models/ICase.model';
 
 @Component({
   selector: 'app-default-header-front',
@@ -12,9 +14,15 @@ export class DefaultHeaderFrontComponent implements OnInit {
 
   //event$;
   currentRoute: string = '';
+  username: string = '';
+
   public Items;
   public selectedItems;
   public selectedKey;
+
+  public searchText;
+
+  arrSearching : any = [];
 
   arrAgentAccount : any = null;
 
@@ -22,6 +30,7 @@ export class DefaultHeaderFrontComponent implements OnInit {
     public router: Router,
     private location: Location,
     public agentStore: AgentStore,
+    public caseStore: CaseStore,
     private activatedRoute : ActivatedRoute,
     ) {
     this.Items = [
@@ -37,6 +46,8 @@ export class DefaultHeaderFrontComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.caseStore.arrClosedCases;
+
     try{
       this.agentStore.getAgent(this.selectedKey)?.subscribe((res: any) => {
         this.arrAgentAccount = res;
@@ -46,6 +57,22 @@ export class DefaultHeaderFrontComponent implements OnInit {
     }catch(e){
       console.log(e)
     }
+  }
+
+  search() {
+    if(this.username == "") {
+       this.ngOnInit();
+    }
+    else {
+      this.arrSearching = this.caseStore.arrClosedCases.filter(res =>{
+        return res.customer?.username?.toLocaleLowerCase().match(this.username?.toLocaleLowerCase());
+      });
+    }
+    this.caseStore.arrClosedCases = this.arrSearching;
+  }
+
+  btnSearchClicked() {
+
   }
 
   itemSelected(event: any) {

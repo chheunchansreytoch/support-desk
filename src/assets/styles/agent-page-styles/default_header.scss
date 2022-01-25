@@ -43,14 +43,15 @@
                 padding: 8px 150px;
                 padding-left: 15px;
                 font-size: 12px;
-                border-top: 1px solid #ccc;
-                border-left: 1px solid #ccc;
-                border-right: none;
-                border-bottom: 1px solid #ccc;
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-                background: $color7;
                 outline: none;
+                // border-top: 1px solid #ccc;
+                // border-left: 1px solid #ccc;
+                // border-right: none;
+                // border-bottom: 1px solid #ccc;
+                border-radius: 5px;
+                // border-top-left-radius: 5px;
+                // border-bottom-left-radius: 5px;
+                background: $color7;
                 text-indent: 10px;
               }
 

@@ -13,6 +13,7 @@ export class AgentStore {
   @observable public agentData = null;
   @observable public selectedAgent;
 
+
   endpoint = 'http://localhost:3000/api';
   httpHeader = {
     headers: new HttpHeaders({

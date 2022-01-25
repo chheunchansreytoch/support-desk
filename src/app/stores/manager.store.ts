@@ -51,25 +51,59 @@ export class ManagerStore {
   @computed
   get getCurrentUser(): any {
     const manager = localStorage.getItem('manager_auth');
-    return manager ? JSON.parse(manager) : {'id': null, 'username': null};
+    return manager ? JSON.parse(manager) : {id: null, username: null, password: null };
+
   }
 
   @action
   async login(email: string, password: string) {
     try {
       this.isLoading = true;
-      await this.httpClient.post<IManager>(
-        this.endpoint + '/managers/login',
-        JSON.stringify({email, password }), this.httpHeader).toPromise()
+      await this.httpClient
+        .post<IManager>(
+          this.endpoint + '/managers/login',
+          {
+            email: email,
+            password: password,
+          },
+          this.httpHeader
+        )
+        .toPromise()
         .then((result) => {
-          localStorage.setItem("manager_auth", JSON.stringify(result));
-          this.router.navigate(['/admin-homepage']);
-          console.log("correct");
+          console.log(result);
+          this.router.navigate(['/admin-homepage'], {
+            queryParams: { key: this.getCurrentUser.id },
+          });
+          console.log('id', this.getCurrentUser.id);
+
+          localStorage.setItem('manager_auth', JSON.stringify(result));
+          console.log('correct');
         });
-    } catch(error) {
-      console.log('login error ln.52: ', error)
+    } catch (error) {
+      this.isLoading = false;
+      console.log('login error ln.52: ', error);
     }
   }
+
+
+  // @action
+  // async login(email: string, password: string) {
+  //   try {
+  //     this.isLoading = true;
+  //     await this.httpClient.post<IManager>(
+  //       this.endpoint + '/managers/login',
+  //       JSON.stringify({email, password }), this.httpHeader).toPromise()
+  //       .then((result) => {
+  //         localStorage.setItem("manager_auth", JSON.stringify(result));
+  //         this.router.navigate(['/admin-homepage'], {
+  //           queryParams: { key: this.getCurrentUser.id },
+  //         });
+  //         console.log("correct");
+  //       });
+  //   } catch(error) {
+  //     console.log('login error ln.52: ', error)
+  //   }
+  // }
 
   @action
   getManagers(): Observable<IManager> {
@@ -81,13 +115,24 @@ export class ManagerStore {
     )
   }
 
+  // @action
+  // getManager(id): Observable<IManager> {
+  //   return this.httpClient.get<IManager>(this.endpoint + '/managers/' + id, this.httpHeader)
+  //   .pipe(
+  //     retry(1),
+  //     catchError(this.processError)
+  //   )
+  // }
+
   @action
-  getManager(id, data): Observable<IManager> {
-    return this.httpClient.get<IManager>(this.endpoint + '/managers/' + id, this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.processError)
-    )
+  async getManager(id) {
+    try {
+      const result = await this.httpClient.get<IManager>(this.endpoint + '/managers/' + id, this.httpHeader).toPromise();
+      return result;
+    } catch (error) {
+      console.log(error);
+      return;
+    }
   }
 
   // @action

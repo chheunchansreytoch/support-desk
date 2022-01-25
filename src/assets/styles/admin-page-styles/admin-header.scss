@@ -62,123 +62,72 @@
         }
       }
 
-      // .custom-header-item {
-      //   padding: 10px;
-      //   #close {
-      //     display: none;
-      //   }
-
-      //   button {
-      //     border: none;
-      //     background: none;
-
-      //     .fi-rr-menu-burger {
-      //       font-size: 18px;
-      //       color: $black1;
-      //     }
-
-      //     .fi-rr-menu-burger:hover {
-      //       text-shadow: 0 0 10px rgb(130, 160, 216);
-      //     }
-      //   }
-      // }
-
-      .search-form {
-        // width: 25%;
-        // height: 35px;
-        // border: 1px solid #dee2ff;
-        // background-color: #f8f9fa;
-        // border-radius: 25px;
-        // margin-left: 25%;
-        // align-items: center;
-        // text-align: center;
-
-        form {
-          display: flex;
-          flex-direction: row;
-          margin-right: 20px;
-
-          overflow: hidden;
-          border-radius: 20px;
-          border: 1px solid #ccc;
-
-          input, button {
-            border: none;
-            outline: none;
-          }
-
-          input[type=text] {
-            padding: 8px 150px;
-            padding-left: 15px;
-            font-size: 12px;
-
-            background: $color7;
-            outline: none;
-            text-indent: 10px;
-          }
-
-          .custom-search-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            margin: 2px;
-            padding: 10px 12px;
-            border-radius: 50%;
-            background-color: #ddd;
-
-            .btn-icon-search {
-              border: none;
-              background: none;
-
-              .fi-rr-search {
-                font-size: 13px;
-              }
-            }
-          }
-
-          .custom-search-btn:hover {
-            background: $gray4;
-          }
-        }
-      }
-
       .custom-notify-userAcc {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        .search-form {
+          form {
+            display: flex;
+            flex-direction: row;
+            margin-right: 20px;
 
-        .btnNotification-Click {
-          width: 33px;
-          //height: 33px;
-          text-align: center;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid #ccc;
 
-          float: left;
-          padding: 4px;
-          padding-right: 50px;
-          margin-right: 20px;
-          //border-right: 1px solid #ccc;
+            input, button {
+              border: none;
+              outline: none;
+            }
 
-          .btn-Notification {
-            color: $black1;
-            font-size: 24px;
-            border: none;
-            background: none;
+            input[type=text] {
+              padding: 8px 150px;
+              padding-left: 15px;
+              font-size: 12px;
+
+              background: $color7;
+              outline: none;
+              text-indent: 10px;
+            }
+
+            .custom-search-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              margin: 2px;
+              padding: 10px 12px;
+              border-radius: 50%;
+              background-color: #ddd;
+
+              .btn-icon-search {
+                border: none;
+                background: none;
+
+                .fi-rr-search {
+                  font-size: 13px;
+                }
+              }
+            }
+
+            .custom-search-btn:hover {
+              background: $gray4;
+            }
           }
         }
 
-        // .btnNotification-Click:hover {
-        //   background-color: #cedde4;
-        //   transition: 0.5s;
-        //   border-radius: 50%;
-        // }
-
-        .profile-account {
-          .avatarImg {
-            float: right;
-            width: 35px;
-            height: 35px;
-            border: 1px solid $gray3;
-            border-radius: 50%;
+        .Custom-Menu-icons {
+          .custom-user-profile {
+            padding: 10px;
+            span{
+              margin: 0!important;
+            }
+            .avatarImg1 {
+              width: 45px;
+              height: 45px;
+              //border: 2px solid #ccc;
+              border-radius: 50%;
+            }
           }
         }
       }

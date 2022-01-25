@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import { CaseStore } from 'src/app/stores/case.store';
 import { Router } from '@angular/router';
@@ -34,8 +34,9 @@ export class AllClosedCasesPageComponent implements OnInit {
   constructor(
     public router: Router,
     private location: Location,
-    private caseStore: CaseStore,
+    public caseStore: CaseStore,
     private dialog: MatDialog,
+
 
   ) {}
 
@@ -58,6 +59,7 @@ export class AllClosedCasesPageComponent implements OnInit {
         .getAllClosedCases(this.selectedKey, agent_id.id)
         ?.then((res: any) => {
           this.arrClosedCases = res;
+this.caseStore.arrClosedCases=res;
         });
     } catch (e) {
       console.log(e);

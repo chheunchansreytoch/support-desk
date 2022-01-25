@@ -9,10 +9,11 @@
     <div class="search-menuIcon-container">
       <div class="Custom-searchForm">
         <form class="searchForm">
-            <input type="text" name="search-item" placeholder="Search Cases and more ...">
-            <div class="custom-search-btn">
+            <input type="text" name="search-item" placeholder="Search Cases and more ..." [(ngModel)]="username" (input)="search()">
+            {{searchText}}
+            <!-- <div class="custom-search-btn">
               <button class="btn-icon-search"><i class="fi-rr-search"></i></button>
-            </div>
+            </div> -->
         </form>
       </div>
 
